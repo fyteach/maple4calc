@@ -1,0 +1,16 @@
+Package: placeholder
+Type: Book
+Title: Maple Notes on Calculus
+Version: 0.0.1
+Author: Fei Ye <fyecuny@gmail.com>
+Maintainer: Fei Ye <fyecuny@gmail.com>
+Description: Notes on Maples for Calculus.
+License: Attribution-NonCommercial-ShareAlike 4.0 International
+Imports:
+  tinytex,
+  bookdown,
+  knitr
+Suggests:
+  tufte
+
+Encoding: UTF-8
