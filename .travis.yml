@@ -5,14 +5,14 @@ sudo: false
 repos:
   cran: http://cran.rstudio.com
 
-r_packages:
-  - bookdown
+# r_packages:
+#   - bookdown
 
 pandoc_version: 1.19.2.1
 
 
 # r_github_packages:
-#  - grimbough/msmbstyle@grid-layout
+#  - grimbough/msmbstyle
 
 
 # addons:
