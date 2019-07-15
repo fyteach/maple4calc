@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Solve differential equations | Notes on Maple for Calculus II</title>
+  <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Solve differential equations | Notes on Maple for Calculus II" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Solve differential equations | Notes on Maple for Calculus II" />
+  
+  <meta name="twitter:description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
+  
+
+<meta name="author" content="Fei Ye" />
+
+
+<meta name="date" content="2019-07-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="logarithmic-and-exponential-functions.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Notes on Maple for Calculus II</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-should-i-do-after-i-opened-maple"><i class="fa fa-check"></i>What should I do after I opened Maple</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="volume-of-revolution.html"><a href="volume-of-revolution.html"><i class="fa fa-check"></i><b>1</b> Volume of Revolution</a></li>
+<li class="chapter" data-level="2" data-path="inverse-functions.html"><a href="inverse-functions.html"><i class="fa fa-check"></i><b>2</b> Inverse Functions</a></li>
+<li class="chapter" data-level="3" data-path="logarithmic-and-exponential-functions.html"><a href="logarithmic-and-exponential-functions.html"><i class="fa fa-check"></i><b>3</b> Logarithmic and Exponential Functions</a><ul>
+<li class="chapter" data-level="3.1" data-path="logarithmic-and-exponential-functions.html"><a href="logarithmic-and-exponential-functions.html#basic-properties-and-graphs"><i class="fa fa-check"></i><b>3.1</b> Basic properties and graphs</a></li>
+<li class="chapter" data-level="3.2" data-path="logarithmic-and-exponential-functions.html"><a href="logarithmic-and-exponential-functions.html#differentiation-and-integration"><i class="fa fa-check"></i><b>3.2</b> Differentiation and integration</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="solve-differential-equations.html"><a href="solve-differential-equations.html"><i class="fa fa-check"></i><b>4</b> Solve differential equations</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Notes on Maple for Calculus II</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="solve-differential-equations" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Solve differential equations</h1>
+<p>In Maple, you may solve the equation <span class="math inline">\(y&#39;(x)=k y(x) + c\)</span> (which is called an ODE) using the command <code>dsolve({ics, eq})</code>, where <code>ics</code> stands for initial condition <span class="math inline">\(y(0)=c\)</span> and <code>eq</code> stands for the differential equation. Without the <code>ics</code>, <code>dsolve</code> will provide a general solution.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-1" class="example"><strong>Example 1.1  </strong></span>Find the function <span class="math inline">\(f(x)\)</span> which satisfies the differential equation <span class="math inline">\(f&#39;(x)=k f(x)\)</span> with <span class="math inline">\(f(0)=5\)</span> and <span class="math inline">\(f(2)=3\)</span>.</p>
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> <br> Use the following command</p>
+<pre><code>dsolve({f(0)=5, f&#39;(x)=k f(x)})</code></pre>
+<p>we get <span class="math inline">\(f(x)=5e^{kx}\)</span>.</p>
+<p>To find <span class="math inline">\(k\)</span>, we solve the equation <span class="math inline">\(3=5e^{2k}\)</span> by</p>
+<pre><code>solve(3=5*e^(2*k), k)</code></pre>
+<p>which shows that <span class="math inline">\(k=\frac{\ln3-\ln5}{2}\approx -0.255\)</span>. Here we use <code>evalf(%)</code> (% represents the previous result) to get the approximation.</p>
+<p>So the function <span class="math inline">\(f\)</span> is given by <span class="math display">\[
+f(x)=5e^{\frac{x(\ln3-\ln5)}{2}}\approx 5e^{-0.255x}.
+\]</span></p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-3" class="exercise"><strong>Exercise 3.1  </strong></span> Find the function <span class="math inline">\(y\)</span> which satisfies the differential equation <span class="math inline">\(y&#39;(x)=k y(x)\)</span> with <span class="math inline">\(y(0)=2\)</span> and <span class="math inline">\(y(5)=11\)</span>.</p>
+</div>
+
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="logarithmic-and-exponential-functions.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["maple-notes.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
