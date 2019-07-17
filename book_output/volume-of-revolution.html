@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Volume of Revolution | Notes on Maple for Calculus II</title>
+  <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Volume of Revolution | Notes on Maple for Calculus II" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Volume of Revolution | Notes on Maple for Calculus II" />
+  
+  <meta name="twitter:description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
+  
+
+<meta name="author" content="Fei Ye" />
+
+
+<meta name="date" content="2019-07-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="inverse-functions.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Notes on Maple for Calculus II</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-should-i-do-after-i-opened-maple"><i class="fa fa-check"></i>What should I do after I opened Maple</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="volume-of-revolution.html"><a href="volume-of-revolution.html"><i class="fa fa-check"></i><b>1</b> Volume of Revolution</a></li>
+<li class="chapter" data-level="2" data-path="inverse-functions.html"><a href="inverse-functions.html"><i class="fa fa-check"></i><b>2</b> Inverse Functions</a></li>
+<li class="chapter" data-level="3" data-path="logarithmic-and-exponential-functions.html"><a href="logarithmic-and-exponential-functions.html"><i class="fa fa-check"></i><b>3</b> Logarithmic and Exponential Functions</a><ul>
+<li class="chapter" data-level="3.1" data-path="logarithmic-and-exponential-functions.html"><a href="logarithmic-and-exponential-functions.html#basic-properties-and-graphs"><i class="fa fa-check"></i><b>3.1</b> Basic properties and graphs</a></li>
+<li class="chapter" data-level="3.2" data-path="logarithmic-and-exponential-functions.html"><a href="logarithmic-and-exponential-functions.html#differentiation-and-integration-of-logarithmic-and-exponential-functions"><i class="fa fa-check"></i><b>3.2</b> Differentiation and integration of logarithmic and exponential functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="solve-differential-equations.html"><a href="solve-differential-equations.html"><i class="fa fa-check"></i><b>4</b> Solve differential equations</a></li>
+<li class="chapter" data-level="5" data-path="inverse-trigonometric-functions.html"><a href="inverse-trigonometric-functions.html"><i class="fa fa-check"></i><b>5</b> Inverse Trigonometric Functions</a><ul>
+<li class="chapter" data-level="5.1" data-path="inverse-trigonometric-functions.html"><a href="inverse-trigonometric-functions.html#domains-and-ranges"><i class="fa fa-check"></i><b>5.1</b> Domains and Ranges</a></li>
+<li class="chapter" data-level="5.2" data-path="inverse-trigonometric-functions.html"><a href="inverse-trigonometric-functions.html#differentiation-and-integration-of-inverse-trigonometric-functions"><i class="fa fa-check"></i><b>5.2</b> Differentiation and integration of inverse trigonometric functions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="integrations-involving-trigonometric-functions.html"><a href="integrations-involving-trigonometric-functions.html"><i class="fa fa-check"></i><b>6</b> Integrations Involving Trigonometric Functions</a><ul>
+<li class="chapter" data-level="6.1" data-path="integrations-involving-trigonometric-functions.html"><a href="integrations-involving-trigonometric-functions.html#integrations-of-trigonometric-functions"><i class="fa fa-check"></i><b>6.1</b> Integrations of trigonometric functions</a></li>
+<li class="chapter" data-level="6.2" data-path="integrations-involving-trigonometric-functions.html"><a href="integrations-involving-trigonometric-functions.html#trigonometric-substitution"><i class="fa fa-check"></i><b>6.2</b> Trigonometric Substitution</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="lhospitals-rule.html"><a href="lhospitals-rule.html"><i class="fa fa-check"></i><b>7</b> L’Hospital’s Rule</a><ul>
+<li class="chapter" data-level="7.1" data-path="lhospitals-rule.html"><a href="lhospitals-rule.html#integrations-of-trigonometric-functions-1"><i class="fa fa-check"></i><b>7.1</b> Integrations of trigonometric functions</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="lhospitals-rule-1.html"><a href="lhospitals-rule-1.html"><i class="fa fa-check"></i><b>8</b> L’Hospital’s Rule</a><ul>
+<li class="chapter" data-level="8.1" data-path="lhospitals-rule-1.html"><a href="lhospitals-rule-1.html#integrations-of-trigonometric-functions-2"><i class="fa fa-check"></i><b>8.1</b> Integrations of trigonometric functions</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Notes on Maple for Calculus II</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="volume-of-revolution" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Volume of Revolution</h1>
+<p>In terms of definite integrals, the volume of a solid obtained by rotating a region about the <span class="math inline">\(x\)</span>-axis can be calculated by
+<span class="math display">\[\int_a^b \pi (r_1(x)^2 - r_2(x)^2) \mathrm{d} x \qquad \text{disk/washer method},\]</span>
+or
+<span class="math display">\[\int_a^b 2\pi r(y) h(y) \mathrm{d} y \qquad \text{shell method method},\]</span></p>
+<p>where <span class="math inline">\(r_1(x)\)</span>, <span class="math inline">\(r_2(x)\)</span> and <span class="math inline">\(r(x)\)</span> represents the radius and <span class="math inline">\(h(x)\)</span> represents the height of a cylindrical shell.</p>
+<p>In practice, it’s better to recognize the shape of a cross section, find the volume of a slice of the solid and then set up the integral.</p>
+<p>In the following, you will see some tools/commands from Maple which are very helpful to calculate the volume of a solid.</p>
+<p>In Maple, the following command, supported by the package <code>Student[Calculus1]</code>, can be used to get the graph, the integral and the volume of the solid obtained by rotation the region bounded by <span class="math inline">\(f(x)\)</span>, <span class="math inline">\(g(x)\)</span>, <span class="math inline">\(x=a\)</span> and <span class="math inline">\(x=b\)</span>.</p>
+<pre class="maple"><code>VolumeOfRevolution(f(x), g(x), x = a..b, opts)</code></pre>
+<p>To learn what options does the command <code>VolumeOfRevolution</code> have, you may type</p>
+<pre class="maple"><code>?VolumeOfRevolution</code></pre>
+<p>in the Math mode and hit enter. You will see the help page.</p>
+<p><img src="figs/VolOfRev-help-page.png" /></p>
+
+<div class="example">
+<span id="exm:unnamed-chunk-1" class="example"><strong>Example 1.1  </strong></span>Show the solid obtained by rotating the region bounded by <span class="math inline">\(y=x^2\)</span> and <span class="math inline">\(y=x\)</span> about <span class="math inline">\(y\)</span>-axis. Set up an integral for the volume. Find the volume.
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> <br></p>
+<p>#Load the package</p>
+<pre><code>with(Student[Calculus1])</code></pre>
+<p>#Show the solid</p>
+<pre><code>VolumeOfRevolution(x^2, x, x = 0 .. 1, axis = vertical, output = plot)</code></pre>
+<p>#Set up an integral</p>
+<pre><code>VolumeOfRevolution(x^2, x, x = 0 .. 1, axis = vertical, output = integral)</code></pre>
+<p>#Find the volume</p>
+<pre><code>VolumeOfRevolution(x^2, x, x = 0 .. 1, axis = vertical, output = value)</code></pre>
+<p>The outputs in Maple can be seen in the following picture</p>
+<img src="figs/VolOfRev-Example1.png" />
+</div>
+
+
+<div class="remark">
+<p> <span class="remark"><em>Remark. </em></span> 1. If you change the function to <code>VolumeOfRevolutionTutor</code>, you will see an interactive popup windows which does exactly the same thing.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>If the rotation axis is not an axis of the coordinate system, you need add the option <code>distancefromaxis = numeric</code> into the function. For example, if in the above example, the rotation is about <span class="math inline">\(y=-2\)</span>, then the Maple command should be the following</p>
+<pre><code> VolumeOfRevolution(x^2, x, x = 0 .. 1, axis = vertical, distancefromaxis = -2, output = integral)</code></pre></li>
+</ol>
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-4" class="exercise"><strong>Exercise 1.1  </strong></span>Find the volume of the solid obtained by rotating the region bounded by <span class="math inline">\(y=x^3\)</span>, <span class="math inline">\(x=0\)</span>, <span class="math inline">\(y=1\)</span> about <span class="math inline">\(y\)</span>-axis
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-5" class="exercise"><strong>Exercise 1.2  </strong></span>Find the volume of the solid obtained by rotating the region bounded by <span class="math inline">\(y=x^3\)</span>, <span class="math inline">\(y=0\)</span>, <span class="math inline">\(x=1\)</span> about (a) <span class="math inline">\(y=0\)</span>, and (b) <span class="math inline">\(x=2\)</span>.
+</div>
+
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="inverse-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["maple-notes.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

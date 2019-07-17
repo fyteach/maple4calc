@@ -11,7 +11,7 @@ rmd_files: [
   "08-Partial-Fractions.Rmd"
 ]
 
-output_dir: _book
+output_dir: book_output
 # clean: [packages.bib, bookdown.bbl]
 new_session: yes
 
