@@ -49,23 +49,16 @@ $$
 
 Here is the output
 
-![Graph of some logarithmic and exponential functions](figs/InversePlot_tanx.png)
+![Graph of the tangent and arctangent functions](figs/InversePlot_tanx.png)
 </div>\EndKnitrBlock{solution}
 
-\BeginKnitrBlock{exercise}<div class="exercise"><span class="exercise" id="exr:unnamed-chunk-3"><strong>(\#exr:unnamed-chunk-3) </strong></span>Graph the following functions together.
-$$
-y=\log_3x, \qquad y=3^x, \qquad y=(1/3)^x, \qquad y=\log_{1/3}x.
-$$
-
-Find the pairs that are symmetric to each other with respect to a certain line.
-</div>\EndKnitrBlock{exercise}
-
-\BeginKnitrBlock{exercise}<div class="exercise"><span class="exercise" id="exr:unnamed-chunk-4"><strong>(\#exr:unnamed-chunk-4) </strong></span>Graph the following functions together over an appropriate domain.
+\BeginKnitrBlock{exercise}<div class="exercise"><span class="exercise" id="exr:unnamed-chunk-3"><strong>(\#exr:unnamed-chunk-3) </strong></span>
+Graph the following functions together over an appropriate domain.
 $$
 y=\cot x, \qquad y=\mathrm{arccot} x, \qquad y=x.
 $$
 
-What's the domain and range of $y=\mathrm{arcctg} x$?
+What's the domain and range of $y=\mathrm{arccot} x$?
 </div>\EndKnitrBlock{exercise}
 
 ## Differentiation and integration of inverse trigonometric functions
@@ -74,8 +67,8 @@ In the section {#Differentiation and integration of logarithmic and exponential 
 
 Now let find derivatives and integrals of some inverse trigonometric functions.
 
-\BeginKnitrBlock{example}<div class="example"><span class="example" id="exm:unnamed-chunk-5"><strong>(\#exm:unnamed-chunk-5) </strong></span>
-Find $y'$, where $y=\mathrm{arccot} x\right)$.
+\BeginKnitrBlock{example}<div class="example"><span class="example" id="exm:unnamed-chunk-4"><strong>(\#exm:unnamed-chunk-4) </strong></span>
+Find $y'$, where $y=\mathrm{arccot} x$.
 </div>\EndKnitrBlock{example}
 
 \BeginKnitrBlock{solution}<div class="solution">\iffalse{} <span class="solution"><em>Solution. </em></span>  \fi{}<br>
@@ -94,11 +87,11 @@ Enter the following commands in Maple, you will find $y'=-\frac{1}{x^2+1}$.
 where `%` is a ditto operator that allows you to refer to a previously computed result in Maple.
 </div>\EndKnitrBlock{solution}
 
-\BeginKnitrBlock{exercise}<div class="exercise"><span class="exercise" id="exr:unnamed-chunk-7"><strong>(\#exr:unnamed-chunk-7) </strong></span>
+\BeginKnitrBlock{exercise}<div class="exercise"><span class="exercise" id="exr:unnamed-chunk-6"><strong>(\#exr:unnamed-chunk-6) </strong></span>
 Find the derivative of $y=\mathrm{arcsec} x$
 </div>\EndKnitrBlock{exercise}
 
-\BeginKnitrBlock{exercise}<div class="exercise"><span class="exercise" id="exr:unnamed-chunk-8"><strong>(\#exr:unnamed-chunk-8) </strong></span>
+\BeginKnitrBlock{exercise}<div class="exercise"><span class="exercise" id="exr:unnamed-chunk-7"><strong>(\#exr:unnamed-chunk-7) </strong></span>
 Find the derivative of $y=\mathrm{arccsc} x$
 </div>\EndKnitrBlock{exercise}
 
@@ -106,21 +99,21 @@ For integrals of inverse trigonometric function, you may need the method of inte
 
 Use `DiffTutor` to find antiderivatives of inverse trigonometric functions.
 
-\BeginKnitrBlock{exercise}<div class="exercise"><span class="exercise" id="exr:unnamed-chunk-9"><strong>(\#exr:unnamed-chunk-9) </strong></span>
+\BeginKnitrBlock{exercise}<div class="exercise"><span class="exercise" id="exr:unnamed-chunk-8"><strong>(\#exr:unnamed-chunk-8) </strong></span>
 Evaluate the integral
 $$
 \int \arcsin x \mathrm{d} x
 $$
 </div>\EndKnitrBlock{exercise}
 
-\BeginKnitrBlock{exercise}<div class="exercise"><span class="exercise" id="exr:unnamed-chunk-10"><strong>(\#exr:unnamed-chunk-10) </strong></span>
+\BeginKnitrBlock{exercise}<div class="exercise"><span class="exercise" id="exr:unnamed-chunk-9"><strong>(\#exr:unnamed-chunk-9) </strong></span>
 Evaluate the integral
 $$
 \int \arctan x \mathrm{d} x
 $$
 </div>\EndKnitrBlock{exercise}
 
-\BeginKnitrBlock{exercise}<div class="exercise"><span class="exercise" id="exr:unnamed-chunk-11"><strong>(\#exr:unnamed-chunk-11) </strong></span>
+\BeginKnitrBlock{exercise}<div class="exercise"><span class="exercise" id="exr:unnamed-chunk-10"><strong>(\#exr:unnamed-chunk-10) </strong></span>
 Evaluate the integral
 $$
 \int \mathrm{sec} x \mathrm{d} x

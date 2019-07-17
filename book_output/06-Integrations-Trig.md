@@ -16,10 +16,10 @@ Rewrite $\cos^4x$ into an expression with single terms and evaluate the integral
     combine((cos(x))^4)
     # use DiffTutor to evaluate the integral of the resulting function.
     with(Student[Calculus1])
-    DiffTutor(%, x)
+    IntTutor(%, x)
 </div>\EndKnitrBlock{solution}
 
-You may compare the above solution with the solution given by `DiffTutor((cos(x))^4, x)`.
+You may compare the above solution with the solution given by `IntTutor((cos(x))^4, x)`.
 
 \BeginKnitrBlock{exercise}<div class="exercise"><span class="exercise" id="exr:unnamed-chunk-3"><strong>(\#exr:unnamed-chunk-3) </strong></span>
 Evaluate the integral
@@ -37,14 +37,14 @@ $$
 
 ## Trigonometric Substitution
 
-Surely, you may learn some trigonometric substitution tricks using `DiffTutor`.
+Surely, you may learn some trigonometric substitution tricks using `IntTutor`.
 
 Here I want to introduce another useful command which when integrating functions, we may need to complete a square and then do a substitution. In Maple, we can complete squares using the command `CompleteSquare(f, x)` which supported by the package `Student[Precalculus]`.
 
 \BeginKnitrBlock{example}<div class="example"><span class="example" id="exm:unnamed-chunk-5"><strong>(\#exm:unnamed-chunk-5) </strong></span>
 Evaluate the integral
 $$
-\int\dfrac{1}{x^2+x+1} \d x.
+\int\dfrac{1}{x^2+x+1} \mathrm{d} x.
 $$
 </div>\EndKnitrBlock{example}
 
@@ -67,13 +67,13 @@ Now you may try `DiffTutor` and/or evaluate it by hand.
 \BeginKnitrBlock{exercise}<div class="exercise"><span class="exercise" id="exr:unnamed-chunk-7"><strong>(\#exr:unnamed-chunk-7) </strong></span>
 Evaluate the integral
 $$
-\int x^{2} \sqrt{3+2 x-x^{2}} \mathrm{d} x
+\int \sqrt{3+2 x-x^{2}} \mathrm{d} x
 $$
 </div>\EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}<div class="exercise"><span class="exercise" id="exr:unnamed-chunk-8"><strong>(\#exr:unnamed-chunk-8) </strong></span>
 Evaluate the integral
 $$
-\int_{0}^{\pi / 2} \frac{\cos t}{\sqrt{1+\sin ^{2} t}} d t
+\int_{0}^{\pi / 2} \frac{\cos t}{\sqrt{1+\sin ^{2} t}} \mathrm{d} t
 $$
 </div>\EndKnitrBlock{exercise}

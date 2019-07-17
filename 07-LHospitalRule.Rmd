@@ -21,8 +21,6 @@ $$
 
 ```
 
-You may compare the above solution with the solution given by `DiffTutor((cos(x))^4, x)`.
-
 ```{exercise}
 
 Estimate the limit

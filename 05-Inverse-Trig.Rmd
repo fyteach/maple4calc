@@ -52,27 +52,18 @@ $$
 
 Here is the output
 
-![Graph of some logarithmic and exponential functions](figs/InversePlot_tanx.png)
+![Graph of the tangent and arctangent functions](figs/InversePlot_tanx.png)
 
 ```
 
 ```{exercise}
-Graph the following functions together.
-$$
-y=\log_3x, \qquad y=3^x, \qquad y=(1/3)^x, \qquad y=\log_{1/3}x.
-$$
 
-Find the pairs that are symmetric to each other with respect to a certain line.
-
-```
-
-```{exercise}
 Graph the following functions together over an appropriate domain.
 $$
 y=\cot x, \qquad y=\mathrm{arccot} x, \qquad y=x.
 $$
 
-What's the domain and range of $y=\mathrm{arcctg} x$?
+What's the domain and range of $y=\mathrm{arccot} x$?
 
 ```
 
@@ -84,7 +75,7 @@ Now let find derivatives and integrals of some inverse trigonometric functions.
 
 ```{example}
 
-Find $y'$, where $y=\mathrm{arccot} x\right)$.
+Find $y'$, where $y=\mathrm{arccot} x$.
 
 ```
 
