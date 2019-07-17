@@ -1,0 +1,94 @@
+# Integrations Involving Trigonometric Functions
+
+## Integrations of trigonometric functions
+
+When evaluating integrations of trigonometric functions, one idea is to reduce the total degree (power) of trigonometric functions using trigonometric identities.
+
+In Maple, you may use the command `combine` to rewrite the expression.
+
+```{example}
+
+Rewrite $\cos^4x$ into an expression with single terms and evaluate the integral $\int \cos^4x\mathrm{d} x$.
+
+```
+
+```{solution}
+<br>
+    # combine terms into a single term
+    combine((cos(x))^4)
+    # use DiffTutor to evaluate the integral of the resulting function.
+    with(Student[Calculus1])
+    DiffTutor(%, x)
+
+```
+
+You may compare the above solution with the solution given by `DiffTutor((cos(x))^4, x)`.
+
+```{exercise}
+
+Evaluate the integral
+$$
+\int \tan ^{5} x \mathrm{d} x
+$$
+
+```
+
+```{exercise}
+
+Evaluate the integral
+$$
+\int \sin 5 x \sin^2 x \mathrm{d} x
+$$
+
+```
+
+## Trigonometric Substitution
+
+Surely, you may learn some trigonometric substitution tricks using `DiffTutor`.
+
+Here I want to introduce another useful command which when integrating functions, we may need to complete a square and then do a substitution. In Maple, we can complete squares using the command `CompleteSquare(f, x)` which supported by the package `Student[Precalculus]`.
+
+```{example}
+
+Evaluate the integral
+$$
+\int\dfrac{1}{x^2+x+1} \d x.
+$$
+
+```
+
+```{solution}
+<br>
+
+We first complete the square for the denominator.
+
+    #load package Student[Precalculus]
+    with(Student[Precalculus])
+    #Complete square for the denominator
+    CompleteSquare(x^2+x+1, x)
+
+Now you may try `DiffTutor` and/or evaluate it by hand.
+
+    #load package Student[Calculus1]
+    with(Student[Calculus1])
+    DiffTutor(1/%, x)
+
+```
+
+```{exercise}
+
+Evaluate the integral
+$$
+\int x^{2} \sqrt{3+2 x-x^{2}} \mathrm{d} x
+$$
+
+```
+
+```{exercise}
+
+Evaluate the integral
+$$
+\int_{0}^{\pi / 2} \frac{\cos t}{\sqrt{1+\sin ^{2} t}} d t
+$$
+
+```

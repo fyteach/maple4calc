@@ -4,7 +4,11 @@ rmd_files: [
   "01-Volumes.Rmd", 
   "02-Inverse-Functions.Rmd", 
   "03-Log-Exp-Functions.Rmd", 
-  "04-ODE.Rmd"
+  "04-ODE.Rmd",
+  "05-Inverse-Trig.Rmd",
+  "06-Integrations-Trig.Rmd",
+  "07-LHospitalRule.Rmd",
+  "08-Partial-Fractions.Rmd"
 ]
 
 output_dir: _book

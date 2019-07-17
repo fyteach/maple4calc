@@ -1,0 +1,53 @@
+# L'Hospital's Rule
+
+## Integrations of trigonometric functions
+
+In Maple, supported by the package, `Student[Calculus1]`, the command `LimitTutor` can show step-by-step solutions of evaluating limits.
+
+```{example}
+
+Evaluate the limit
+$$
+\lim\limits_{x\to \infty}(1+x)^{1/\ln(x)}
+$$
+
+```
+
+```{solution}
+<br>
+    #load the package ``Student[Calculus1]".
+    with(Student[Calculus1])
+    #Find the limit step-by-step using LimitTutor
+    LimitTutor((1+x)^(1/ln(x)), x = infinity)
+
+```
+
+You may compare the above solution with the solution given by `DiffTutor((cos(x))^4, x)`.
+
+```{exercise}
+
+Estimate the limit
+$$
+\lim\limits_{x\to 1}\frac{x^2-2x+1}{x^2-x}
+$$
+by graphing and verify your estimation.
+
+```
+
+```{exercise}
+
+Evaluate the limit
+$$
+\lim\limits_{x\to \infty} x-\ln(x).
+$$
+
+```
+
+```{exercise}
+
+Evaluate the limit
+$$
+\lim\limits_{x\to \infty} x\tan(\frac1x).
+$$
+
+```
