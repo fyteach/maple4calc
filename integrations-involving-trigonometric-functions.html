@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Inverse Functions | Notes on Maple for Calculus II</title>
+  <title>Chapter 6 Integrations Involving Trigonometric Functions | Notes on Maple for Calculus II</title>
   <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
   <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Inverse Functions | Notes on Maple for Calculus II" />
+  <meta property="og:title" content="Chapter 6 Integrations Involving Trigonometric Functions | Notes on Maple for Calculus II" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Inverse Functions | Notes on Maple for Calculus II" />
+  <meta name="twitter:title" content="Chapter 6 Integrations Involving Trigonometric Functions | Notes on Maple for Calculus II" />
   
   <meta name="twitter:description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="volume-of-revolution.html">
-<link rel="next" href="logarithmic-and-exponential-functions.html">
+<link rel="prev" href="inverse-trigonometric-functions.html">
+<link rel="next" href="lhospitals-rule.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -110,89 +110,87 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="inverse-functions" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Inverse Functions</h1>
-<p>Maple package <code>Student[Calculus1]</code> provides the following command</p>
-<pre class="maple"><code>InversePlot(f(x), x = a..b);</code></pre>
-<p>which graphs the original function <span class="math inline">\(f(x)\)</span> and the inverse function <span class="math inline">\(f^{-1}(x)\)</span> together over the interval <span class="math inline">\([a, b]\)</span>.</p>
-<p>You will see clearly that the graphs of a function and its inverse are symmetric with respect to the line <span class="math inline">\(y=x\)</span>.</p>
+<div id="integrations-involving-trigonometric-functions" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Integrations Involving Trigonometric Functions</h1>
+<div id="integrations-of-trigonometric-functions" class="section level2">
+<h2><span class="header-section-number">6.1</span> Integrations of trigonometric functions</h2>
+<p>When evaluating integrations of trigonometric functions, one idea is to reduce the total degree (power) of trigonometric functions using trigonometric identities.</p>
+<p>In Maple, you may use the command <code>combine</code> to rewrite the expression.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-1" class="example"><strong>Example 1.1  </strong></span><br></p>
-<ol style="list-style-type: decimal">
-<li><p>Graph the function <span class="math inline">\(f(x)=x^3-2\)</span>, its inverse function, and the line <span class="math inline">\(y=x\)</span> over the interval <span class="math inline">\([-2,2]\)</span>.</p></li>
-<li>Find the inverse function.</li>
-</ol>
+<p><span id="exm:unnamed-chunk-1" class="example"><strong>Example 1.1  </strong></span> Rewrite <span class="math inline">\(\cos^4x\)</span> into an expression with single terms and evaluate the integral <span class="math inline">\(\int \cos^4x\mathrm{d} x\)</span>.</p>
 </div>
 
 
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> <br> One way to plot the function and its inverse together is to use the following command which is supported by the package <code>Student[Calculus1]</code>.</p>
-<pre><code>  InversePlot(x^3-3, x = -2 .. 2)</code></pre>
-<p>Here is the output in Maple</p>
-<div class="figure">
-<img src="figs/InversePlot1.png" alt="Graph of a pair of functions inverse to each other" />
-<p class="caption">Graph of a pair of functions inverse to each other</p>
-</div>
-<p>Another way to plot the function <span class="math inline">\(f\)</span> and its inverse <span class="math inline">\(g\)</span> together uses the <code>plot</code> function.</p>
-<pre><code>  plot([f(x), g(x), x], x = -2 .. 4, y = -5 .. 5, color = [red, black, blue])</code></pre>
-<p>To find the inverse function, we replace <span class="math inline">\(f(x)\)</span> by <span class="math inline">\(y\)</span>, then switch <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, and solve for <span class="math inline">\(y\)</span>. In Maple, you may use the command <code>solve(equation/inequality, variable)</code> to solve an equation or an inequality (even system of equations/inequalities).</p>
-<p>In this example, we may find the inverse function by type in the following command. Note I have switch <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
-<pre><code>solve(x=y^3, y)</code></pre>
+<p> <span class="solution"><em>Solution. </em></span> <br> # combine terms into a single term combine((cos(x))^4) # use DiffTutor to evaluate the integral of the resulting function. with(Student[Calculus1]) DiffTutor(%, x)</p>
 </div>
 
-<p>To find the derivative of the inverse function of a function <span class="math inline">\(f\)</span> at a given point <span class="math inline">\(x=a\)</span>, we may apply the formula <span class="math display">\[(f^{-1})&#39;(a)=\dfrac{1}{f&#39;(f^{-1}(a))}.\]</span> In Maple, we may use the following commands to calculate the value of the derivative function.</p>
-<ul>
-<li>Calculate the derivative of the function <span class="math inline">\(f\)</span>.</li>
-</ul>
-<pre class="maple"><code>
-diff(f(x), x)
-</code></pre>
-<ul>
-<li>Find <span class="math inline">\(f^{-1}(a)\)</span> which is the solution of the equaiton <span class="math inline">\(f(x)=a\)</span>.</li>
-</ul>
-<pre class="maple"><code>
-solve(f(x)=a, x)
-</code></pre>
-<ul>
-<li>Plug in the formula to evaluate.</li>
-</ul>
-<pre class="maple"><code>
-eval(subs(x=f^{-1}(a), 1/f&#39;(x)))
-</code></pre>
+<p>You may compare the above solution with the solution given by <code>DiffTutor((cos(x))^4, x)</code>.</p>
 
-<div class="example">
-<span id="exm:unnamed-chunk-3" class="example"><strong>Example 2.1  </strong></span>Find <span class="math inline">\((f^{-1})&#39;(0)\)</span>, where <span class="math inline">\(f(x)=\cos(x)\)</span> and <span class="math inline">\(0\leq x\leq \pi\)</span>.
-</div>
-
-
-<div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> <br> Find the derivative of <span class="math inline">\(f\)</span></p>
-<pre><code>diff(cos(x), x)</code></pre>
-<p>Find the value of <span class="math inline">\(f^{-1}(0)\)</span></p>
-<pre><code>solve(cos(x)=0, x)</code></pre>
-<p>Apply the formula</p>
-<pre><code>eval(subs(x=Pi/2, -1/sin(x)))</code></pre>
-Using Maple, we find <span class="math inline">\((f^{-1})&#39;(0)=-1\)</span>.
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-3" class="exercise"><strong>Exercise 3.1  </strong></span> Evaluate the integral <span class="math display">\[
+\int \tan ^{5} x \mathrm{d} x
+\]</span></p>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-5" class="exercise"><strong>Exercise 1.2  </strong></span> 1. Graph the function <span class="math inline">\(f(x)=3+2\sin x\)</span>, its inverse function, and the line <span class="math inline">\(y=x\)</span> over the interval <span class="math inline">\([-2,2]\)</span>.</p>
-<ol start="2" style="list-style-type: decimal">
-<li>Find the value <span class="math inline">\((f^{-1})&#39;(5)\)</span>.</li>
-</ol>
+<p><span id="exr:unnamed-chunk-4" class="exercise"><strong>Exercise 1.1  </strong></span> Evaluate the integral <span class="math display">\[
+\int \sin 5 x \sin^2 x \mathrm{d} x
+\]</span></p>
+</div>
+
+</div>
+<div id="trigonometric-substitution" class="section level2">
+<h2><span class="header-section-number">6.2</span> Trigonometric Substitution</h2>
+<p>Surely, you may learn some trigonometric substitution tricks using <code>DiffTutor</code>.</p>
+<p>Here I want to introduce another useful command which when integrating functions, we may need to complete a square and then do a substitution. In Maple, we can complete squares using the command <code>CompleteSquare(f, x)</code> which supported by the package <code>Student[Precalculus]</code>.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-5" class="example"><strong>Example 5.1  </strong></span> Evaluate the integral <span class="math display">\[
+\int\dfrac{1}{x^2+x+1} \d x.
+\]</span></p>
 </div>
 
 
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> <br></p>
+<p>We first complete the square for the denominator.</p>
+<pre><code>#load package Student[Precalculus]
+with(Student[Precalculus])
+#Complete square for the denominator
+CompleteSquare(x^2+x+1, x)</code></pre>
+<p>Now you may try <code>DiffTutor</code> and/or evaluate it by hand.</p>
+<pre><code>#load package Student[Calculus1]
+with(Student[Calculus1])
+DiffTutor(1/%, x)</code></pre>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-7" class="exercise"><strong>Exercise 5.1  </strong></span> Evaluate the integral <span class="math display">\[
+\int x^{2} \sqrt{3+2 x-x^{2}} \mathrm{d} x
+\]</span></p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-8" class="exercise"><strong>Exercise 5.2  </strong></span> Evaluate the integral <span class="math display">\[
+\int_{0}^{\pi / 2} \frac{\cos t}{\sqrt{1+\sin ^{2} t}} d t
+\]</span></p>
+</div>
+
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="volume-of-revolution.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="logarithmic-and-exponential-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="inverse-trigonometric-functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lhospitals-rule.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

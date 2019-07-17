@@ -72,7 +72,7 @@ Describe the monotonicity (increasing/decreasing) of the functions?
 Fix an input $x$. Describe how $y$-values change when bases changes from small number to bigger number?
 </div>\EndKnitrBlock{exercise}
 
-## Differentiation and integration
+## Differentiation and integration of logarithmic and exponential functions
 
 In Maple, one way to do differentiation and integration is to use the `Calculus Palette` on the left side.
 
