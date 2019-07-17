@@ -14,6 +14,7 @@ Rewrite $\cos^4x$ into an expression with single terms and evaluate the integral
 
 ```{solution}
 <br>
+
     # combine terms into a single term
     combine((cos(x))^4)
     # use DiffTutor to evaluate the integral of the resulting function.

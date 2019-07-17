@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Solve differential equations | Notes on Maple for Calculus II</title>
+  <title>Chapter 8 Integrations of Rational Functions by Partial Fractions | Notes on Maple for Calculus II</title>
   <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
   <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Solve differential equations | Notes on Maple for Calculus II" />
+  <meta property="og:title" content="Chapter 8 Integrations of Rational Functions by Partial Fractions | Notes on Maple for Calculus II" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Solve differential equations | Notes on Maple for Calculus II" />
+  <meta name="twitter:title" content="Chapter 8 Integrations of Rational Functions by Partial Fractions | Notes on Maple for Calculus II" />
   
   <meta name="twitter:description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="logarithmic-and-exponential-functions.html">
-<link rel="next" href="inverse-trigonometric-functions.html">
+<link rel="prev" href="lhospitals-rule.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -106,34 +106,60 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="solve-differential-equations" class="section level1">
-<h1><span class="header-section-number">Chapter 4</span> Solve differential equations</h1>
-<p>In Maple, you may solve the equation <span class="math inline">\(y&#39;(x)=k y(x) + c\)</span> (which is called an ODE) using the command <code>dsolve({ics, eq})</code>, where <code>ics</code> stands for initial condition <span class="math inline">\(y(0)=c\)</span> and <code>eq</code> stands for the differential equation. Without the <code>ics</code>, <code>dsolve</code> will provide a general solution.</p>
+<div id="integrations-of-rational-functions-by-partial-fractions" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Integrations of Rational Functions by Partial Fractions</h1>
+<p>In Maple, we can factor a polynomial using the command <code>factor(polynomial)</code> or find partial fraction decomposition using <code>convert(function, parfrac)</code>.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-1" class="example"><strong>Example 1.1  </strong></span>Find the function <span class="math inline">\(f(x)\)</span> which satisfies the differential equation <span class="math inline">\(f&#39;(x)=k f(x)\)</span> with <span class="math inline">\(f(0)=5\)</span> and <span class="math inline">\(f(2)=3\)</span>.</p>
+<p><span id="exm:unnamed-chunk-1" class="example"><strong>Example 1.1  </strong></span>
+Find the sum of partial fractions for the rational function
+<span class="math display">\[
+f(x)=\frac{x^3+4x+3}{x^4+5x^2+4}
+\]</span></p>
 </div>
 
 
 <div class="solution">
 <p> <span class="solution"><em>Solution. </em></span> <br>
-Use the following command</p>
-<pre><code>dsolve({f(0)=5, f&#39;(x)=k f(x)})</code></pre>
-<p>we get <span class="math inline">\(f(x)=5e^{kx}\)</span>.</p>
-<p>To find <span class="math inline">\(k\)</span>, we solve the equation <span class="math inline">\(3=5e^{2k}\)</span> by</p>
-<pre><code>solve(3=5*e^(2*k), k)</code></pre>
-<p>which shows that <span class="math inline">\(k=\frac{\ln3-\ln5}{2}\approx -0.255\)</span>.
-Here we use <code>evalf(%)</code> (% represents the previous result) to get the approximation.</p>
-<p>So the function <span class="math inline">\(f\)</span> is given by
-<span class="math display">\[
-f(x)=5e^{\frac{x(\ln3-\ln5)}{2}}\approx 5e^{-0.255x}.
-\]</span></p>
+This can be done easily in Maple:</p>
+<pre><code>#use the command convert
+convert(x^3+4*x+3/(x^4+5x^2+4),parfrac)</code></pre>
 </div>
 
 
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-3" class="exercise"><strong>Exercise 3.1  </strong></span>
-Find the function <span class="math inline">\(y\)</span> which satisfies the differential equation <span class="math inline">\(y&#39;(x)=k y(x)\)</span> with <span class="math inline">\(y(0)=2\)</span> and <span class="math inline">\(y(5)=11\)</span>.</p>
+Find the sum of partial fractions for the rational function
+<span class="math display">\[
+f(x)=\frac{x^{4}}{\left(x^{2}-x+1\right)\left(x^{2}+2\right)^{2}}.
+\]</span></p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-4" class="exercise"><strong>Exercise 1.1  </strong></span>
+Find the sum of partial fraction and evaluate the integral</p>
+<p><span class="math display">\[
+\int \frac{2}{3x^{2}+2x-1} \mathrm{d} x
+\]</span></p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-5" class="exercise"><strong>Exercise 1.2  </strong></span>
+Find the sum of partial fraction and evaluate the integral</p>
+<p><span class="math display">\[
+\int \frac{x^{3}+6 x-2}{x^{4}+6 x^{2}} \mathrm{d} x
+\]</span></p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-6" class="exercise"><strong>Exercise 8.1  </strong></span>
+Find the sum of partial fraction and evaluate the integral</p>
+<p><span class="math display">\[
+\int \frac{\sin x}{\cos ^{2} x-3 \cos x} d x
+\]</span></p>
 </div>
 
 
@@ -143,8 +169,8 @@ Find the function <span class="math inline">\(y\)</span> which satisfies the dif
           </div>
         </div>
       </div>
-<a href="logarithmic-and-exponential-functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="inverse-trigonometric-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lhospitals-rule.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

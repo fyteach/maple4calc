@@ -31,16 +31,7 @@ $$
 y=\arctan x,\quad -\pi/2< y< \pi/2 ~~\text{and}~ -\infty< x<\infty.
 $$
 
-To see the graphs of the functions, we may use the `plotPlot(f(x), x = a..b, opts)` command. Or, to graph $f$, $f^{-1}$ and $y=x$ together, we may also use the command `InversePlot(f(x), x = a..b, opts)` supported by the package `Student[Calculus1]`.
-  
-\begin{ex}Graph $y=\sin x$, $x\in [-\pi/2, \pi/2]$ and $y=\arcsin x$ in the same coordinate system.
-\end{ex}
-\begin{lstlisting}[frame=single, mathescape]
-#load the package ``Student[Calculus1]".
-with(Student[Calculus1])
-#plot the functions
-InversePlot(sin(x),x=-Pi/2..Pi/2)
-\end{lstlisting}
+To see the graphs of the functions, we may use the `plot(f(x), x = a..b, opts)` command. Or, to graph $f$, $f^{-1}$ and $y=x$ together, we may also use the command `InversePlot(f(x), x = a..b, opts)` supported by the package `Student[Calculus1]`.
 
 \BeginKnitrBlock{example}<div class="example"><span class="example" id="exm:unnamed-chunk-1"><strong>(\#exm:unnamed-chunk-1) </strong></span>
 Graph the following functions together.
@@ -50,6 +41,7 @@ $$
 </div>\EndKnitrBlock{example}
 
 \BeginKnitrBlock{solution}<div class="solution">\iffalse{} <span class="solution"><em>Solution. </em></span>  \fi{}<br>
+
     #load the package ``Student[Calculus1]".
     with(Student[Calculus1])
     #plot the functions
@@ -82,9 +74,12 @@ In the section {#Differentiation and integration of logarithmic and exponential 
 
 Now let find derivatives and integrals of some inverse trigonometric functions.
 
-\BeginKnitrBlock{example}<div class="example"><span class="example" id="exm:unnamed-chunk-5"><strong>(\#exm:unnamed-chunk-5) </strong></span>Find $y'$, where $y=\mathrm{arccot} x\right)$.</div>\EndKnitrBlock{example}
+\BeginKnitrBlock{example}<div class="example"><span class="example" id="exm:unnamed-chunk-5"><strong>(\#exm:unnamed-chunk-5) </strong></span>
+Find $y'$, where $y=\mathrm{arccot} x\right)$.
+</div>\EndKnitrBlock{example}
 
 \BeginKnitrBlock{solution}<div class="solution">\iffalse{} <span class="solution"><em>Solution. </em></span>  \fi{}<br>
+
 Surely, we may use `diff` or `DiffTutor` to find the derivative.
 
 Here let's me introduce to you another command `implicitdiff`.

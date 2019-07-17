@@ -11,6 +11,7 @@ Rewrite $\cos^4x$ into an expression with single terms and evaluate the integral
 </div>\EndKnitrBlock{example}
 
 \BeginKnitrBlock{solution}<div class="solution">\iffalse{} <span class="solution"><em>Solution. </em></span>  \fi{}<br>
+
     # combine terms into a single term
     combine((cos(x))^4)
     # use DiffTutor to evaluate the integral of the resulting function.

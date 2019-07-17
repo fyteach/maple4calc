@@ -1,6 +1,4 @@
-# L'Hospital's Rule
-
-## Integrations of trigonometric functions
+# Integrations  of Rational Functions by Partial Fractions
 
 In Maple, we can factor a polynomial using the command `factor(polynomial)` or find partial fraction decomposition using  `convert(function, parfrac)`.
 

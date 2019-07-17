@@ -1,7 +1,5 @@
 # L'Hospital's Rule
 
-## Integrations of trigonometric functions
-
 In Maple, supported by the package, `Student[Calculus1]`, the command `LimitTutor` can show step-by-step solutions of evaluating limits.
 
 ```{example}
@@ -15,6 +13,7 @@ $$
 
 ```{solution}
 <br>
+
     #load the package ``Student[Calculus1]".
     with(Student[Calculus1])
     #Find the limit step-by-step using LimitTutor

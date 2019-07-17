@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="integrations-involving-trigonometric-functions.html">
-<link rel="next" href="lhospitals-rule-1.html">
+<link rel="next" href="integrations-of-rational-functions-by-partial-fractions.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -84,12 +84,8 @@
 <li class="chapter" data-level="6.1" data-path="integrations-involving-trigonometric-functions.html"><a href="integrations-involving-trigonometric-functions.html#integrations-of-trigonometric-functions"><i class="fa fa-check"></i><b>6.1</b> Integrations of trigonometric functions</a></li>
 <li class="chapter" data-level="6.2" data-path="integrations-involving-trigonometric-functions.html"><a href="integrations-involving-trigonometric-functions.html#trigonometric-substitution"><i class="fa fa-check"></i><b>6.2</b> Trigonometric Substitution</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="lhospitals-rule.html"><a href="lhospitals-rule.html"><i class="fa fa-check"></i><b>7</b> L’Hospital’s Rule</a><ul>
-<li class="chapter" data-level="7.1" data-path="lhospitals-rule.html"><a href="lhospitals-rule.html#integrations-of-trigonometric-functions-1"><i class="fa fa-check"></i><b>7.1</b> Integrations of trigonometric functions</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="lhospitals-rule-1.html"><a href="lhospitals-rule-1.html"><i class="fa fa-check"></i><b>8</b> L’Hospital’s Rule</a><ul>
-<li class="chapter" data-level="8.1" data-path="lhospitals-rule-1.html"><a href="lhospitals-rule-1.html#integrations-of-trigonometric-functions-2"><i class="fa fa-check"></i><b>8.1</b> Integrations of trigonometric functions</a></li>
-</ul></li>
+<li class="chapter" data-level="7" data-path="lhospitals-rule.html"><a href="lhospitals-rule.html"><i class="fa fa-check"></i><b>7</b> L’Hospital’s Rule</a></li>
+<li class="chapter" data-level="8" data-path="integrations-of-rational-functions-by-partial-fractions.html"><a href="integrations-of-rational-functions-by-partial-fractions.html"><i class="fa fa-check"></i><b>8</b> Integrations of Rational Functions by Partial Fractions</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -112,8 +108,6 @@
             <section class="normal" id="section-">
 <div id="lhospitals-rule" class="section level1">
 <h1><span class="header-section-number">Chapter 7</span> L’Hospital’s Rule</h1>
-<div id="integrations-of-trigonometric-functions-1" class="section level2">
-<h2><span class="header-section-number">7.1</span> Integrations of trigonometric functions</h2>
 <p>In Maple, supported by the package, <code>Student[Calculus1]</code>, the command <code>LimitTutor</code> can show step-by-step solutions of evaluating limits.</p>
 
 <div class="example">
@@ -126,11 +120,11 @@ Evaluate the limit
 
 
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> <br>
-#load the package ``Student[Calculus1]".
+<p> <span class="solution"><em>Solution. </em></span> <br></p>
+<pre><code>#load the package ``Student[Calculus1]&quot;.
 with(Student[Calculus1])
 #Find the limit step-by-step using LimitTutor
-LimitTutor((1+x)^(1/ln(x)), x = infinity)</p>
+LimitTutor((1+x)^(1/ln(x)), x = infinity)</code></pre>
 </div>
 
 <p>You may compare the above solution with the solution given by <code>DiffTutor((cos(x))^4, x)</code>.</p>
@@ -164,14 +158,13 @@ Evaluate the limit
 
 
 </div>
-</div>
             </section>
 
           </div>
         </div>
       </div>
 <a href="integrations-involving-trigonometric-functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lhospitals-rule-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="integrations-of-rational-functions-by-partial-fractions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
