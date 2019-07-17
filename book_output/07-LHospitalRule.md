@@ -17,8 +17,6 @@ $$
     LimitTutor((1+x)^(1/ln(x)), x = infinity)
 </div>\EndKnitrBlock{solution}
 
-You may compare the above solution with the solution given by `DiffTutor((cos(x))^4, x)`.
-
 \BeginKnitrBlock{exercise}<div class="exercise"><span class="exercise" id="exr:unnamed-chunk-3"><strong>(\#exr:unnamed-chunk-3) </strong></span>
 Estimate the limit
 $$

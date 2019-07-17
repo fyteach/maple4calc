@@ -13,7 +13,7 @@ $$
 This can be done easily in Maple:
 
     #use the command convert
-    convert(x^3+4*x+3/(x^4+5x^2+4),parfrac)
+    convert((x^3+4*x+3)/(x^4+5x^2+4), parfrac)
 </div>\EndKnitrBlock{solution}
 
 \BeginKnitrBlock{exercise}<div class="exercise"><span class="exercise" id="exr:unnamed-chunk-3"><strong>(\#exr:unnamed-chunk-3) </strong></span>
