@@ -11,7 +11,7 @@ $$
 
 \BeginKnitrBlock{solution}<div class="solution">\iffalse{} <span class="solution"><em>Solution. </em></span>  \fi{}<br>
 
-    #load the package ``Student[Calculus1]".
+    # load the package Student[Calculus1].
     with(Student[Calculus1])
     #Find the limit step-by-step using LimitTutor
     LimitTutor((1+x)^(1/ln(x)), x = infinity)

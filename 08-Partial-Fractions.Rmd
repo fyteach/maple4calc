@@ -15,7 +15,7 @@ $$
 <br>
 This can be done easily in Maple:
 
-    #use the command convert
+    # use the command convert
     convert((x^3+4*x+3)/(x^4+5x^2+4), parfrac)
 
 ```
@@ -38,7 +38,6 @@ $$
 $$
 
 ```
-
 
 ```{exercise}
 

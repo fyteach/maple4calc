@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Topic 2 Inverse Functions | Notes on Maple for Calculus II</title>
+  <title>Topic 11 Power Series | Notes on Maple for Calculus II</title>
   <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
   <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Topic 2 Inverse Functions | Notes on Maple for Calculus II" />
+  <meta property="og:title" content="Topic 11 Power Series | Notes on Maple for Calculus II" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Topic 2 Inverse Functions | Notes on Maple for Calculus II" />
+  <meta name="twitter:title" content="Topic 11 Power Series | Notes on Maple for Calculus II" />
   
   <meta name="twitter:description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="volume-of-revolution.html">
-<link rel="next" href="logarithmic-and-exponential-functions.html">
+<link rel="prev" href="sequences-and-series.html">
+<link rel="next" href="taylor-expansion.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -110,83 +110,91 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="inverse-functions" class="section level1">
-<h1><span class="header-section-number">Topic 2</span> Inverse Functions</h1>
-<p>Maple package <code>Student[Calculus1]</code> provides the following command</p>
-<pre class="maple"><code>InversePlot(f(x), x = a..b);</code></pre>
-<p>which graphs the original function <span class="math inline">\(f(x)\)</span> and the inverse function <span class="math inline">\(f^{-1}(x)\)</span> together over the interval <span class="math inline">\([a, b]\)</span>.</p>
-<p>You will see clearly that the graphs of a function and its inverse are symmetric with respect to the line <span class="math inline">\(y=x\)</span>.</p>
+<div id="power-series" class="section level1">
+<h1><span class="header-section-number">Topic 11</span> Power Series</h1>
+<p>A power series is a series with a variable <span class="math inline">\(x\)</span>:
+<span class="math display">\[
+\sum\limits_{n=0}^{\infty} c_nx^n=c_0+c_1x+c_2x^2+c_3x^3+\cdots.
+\]</span></p>
+<p>More generally, a series of the form</p>
+<p><span class="math display" id="eq:Taylor-series">\[\begin{equation}
+\sum\limits_{n=0}^{\infty} c_n(x-a)^n=c_0+c_1(x-a)+c_2(x-a)^2+c_3(x-a)^3+\cdots
+\tag{11.1}
+\end{equation}\]</span></p>
+<p>is called a power series at <span class="math inline">\(a\)</span>.</p>
+<p>We call a positive number <span class="math inline">\(R\)</span> the radius of convergence of the power series (eq:Taylor-series) if the power series converges whenever <span class="math inline">\(\left|x-a\right|&lt;R\)</span> and diverges whenever <span class="math inline">\(\left|x-a\right|&gt;R\)</span>.</p>
+<p>If a function <span class="math inline">\(f\)</span> has a power series representation, i.e.
+<span class="math display">\[
+f(x)=\sum_{n=0}^\infty c_n(x-a)^n,\quad\quad \left|x-a\right|&lt;R,
+\]</span>
+then its coefficients are given by <span class="math inline">\(c_n=\dfrac{f^{(n)}(a)}{n!}.\)</span></p>
+<!-- This representation is called a Taylor expansion.
+
+Given a differentiable function $f(x)$, we can use Maple command `taylor(f, x=a, n)` to find its Taylor expansion at $x=a$ up to the $n$-th order.
+
+We also have Maple command `TaylorApproximation` supported by the package `Student[Calculus1]` which provides more details about Taylor expansion.
+
+TaylorApproximation(sin(x), x=-1, order=1..10, output=animation, view=[-5..3, DEFAULT]); -->
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-1" class="example"><strong>Example 1.1  </strong></span><br></p>
-<ol style="list-style-type: decimal">
-<li><p>Graph the function <span class="math inline">\(f(x)=x^3-2\)</span>, its inverse function, and the line <span class="math inline">\(y=x\)</span> over the interval <span class="math inline">\([-2,2]\)</span>.</p></li>
-<li>Find the inverse function.</li>
-</ol>
+<p><span id="exm:unnamed-chunk-1" class="example"><strong>Example 1.1  </strong></span>
+Find the interval of convergence of the power series
+<span class="math display">\[
+\sum\limits_{n=1}^{\infty}\dfrac{(-2)^nx^n}{n^3}.
+\]</span></p>
 </div>
 
 
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> <br>
-One way to plot the function and its inverse together is to use the following command which is supported by the package <code>Student[Calculus1]</code>.</p>
-<pre><code>  InversePlot(x^3-3, x = -2 .. 2)</code></pre>
-<p>Here is the output in Maple</p>
-<div class="figure">
-<img src="figs/InversePlot1.png" alt="Graph of a pair of functions inverse to each other" />
-<p class="caption">Graph of a pair of functions inverse to each other</p>
-</div>
-<p>Another way to plot the function <span class="math inline">\(f\)</span> and its inverse <span class="math inline">\(g\)</span> together uses the <code>plot</code> function.</p>
-<pre><code>  plot([f(x), g(x), x], x = -2 .. 4, y = -5 .. 5, color = [red, black, blue])</code></pre>
-<p>To find the inverse function, we replace <span class="math inline">\(f(x)\)</span> by <span class="math inline">\(y\)</span>, then switch <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, and solve for <span class="math inline">\(y\)</span>. In Maple, you may use the command <code>solve(equation/inequality, variable)</code> to solve an equation or an inequality (even system of equations/inequalities).</p>
-<p>In this example, we may find the inverse function by type in the following command. Note I have switch <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
-<pre><code>solve(x=y^3, y)</code></pre>
+<p> <span class="solution"><em>Solution. </em></span> <br></p>
+<pre><code># Find the abs(a_{n+1}/a_n)
+
+q:=abs((-2)^(n+1)(n+1)^3/(-2)^(n+1)(n+1)^3);
+
+# Find the limit of q
+
+r:=limit(simplify(q), n=infinity)
+
+# Find the interval of convergence
+
+solve(abs(x)&lt;1/r, x)</code></pre>
 </div>
 
-<p>To find the derivative of the inverse function of a function <span class="math inline">\(f\)</span> at a given point <span class="math inline">\(x=a\)</span>, we may apply the formula
-<span class="math display">\[(f^{-1})&#39;(a)=\dfrac{1}{f&#39;(f^{-1}(a))}.\]</span>
-In Maple, we may use the following commands to calculate the value of the derivative function.</p>
-<ul>
-<li>Calculate the derivative of the function <span class="math inline">\(f\)</span>.</li>
-</ul>
-<pre class="maple"><code>
-diff(f(x), x)
-</code></pre>
-<ul>
-<li>Find <span class="math inline">\(f^{-1}(a)\)</span> which is the solution of the equaiton <span class="math inline">\(f(x)=a\)</span>.</li>
-</ul>
-<pre class="maple"><code>
-solve(f(x)=a, x)
-</code></pre>
-<ul>
-<li>Plug in the formula to evaluate.</li>
-</ul>
-<pre class="maple"><code>
-eval(subs(x=f^{-1}(a), 1/f&#39;(x)))
-</code></pre>
 
 <div class="example">
-<span id="exm:unnamed-chunk-3" class="example"><strong>Example 2.1  </strong></span>Find <span class="math inline">\((f^{-1})&#39;(0)\)</span>, where <span class="math inline">\(f(x)=\cos(x)\)</span> and <span class="math inline">\(0\leq x\leq \pi\)</span>.
+<p><span id="exm:unnamed-chunk-3" class="example"><strong>Example 2.1  </strong></span>
+Find the Taylor expansion of the function <span class="math inline">\(f(x)=\dfrac{1}{x-2}\)</span> at <span class="math inline">\(x=0\)</span> up to the 5-th order. Plot <span class="math inline">\(f(x)\)</span> and the <span class="math inline">\(5\)</span>-th order Taylor polynomial together.</p>
 </div>
 
 
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> <br>
-Find the derivative of <span class="math inline">\(f\)</span></p>
-<pre><code>diff(cos(x), x)</code></pre>
-<p>Find the value of <span class="math inline">\(f^{-1}(0)\)</span></p>
-<pre><code>solve(cos(x)=0, x)</code></pre>
-<p>Apply the formula</p>
-<pre><code>eval(subs(x=Pi/2, -1/sin(x)))</code></pre>
-Using Maple, we find <span class="math inline">\((f^{-1})&#39;(0)=-1\)</span>.
+<p> <span class="solution"><em>Solution. </em></span> <br></p>
+<pre><code># Find the Taylor expansion.
+
+ftaylor:=taylor(1/(x-2), x = 0, 5)
+
+# convert the Taylor series into a polynomial
+
+fpoly:=convert(ftaylor, polynom)
+
+# Plot the functions
+
+plot([1/(x-2), fpoly], x=-1..1)</code></pre>
 </div>
 
 
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-5" class="exercise"><strong>Exercise 1.2  </strong></span>
-1. Graph the function <span class="math inline">\(f(x)=3+2\sin x\)</span>, its inverse function, and the line <span class="math inline">\(y=x\)</span> over the interval <span class="math inline">\([-2,2]\)</span>.</p>
-<ol start="2" style="list-style-type: decimal">
-<li>Find the value <span class="math inline">\((f^{-1})&#39;(5)\)</span>.</li>
-</ol>
+Find the interval of convergence of the power series
+<span class="math display">\[
+\sum\limits_{n=1}^{\infty}\dfrac{(-4)^nx^n}{\sqrt{n}}.
+\]</span></p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-6" class="exercise"><strong>Exercise 5.1  </strong></span>
+Find the Taylor expansion of the function <span class="math inline">\(f(x)=\sin x\)</span> at <span class="math inline">\(x=0\)</span> up to the 5-th order. Plot <span class="math inline">\(f(x)\)</span> and the <span class="math inline">\(5\)</span>-th order Taylor polynomial together over the interval <span class="math inline">\([-\pi,\pi]\)</span>.</p>
 </div>
 
 
@@ -196,8 +204,8 @@ Using Maple, we find <span class="math inline">\((f^{-1})&#39;(0)=-1\)</span>.
           </div>
         </div>
       </div>
-<a href="volume-of-revolution.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="logarithmic-and-exponential-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="sequences-and-series.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="taylor-expansion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

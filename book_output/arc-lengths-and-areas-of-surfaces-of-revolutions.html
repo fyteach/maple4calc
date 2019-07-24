@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Topic 2 Inverse Functions | Notes on Maple for Calculus II</title>
+  <title>Topic 9 Arc Lengths and Areas of Surfaces of Revolutions | Notes on Maple for Calculus II</title>
   <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
   <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Topic 2 Inverse Functions | Notes on Maple for Calculus II" />
+  <meta property="og:title" content="Topic 9 Arc Lengths and Areas of Surfaces of Revolutions | Notes on Maple for Calculus II" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Topic 2 Inverse Functions | Notes on Maple for Calculus II" />
+  <meta name="twitter:title" content="Topic 9 Arc Lengths and Areas of Surfaces of Revolutions | Notes on Maple for Calculus II" />
   
   <meta name="twitter:description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="volume-of-revolution.html">
-<link rel="next" href="logarithmic-and-exponential-functions.html">
+<link rel="prev" href="integrations-of-rational-functions-by-partial-fractions.html">
+<link rel="next" href="sequences-and-series.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -110,83 +110,118 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="inverse-functions" class="section level1">
-<h1><span class="header-section-number">Topic 2</span> Inverse Functions</h1>
-<p>Maple package <code>Student[Calculus1]</code> provides the following command</p>
-<pre class="maple"><code>InversePlot(f(x), x = a..b);</code></pre>
-<p>which graphs the original function <span class="math inline">\(f(x)\)</span> and the inverse function <span class="math inline">\(f^{-1}(x)\)</span> together over the interval <span class="math inline">\([a, b]\)</span>.</p>
-<p>You will see clearly that the graphs of a function and its inverse are symmetric with respect to the line <span class="math inline">\(y=x\)</span>.</p>
+<div id="arc-lengths-and-areas-of-surfaces-of-revolutions" class="section level1">
+<h1><span class="header-section-number">Topic 9</span> Arc Lengths and Areas of Surfaces of Revolutions</h1>
+<ul>
+<li><p><strong>Arc length:</strong></p>
+<p>The length <span class="math inline">\(L\)</span> of an arc: <span class="math inline">\(y=f(x)\)</span>, <span class="math inline">\(a\leq x \leq b\)</span> is
+<span class="math display">\[
+L=\int_a^b\sqrt{1+\left(\frac{\mathrm{d} y}{\mathrm{d} x}\right)^2}~\mathrm{d} x=\int_{f(a)}^{f(b)}\sqrt{1+\left(\frac{\mathrm{d} y}{\mathrm{d} x}\right)^2}~\mathrm{d} y.
+\]</span></p></li>
+<li><p><strong>Surface area of a revolution</strong></p>
+<p>The area <span class="math inline">\(S\)</span> of the surface rotating an arc: <span class="math inline">\(y=f(x)\)</span>, <span class="math inline">\(a\leq x \leq b\)</span> about the <span class="math inline">\(x\)</span>-axis is
+<span class="math display">\[
+S=2\pi\int r\mathrm{d} s = 2\pi\int y\mathrm{d} s,
+\]</span>
+and about the <span class="math inline">\(y\)</span>-axis is
+<span class="math display">\[
+S=2\pi\int r\mathrm{d} s = 2\pi\int x\mathrm{d} s,
+\]</span>
+where
+<span class="math display">\[\mathrm{d} s=\sqrt{1+\left(\frac{\mathrm{d} y}{\mathrm{d} x}\right)^2}~\mathrm{d} x = \sqrt{1+\left(\frac{\mathrm{d} y}{\mathrm{d} x}\right)^2}~\mathrm{d} y.
+\]</span>
+The integral limits depend on whether you use <span class="math inline">\(\mathrm{d} x\)</span> or <span class="math inline">\(\mathrm{d}y\)</span> in the integral.</p></li>
+</ul>
+<p>In Maple, the package <code>Student[Calculus1]</code> provides commands to investigate arc length and surface area of revolutions:
+<code>ArcLength(f(x), x = a..b, opts)}</code>
+<code>SurfaceOfRevolution(f(x), x = a..b, opts)}</code></p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-1" class="example"><strong>Example 1.1  </strong></span><br></p>
-<ol style="list-style-type: decimal">
-<li><p>Graph the function <span class="math inline">\(f(x)=x^3-2\)</span>, its inverse function, and the line <span class="math inline">\(y=x\)</span> over the interval <span class="math inline">\([-2,2]\)</span>.</p></li>
-<li>Find the inverse function.</li>
-</ol>
+<p><span id="exm:unnamed-chunk-1" class="example"><strong>Example 1.1  </strong></span>
+Set up an integral and evaluate the integral for the length of the curve defined by
+<span class="math display">\[
+f(x)=\sqrt{x},\qquad 1\leq x\leq 4.
+\]</span>
+Plot <span class="math inline">\(f(x)\)</span> together with the arc length function in the same coordinate system.</p>
 </div>
 
 
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> <br>
-One way to plot the function and its inverse together is to use the following command which is supported by the package <code>Student[Calculus1]</code>.</p>
-<pre><code>  InversePlot(x^3-3, x = -2 .. 2)</code></pre>
-<p>Here is the output in Maple</p>
-<div class="figure">
-<img src="figs/InversePlot1.png" alt="Graph of a pair of functions inverse to each other" />
-<p class="caption">Graph of a pair of functions inverse to each other</p>
-</div>
-<p>Another way to plot the function <span class="math inline">\(f\)</span> and its inverse <span class="math inline">\(g\)</span> together uses the <code>plot</code> function.</p>
-<pre><code>  plot([f(x), g(x), x], x = -2 .. 4, y = -5 .. 5, color = [red, black, blue])</code></pre>
-<p>To find the inverse function, we replace <span class="math inline">\(f(x)\)</span> by <span class="math inline">\(y\)</span>, then switch <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, and solve for <span class="math inline">\(y\)</span>. In Maple, you may use the command <code>solve(equation/inequality, variable)</code> to solve an equation or an inequality (even system of equations/inequalities).</p>
-<p>In this example, we may find the inverse function by type in the following command. Note I have switch <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
-<pre><code>solve(x=y^3, y)</code></pre>
+<p> <span class="solution"><em>Solution. </em></span> <br></p>
+<pre><code># Load the package
+
+with(Student[Calculus1])
+
+# Set up an integral
+
+ArcLength(sqrt(x),x=1..4,output=integral)
+
+# Evaluate the integral
+
+ArcLength(sqrt(x),x=1..4)
+
+# Plot the function and the arc length function
+
+ArcLength(sqrt(x), x=1..4, output=plot)</code></pre>
 </div>
 
-<p>To find the derivative of the inverse function of a function <span class="math inline">\(f\)</span> at a given point <span class="math inline">\(x=a\)</span>, we may apply the formula
-<span class="math display">\[(f^{-1})&#39;(a)=\dfrac{1}{f&#39;(f^{-1}(a))}.\]</span>
-In Maple, we may use the following commands to calculate the value of the derivative function.</p>
-<ul>
-<li>Calculate the derivative of the function <span class="math inline">\(f\)</span>.</li>
-</ul>
-<pre class="maple"><code>
-diff(f(x), x)
-</code></pre>
-<ul>
-<li>Find <span class="math inline">\(f^{-1}(a)\)</span> which is the solution of the equaiton <span class="math inline">\(f(x)=a\)</span>.</li>
-</ul>
-<pre class="maple"><code>
-solve(f(x)=a, x)
-</code></pre>
-<ul>
-<li>Plug in the formula to evaluate.</li>
-</ul>
-<pre class="maple"><code>
-eval(subs(x=f^{-1}(a), 1/f&#39;(x)))
-</code></pre>
 
 <div class="example">
-<span id="exm:unnamed-chunk-3" class="example"><strong>Example 2.1  </strong></span>Find <span class="math inline">\((f^{-1})&#39;(0)\)</span>, where <span class="math inline">\(f(x)=\cos(x)\)</span> and <span class="math inline">\(0\leq x\leq \pi\)</span>.
+<p><span id="exm:unnamed-chunk-3" class="example"><strong>Example 2.1  </strong></span>
+Set up an integral and evaluate the integral for the area of the surface obtained by rotating the curve defined by
+<span class="math display">\[
+f(x)=\sqrt{x},\qquad 1\leq x\leq 4
+\]</span>
+about the <span class="math inline">\(y\)</span>-axis. Plot the surface of the revolution.</p>
 </div>
 
 
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> <br>
-Find the derivative of <span class="math inline">\(f\)</span></p>
-<pre><code>diff(cos(x), x)</code></pre>
-<p>Find the value of <span class="math inline">\(f^{-1}(0)\)</span></p>
-<pre><code>solve(cos(x)=0, x)</code></pre>
-<p>Apply the formula</p>
-<pre><code>eval(subs(x=Pi/2, -1/sin(x)))</code></pre>
-Using Maple, we find <span class="math inline">\((f^{-1})&#39;(0)=-1\)</span>.
+<p> <span class="solution"><em>Solution. </em></span> <br></p>
+<pre><code># Load the package (skip if the package was already loaded)
+
+with(Student[Calculus1])
+
+# Plot the surface
+
+SurfaceOfRevolution(sqrt(x), x=1..4, output=plot, axis=vertical)
+
+# Set up an integral
+
+SurfaceOfRevolution(sqrt(x),x=1..4,output=integral, axis=vertical)
+
+# Evaluate the integral
+
+SurfaceOfRevolution(sqrt(x),x=1..4, axis=vertical)</code></pre>
 </div>
 
 
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-5" class="exercise"><strong>Exercise 1.2  </strong></span>
-1. Graph the function <span class="math inline">\(f(x)=3+2\sin x\)</span>, its inverse function, and the line <span class="math inline">\(y=x\)</span> over the interval <span class="math inline">\([-2,2]\)</span>.</p>
-<ol start="2" style="list-style-type: decimal">
-<li>Find the value <span class="math inline">\((f^{-1})&#39;(5)\)</span>.</li>
-</ol>
+Set up an integral and evaluate the integral for the length of the arc defined by
+<span class="math display">\[
+f(x)=\ln x, \qquad 1\leq x\leq 2.
+\]</span>
+Plot <span class="math inline">\(f(x)\)</span> together with the arc length function in the same coordinate system.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-6" class="exercise"><strong>Exercise 5.1  </strong></span>
+Plot the surface obtained by rotating the curve defined by
+<span class="math display">\[
+f(x)=\frac{\cos x}{x}, \qquad 0\leq x\leq 4\pi
+\]</span>
+about the <span class="math inline">\(y\)</span>-axis. Set up an integral for the area of the surface.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-7" class="exercise"><strong>Exercise 5.2  </strong></span>
+Find the area of the surface obtained by rotating the curve defined by
+<span class="math display">\[
+f(x)=\sqrt{1+x^2},\qquad 0\leq x\leq 3.
+\]</span></p>
 </div>
 
 
@@ -196,8 +231,8 @@ Using Maple, we find <span class="math inline">\((f^{-1})&#39;(0)=-1\)</span>.
           </div>
         </div>
       </div>
-<a href="volume-of-revolution.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="logarithmic-and-exponential-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="integrations-of-rational-functions-by-partial-fractions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sequences-and-series.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

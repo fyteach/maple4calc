@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Topic 2 Inverse Functions | Notes on Maple for Calculus II</title>
+  <title>Topic 10 Sequences and Series | Notes on Maple for Calculus II</title>
   <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
   <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Topic 2 Inverse Functions | Notes on Maple for Calculus II" />
+  <meta property="og:title" content="Topic 10 Sequences and Series | Notes on Maple for Calculus II" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Topic 2 Inverse Functions | Notes on Maple for Calculus II" />
+  <meta name="twitter:title" content="Topic 10 Sequences and Series | Notes on Maple for Calculus II" />
   
   <meta name="twitter:description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="volume-of-revolution.html">
-<link rel="next" href="logarithmic-and-exponential-functions.html">
+<link rel="prev" href="arc-lengths-and-areas-of-surfaces-of-revolutions.html">
+<link rel="next" href="power-series.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -110,83 +110,115 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="inverse-functions" class="section level1">
-<h1><span class="header-section-number">Topic 2</span> Inverse Functions</h1>
-<p>Maple package <code>Student[Calculus1]</code> provides the following command</p>
-<pre class="maple"><code>InversePlot(f(x), x = a..b);</code></pre>
-<p>which graphs the original function <span class="math inline">\(f(x)\)</span> and the inverse function <span class="math inline">\(f^{-1}(x)\)</span> together over the interval <span class="math inline">\([a, b]\)</span>.</p>
-<p>You will see clearly that the graphs of a function and its inverse are symmetric with respect to the line <span class="math inline">\(y=x\)</span>.</p>
+<div id="sequences-and-series" class="section level1">
+<h1><span class="header-section-number">Topic 10</span> Sequences and Series</h1>
+<p>A sequence is a list of numbers in a definite order (indexed by integers). A series may be considered as the limit of the sequence of partial sums.</p>
+<p>When the sequence is explicitly defined by an mathematical expression <span class="math inline">\(a_n=f(n)\)</span>, Maple has the following command to list numbers of the sequence <code>seq(f, i=m..n, step)</code>.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-1" class="example"><strong>Example 1.1  </strong></span><br></p>
-<ol style="list-style-type: decimal">
-<li><p>Graph the function <span class="math inline">\(f(x)=x^3-2\)</span>, its inverse function, and the line <span class="math inline">\(y=x\)</span> over the interval <span class="math inline">\([-2,2]\)</span>.</p></li>
-<li>Find the inverse function.</li>
-</ol>
+<p><span id="exm:seq-eg" class="example"><strong>Example 10.1  </strong></span>
+Find the first 10 terms of the sequence <span class="math inline">\(\{\frac{1}{n(n+1)}\}_{n=1}^\infty\)</span>. Determine whether the sequence <span class="math inline">\(\{\frac{1}{n(n+1)}\}\)</span> is convergent or divergent.</p>
 </div>
 
 
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> <br>
-One way to plot the function and its inverse together is to use the following command which is supported by the package <code>Student[Calculus1]</code>.</p>
-<pre><code>  InversePlot(x^3-3, x = -2 .. 2)</code></pre>
-<p>Here is the output in Maple</p>
-<div class="figure">
-<img src="figs/InversePlot1.png" alt="Graph of a pair of functions inverse to each other" />
-<p class="caption">Graph of a pair of functions inverse to each other</p>
-</div>
-<p>Another way to plot the function <span class="math inline">\(f\)</span> and its inverse <span class="math inline">\(g\)</span> together uses the <code>plot</code> function.</p>
-<pre><code>  plot([f(x), g(x), x], x = -2 .. 4, y = -5 .. 5, color = [red, black, blue])</code></pre>
-<p>To find the inverse function, we replace <span class="math inline">\(f(x)\)</span> by <span class="math inline">\(y\)</span>, then switch <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, and solve for <span class="math inline">\(y\)</span>. In Maple, you may use the command <code>solve(equation/inequality, variable)</code> to solve an equation or an inequality (even system of equations/inequalities).</p>
-<p>In this example, we may find the inverse function by type in the following command. Note I have switch <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
-<pre><code>solve(x=y^3, y)</code></pre>
+<p> <span class="solution"><em>Solution. </em></span> <br></p>
+<pre><code># using seq
+
+seq(1/(n*(n+1)), n=1..10)</code></pre>
+<p>The sequence converges to <span class="math inline">\(0\)</span>.</p>
 </div>
 
-<p>To find the derivative of the inverse function of a function <span class="math inline">\(f\)</span> at a given point <span class="math inline">\(x=a\)</span>, we may apply the formula
-<span class="math display">\[(f^{-1})&#39;(a)=\dfrac{1}{f&#39;(f^{-1}(a))}.\]</span>
-In Maple, we may use the following commands to calculate the value of the derivative function.</p>
-<ul>
-<li>Calculate the derivative of the function <span class="math inline">\(f\)</span>.</li>
-</ul>
-<pre class="maple"><code>
-diff(f(x), x)
-</code></pre>
-<ul>
-<li>Find <span class="math inline">\(f^{-1}(a)\)</span> which is the solution of the equaiton <span class="math inline">\(f(x)=a\)</span>.</li>
-</ul>
-<pre class="maple"><code>
-solve(f(x)=a, x)
-</code></pre>
-<ul>
-<li>Plug in the formula to evaluate.</li>
-</ul>
-<pre class="maple"><code>
-eval(subs(x=f^{-1}(a), 1/f&#39;(x)))
-</code></pre>
+<p>For a series <span class="math inline">\(\sum a_n\)</span>, normally it is not easy to find explicit expression for the partial sum <span class="math inline">\(s_n=\sum\limits_{k=1}^n a_k\)</span>. However, if sequence is defined by an mathematical expression <span class="math inline">\(a_n=f(n)\)</span>, we may find values of partial sums recursively use a <code>for/from loop</code> statement in Maple:</p>
+<pre><code>for *counter* from *initial* by *increment* to *final* do
+    statement_sequence;
+end do;</code></pre>
 
 <div class="example">
-<span id="exm:unnamed-chunk-3" class="example"><strong>Example 2.1  </strong></span>Find <span class="math inline">\((f^{-1})&#39;(0)\)</span>, where <span class="math inline">\(f(x)=\cos(x)\)</span> and <span class="math inline">\(0\leq x\leq \pi\)</span>.
+<p><span id="exm:unnamed-chunk-2" class="example"><strong>Example 10.2  </strong></span>
+Find the first 20 partial sums <span class="math inline">\(s_k=\sum_{n=1}^{n}a_n\)</span> of the infinite series
+<span class="math display">\[
+\sum_{n=0}^\infty\frac1{2^n}=1+\frac12+\frac14+\frac18+\cdots.
+\]</span>
+Determine whether the series <span class="math inline">\(\sum_{n=0}^\infty\frac1{2^n}\)</span> is convergent or divergent.</p>
 </div>
 
 
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> <br>
-Find the derivative of <span class="math inline">\(f\)</span></p>
-<pre><code>diff(cos(x), x)</code></pre>
-<p>Find the value of <span class="math inline">\(f^{-1}(0)\)</span></p>
-<pre><code>solve(cos(x)=0, x)</code></pre>
-<p>Apply the formula</p>
-<pre><code>eval(subs(x=Pi/2, -1/sin(x)))</code></pre>
-Using Maple, we find <span class="math inline">\((f^{-1})&#39;(0)=-1\)</span>.
+<p> <span class="solution"><em>Solution. </em></span> <br></p>
+<pre><code># Set up s when n=0
+
+s:=1
+
+# Find 10 terms using `for/from loop`
+
+for n from 1 to 10 do
+    s:=s+1/(2^n);
+end do;</code></pre>
+<p>The series converges to 2.</p>
+</div>
+
+<p>Of course, we may also use <code>for/from loop</code> to list numbers of a sequence.</p>
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> Second solution to example <a href="sequences-and-series.html#exm:seq-eg">10.1</a>.</p>
+<pre><code># using `for/from loop`
+
+for n from 1 to 10 do
+    1/(n*(n+1);
+end do;</code></pre>
+</div>
+
+<p>When the sequence is defined by a recurrence formula like the Fibonacci sequence, we will need to Maple how to interpret the formula. For that purpose, we use a procedure, which encloses a sequence of statements between <code>proc(...)</code> and <code>end proc</code>, to define the formula in Maple.</p>
+<p>For example, the following is a procedure that defines a function <span class="math inline">\(a(x)=\sqrt{x}-\frac{1}{\sqrt{x}}\)</span>:</p>
+<pre><code>a:=proc(x) sqrt(x)-1/sqrt{x}; end proc;</code></pre>
+<p>To structure codes in a procedure, you may use <code>Code Edit Region</code> which can be find in the <code>Insert menu</code>.
+To execute codes within this region, click <code>Execute Code</code> from the <code>Edit</code> menu, or use the shortcut command <code>Ctrl+E</code>.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-5" class="example"><strong>Example 6.1  </strong></span>
+The Fibonacci sequence is defined by <span class="math inline">\(fib(0)=0\)</span>, <span class="math inline">\(fib(1)=1\)</span> and <span class="math inline">\(fib(n)=fib(n-1)+fic(n-2)\)</span>.
+Find the first 20 Fibonacci numbers.</p>
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> 
+We first define a function <span class="math inline">\(fib(n)\)</span> which returns the <span class="math inline">\(n\)</span>-th Fibonacci number.</p>
+<pre><code>fib := proc (n::nonnegint)
+    if 2 &lt;= n then
+        return fib(n-1)+fib(n-2):
+    else
+        return n:
+    end if;
+end proc</code></pre>
+<p>Now we can use either <code>seq()</code> or <code>for/from loop</code>.</p>
+<p>seq(fib(n), n=0..19)</p>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-5" class="exercise"><strong>Exercise 1.2  </strong></span>
-1. Graph the function <span class="math inline">\(f(x)=3+2\sin x\)</span>, its inverse function, and the line <span class="math inline">\(y=x\)</span> over the interval <span class="math inline">\([-2,2]\)</span>.</p>
-<ol start="2" style="list-style-type: decimal">
-<li>Find the value <span class="math inline">\((f^{-1})&#39;(5)\)</span>.</li>
-</ol>
+<p><span id="exr:unnamed-chunk-7" class="exercise"><strong>Exercise 5.2  </strong></span>
+Find the first 20 terms of the sequence
+<span class="math display">\[
+\{\sin{\frac{\pi}{n}}\}_{n=1}^\infty.
+\]</span>
+Determine whether the sequence <span class="math inline">\(\{\sin{\frac{\pi}{n}}\}\)</span> is convergent or divergent.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-8" class="exercise"><strong>Exercise 5.3  </strong></span>
+Find the first 20 partial sums <span class="math inline">\(s_k=\sum_{n=1}^{n}a_n\)</span> of the infinite series
+<span class="math display">\[\sum_{n=0}^\infty\frac1n=1+\frac12+\frac13+\frac14+\cdots.
+\]</span>
+Determine whether the series <span class="math inline">\(\sum_{n=0}^\infty\frac1n\)</span> is convergent or divergent.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-9" class="exercise"><strong>Exercise 5.4  </strong></span>
+Find the 20th to 30th Fibonacci numbers.</p>
 </div>
 
 
@@ -196,8 +228,8 @@ Using Maple, we find <span class="math inline">\((f^{-1})&#39;(0)=-1\)</span>.
           </div>
         </div>
       </div>
-<a href="volume-of-revolution.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="logarithmic-and-exponential-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="arc-lengths-and-areas-of-surfaces-of-revolutions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="power-series.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

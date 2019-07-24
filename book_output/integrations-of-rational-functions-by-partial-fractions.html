@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 8 Integrations of Rational Functions by Partial Fractions | Notes on Maple for Calculus II</title>
+  <title>Topic 8 Integrations of Rational Functions by Partial Fractions | Notes on Maple for Calculus II</title>
   <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
   <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 8 Integrations of Rational Functions by Partial Fractions | Notes on Maple for Calculus II" />
+  <meta property="og:title" content="Topic 8 Integrations of Rational Functions by Partial Fractions | Notes on Maple for Calculus II" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 8 Integrations of Rational Functions by Partial Fractions | Notes on Maple for Calculus II" />
+  <meta name="twitter:title" content="Topic 8 Integrations of Rational Functions by Partial Fractions | Notes on Maple for Calculus II" />
   
   <meta name="twitter:description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Fei Ye" />
 
 
-<meta name="date" content="2019-07-17" />
+<meta name="date" content="2019-07-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="lhospitals-rule.html">
-
+<link rel="next" href="arc-lengths-and-areas-of-surfaces-of-revolutions.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -86,6 +86,10 @@
 </ul></li>
 <li class="chapter" data-level="7" data-path="lhospitals-rule.html"><a href="lhospitals-rule.html"><i class="fa fa-check"></i><b>7</b> L’Hospital’s Rule</a></li>
 <li class="chapter" data-level="8" data-path="integrations-of-rational-functions-by-partial-fractions.html"><a href="integrations-of-rational-functions-by-partial-fractions.html"><i class="fa fa-check"></i><b>8</b> Integrations of Rational Functions by Partial Fractions</a></li>
+<li class="chapter" data-level="9" data-path="arc-lengths-and-areas-of-surfaces-of-revolutions.html"><a href="arc-lengths-and-areas-of-surfaces-of-revolutions.html"><i class="fa fa-check"></i><b>9</b> Arc Lengths and Areas of Surfaces of Revolutions</a></li>
+<li class="chapter" data-level="10" data-path="sequences-and-series.html"><a href="sequences-and-series.html"><i class="fa fa-check"></i><b>10</b> Sequences and Series</a></li>
+<li class="chapter" data-level="11" data-path="power-series.html"><a href="power-series.html"><i class="fa fa-check"></i><b>11</b> Power Series</a></li>
+<li class="chapter" data-level="12" data-path="taylor-expansion.html"><a href="taylor-expansion.html"><i class="fa fa-check"></i><b>12</b> Taylor Expansion</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -107,7 +111,7 @@
 
             <section class="normal" id="section-">
 <div id="integrations-of-rational-functions-by-partial-fractions" class="section level1">
-<h1><span class="header-section-number">Chapter 8</span> Integrations of Rational Functions by Partial Fractions</h1>
+<h1><span class="header-section-number">Topic 8</span> Integrations of Rational Functions by Partial Fractions</h1>
 <p>In Maple, we can factor a polynomial using the command <code>factor(polynomial)</code> or find partial fraction decomposition using <code>convert(function, parfrac)</code>.</p>
 
 <div class="example">
@@ -122,7 +126,7 @@ f(x)=\frac{x^3+4x+3}{x^4+5x^2+4}
 <div class="solution">
 <p> <span class="solution"><em>Solution. </em></span> <br>
 This can be done easily in Maple:</p>
-<pre><code>#use the command convert
+<pre><code># use the command convert
 convert((x^3+4*x+3)/(x^4+5x^2+4), parfrac)</code></pre>
 </div>
 
@@ -169,8 +173,8 @@ Find the sum of partial fraction and evaluate the integral</p>
           </div>
         </div>
       </div>
-<a href="lhospitals-rule.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="lhospitals-rule.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="arc-lengths-and-areas-of-surfaces-of-revolutions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

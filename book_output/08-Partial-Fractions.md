@@ -12,7 +12,7 @@ $$
 \BeginKnitrBlock{solution}<div class="solution">\iffalse{} <span class="solution"><em>Solution. </em></span>  \fi{}<br>
 This can be done easily in Maple:
 
-    #use the command convert
+    # use the command convert
     convert((x^3+4*x+3)/(x^4+5x^2+4), parfrac)
 </div>\EndKnitrBlock{solution}
 
@@ -30,7 +30,6 @@ $$
 \int \frac{2}{3x^{2}+2x-1} \mathrm{d} x
 $$
 </div>\EndKnitrBlock{exercise}
-
 
 \BeginKnitrBlock{exercise}<div class="exercise"><span class="exercise" id="exr:unnamed-chunk-5"><strong>(\#exr:unnamed-chunk-5) </strong></span>
 Find the sum of partial fraction and evaluate the integral
