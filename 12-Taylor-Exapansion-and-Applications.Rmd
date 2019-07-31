@@ -3,7 +3,7 @@
 Let $f(x)$ be a function. Assume that the $k$-th order derivatives $f^k(a)$ exist for $k=1, 2, \dots, n$. The polynomial
 $$
 T_n(x)=\sum_{k=0}^n\dfrac{f^{(n)}(a)}{k!}(x-a)^k
-$
+$$
 is called the $n$-th degree Taylor polynomial of $f$ at $a$.
 
 Let $f(x)$ be a function has derivative at $a$ up to all orders. Set
@@ -71,15 +71,20 @@ and its 5-th order Taylor polynomial over the domain $[-2..2]$. What can you con
 
     g:=piecewise(x!=0, exp(-1/x^2), 0)
 
-    # Find derivatives up to order 5.
+    # Find Taylor polynomial of degree 5.
 
-    for n from 1 to 5 do diff(g, x(*\$*)n) end do
+    for n to 5 do T := (eval(diff(g(x), x$n), x = 0))*x^n/factorial(n)+T end do
 
     # Plot the functions
 
-    plot([g,0],x=-2..2, color=[red, blue])
+    plot([g,T],x=-2..2, color=[red, blue])
+
+The graphs of the functions are shown in the picture.
+![A non-analytic smooth function](figs/non-analytic-smooth.png)
 
 ```
+
+In the solution, `x$n` is a shortcut option for `x, x, x, x, x` in the `diff` command.
 
 ```{exercise}
 

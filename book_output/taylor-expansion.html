@@ -24,7 +24,7 @@
 <meta name="author" content="Fei Ye" />
 
 
-<meta name="date" content="2019-07-24" />
+<meta name="date" content="2019-07-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -113,9 +113,9 @@
 <div id="taylor-expansion" class="section level1">
 <h1><span class="header-section-number">Topic 12</span> Taylor Expansion</h1>
 <p>Let <span class="math inline">\(f(x)\)</span> be a function. Assume that the <span class="math inline">\(k\)</span>-th order derivatives <span class="math inline">\(f^k(a)\)</span> exist for <span class="math inline">\(k=1, 2, \dots, n\)</span>. The polynomial
-$$
-T_n(x)=_{k=0}<sup>n(x-a)</sup>k
-$
+<span class="math display">\[
+T_n(x)=\sum_{k=0}^n\dfrac{f^{(n)}(a)}{k!}(x-a)^k
+\]</span>
 is called the <span class="math inline">\(n\)</span>-th degree Taylor polynomial of <span class="math inline">\(f\)</span> at <span class="math inline">\(a\)</span>.</p>
 <p>Let <span class="math inline">\(f(x)\)</span> be a function has derivative at <span class="math inline">\(a\)</span> up to all orders. Set
 <span class="math display">\[
@@ -177,15 +177,18 @@ and its 5-th order Taylor polynomial over the domain <span class="math inline">\
 
 g:=piecewise(x!=0, exp(-1/x^2), 0)
 
-# Find derivatives up to order 5.
+# Find Taylor polynomial of degree 5.
 
-for n from 1 to 5 do diff(g, x(*\$*)n) end do
+for n to 5 do T := (eval(diff(g(x), x$n), x = 0))*x^n/factorial(n)+T end do
 
 # Plot the functions
 
-plot([g,0],x=-2..2, color=[red, blue])</code></pre>
+plot([g,T],x=-2..2, color=[red, blue])</code></pre>
+<p>The graphs of the functions are shown in the picture.
+<img src="figs/non-analytic-smooth.png" alt="A non-analytic smooth function" /></p>
 </div>
 
+<p>In the solution, <code>x$n</code> is a shortcut option for <code>x, x, x, x, x</code> in the <code>diff</code> command.</p>
 
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-5" class="exercise"><strong>Exercise 1.2  </strong></span>

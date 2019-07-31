@@ -1,7 +1,7 @@
 --- 
 title: "Notes on Maple for Calculus II"
 author: "Fei Ye"
-date: "2019-07-24"
+date: "2019-07-30"
 site: bookdown::bookdown_site
 documentclass: book
 description: "This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown"
