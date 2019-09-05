@@ -1,0 +1,182 @@
+# (PART\*) Part 1 - Calculus I {-}
+
+# Limits
+
+## Understand limits using tangent lines
+
+Intuitively, the limit of a function $f$ at $x=a$ is a fixed value $L$ that values of the function $f(x)$ approach as the values of $x$ $(\ne a)$ approach $a$.
+
+The slope of a tangent line to the graph of a functions is a limit of slopes of secant lines. This can be visualized easily using Maple with the support of the package `Student[Calculus1]`.
+
+Like predefined functions in Maple, package consists of predefine commands for Maple. The package `Student` serves for studying Calculus and other subject interactively. The subpackage `Student[Calculus1]` focus mainly on Calculus as the name indicated.
+
+As different package has different focus and serves for different purpose, Maple won't load a specific package until you run the command `with(package_name)`. For example, the command
+`with(Student[Calculus1])` will load the subpackage `Calculus1`.
+
+```{example}
+
+Observe how do secant lines of the function  $f(x)=x^3-2$ approach to the tangent line at $x=1$.
+
+```
+
+```{solution}
+Load the `Student[Calculus1]` package using `with()`.
+
+    with(Student[Calculus1])
+
+Use `TangentSecantTutor` from the loaded package to observe changes of secant lines.
+
+    TangentSecantTutor(x^3-1, x=1)
+
+```
+
+```{exercise}
+
+Explore the package `Student`, in particular the subpackage `Student[Calculus1]`.
+You can use the command `?Student` to get help.
+
+Find the slope of the tangent line to the function $f(x)=2x^3+\frac1{x^2}$ at $x=1$ using the `TangentSecantTutor` command.
+
+```
+
+## Estimate limits numerically or graphically
+
+To estimate a limit $\lim\limits_{x\to a}f(x)$ numerically, one may pick some values close to $a$ and evaluate the function. In Maple, the calculation can be done by using the repetition statement `for counter in array do statement end to;`.
+
+```{example}
+
+Estimate the limit $\lim\limits_{x\to 0}\frac{\sin x}{x}$ by approximations.
+
+```
+
+```{solution}
+
+First, we pick some values close to 0, for example -0.99, -0.999, -0.9999, 0.01, 0.001, 0.0001 and assign them to an expression.
+
+    sq:= [-0.99, -0.999, -0.9999, 0.0001, 0.001, 0.01]
+
+Now we find the function values using two new commands instead of defining the function a priori.
+
+    for t in sq do evalf(subs(x=t, sin(x)/x)) end do;
+
+```
+
+Graphs provide visual intuition which helps understand and solve problems. Recall, the command `plot(expression, domain, option)` produces a graph of the function defined by the expression over your choice of domain.
+
+```{example}
+
+Determine whether the limit $\lim\limits_{x\to 0}\frac{1}{1- \cos x}$ exists.
+
+```
+
+```{solution}
+
+Apply the `plot` function to the expression over the domain $(-0.5, 0.5)$.
+
+    plot(1/(1-cos(x)), x=-0.5..0.5)
+
+The graph shows that the function $y=\frac{1}{1- \cos x}$ goes to $\infty$ when $x$ approaches $0$. So the limit is an infinite limit.
+
+```
+
+```{exercise}
+
+Estimate the limit $\lim\limits_{t \to 0}\frac{1-\cos x}{x}$ numerically.
+
+```
+
+```{exercise}
+
+Determine whether the limit $\lim\limits_{x \to 1}\frac{\sin x}{|x-1|}$ exists using the graph.
+
+```
+
+## Evaluate limits
+
+Maple provides the following command to evaluate a limit
+
+```
+
+limit(function, position, direction)s
+
+```
+
+The direction may be omitted when evaluating a two-side limit.
+
+```{example}
+
+Determine whether the limit $\lim\limits_{x\to 0}\frac{|x|}{x}$ exists.
+
+```
+
+```{solution}
+You may find the left and right limits using the following commands.
+
+    limit(abs(x)/x, x=0, left)
+    limit(abs(x)/x, x=0, right)
+
+It turns out that $\lim\limits_{x\to 0}\frac{|x|}{x}$ does not exist because the left limit and the right limit are different.
+
+```
+
+```{example}
+
+Evaluate the limit $\lim\limits_{h\to 0}\dfrac{f(x+h)-f(x)}{h}$, where $f(x)=\dfrac{1}{x}$.
+
+```
+
+```{solution}
+
+The limit can be obtained using the following command.
+
+    limit((1/(x+h)-1/x)/h, x=0)
+
+```
+
+```{exercise}
+
+Determine whether the limit $\lim\limits_{x\to 1/2}\dfrac{2x-1}{|2x^3-x^2|}$ exists.
+
+```
+
+```{exercise}
+
+Evaluate the limit $\lim\limits_{t\to 0}\dfrac{\sqrt{x+t}-\sqrt{x}}{t}$.
+
+```
+
+## Learn limit laws using `LimitTutor`
+
+Suppose the limits of two functions $f$ and $g$ at the same point $x=a$ exist (equal finite numbers). Then the limit operation commutes with addition/subtraction, multiplication/division and power.
+
+In Maple, you may use the command `LimitTutor(function, position, direction)`, which is again supported by the subpackage `Student[Calculus1]`,  to learn how to evaluate a limit using limit laws and theorems.
+
+```{example}
+
+Evaluate $\lim\limits_{x\to 0}\dfrac{1-\cos x}{x}$.
+
+```
+
+```{solution}
+
+Load the subpackage `Student[Calculus1]` if it was not loaded.
+
+    with(Student[Calculus1])
+
+Use the following command to learn how to evaluate the limit.
+
+    LimitTutor(2-x^3, x=2,'right')
+
+You will see an interactive windows pop out.  You can choose the see the procedure step-by-step.
+
+```
+
+```{exercise}
+
+Evaluate $\lim\limits_{x\to 0}\dfrac{(x+2)(\cos x-1)}{x^2-x}$ using `LimitTutor`.
+
+```
+
+## Continuity
+
+A function $f$ is continuous at $x=a$ if $f(a)$ is defined and $\lim\limits_{x\to a}f(x)=f(a)$.

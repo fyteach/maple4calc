@@ -1,18 +1,20 @@
 book_filename: "maple-notes"
 rmd_files: [
   "index.Rmd",
-  "01-Volumes.Rmd",
-  "02-Inverse-Functions.Rmd",
-  "03-Log-Exp-Functions.Rmd",
-  "04-ODE.Rmd",
-  "05-Inverse-Trig.Rmd",
-  "06-Integrations-Trig.Rmd",
-  "07-LHospitalRule.Rmd",
-  "08-Partial-Fractions.Rmd",
-  "09-Arc-Length-Surface-Area.Rmd",
-  "10-Sequences-Series.Rmd",
-  "11-Power-Series-and-Applications.Rmd",
-  "12-Taylor-Exapansion-and-Applications.Rmd"
+  # "001.Introduction.Rmd",
+  "101-Limits.Rmd",
+  "201-Volumes.Rmd",
+  "202-Inverse-Functions.Rmd",
+  "203-Log-Exp-Functions.Rmd",
+  "204-ODE.Rmd",
+  "205-Inverse-Trig.Rmd",
+  "206-Integrations-Trig.Rmd",
+  "207-LHospitalRule.Rmd",
+  "208-Partial-Fractions.Rmd",
+  "209-Arc-Length-Surface-Area.Rmd",
+  "210-Sequences-Series.Rmd",
+  "211-Power-Series-and-Applications.Rmd",
+  "212-Taylor-Expansion-and-Applications.Rmd"
 ]
 
 output_dir: book_output
@@ -23,4 +25,4 @@ delete_merged_file: true
 
 language:
   ui:
-    chapter_name: "Topic "
+    chapter_name: "Lab "

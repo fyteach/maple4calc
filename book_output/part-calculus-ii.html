@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>(Part) Calculus II | Notes on Maple for Calculus II</title>
+  <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="(Part) Calculus II | Notes on Maple for Calculus II" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="(Part) Calculus II | Notes on Maple for Calculus II" />
+  
+  <meta name="twitter:description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
+  
+
+<meta name="author" content="Fei Ye" />
+
+
+<meta name="date" content="2019-09-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="volume-of-revolution.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script async src="https://hypothes.is/embed.js"></script>
+
+<script type="application/json" class="js-hypothesis-config">
+    {
+      "openSidebar": false
+    }
+</script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Notes on Maple for Calculus II</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-should-i-do-after-i-opened-maple"><i class="fa fa-check"></i>What should I do after I opened Maple</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="part-calculus-ii.html"><a href="part-calculus-ii.html"><i class="fa fa-check"></i>(Part) Calculus II</a></li>
+<li class="chapter" data-level="1" data-path="volume-of-revolution.html"><a href="volume-of-revolution.html"><i class="fa fa-check"></i><b>1</b> Volume of Revolution</a></li>
+<li class="chapter" data-level="2" data-path="inverse-functions.html"><a href="inverse-functions.html"><i class="fa fa-check"></i><b>2</b> Inverse Functions</a></li>
+<li class="chapter" data-level="3" data-path="logarithmic-and-exponential-functions.html"><a href="logarithmic-and-exponential-functions.html"><i class="fa fa-check"></i><b>3</b> Logarithmic and Exponential Functions</a><ul>
+<li class="chapter" data-level="3.1" data-path="logarithmic-and-exponential-functions.html"><a href="logarithmic-and-exponential-functions.html#basic-properties-and-graphs"><i class="fa fa-check"></i><b>3.1</b> Basic properties and graphs</a></li>
+<li class="chapter" data-level="3.2" data-path="logarithmic-and-exponential-functions.html"><a href="logarithmic-and-exponential-functions.html#differentiation-and-integration-of-logarithmic-and-exponential-functions"><i class="fa fa-check"></i><b>3.2</b> Differentiation and integration of logarithmic and exponential functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="solve-differential-equations.html"><a href="solve-differential-equations.html"><i class="fa fa-check"></i><b>4</b> Solve differential equations</a></li>
+<li class="chapter" data-level="5" data-path="inverse-trigonometric-functions.html"><a href="inverse-trigonometric-functions.html"><i class="fa fa-check"></i><b>5</b> Inverse Trigonometric Functions</a><ul>
+<li class="chapter" data-level="5.1" data-path="inverse-trigonometric-functions.html"><a href="inverse-trigonometric-functions.html#domains-and-ranges"><i class="fa fa-check"></i><b>5.1</b> Domains and Ranges</a></li>
+<li class="chapter" data-level="5.2" data-path="inverse-trigonometric-functions.html"><a href="inverse-trigonometric-functions.html#differentiation-and-integration-of-inverse-trigonometric-functions"><i class="fa fa-check"></i><b>5.2</b> Differentiation and integration of inverse trigonometric functions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="integrations-involving-trigonometric-functions.html"><a href="integrations-involving-trigonometric-functions.html"><i class="fa fa-check"></i><b>6</b> Integrations Involving Trigonometric Functions</a><ul>
+<li class="chapter" data-level="6.1" data-path="integrations-involving-trigonometric-functions.html"><a href="integrations-involving-trigonometric-functions.html#integrations-of-trigonometric-functions"><i class="fa fa-check"></i><b>6.1</b> Integrations of trigonometric functions</a></li>
+<li class="chapter" data-level="6.2" data-path="integrations-involving-trigonometric-functions.html"><a href="integrations-involving-trigonometric-functions.html#trigonometric-substitution"><i class="fa fa-check"></i><b>6.2</b> Trigonometric Substitution</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="lhospitals-rule.html"><a href="lhospitals-rule.html"><i class="fa fa-check"></i><b>7</b> L’Hospital’s Rule</a></li>
+<li class="chapter" data-level="8" data-path="integrations-of-rational-functions-by-partial-fractions.html"><a href="integrations-of-rational-functions-by-partial-fractions.html"><i class="fa fa-check"></i><b>8</b> Integrations of Rational Functions by Partial Fractions</a></li>
+<li class="chapter" data-level="9" data-path="arc-lengths-and-areas-of-surfaces-of-revolutions.html"><a href="arc-lengths-and-areas-of-surfaces-of-revolutions.html"><i class="fa fa-check"></i><b>9</b> Arc Lengths and Areas of Surfaces of Revolutions</a></li>
+<li class="chapter" data-level="10" data-path="sequences-and-series.html"><a href="sequences-and-series.html"><i class="fa fa-check"></i><b>10</b> Sequences and Series</a></li>
+<li class="chapter" data-level="11" data-path="power-series.html"><a href="power-series.html"><i class="fa fa-check"></i><b>11</b> Power Series</a></li>
+<li class="chapter" data-level="12" data-path="taylor-expansion.html"><a href="taylor-expansion.html"><i class="fa fa-check"></i><b>12</b> Taylor Expansion</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Notes on Maple for Calculus II</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="part-calculus-ii" class="section level1 unnumbered">
+<h1>(Part) Calculus II</h1>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="volume-of-revolution.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["maple-notes.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
