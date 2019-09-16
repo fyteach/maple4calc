@@ -3,6 +3,7 @@ rmd_files: [
   "index.Rmd",
   # "001.Introduction.Rmd",
   "101-Limits.Rmd",
+  "102-Derivatives.Rmd",
   "201-Volumes.Rmd",
   "202-Inverse-Functions.Rmd",
   "203-Log-Exp-Functions.Rmd",
