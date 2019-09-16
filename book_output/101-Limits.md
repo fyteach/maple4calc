@@ -152,7 +152,7 @@ A function $f$ is continuous at $x=a$ if $f(a)$ is defined and $\lim\limits_{x\t
 Use graph to determine if the function
 $$
 f(x)=
-\begin{cases
+\begin{cases}
     x & x\le -1 \\
     1/(x-1) & -1<x<1\\
     3-x & 1<x\le 2\\
@@ -194,7 +194,7 @@ However, $g(2)=-2$. So $f$ has three discontinuities at $x=-1$, $x=1$ and $x=2$.
 \BeginKnitrBlock{exercise}<div class="exercise"><span class="exercise" id="exr:unnamed-chunk-25"><strong>(\#exr:unnamed-chunk-25) </strong></span>Determine if the function
 $$
 f(x)=
-\begin{cases
+\begin{cases}
     -x^2+2 & x\le 1 \\
     \tan x& 1<x<\pi/2\\
     2\cos x-1 & \text{otherwise}
@@ -277,7 +277,7 @@ In particular, if $f(a)f(b)<0$ then there exists a number $c$ such that $f(c)=0$
 \BeginKnitrBlock{example}<div class="example"><span class="example" id="exm:unnamed-chunk-31"><strong>(\#exm:unnamed-chunk-31) </strong></span>
 Determine whether the equation
 $$
-sin^2x + 2*x - 1=0
+\sin^2x + 2x - 1=0
 $$
 has the solution in $(-1, 1)$. Estimate the solution if it exists.
 </div>\EndKnitrBlock{example}
@@ -327,7 +327,7 @@ or you may repeatedly apply IVT to find an approximate solution.
 \BeginKnitrBlock{exercise}<div class="exercise"><span class="exercise" id="exr:unnamed-chunk-33"><strong>(\#exr:unnamed-chunk-33) </strong></span>
 Find an integer $k$ such that the equation
 $$
-cos^2x + 3*x - 2=0
+\cos^2x + 3x - 2=0
 $$
 has a solution in $(k, k+1)$. Estimate the solution.
 </div>\EndKnitrBlock{exercise}
