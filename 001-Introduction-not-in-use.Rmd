@@ -1,8 +1,8 @@
-# Basics in Maple {-}
+# Basics in Maple
 
 This is a book written for Maple labs for Calculus I and II.
 
-## What should I do after I opened Maple {-}
+## What should I do after I opened Maple
 
 Once you opened Maple, you will see the following Maple Start document.
 
@@ -30,7 +30,7 @@ If you click the `Calculus` icon on the Start page and click `OK`, you will see 
 
 ![Maple Calculus document page screen shot](figs/Calculus-Doc.png)
 
-## Basic Operators {-}
+## Basic Operators
 
 The first thing to know when learn something new is where and how to get help. In Maple, you may simply type
 
@@ -48,7 +48,7 @@ For example, the command `?operators` will lead you to descriptions of arithmeti
 | Example | $x+2$ | $a-b$ | $2x$ | $\frac pq$ | $b^5$ |
 | In Maple| `x+2` | `a-b` | `2*x` | `p/q` | `b^5` |
 
-## How to define a function {-}
+## How to define a function
 
 A function is an assignment, for a given input $x$, we assignment an output $y$ under a certain rule. Maple take this idea to define functions. The command to define a function has the following form.
 
@@ -95,11 +95,15 @@ The assignment operator `:=` to the left-hand side the value of the right-hand s
 
 ```
 
-## Initially known mathematical functions {-}
+## Initially known mathematical functions
 
 Maple has many predefined functions which can be used to create new functions. To see all initially known mathematical functions in maple, you may use the help command `?functions` and click the hyperlinked "initial functions" in the description shown in the new window.
 
-![Maple function help page screen shot](fig/predefined-functions.png)
+<!-- ![Maple functions help page screen shot](figs/Initial-Functions.PNG) -->
+
+
+![Maple Calculus document page screen shot](figs/Calculus-Doc.png)
+
 
 Some frequently used functions are listed in tables below.
 
@@ -160,7 +164,7 @@ $$
 
 ```
 
-## Plot functions {-}
+## Plot functions
 
 In Maple, you may plot a single variable function easily using the command
 

@@ -1,7 +1,7 @@
 --- 
 title: "Notes on Maple for Calculus"
 author: "Fei Ye"
-date: "2019-09-15"
+date: "2019-09-22"
 site: bookdown::bookdown_site
 documentclass: book
 description: "This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown"
@@ -98,7 +98,7 @@ The assignment operator `:=` to the left-hand side the value of the right-hand s
 
 Maple has many predefined functions which can be used to create new functions. To see all initially known mathematical functions in maple, you may use the help command `?functions` and click the hyperlinked "initial functions" in the description shown in the new window.
 
-![Maple function help page screen shot](fig/predefined-functions.png)
+![Maple function help page screenshot](figs/Initial-Functions.PNG)
 
 Some frequently used functions are listed in tables below.
 
