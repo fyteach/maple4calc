@@ -1,6 +1,6 @@
 bookdown::gitbook:
-  includes:
-      in_header: annotation.html
+  # includes:
+      # in_header: annotation.html
   css: style.css
   config:
     toc:

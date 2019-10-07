@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lab 5 Inverse Functions | Notes on Maple for Calculus</title>
   <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
-  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lab 5 Inverse Functions | Notes on Maple for Calculus" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Fei Ye" />
 
 
-<meta name="date" content="2019-09-22" />
+<meta name="date" content="2019-10-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -40,6 +40,7 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -47,13 +48,8 @@
 
 
 
-<script async src="https://hypothes.is/embed.js"></script>
 
-<script type="application/json" class="js-hypothesis-config">
-    {
-      "openSidebar": false
-    }
-</script>
+
 
 
 
@@ -94,6 +90,10 @@
 <li class="chapter" data-level="3" data-path="derivatives.html"><a href="derivatives.html"><i class="fa fa-check"></i><b>3</b> Derivatives</a><ul>
 <li class="chapter" data-level="3.1" data-path="derivatives.html"><a href="derivatives.html#derivative-functions"><i class="fa fa-check"></i><b>3.1</b> Derivative Functions</a></li>
 <li class="chapter" data-level="3.2" data-path="derivatives.html"><a href="derivatives.html#calculating-derivatives"><i class="fa fa-check"></i><b>3.2</b> Calculating Derivatives</a></li>
+<li class="chapter" data-level="3.3" data-path="derivatives.html"><a href="derivatives.html#chain-rule"><i class="fa fa-check"></i><b>3.3</b> Chain Rule</a></li>
+<li class="chapter" data-level="3.4" data-path="derivatives.html"><a href="derivatives.html#implicit-differentiation"><i class="fa fa-check"></i><b>3.4</b> Implicit Differentiation</a></li>
+<li class="chapter" data-level="3.5" data-path="derivatives.html"><a href="derivatives.html#related-rates"><i class="fa fa-check"></i><b>3.5</b> Related Rates</a></li>
+<li class="chapter" data-level="3.6" data-path="derivatives.html"><a href="derivatives.html#linearizations"><i class="fa fa-check"></i><b>3.6</b> Linearizations</a></li>
 </ul></li>
 <li class="part"><span><b>Part 2 - Calculus II</b></span></li>
 <li class="chapter" data-level="4" data-path="volume-of-revolution.html"><a href="volume-of-revolution.html"><i class="fa fa-check"></i><b>4</b> Volume of Revolution</a></li>
@@ -229,11 +229,13 @@ Using Maple, we find <span class="math inline">\((f^{-1})&#39;(0)=-1\)</span>.
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({

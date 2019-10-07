@@ -84,7 +84,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-09-22}
+    \date{2019-10-06}
 
 \usepackage{booktabs}
 
@@ -1014,6 +1014,373 @@ Calculate the first derivative for the function \(y=\frac{\cos(x)+\sin x}{x}\) b
 \BeginKnitrBlock{exercise}
 \protect\hypertarget{exr:unnamed-chunk-13}{}{\label{exr:unnamed-chunk-13} }
 Calculate the \(3\)-th derivative for the function \(y=\sin x\cos x\) by hand and by Maple. Can you find a formula for the \(n\)-th derivative of the function?
+\EndKnitrBlock{exercise}
+
+\hypertarget{chain-rule}{%
+\section{Chain Rule}\label{chain-rule}}
+
+Let \(f(x)\) and \(g(x)\) be two differentiable functions. Then the derivative of the composite function \(f(g(x))\) can be calculated using the following formula
+\[
+(f(g(x)))'=f'(g(x))g'(x).
+\]
+Why there is an extra factor \(g'(x)\)? This is mainly because \(g(x+h)\approx g(x)+g'(x)h\).
+
+Now let's use Maple to understand the chain rule. In Maple, the symbol for composition is \texttt{@}, that is, in Maple the composition \(f\circ g\) is given by \texttt{f@g}.
+
+Since we will evaluate derivative functions, in addition to the command \texttt{diff(expression,\ variable)}, we will also use \texttt{D(function)(variable)} to find the derivative function. One major difference between those two commands is that \texttt{D} is designed to differentiate functions, whereas \texttt{diff} is for differentiating expressions.
+
+\begin{figure}
+\centering
+\includegraphics{figs/D_vs_diff.png}
+\caption{A screen shot from Maple shows a comparison between the commands D and diff}
+\end{figure}
+
+\BeginKnitrBlock{example}
+\protect\hypertarget{exm:unnamed-chunk-14}{}{\label{exm:unnamed-chunk-14} }
+Let \(f(x)=\sin x\), \(g(x)=2x\) and \(F(x)=2\sin x\cos x\). Find \(f'(g(x))\), \((fg)'(x)\), \((f\circ g)'(x)\) and \(F'(x)\)?
+Compare the derivatives and draw a conclusion.
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{solution}
+\iffalse{} {Solution. } \fi{}
+We first define the functions.
+
+\begin{verbatim}
+f:=x->sin(x);
+g:=x->2*x;
+F:=x->2*sin(x)*cos(x);
+\end{verbatim}
+
+Find the derivative functions
+
+\begin{verbatim}
+Der_f_g:=D(f)(g(x)); # f'(g(x))
+Der_fg:=diff(f(x)g(x), x); # (fg)'(x)
+Der_fog:=D(f@g)(x); # (fog)'(x)
+Der_F:=D(F)(x); # F'(x)
+\end{verbatim}
+
+To compare the derivatives, we use the command \texttt{expand} and \texttt{simplify} to rewrite the expressions.
+
+\begin{verbatim}
+simplify(expand(Der_f_g));
+simplify(expand(Der_fg));
+simplify(expand(Der_fog));
+simplify(expand(Der_F));
+\end{verbatim}
+
+From the outputs, we see that \((f\circ g)'(x)=F'(x)\). Why they are the same? This is because \(\sin(2x)=2\sin x\cos x\)!.
+
+\begin{figure}
+\centering
+\includegraphics{figs/chain_rule.png}
+\caption{An example about the chain rule solved using Maple}
+\end{figure}
+\EndKnitrBlock{solution}
+
+\BeginKnitrBlock{remark}
+\iffalse{} {Remark. } \fi{}
+You may also use \texttt{D(unapply(f(x)*g(x),\ x))(x)} to calculate the derivative of the product function \((fg)(x)=f(x)g(x)\).
+\EndKnitrBlock{remark}
+
+The chain rule is almost unavoidable in calculation of derivatives. Sometimes, using chain rule will simplify the calculation.
+
+\BeginKnitrBlock{example}
+\protect\hypertarget{exm:unnamed-chunk-17}{}{\label{exm:unnamed-chunk-17} }
+Consider the function \(f(x)=\frac{1}{\sin x+\cos x}\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Find the derivative function \(f'(x)\) using \texttt{DiffTutor}. Which rule of derivative was applied first?
+\item
+  Find the point where the tangent line of \(f\) is horizontal over the domain \((-\frac{\pi}{2}, \frac{\pi}{2})\).
+\item
+  Find an equation of the tangent line at \((0, 1)\).
+\item
+  Plot the tangent line and the function together over the domain \((-\frac12, \frac12)\).
+\end{enumerate}
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{solution}
+\iffalse{} {Solution. } \fi{}
+You may use quotient rule to find the derivative. However, the chain rule may be a better choice because \(\frac{1}{\sin x+\cos x}=(\sin x+\cos x)^{-1}\). Let's try \texttt{DiffTutor}.
+
+\begin{verbatim}
+restart; # Use `restart` to clear the internal memory.
+with(Student[Calculus1]);
+f:=1/(sin(x)+cos(x));
+DiffTutor(f, x);
+\end{verbatim}
+
+You see that the chain rule was applied first.
+
+\begin{figure}
+\centering
+\includegraphics{figs/DiffTutor-Chain-Rule-Example.png}
+\caption{A example that chain rule was applied first by DiffTutor}
+\end{figure}
+
+To find the points where the tangent line is horizontal, we need to solve the equation \(f'(x)=0\).
+
+\begin{verbatim}
+solve(diff(f, x)=0)
+\end{verbatim}
+
+To find the tangent line, we find the derivative \(f'(0)\). One way is to use \texttt{unapply}.
+
+\begin{verbatim}
+unapply(diff(f, x), x)(0)
+\end{verbatim}
+
+You may also use \texttt{eval(expression,\ variable=value)}.
+
+\begin{verbatim}
+eval(diff(f, x), x=0)
+\end{verbatim}
+
+Since \(f'(0)=-1\), the tangent line at \((0, 1)\) is defined by \(y=-x+1\).
+
+\begin{verbatim}
+y:= -x+1
+\end{verbatim}
+
+Now let's verify visually that \(y=-x+1\) is the tangent line.
+
+\begin{verbatim}
+plot([f, y], x=-1/2..1/2)
+\end{verbatim}
+\EndKnitrBlock{solution}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-19}{}{\label{exr:unnamed-chunk-19} }
+Let \(f(x)=\sin x\), \(g(x)=\frac{\pi}{2}-x\) and \(h(x)=\cos x\). Find \(f'(g(x))\), \((fg)'(x)\), \((f\circ g)'(x)\) and \(h'(x)\). Compare the derivatives and draw a conclusion.
+\EndKnitrBlock{exercise}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-20}{}{\label{exr:unnamed-chunk-20} }
+Let \(f(x)=x^2\) and \(g(x)=\cos x\) and \(h(x)=\frac{1}{2}(\cos(2x)+1)\). Find \(f'(g(x))\), \((fg)'(x)\), \((f\circ g)'(x)\) and \(h'(x)\). Compare the derivatives and draw a conclusion.
+\EndKnitrBlock{exercise}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-21}{}{\label{exr:unnamed-chunk-21} }
+Consider the function \(F(x)=\sin^2(\frac{\pi(x^2+1)}{3})\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Define three functions \(f\), \(g\) and \(h\) so that \(F(x)=f(g(h(x)))\).
+\item
+  Describe how the derivative function \(F'(x)\) was calculated by \texttt{DiffTutor}.
+\item
+  Find the point where the tangent line of \(F\) is horizontal over the domain \((0, 1)\).
+\item
+  Find an equation of the tangent line of \(F\) at \((1, \frac34)\).
+\item
+  Plot the tangent line and the function together over the domain \((\frac12, \frac32)\).
+\end{enumerate}
+\EndKnitrBlock{exercise}
+
+\hypertarget{implicit-differentiation}{%
+\section{Implicit Differentiation}\label{implicit-differentiation}}
+
+Implicit differentiation is an application of the chain rule. It provides a way to find the slope of a tangent line of a function implicitly defined by an equation, that is, the dependent variable is not isolated.
+
+In Maple, there are two useful commands that help us understand implicit defined functions.
+The command \texttt{implicitplot(equation,\ domain,\ range,\ options)} supported by the package \texttt{plots} can be used to graph an implicitly defined function.
+The command \texttt{implicitdiff(function,\ dependent\ variable,\ independent\ variable)} can be used to find derivatives implicitly.
+
+\BeginKnitrBlock{example}
+\protect\hypertarget{exm:unnamed-chunk-22}{}{\label{exm:unnamed-chunk-22} }
+Graph the function \(y\) of \(x\) defined by \(x^2+2y^2=2x+4y\) with it tangent line at \((2, 0)\) over the domain \((1, 3)\) and range \((-1, 2)\).
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{solution}
+\iffalse{} {Solution. } \fi{}
+Let's first assign an name to the equation. (Run \texttt{restart} first if \texttt{x} and \texttt{y} were previously used an names.)
+
+\begin{verbatim}
+restart;
+eqnf:=x^2+2*y^2=2*x+4*y;
+\end{verbatim}
+
+Now let's find the derivative function, and its value at \((0, 1)\).
+
+\begin{verbatim}
+D_eqnf:=implicitdiff(eqnf, y, x);
+slope:=eval(D_eqnf, x=2, y=0);
+\end{verbatim}
+
+Let's define the tangent line
+
+\begin{verbatim}
+tangentline:= y=slope*(x-2)+0
+\end{verbatim}
+
+Now we are ready to plot the function with the tangent line together.
+
+\begin{verbatim}
+with(plots);
+implicitplot([eqnf, tangentline], x = 1 .. 3, y = -1 .. 2, color = [red, blue]);
+\end{verbatim}
+\EndKnitrBlock{solution}
+
+\BeginKnitrBlock{remark}
+\iffalse{} {Remark. } \fi{}
+Another way, which is more flexible, to put two or more graphs together is to use the command \texttt{display(graph1,\ graph2)} which is supported by the package \texttt{plots}. For example, the following commands will show two curves in a single picture.
+
+\begin{verbatim}
+with(plots):
+g1 := implicitplot(x^2 + y^2 = 1, x = -1 .. 1, y = 0 .. 1):
+g2 := plot(1 - abs(x), x = -1 .. 1):
+display(g1, g2, title = "Two Together");
+\end{verbatim}
+
+Note that we use colone \texttt{:} at the end of a command to hide the output.
+\EndKnitrBlock{remark}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-25}{}{\label{exr:unnamed-chunk-25} }
+For the ellipse \(x^2-xy+y^2=4\), find the locations of all horizontal tangent lines and plot them implicitly on the same graph as the relation over the interval \(-3 \leq x \leq 3\) and \(-3 \leq y \leq 3\).
+\EndKnitrBlock{exercise}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-26}{}{\label{exr:unnamed-chunk-26} }
+Find an equation of the line tangent to the curve \(x^2 + (x-y)^3 = 9\) at \(x=1\). (You may want to use \texttt{solve} and \texttt{subs} to find the \(y\) when \(x=1\)).
+\EndKnitrBlock{exercise}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-27}{}{\label{exr:unnamed-chunk-27} }
+Find all points \((x, y)\) on the curve of \(|x|^{2/3} + |y|^{2/3} = 8\) where lines tangent to the curve at \((x, y)\) is perpendicular to the line \(x-y=1\). (Use \texttt{?solve} to learn how to solve a system of equations in Maple).
+\EndKnitrBlock{exercise}
+
+\hypertarget{related-rates}{%
+\section{Related Rates}\label{related-rates}}
+
+Stewart suggests the following general steps for solving problems about related rates.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Read the problem carefully. (What quantities are known? What is the unknown rate of change?)
+\item
+  Draw a diagram if possible.
+\item
+  Introduce notations. Assign symbols to all quantities that are functions of time.
+\item
+  Express the given information and the required rate in terms of derivatives.
+\item
+  Write an equation that relates the various quantities of the problem. If necessary, use the geometry of the situation to eliminate one of the variables by substitution.
+\item
+  Use the Chain Rule to differentiate both sides of the equation with respect to the shared independent variable, say \(t\).
+\item
+  Substitute the given information into the resulting equation and solve for the unknown rate.
+\end{enumerate}
+
+In Maple, the quantities that shared by the same independent variable should be written in function notations. See the following example for details.
+
+\BeginKnitrBlock{example}
+\protect\hypertarget{exm:unnamed-chunk-28}{}{\label{exm:unnamed-chunk-28} }
+A spherical shaped balloon is inflated at a constant rate 2 cm\(^3\)/s. Find the relative rate growth of the diameter when its 10 cm wide.
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{solution}
+\iffalse{} {Solution. } \fi{}
+The volume of a sphere is given by \(V=\frac{4\pi}{3}r^3\). In this equation, both \(V\) and \(r\) are functions of the time \(t\). In Maple, we will use \texttt{V(t)} and \texttt{r(t)} for the volume and the radius.
+
+\begin{verbatim}
+eqn_v:=V(t)=4*Pi/3*(r(t))^3
+\end{verbatim}
+
+We know that at a certain time \(r(t)=10/2=5\), and \(\frac{\mathrm{d}}{\mathrm{d} t}V(t)|_{r(t)=5}=2\). What is asked is \(\frac{\mathrm{d}}{\mathrm{d} t}r(t)|_{r(t)=5}\). The two rates are related by the equation obtained by differentiating both side of the equation \texttt{eqn\_v}.
+
+\begin{verbatim}
+D_eqn_v:=diff(eqn_v, t)
+\end{verbatim}
+
+In the above equation, we need to solve the derivative of \(r\) with respect to \(t\). Let's first simplify notations.
+
+\begin{verbatim}
+D_v:=diff(V(t), t);
+D_r:=diff(r(t), t);
+D_r:=solve(D_eqn_v, D_r);
+\end{verbatim}
+
+Now we plugin \texttt{D\_v=2} and \texttt{r(t)=5} to find the value for \texttt{D\_r}.
+
+\begin{verbatim}
+subs({D_v=2, r(t)=5}, D_r) # or using eval(D_r, {D_v=2, r(t)=5})
+\end{verbatim}
+\EndKnitrBlock{solution}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-30}{}{\label{exr:unnamed-chunk-30} }
+A cylindrical cup with radius 5 cm is being filled with coffee at a rate of 2 cm\(^3\)/s. How fast is
+the height of the coffee increasing?
+\EndKnitrBlock{exercise}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-31}{}{\label{exr:unnamed-chunk-31} }
+Two cars start moving from the same point. One travels north at 30 mph and the other travels
+west at 50 mph. At what rate is the distance between the cars changing one hour later?
+\EndKnitrBlock{exercise}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-32}{}{\label{exr:unnamed-chunk-32} }
+Sands dumping from a truck to the ground at a constant rate 5 m\(^3\)/s is creating a circular cone. Find a relation between the rate of growth of the radius of the base and the rate of growth of the height of cone, when the the base is 6 m and the heigh is 4 m.
+\EndKnitrBlock{exercise}
+
+\hypertarget{linearizations}{%
+\section{Linearizations}\label{linearizations}}
+
+Let \(f\) be the function differentiable at \(x = a\). The \textbf{linearization} of \(f\) at \(x = a\) is defined to be the function \(L(x)=f'(a)(x-a)+f(a)\). For any value \(b\) near \(a\), the function value \(f(b)\) is approximately the same as \(L(b)\). This method is called \textbf{linear approximation}. The tangent line approximation is fundamental to almost every application of the derivative.
+
+\BeginKnitrBlock{example}
+\protect\hypertarget{exm:unnamed-chunk-33}{}{\label{exm:unnamed-chunk-33} }
+Find the linearization \(L(x)\) of the function \(f(x) = \sqrt[3](x+7)\) at \(x=1\) and use this linearization to estimate \(f(0.99)\). How large is the error?
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{solution}
+\iffalse{} {Solution. } \fi{}
+We first find the slope fr the linearization which is the derivative \(f'(1)\).
+
+\begin{verbatim}
+f:=x->surd(x+7, 3); # or f:=x->(x+7)^(1/3)
+m:=simplify(D(f)(1)); # this is the slope (simplified).
+\end{verbatim}
+
+Now we define the linearization \(L(x)\) and estimate \(f(0.99)\) using \(L(0.99)\).
+
+\begin{verbatim}
+L:=x->m*(x-1)+f(1);
+L(0.99);
+\end{verbatim}
+
+The error may be calculated based on the output of the follow command.
+
+\begin{verbatim}
+f_L:=f(0.99)-L(0.99);
+\end{verbatim}
+
+The results shows that the linear approximation is slightly over estimated with an error less than \(4\times 10^{-7}\).
+\EndKnitrBlock{solution}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-35}{}{\label{exr:unnamed-chunk-35} }
+Find the linear approximation \(L(x)\) of the function \(f(x) = \frac{\sqrt{x}}{x+1}\) at \(x = 1\). Use this linearization to approximate \(f(1.02)\).
+\EndKnitrBlock{exercise}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-36}{}{\label{exr:unnamed-chunk-36} }
+Find the linear approximation \(L(x)\) of the function \(f(x) = \cos(2x)\) at \(x = 0\). Use this linearization to approximate \(f(0.1)\).
+\EndKnitrBlock{exercise}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-37}{}{\label{exr:unnamed-chunk-37} }
+Find the linear approximation \(L(x)\) of the function \(f(x) = \sqrt{x^2+5}\) at \(x = 2\). Use this linearization to approximate \(f(2.03)\).
 \EndKnitrBlock{exercise}
 
 \hypertarget{part-part-2---calculus-ii}{%

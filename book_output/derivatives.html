@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lab 3 Derivatives | Notes on Maple for Calculus</title>
   <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
-  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lab 3 Derivatives | Notes on Maple for Calculus" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Fei Ye" />
 
 
-<meta name="date" content="2019-09-22" />
+<meta name="date" content="2019-10-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -40,6 +40,7 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -47,13 +48,8 @@
 
 
 
-<script async src="https://hypothes.is/embed.js"></script>
 
-<script type="application/json" class="js-hypothesis-config">
-    {
-      "openSidebar": false
-    }
-</script>
+
 
 
 
@@ -94,6 +90,10 @@
 <li class="chapter" data-level="3" data-path="derivatives.html"><a href="derivatives.html"><i class="fa fa-check"></i><b>3</b> Derivatives</a><ul>
 <li class="chapter" data-level="3.1" data-path="derivatives.html"><a href="derivatives.html#derivative-functions"><i class="fa fa-check"></i><b>3.1</b> Derivative Functions</a></li>
 <li class="chapter" data-level="3.2" data-path="derivatives.html"><a href="derivatives.html#calculating-derivatives"><i class="fa fa-check"></i><b>3.2</b> Calculating Derivatives</a></li>
+<li class="chapter" data-level="3.3" data-path="derivatives.html"><a href="derivatives.html#chain-rule"><i class="fa fa-check"></i><b>3.3</b> Chain Rule</a></li>
+<li class="chapter" data-level="3.4" data-path="derivatives.html"><a href="derivatives.html#implicit-differentiation"><i class="fa fa-check"></i><b>3.4</b> Implicit Differentiation</a></li>
+<li class="chapter" data-level="3.5" data-path="derivatives.html"><a href="derivatives.html#related-rates"><i class="fa fa-check"></i><b>3.5</b> Related Rates</a></li>
+<li class="chapter" data-level="3.6" data-path="derivatives.html"><a href="derivatives.html#linearizations"><i class="fa fa-check"></i><b>3.6</b> Linearizations</a></li>
 </ul></li>
 <li class="part"><span><b>Part 2 - Calculus II</b></span></li>
 <li class="chapter" data-level="4" data-path="volume-of-revolution.html"><a href="volume-of-revolution.html"><i class="fa fa-check"></i><b>4</b> Volume of Revolution</a></li>
@@ -279,6 +279,284 @@ Calculate the first derivative for the function <span class="math inline">\(y=\f
 Calculate the <span class="math inline">\(3\)</span>-th derivative for the function <span class="math inline">\(y=\sin x\cos x\)</span> by hand and by Maple. Can you find a formula for the <span class="math inline">\(n\)</span>-th derivative of the function?</p>
 </div>
 
+</div>
+<div id="chain-rule" class="section level2">
+<h2><span class="header-section-number">3.3</span> Chain Rule</h2>
+<p>Let <span class="math inline">\(f(x)\)</span> and <span class="math inline">\(g(x)\)</span> be two differentiable functions. Then the derivative of the composite function <span class="math inline">\(f(g(x))\)</span> can be calculated using the following formula
+<span class="math display">\[
+(f(g(x)))&#39;=f&#39;(g(x))g&#39;(x).
+\]</span>
+Why there is an extra factor <span class="math inline">\(g&#39;(x)\)</span>? This is mainly because <span class="math inline">\(g(x+h)\approx g(x)+g&#39;(x)h\)</span>.
+<!-- More precisely, let
+$$
+\varepsilon(y, t)=\frac{f(y+t)-f(y)}{t}-f'(y).
+$$
+Then $f(y+t)-f(y)=t(f'(y)-\varepsilon(y, t)$, $\varepsilon(y, t)$ is a continuous function in $t$ for each fixed value $y$, and $lim\limits_{t\to 0}\varepsilon(y, t)=0$ for every fixed $y$.
+Now let $y=g(x)$ and $t=g(x+h)-g(x)$. Then
+$$
+\lim_{h\to 0}\frac{f(g(x+h))-f(x)}{h}=\lim_{h\to 0}\frac{g(x+h)-g(x)}{h}(f'(g(x))-\lim_{h\to 0}\varepsilon(g(x), (g(x+h)-g(x)))=f'(g(x))g'(x).
+$$ --></p>
+<p>Now let’s use Maple to understand the chain rule. In Maple, the symbol for composition is <code>@</code>, that is, in Maple the composition <span class="math inline">\(f\circ g\)</span> is given by <code>f@g</code>.</p>
+<p>Since we will evaluate derivative functions, in addition to the command <code>diff(expression, variable)</code>, we will also use <code>D(function)(variable)</code> to find the derivative function. One major difference between those two commands is that <code>D</code> is designed to differentiate functions, whereas <code>diff</code> is for differentiating expressions.</p>
+<div class="figure">
+<img src="figs/D_vs_diff.png" alt="" />
+<p class="caption">A screen shot from Maple shows a comparison between the commands D and diff</p>
+</div>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-14" class="example"><strong>Example 3.2  </strong></span>
+Let <span class="math inline">\(f(x)=\sin x\)</span>, <span class="math inline">\(g(x)=2x\)</span> and <span class="math inline">\(F(x)=2\sin x\cos x\)</span>. Find <span class="math inline">\(f&#39;(g(x))\)</span>, <span class="math inline">\((fg)&#39;(x)\)</span>, <span class="math inline">\((f\circ g)&#39;(x)\)</span> and <span class="math inline">\(F&#39;(x)\)</span>?
+Compare the derivatives and draw a conclusion.</p>
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> 
+We first define the functions.</p>
+<pre><code>f:=x-&gt;sin(x);
+g:=x-&gt;2*x;
+F:=x-&gt;2*sin(x)*cos(x);</code></pre>
+<p>Find the derivative functions</p>
+<pre><code>Der_f_g:=D(f)(g(x)); # f&#39;(g(x))
+Der_fg:=diff(f(x)g(x), x); # (fg)&#39;(x)
+Der_fog:=D(f@g)(x); # (fog)&#39;(x)
+Der_F:=D(F)(x); # F&#39;(x)</code></pre>
+<p>To compare the derivatives, we use the command <code>expand</code> and <code>simplify</code> to rewrite the expressions.</p>
+<pre><code>simplify(expand(Der_f_g));
+simplify(expand(Der_fg));
+simplify(expand(Der_fog));
+simplify(expand(Der_F));</code></pre>
+<p>From the outputs, we see that <span class="math inline">\((f\circ g)&#39;(x)=F&#39;(x)\)</span>. Why they are the same? This is because <span class="math inline">\(\sin(2x)=2\sin x\cos x\)</span>!.</p>
+<div class="figure">
+<img src="figs/chain_rule.png" alt="" />
+<p class="caption">An example about the chain rule solved using Maple</p>
+</div>
+</div>
+
+
+<div class="remark">
+<p> <span class="remark"><em>Remark. </em></span> 
+You may also use <code>D(unapply(f(x)*g(x), x))(x)</code> to calculate the derivative of the product function <span class="math inline">\((fg)(x)=f(x)g(x)\)</span>.</p>
+</div>
+
+<p>The chain rule is almost unavoidable in calculation of derivatives. Sometimes, using chain rule will simplify the calculation.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-17" class="example"><strong>Example 3.3  </strong></span>
+Consider the function <span class="math inline">\(f(x)=\frac{1}{\sin x+\cos x}\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li>Find the derivative function <span class="math inline">\(f&#39;(x)\)</span> using <code>DiffTutor</code>. Which rule of derivative was applied first?</li>
+<li>Find the point where the tangent line of <span class="math inline">\(f\)</span> is horizontal over the domain <span class="math inline">\((-\frac{\pi}{2}, \frac{\pi}{2})\)</span>.</li>
+<li>Find an equation of the tangent line at <span class="math inline">\((0, 1)\)</span>.</li>
+<li>Plot the tangent line and the function together over the domain <span class="math inline">\((-\frac12, \frac12)\)</span>.</li>
+</ol>
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> 
+You may use quotient rule to find the derivative. However, the chain rule may be a better choice because <span class="math inline">\(\frac{1}{\sin x+\cos x}=(\sin x+\cos x)^{-1}\)</span>. Let’s try <code>DiffTutor</code>.</p>
+<pre><code>restart; # Use `restart` to clear the internal memory.
+with(Student[Calculus1]);
+f:=1/(sin(x)+cos(x));
+DiffTutor(f, x);</code></pre>
+<p>You see that the chain rule was applied first.</p>
+<div class="figure">
+<img src="figs/DiffTutor-Chain-Rule-Example.png" alt="" />
+<p class="caption">A example that chain rule was applied first by DiffTutor</p>
+</div>
+<p>To find the points where the tangent line is horizontal, we need to solve the equation <span class="math inline">\(f&#39;(x)=0\)</span>.</p>
+<pre><code>solve(diff(f, x)=0)</code></pre>
+<p>To find the tangent line, we find the derivative <span class="math inline">\(f&#39;(0)\)</span>. One way is to use <code>unapply</code>.</p>
+<pre><code>unapply(diff(f, x), x)(0)</code></pre>
+<p>You may also use <code>eval(expression, variable=value)</code>.</p>
+<pre><code>eval(diff(f, x), x=0)</code></pre>
+<p>Since <span class="math inline">\(f&#39;(0)=-1\)</span>, the tangent line at <span class="math inline">\((0, 1)\)</span> is defined by <span class="math inline">\(y=-x+1\)</span>.</p>
+<pre><code>y:= -x+1</code></pre>
+<p>Now let’s verify visually that <span class="math inline">\(y=-x+1\)</span> is the tangent line.</p>
+<pre><code>plot([f, y], x=-1/2..1/2)</code></pre>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-19" class="exercise"><strong>Exercise 3.6  </strong></span>
+Let <span class="math inline">\(f(x)=\sin x\)</span>, <span class="math inline">\(g(x)=\frac{\pi}{2}-x\)</span> and <span class="math inline">\(h(x)=\cos x\)</span>. Find <span class="math inline">\(f&#39;(g(x))\)</span>, <span class="math inline">\((fg)&#39;(x)\)</span>, <span class="math inline">\((f\circ g)&#39;(x)\)</span> and <span class="math inline">\(h&#39;(x)\)</span>. Compare the derivatives and draw a conclusion.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-20" class="exercise"><strong>Exercise 3.7  </strong></span>
+Let <span class="math inline">\(f(x)=x^2\)</span> and <span class="math inline">\(g(x)=\cos x\)</span> and <span class="math inline">\(h(x)=\frac{1}{2}(\cos(2x)+1)\)</span>. Find <span class="math inline">\(f&#39;(g(x))\)</span>, <span class="math inline">\((fg)&#39;(x)\)</span>, <span class="math inline">\((f\circ g)&#39;(x)\)</span> and <span class="math inline">\(h&#39;(x)\)</span>. Compare the derivatives and draw a conclusion.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-21" class="exercise"><strong>Exercise 3.8  </strong></span>
+Consider the function <span class="math inline">\(F(x)=\sin^2(\frac{\pi(x^2+1)}{3})\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li>Define three functions <span class="math inline">\(f\)</span>, <span class="math inline">\(g\)</span> and <span class="math inline">\(h\)</span> so that <span class="math inline">\(F(x)=f(g(h(x)))\)</span>.</li>
+<li>Describe how the derivative function <span class="math inline">\(F&#39;(x)\)</span> was calculated by <code>DiffTutor</code>.</li>
+<li>Find the point where the tangent line of <span class="math inline">\(F\)</span> is horizontal over the domain <span class="math inline">\((0, 1)\)</span>.</li>
+<li>Find an equation of the tangent line of <span class="math inline">\(F\)</span> at <span class="math inline">\((1, \frac34)\)</span>.</li>
+<li>Plot the tangent line and the function together over the domain <span class="math inline">\((\frac12, \frac32)\)</span>.</li>
+</ol>
+</div>
+
+</div>
+<div id="implicit-differentiation" class="section level2">
+<h2><span class="header-section-number">3.4</span> Implicit Differentiation</h2>
+<p>Implicit differentiation is an application of the chain rule. It provides a way to find the slope of a tangent line of a function implicitly defined by an equation, that is, the dependent variable is not isolated.</p>
+<p>In Maple, there are two useful commands that help us understand implicit defined functions.
+The command <code>implicitplot(equation, domain, range, options)</code> supported by the package <code>plots</code> can be used to graph an implicitly defined function.
+The command <code>implicitdiff(function, dependent variable, independent variable)</code> can be used to find derivatives implicitly.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-22" class="example"><strong>Example 3.4  </strong></span>
+Graph the function <span class="math inline">\(y\)</span> of <span class="math inline">\(x\)</span> defined by <span class="math inline">\(x^2+2y^2=2x+4y\)</span> with it tangent line at <span class="math inline">\((2, 0)\)</span> over the domain <span class="math inline">\((1, 3)\)</span> and range <span class="math inline">\((-1, 2)\)</span>.</p>
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> 
+Let’s first assign an name to the equation. (Run <code>restart</code> first if <code>x</code> and <code>y</code> were previously used an names.)</p>
+<pre><code>restart;
+eqnf:=x^2+2*y^2=2*x+4*y;</code></pre>
+<p>Now let’s find the derivative function, and its value at <span class="math inline">\((0, 1)\)</span>.</p>
+<pre><code>D_eqnf:=implicitdiff(eqnf, y, x);
+slope:=eval(D_eqnf, x=2, y=0);</code></pre>
+<p>Let’s define the tangent line</p>
+<pre><code>tangentline:= y=slope*(x-2)+0</code></pre>
+<p>Now we are ready to plot the function with the tangent line together.</p>
+<pre><code>with(plots);
+implicitplot([eqnf, tangentline], x = 1 .. 3, y = -1 .. 2, color = [red, blue]);</code></pre>
+</div>
+
+
+<div class="remark">
+<p> <span class="remark"><em>Remark. </em></span> 
+Another way, which is more flexible, to put two or more graphs together is to use the command <code>display(graph1, graph2)</code> which is supported by the package <code>plots</code>. For example, the following commands will show two curves in a single picture.</p>
+<pre><code>with(plots):
+g1 := implicitplot(x^2 + y^2 = 1, x = -1 .. 1, y = 0 .. 1):
+g2 := plot(1 - abs(x), x = -1 .. 1):
+display(g1, g2, title = &quot;Two Together&quot;);</code></pre>
+<p>Note that we use colone <code>:</code> at the end of a command to hide the output.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-25" class="exercise"><strong>Exercise 2.6  </strong></span>
+For the ellipse <span class="math inline">\(x^2-xy+y^2=4\)</span>, find the locations of all horizontal tangent lines and plot them implicitly on the same graph as the relation over the interval <span class="math inline">\(-3 \leq x \leq 3\)</span> and <span class="math inline">\(-3 \leq y \leq 3\)</span>.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-26" class="exercise"><strong>Exercise 3.9  </strong></span>
+Find an equation of the line tangent to the curve <span class="math inline">\(x^2 + (x-y)^3 = 9\)</span> at <span class="math inline">\(x=1\)</span>. (You may want to use <code>solve</code> and <code>subs</code> to find the <span class="math inline">\(y\)</span> when <span class="math inline">\(x=1\)</span>).</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-27" class="exercise"><strong>Exercise 3.10  </strong></span>
+Find all points <span class="math inline">\((x, y)\)</span> on the curve of <span class="math inline">\(|x|^{2/3} + |y|^{2/3} = 8\)</span> where lines tangent to the curve at <span class="math inline">\((x, y)\)</span> is perpendicular to the line <span class="math inline">\(x-y=1\)</span>. (Use <code>?solve</code> to learn how to solve a system of equations in Maple).</p>
+</div>
+
+</div>
+<div id="related-rates" class="section level2">
+<h2><span class="header-section-number">3.5</span> Related Rates</h2>
+<p>Stewart suggests the following general steps for solving problems about related rates.</p>
+<ol style="list-style-type: decimal">
+<li>Read the problem carefully. (What quantities are known? What is the unknown rate of change?)</li>
+<li>Draw a diagram if possible.</li>
+<li>Introduce notations. Assign symbols to all quantities that are functions of time.</li>
+<li>Express the given information and the required rate in terms of derivatives.</li>
+<li>Write an equation that relates the various quantities of the problem. If necessary, use the geometry of the situation to eliminate one of the variables by substitution.</li>
+<li>Use the Chain Rule to differentiate both sides of the equation with respect to the shared independent variable, say <span class="math inline">\(t\)</span>.</li>
+<li>Substitute the given information into the resulting equation and solve for the unknown rate.</li>
+</ol>
+<p>In Maple, the quantities that shared by the same independent variable should be written in function notations. See the following example for details.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-28" class="example"><strong>Example 3.5  </strong></span>
+A spherical shaped balloon is inflated at a constant rate 2 cm<span class="math inline">\(^3\)</span>/s. Find the relative rate growth of the diameter when its 10 cm wide.</p>
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> 
+The volume of a sphere is given by <span class="math inline">\(V=\frac{4\pi}{3}r^3\)</span>. In this equation, both <span class="math inline">\(V\)</span> and <span class="math inline">\(r\)</span> are functions of the time <span class="math inline">\(t\)</span>. In Maple, we will use <code>V(t)</code> and <code>r(t)</code> for the volume and the radius.</p>
+<pre><code>eqn_v:=V(t)=4*Pi/3*(r(t))^3</code></pre>
+<p>We know that at a certain time <span class="math inline">\(r(t)=10/2=5\)</span>, and <span class="math inline">\(\frac{\mathrm{d}}{\mathrm{d} t}V(t)|_{r(t)=5}=2\)</span>. What is asked is <span class="math inline">\(\frac{\mathrm{d}}{\mathrm{d} t}r(t)|_{r(t)=5}\)</span>. The two rates are related by the equation obtained by differentiating both side of the equation <code>eqn_v</code>.</p>
+<pre><code>D_eqn_v:=diff(eqn_v, t)</code></pre>
+<p>In the above equation, we need to solve the derivative of <span class="math inline">\(r\)</span> with respect to <span class="math inline">\(t\)</span>. Let’s first simplify notations.</p>
+<pre><code>D_v:=diff(V(t), t);
+D_r:=diff(r(t), t);
+D_r:=solve(D_eqn_v, D_r);</code></pre>
+<p>Now we plugin <code>D_v=2</code> and <code>r(t)=5</code> to find the value for <code>D_r</code>.</p>
+<pre><code>subs({D_v=2, r(t)=5}, D_r) # or using eval(D_r, {D_v=2, r(t)=5})</code></pre>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-30" class="exercise"><strong>Exercise 3.11  </strong></span>
+A cylindrical cup with radius 5 cm is being filled with coffee at a rate of 2 cm<span class="math inline">\(^3\)</span>/s. How fast is
+the height of the coffee increasing?</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-31" class="exercise"><strong>Exercise 3.12  </strong></span>
+Two cars start moving from the same point. One travels north at 30 mph and the other travels
+west at 50 mph. At what rate is the distance between the cars changing one hour later?</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-32" class="exercise"><strong>Exercise 3.13  </strong></span>
+Sands dumping from a truck to the ground at a constant rate 5 m<span class="math inline">\(^3\)</span>/s is creating a circular cone. Find a relation between the rate of growth of the radius of the base and the rate of growth of the height of cone, when the the base is 6 m and the heigh is 4 m.</p>
+</div>
+
+</div>
+<div id="linearizations" class="section level2">
+<h2><span class="header-section-number">3.6</span> Linearizations</h2>
+<p>Let <span class="math inline">\(f\)</span> be the function differentiable at <span class="math inline">\(x = a\)</span>. The <strong>linearization</strong> of <span class="math inline">\(f\)</span> at <span class="math inline">\(x = a\)</span> is defined to be the function <span class="math inline">\(L(x)=f&#39;(a)(x-a)+f(a)\)</span>. For any value <span class="math inline">\(b\)</span> near <span class="math inline">\(a\)</span>, the function value <span class="math inline">\(f(b)\)</span> is approximately the same as <span class="math inline">\(L(b)\)</span>. This method is called <strong>linear approximation</strong>. The tangent line approximation is fundamental to almost every application of the derivative.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-33" class="example"><strong>Example 3.6  </strong></span>
+Find the linearization <span class="math inline">\(L(x)\)</span> of the function <span class="math inline">\(f(x) = \sqrt[3](x+7)\)</span> at <span class="math inline">\(x=1\)</span> and use this linearization to estimate <span class="math inline">\(f(0.99)\)</span>. How large is the error?</p>
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> 
+We first find the slope fr the linearization which is the derivative <span class="math inline">\(f&#39;(1)\)</span>.</p>
+<pre><code>f:=x-&gt;surd(x+7, 3); # or f:=x-&gt;(x+7)^(1/3)
+m:=simplify(D(f)(1)); # this is the slope (simplified).</code></pre>
+<p>Now we define the linearization <span class="math inline">\(L(x)\)</span> and estimate <span class="math inline">\(f(0.99)\)</span> using <span class="math inline">\(L(0.99)\)</span>.</p>
+<pre><code>L:=x-&gt;m*(x-1)+f(1);
+L(0.99);</code></pre>
+<p>The error may be calculated based on the output of the follow command.</p>
+<pre><code>f_L:=f(0.99)-L(0.99);</code></pre>
+<p>The results shows that the linear approximation is slightly over estimated with an error less than <span class="math inline">\(4\times 10^{-7}\)</span>.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-35" class="exercise"><strong>Exercise 3.14  </strong></span>
+Find the linear approximation <span class="math inline">\(L(x)\)</span> of the function <span class="math inline">\(f(x) = \frac{\sqrt{x}}{x+1}\)</span> at <span class="math inline">\(x = 1\)</span>. Use this linearization to approximate <span class="math inline">\(f(1.02)\)</span>.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-36" class="exercise"><strong>Exercise 3.15  </strong></span>
+Find the linear approximation <span class="math inline">\(L(x)\)</span> of the function <span class="math inline">\(f(x) = \cos(2x)\)</span> at <span class="math inline">\(x = 0\)</span>. Use this linearization to approximate <span class="math inline">\(f(0.1)\)</span>.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-37" class="exercise"><strong>Exercise 3.16  </strong></span>
+Find the linear approximation <span class="math inline">\(L(x)\)</span> of the function <span class="math inline">\(f(x) = \sqrt{x^2+5}\)</span> at <span class="math inline">\(x = 2\)</span>. Use this linearization to approximate <span class="math inline">\(f(2.03)\)</span>.</p>
+</div>
+
 
 </div>
 </div>
@@ -296,11 +574,13 @@ Calculate the <span class="math inline">\(3\)</span>-th derivative for the funct
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({

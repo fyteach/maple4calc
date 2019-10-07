@@ -58,7 +58,13 @@ function name:= independent variable -> function rule
 
 ```
 
-Here `:=` means "defined/assigned to be" and `->` may be understood as "plug in".
+Here `:=` means "defined/assigned to be" and `->` means "plug in". The symbol `->` is known as a functional operator in Maple. If an expression is already defined, you can also create a functional operator by using the `unapply(expression, variable)` command.
+
+```{remark}
+
+The assignment operator `:=` to the left-hand side the value of the right-hand side. The left-hand side normally is a name and the right-hand side is a value or expression.
+
+```
 
 ```{example}
 
@@ -71,11 +77,27 @@ $$
 ```
 
 ```{solution}
+
 The function name is $f$, the independent variable is $x$ and the function rule is $\dfrac{\sqrt[3]{x}}{\abs{x+1}}$. So the function can be defined in Maple by the following command.
 
   f:=x->x/(x-1)
 
 Once the function is define, you may find the function value by the command `f(0.999)`.
+
+```
+
+```{example}
+
+A function is defined by $y=\frac{\cos x}{2+\sin x}$. Find the $y$-value when $x=0.002$.
+
+```
+
+```{solution}
+
+We first define an expression and then use the `unapply` command to evaluate the function.
+
+  y:=cos(x)/(2+sin(x))
+  unapply(y, x)(0.002)
 
 ```
 
@@ -89,9 +111,9 @@ $$
 
 ```
 
-```{remark}
+```{exercise}
 
-The assignment operator `:=` to the left-hand side the value of the right-hand side. The left-hand side normally is a name and the right-hand side is a value or expression.
+A function is defined by $y=\frac{\sqrt{x^2-2x+2}}{2-\cos x}$. Find the $y$-value when $x=\pi$.
 
 ```
 
@@ -101,9 +123,7 @@ Maple has many predefined functions which can be used to create new functions. T
 
 <!-- ![Maple functions help page screen shot](figs/Initial-Functions.PNG) -->
 
-
 ![Maple Calculus document page screen shot](figs/Calculus-Doc.png)
-
 
 Some frequently used functions are listed in tables below.
 
@@ -119,10 +139,12 @@ Some frequently used functions are listed in tables below.
 | ------------ | -------------- | --------------- | ----------------- | -------------- | ---------------- |
 | `arcsin()`   | `arccos()`     | `arctan()`      | `arccot()`        | `arcsec()`     | `arccsc()`       |
 
-Another initially know function that we will use is the piecewise function.
+Another initially known function that we will use is the piecewise function.
 
 ```
+
 piecewise(condition1, expression1, condition2, expression2, expression3)
+
 ```
 
 ```{example}
