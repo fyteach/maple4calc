@@ -315,7 +315,7 @@ Let's first assign an name to the equation. (Run `restart` first if `x` and `y` 
 Now let's find the derivative function, and its value at $(0, 1)$.
 
     D_eqnf:=implicitdiff(eqnf, y, x);
-    slope:=eval(D_eqnf, x=2, y=0);
+    slope:=eval(D_eqnf, {x=2, y=0});
 
 Let's define the tangent line
 
@@ -324,7 +324,7 @@ Let's define the tangent line
 Now we are ready to plot the function with the tangent line together.
 
     with(plots);
-    implicitplot([eqnf, tangentline], x = 1 .. 3, y = -1 .. 2, color = [red, blue]);
+    implicitplot([eqnf, tangentline], x=1..3, y=-1..2, color=[red, blue]);
 
 ```
 
@@ -333,9 +333,9 @@ Now we are ready to plot the function with the tangent line together.
 Another way, which is more flexible, to put two or more graphs together is to use the command `display(graph1, graph2)` which is supported by the package `plots`. For example, the following commands will show two curves in a single picture.
 
     with(plots):
-    g1 := implicitplot(x^2 + y^2 = 1, x = -1 .. 1, y = 0 .. 1):
-    g2 := plot(1 - abs(x), x = -1 .. 1):
-    display(g1, g2, title = "Two Together");
+    g1 := implicitplot(x^2+y^2=1, x=-1..1, y=0..1):
+    g2 := plot(1-abs(x), x=-1..1):
+    display(g1, g2, title="Two Together");
 
 Note that we use colone `:` at the end of a command to hide the output.
 

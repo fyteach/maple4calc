@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Notes on Maple for Calculus</title>
+  <title>Topic 9 Techniques of Integration | Notes on Maple for Calculus</title>
   <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Notes on Maple for Calculus" />
+  <meta property="og:title" content="Topic 9 Techniques of Integration | Notes on Maple for Calculus" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Notes on Maple for Calculus" />
+  <meta name="twitter:title" content="Topic 9 Techniques of Integration | Notes on Maple for Calculus" />
   
   <meta name="twitter:description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="basics-in-maple.html"/>
+<link rel="prev" href="calculus-of-inverse-functions.html"/>
+<link rel="next" href="further-applications-of-integration.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -164,31 +164,161 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Notes on Maple for Calculus</h1>
-<p class="author"><em>Fei Ye</em></p>
-<p class="date"><em>2019-10-07</em></p>
-</div>
-<div id="introduction" class="section level1 unnumbered">
-<h1>Introduction</h1>
-<p>This is a book written for Maple labs for Calculus I and II. The companion textbook is Stewart’s Calculus book.</p>
-<p>Maple 2018 was used for Calculus II and Maple 2019 was used for Calculus I.</p>
-<p>The resource can be found at <a href="https://github.com/fyemath/maple4calc">https://github.com/fyemath/maple4calc</a>.</p>
-<p>Comments and suggestions are very welcome.</p>
-<p>This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
-<div class="figure">
-<img src="figs/by-nc-sa.png" alt="" />
-<p class="caption">by-nc-sa license icon</p>
+<div id="techniques-of-integration" class="section level1">
+<h1><span class="header-section-number">Topic 9</span> Techniques of Integration</h1>
+<!-- ## Integration by Parts -->
+<div id="integrations-of-trigonometric-functions" class="section level2">
+<h2><span class="header-section-number">9.1</span> Integrations of trigonometric functions</h2>
+<p>When evaluating integrations of trigonometric functions, one idea is to reduce the total degree (power) of trigonometric functions using trigonometric identities.</p>
+<p>In Maple, you may use the command <code>combine</code> to rewrite the expression.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-122" class="example"><strong>Example 9.1  </strong></span>
+Rewrite <span class="math inline">\(\cos^4x\)</span> into an expression with single terms and evaluate the integral <span class="math inline">\(\int \cos^4x\mathrm{d} x\)</span>.</p>
 </div>
 
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> <br></p>
+<pre><code># combine terms into a single term
+combine((cos(x))^4)
+# use DiffTutor to evaluate the integral of the resulting function.
+with(Student[Calculus1])
+IntTutor(%, x)</code></pre>
+</div>
+
+<p>You may compare the above solution with the solution given by <code>IntTutor((cos(x))^4, x)</code>.</p>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-124" class="exercise"><strong>Exercise 9.1  </strong></span>
+Evaluate the integral
+<span class="math display">\[
+\int \tan ^{5} x \mathrm{d} x
+\]</span></p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-125" class="exercise"><strong>Exercise 9.2  </strong></span>
+Evaluate the integral
+<span class="math display">\[
+\int \sin 5 x \sin^2 x \mathrm{d} x
+\]</span></p>
+</div>
+
+</div>
+<div id="trigonometric-substitution" class="section level2">
+<h2><span class="header-section-number">9.2</span> Trigonometric Substitution</h2>
+<p>Surely, you may learn some trigonometric substitution tricks using <code>IntTutor</code>.</p>
+<p>Here I want to introduce another useful command which when integrating functions, we may need to complete a square and then do a substitution. In Maple, we can complete squares using the command <code>CompleteSquare(f, x)</code> which supported by the package <code>Student[Precalculus]</code>.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-126" class="example"><strong>Example 9.2  </strong></span>
+Evaluate the integral
+<span class="math display">\[
+\int\dfrac{1}{x^2+x+1} \mathrm{d} x.
+\]</span></p>
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> <br></p>
+<p>We first complete the square for the denominator.</p>
+<pre><code>#load package Student[Precalculus]
+with(Student[Precalculus])
+#Complete square for the denominator
+CompleteSquare(x^2+x+1, x)</code></pre>
+<p>Now you may try <code>DiffTutor</code> and/or evaluate it by hand.</p>
+<pre><code>#load package Student[Calculus1]
+with(Student[Calculus1])
+DiffTutor(1/%, x)</code></pre>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-128" class="exercise"><strong>Exercise 9.3  </strong></span>
+Evaluate the integral
+<span class="math display">\[
+\int \sqrt{3+2 x-x^{2}} \mathrm{d} x
+\]</span></p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-129" class="exercise"><strong>Exercise 9.4  </strong></span>
+Evaluate the integral
+<span class="math display">\[
+\int_{0}^{\pi / 2} \frac{\cos t}{\sqrt{1+\sin ^{2} t}} \mathrm{d} t
+\]</span></p>
+</div>
+
+</div>
+<div id="integrations-of-rational-functions-by-partial-fractions" class="section level2">
+<h2><span class="header-section-number">9.3</span> Integrations of Rational Functions by Partial Fractions</h2>
+<p>In Maple, we can factor a polynomial using the command <code>factor(polynomial)</code> or find partial fraction decomposition using <code>convert(function, parfrac)</code>.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-130" class="example"><strong>Example 9.3  </strong></span>
+Find the sum of partial fractions for the rational function
+<span class="math display">\[
+f(x)=\frac{x^3+4x+3}{x^4+5x^2+4}
+\]</span></p>
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> <br>
+This can be done easily in Maple:</p>
+<pre><code># use the command convert
+convert((x^3+4*x+3)/(x^4+5x^2+4), parfrac)</code></pre>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-132" class="exercise"><strong>Exercise 9.5  </strong></span>
+Find the sum of partial fractions for the rational function
+<span class="math display">\[
+f(x)=\frac{x^{4}}{\left(x^{2}-x+1\right)\left(x^{2}+2\right)^{2}}.
+\]</span></p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-133" class="exercise"><strong>Exercise 9.6  </strong></span>
+Find the sum of partial fraction and evaluate the integral</p>
+<p><span class="math display">\[
+\int \frac{2}{3x^{2}+2x-1} \mathrm{d} x
+\]</span></p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-134" class="exercise"><strong>Exercise 9.7  </strong></span>
+Find the sum of partial fraction and evaluate the integral</p>
+<p><span class="math display">\[
+\int \frac{x^{3}+6 x-2}{x^{4}+6 x^{2}} \mathrm{d} x
+\]</span></p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-135" class="exercise"><strong>Exercise 9.8  </strong></span>
+Find the sum of partial fraction and evaluate the integral</p>
+<p><span class="math display">\[
+\int \frac{\sin x}{\cos ^{2} x-3 \cos x} d x
+\]</span></p>
+</div>
+
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="basics-in-maple.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="calculus-of-inverse-functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="further-applications-of-integration.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

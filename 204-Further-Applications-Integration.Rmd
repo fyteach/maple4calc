@@ -1,4 +1,6 @@
-# Arc Lengths and Areas of Surfaces of Revolutions
+# Further Applications of Integration
+
+## Arc Lengths and Areas of Surfaces of Revolutions
 
 - **Arc length:**
 

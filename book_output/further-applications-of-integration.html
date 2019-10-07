@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Notes on Maple for Calculus</title>
+  <title>Topic 10 Further Applications of Integration | Notes on Maple for Calculus</title>
   <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Notes on Maple for Calculus" />
+  <meta property="og:title" content="Topic 10 Further Applications of Integration | Notes on Maple for Calculus" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Notes on Maple for Calculus" />
+  <meta name="twitter:title" content="Topic 10 Further Applications of Integration | Notes on Maple for Calculus" />
   
   <meta name="twitter:description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="basics-in-maple.html"/>
+<link rel="prev" href="techniques-of-integration.html"/>
+<link rel="next" href="infinite-sequences-and-series.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -164,31 +164,132 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Notes on Maple for Calculus</h1>
-<p class="author"><em>Fei Ye</em></p>
-<p class="date"><em>2019-10-07</em></p>
-</div>
-<div id="introduction" class="section level1 unnumbered">
-<h1>Introduction</h1>
-<p>This is a book written for Maple labs for Calculus I and II. The companion textbook is Stewart’s Calculus book.</p>
-<p>Maple 2018 was used for Calculus II and Maple 2019 was used for Calculus I.</p>
-<p>The resource can be found at <a href="https://github.com/fyemath/maple4calc">https://github.com/fyemath/maple4calc</a>.</p>
-<p>Comments and suggestions are very welcome.</p>
-<p>This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
-<div class="figure">
-<img src="figs/by-nc-sa.png" alt="" />
-<p class="caption">by-nc-sa license icon</p>
+<div id="further-applications-of-integration" class="section level1">
+<h1><span class="header-section-number">Topic 10</span> Further Applications of Integration</h1>
+<div id="arc-lengths-and-areas-of-surfaces-of-revolutions" class="section level2">
+<h2><span class="header-section-number">10.1</span> Arc Lengths and Areas of Surfaces of Revolutions</h2>
+<ul>
+<li><p><strong>Arc length:</strong></p>
+<p>The length <span class="math inline">\(L\)</span> of an arc: <span class="math inline">\(y=f(x)\)</span>, <span class="math inline">\(a\leq x \leq b\)</span> is
+<span class="math display">\[
+L=\int_a^b\sqrt{1+\left(\frac{\mathrm{d} y}{\mathrm{d} x}\right)^2}~\mathrm{d} x=\int_{f(a)}^{f(b)}\sqrt{1+\left(\frac{\mathrm{d} y}{\mathrm{d} x}\right)^2}~\mathrm{d} y.
+\]</span></p></li>
+<li><p><strong>Surface area of a revolution</strong></p>
+<p>The area <span class="math inline">\(S\)</span> of the surface rotating an arc: <span class="math inline">\(y=f(x)\)</span>, <span class="math inline">\(a\leq x \leq b\)</span> about the <span class="math inline">\(x\)</span>-axis is
+<span class="math display">\[
+S=2\pi\int r\mathrm{d} s = 2\pi\int y\mathrm{d} s,
+\]</span>
+and about the <span class="math inline">\(y\)</span>-axis is
+<span class="math display">\[
+S=2\pi\int r\mathrm{d} s = 2\pi\int x\mathrm{d} s,
+\]</span>
+where
+<span class="math display">\[\mathrm{d} s=\sqrt{1+\left(\frac{\mathrm{d} y}{\mathrm{d} x}\right)^2}~\mathrm{d} x = \sqrt{1+\left(\frac{\mathrm{d} y}{\mathrm{d} x}\right)^2}~\mathrm{d} y.
+\]</span>
+The integral limits depend on whether you use <span class="math inline">\(\mathrm{d} x\)</span> or <span class="math inline">\(\mathrm{d}y\)</span> in the integral.</p></li>
+</ul>
+<p>In Maple, the package <code>Student[Calculus1]</code> provides commands to investigate arc length and surface area of revolutions:
+<code>ArcLength(f(x), x = a..b, opts)}</code>
+<code>SurfaceOfRevolution(f(x), x = a..b, opts)}</code></p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-136" class="example"><strong>Example 10.1  </strong></span>
+Set up an integral and evaluate the integral for the length of the curve defined by
+<span class="math display">\[
+f(x)=\sqrt{x},\qquad 1\leq x\leq 4.
+\]</span>
+Plot <span class="math inline">\(f(x)\)</span> together with the arc length function in the same coordinate system.</p>
 </div>
 
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> <br></p>
+<pre><code># Load the package
+
+with(Student[Calculus1])
+
+# Set up an integral
+
+ArcLength(sqrt(x),x=1..4,output=integral)
+
+# Evaluate the integral
+
+ArcLength(sqrt(x),x=1..4)
+
+# Plot the function and the arc length function
+
+ArcLength(sqrt(x), x=1..4, output=plot)</code></pre>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-138" class="example"><strong>Example 10.2  </strong></span>
+Set up an integral and evaluate the integral for the area of the surface obtained by rotating the curve defined by
+<span class="math display">\[
+f(x)=\sqrt{x},\qquad 1\leq x\leq 4
+\]</span>
+about the <span class="math inline">\(y\)</span>-axis. Plot the surface of the revolution.</p>
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> <br></p>
+<pre><code># Load the package (skip if the package was already loaded)
+
+with(Student[Calculus1])
+
+# Plot the surface
+
+SurfaceOfRevolution(sqrt(x), x=1..4, output=plot, axis=vertical)
+
+# Set up an integral
+
+SurfaceOfRevolution(sqrt(x),x=1..4,output=integral, axis=vertical)
+
+# Evaluate the integral
+
+SurfaceOfRevolution(sqrt(x),x=1..4, axis=vertical)</code></pre>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-140" class="exercise"><strong>Exercise 10.1  </strong></span>
+Set up an integral and evaluate the integral for the length of the arc defined by
+<span class="math display">\[
+f(x)=\ln x, \qquad 1\leq x\leq 2.
+\]</span>
+Plot <span class="math inline">\(f(x)\)</span> together with the arc length function in the same coordinate system.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-141" class="exercise"><strong>Exercise 10.2  </strong></span>
+Plot the surface obtained by rotating the curve defined by
+<span class="math display">\[
+f(x)=\frac{\cos x}{x}, \qquad 0\leq x\leq 4\pi
+\]</span>
+about the <span class="math inline">\(y\)</span>-axis. Set up an integral for the area of the surface.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-142" class="exercise"><strong>Exercise 10.3  </strong></span>
+Find the area of the surface obtained by rotating the curve defined by
+<span class="math display">\[
+f(x)=\sqrt{1+x^2},\qquad 0\leq x\leq 3.
+\]</span></p>
+</div>
+
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="basics-in-maple.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="techniques-of-integration.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="infinite-sequences-and-series.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

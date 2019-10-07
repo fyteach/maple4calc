@@ -1,7 +1,5 @@
 # Basics in Maple
 
-This is a book written for Maple labs for Calculus I and II.
-
 ## What should I do after I opened Maple
 
 Once you opened Maple, you will see the following Maple Start document.
@@ -35,7 +33,9 @@ If you click the `Calculus` icon on the Start page and click `OK`, you will see 
 The first thing to know when learn something new is where and how to get help. In Maple, you may simply type
 
 ```
+
 ?keyword
+
 ```
 
 to open a help page (a new window).
@@ -43,9 +43,9 @@ to open a help page (a new window).
 For example, the command `?operators` will lead you to descriptions of arithmetic operators in Maple.
 
 | | addition | subtraction | multiplication | division | exponentiation |
-| |---|---|---|---|---|
+|:---:|:---:|:---:|:---:|:---:|:---:|
 | Maple Operators | `+` | `-` | `*` | `/` | `^` |
-| Example | $x+2$ | $a-b$ | $2x$ | $\frac pq$ | $b^5$ |
+| In writing | $x+2$ | $a-b$ | $2x$ | $\dfrac pq$ | $b^5$ |
 | In Maple| `x+2` | `a-b` | `2*x` | `p/q` | `b^5` |
 
 ## How to define a function
@@ -58,13 +58,7 @@ function name:= independent variable -> function rule
 
 ```
 
-Here `:=` means "defined/assigned to be" and `->` means "plug in". The symbol `->` is known as a functional operator in Maple. If an expression is already defined, you can also create a functional operator by using the `unapply(expression, variable)` command.
-
-```{remark}
-
-The assignment operator `:=` to the left-hand side the value of the right-hand side. The left-hand side normally is a name and the right-hand side is a value or expression.
-
-```
+Here `:=` means "defined/assigned to be" and `->` may be understood as "plug in".
 
 ```{example}
 
@@ -77,27 +71,11 @@ $$
 ```
 
 ```{solution}
+The function name is $f$, the independent variable is $x$ and the function rule is $\dfrac{x}{x-1}$. So the function can be defined in Maple by the following command.
 
-The function name is $f$, the independent variable is $x$ and the function rule is $\dfrac{\sqrt[3]{x}}{\abs{x+1}}$. So the function can be defined in Maple by the following command.
-
-  f:=x->x/(x-1)
+    f:=x->x/(x-1)
 
 Once the function is define, you may find the function value by the command `f(0.999)`.
-
-```
-
-```{example}
-
-A function is defined by $y=\frac{\cos x}{2+\sin x}$. Find the $y$-value when $x=0.002$.
-
-```
-
-```{solution}
-
-We first define an expression and then use the `unapply` command to evaluate the function.
-
-  y:=cos(x)/(2+sin(x))
-  unapply(y, x)(0.002)
 
 ```
 
@@ -111,9 +89,9 @@ $$
 
 ```
 
-```{exercise}
+```{remark}
 
-A function is defined by $y=\frac{\sqrt{x^2-2x+2}}{2-\cos x}$. Find the $y$-value when $x=\pi$.
+The assignment operator `:=` to the left-hand side the value of the right-hand side. The left-hand side normally is a name and the right-hand side is a value or expression.
 
 ```
 
@@ -121,25 +99,23 @@ A function is defined by $y=\frac{\sqrt{x^2-2x+2}}{2-\cos x}$. Find the $y$-valu
 
 Maple has many predefined functions which can be used to create new functions. To see all initially known mathematical functions in maple, you may use the help command `?functions` and click the hyperlinked "initial functions" in the description shown in the new window.
 
-<!-- ![Maple functions help page screen shot](figs/Initial-Functions.PNG) -->
-
-![Maple Calculus document page screen shot](figs/Calculus-Doc.png)
+![Maple function help page screenshot](figs/Initial-Functions.PNG)
 
 Some frequently used functions are listed in tables below.
 
 | absolute value | square root | n-th root  | natural exponential | logarithmic                |
-| -------------- | ----------- | ---------- | ------------------- | -------------------------- |
+|:--------------:|:-----------:|:----------:|:-------------------:|:--------------------------:|
 | `abs()`        | `sqrt()`    | `surd(,n)` | `exp()`             | `log()`,`log[b]()`, `ln()` |
 
 | sine    | cosine  | tangent | cotangent | secant  | cosecant |
-| ------- | ------- | ------- | --------- | ------- | -------- |
+|:-------:|:-------:|:-------:|:---------:|:-------:|:--------:|
 | `sin()` | `cos()` | `tan()` | `cot()`   | `sec()` | `csc()`  |
 
-| inverse sine | inverse cosine | inverse tangent | inverst cotangent | inverse secant | inverse cosecant |
-| ------------ | -------------- | --------------- | ----------------- | -------------- | ---------------- |
+| inverse sine | inverse cosine | inverse tangent | inverse cotangent | inverse secant | inverse cosecant |
+|:-------:|:-------:|:-------:|:---------:|:-------:|:--------:|
 | `arcsin()`   | `arccos()`     | `arctan()`      | `arccot()`        | `arcsec()`     | `arccsc()`       |
 
-Another initially known function that we will use is the piecewise function.
+Another initially know function that we will use is the piecewise function.
 
 ```
 
@@ -163,9 +139,11 @@ $$
 ```
 
 ```{solution}
-The function can be defined by the following command
 
-  pwf:=x->piecewise(x<-1, sqrt(sin(x)), x>=-1 and x<Pi, surd(x, 3)/abs(x+2), ln(exp(x)+2))
+The function can be defined by the following command.
+
+    pwf:=x->piecewise(x<-1, sqrt(sin(x)), x>=-1 and x<Pi,
+    surd(x, 3)/abs(x+2), ln(exp(x)+2))
 
 The value $pwf(3)$ can be obtained by the command `pwf(3)`.
 
@@ -178,7 +156,7 @@ Define the following function in Maple and evaluate $q(1)$
 $$
 q(x) =
 \begin{cases}
-  \abs{x-2}/\sqrt{x} & x>\dfrac{pi}{2}\\
+  |x-2|/\sqrt{x} & x>\dfrac{pi}{2}\\
   (x-1)\tan(x) & 0\leq x< \dfrac{\pi}{2}\\
   \sqrt[5]{\log_2(1+e^x)} & \text{otherwise}
 \end{cases}
@@ -217,7 +195,7 @@ Plot the functions $f(x)=x^2$ in red and $l(x)=2x+1$ in blue over the domain $[-
 
 Here are the command and the output
 
-  plot([x^2, 2*x+1], x=-1..2, color=[red, blue])
+    plot([x^2, 2*x+1], x=-1..2, color=[red, blue])
 
 ![Screen shot of the output generated by plotting of two function](figs/First-Plot-Example.png)
 

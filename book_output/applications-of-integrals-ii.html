@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Notes on Maple for Calculus</title>
+  <title>Topic 7 Applications of Integrals II | Notes on Maple for Calculus</title>
   <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Notes on Maple for Calculus" />
+  <meta property="og:title" content="Topic 7 Applications of Integrals II | Notes on Maple for Calculus" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Notes on Maple for Calculus" />
+  <meta name="twitter:title" content="Topic 7 Applications of Integrals II | Notes on Maple for Calculus" />
   
   <meta name="twitter:description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="basics-in-maple.html"/>
+<link rel="prev" href="application-of-integrals-i.html"/>
+<link rel="next" href="calculus-of-inverse-functions.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -164,31 +164,72 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Notes on Maple for Calculus</h1>
-<p class="author"><em>Fei Ye</em></p>
-<p class="date"><em>2019-10-07</em></p>
-</div>
-<div id="introduction" class="section level1 unnumbered">
-<h1>Introduction</h1>
-<p>This is a book written for Maple labs for Calculus I and II. The companion textbook is Stewart’s Calculus book.</p>
-<p>Maple 2018 was used for Calculus II and Maple 2019 was used for Calculus I.</p>
-<p>The resource can be found at <a href="https://github.com/fyemath/maple4calc">https://github.com/fyemath/maple4calc</a>.</p>
-<p>Comments and suggestions are very welcome.</p>
-<p>This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
-<div class="figure">
-<img src="figs/by-nc-sa.png" alt="" />
-<p class="caption">by-nc-sa license icon</p>
+<div id="applications-of-integrals-ii" class="section level1">
+<h1><span class="header-section-number">Topic 7</span> Applications of Integrals II</h1>
+<div id="volume-of-revolution" class="section level2">
+<h2><span class="header-section-number">7.1</span> Volume of Revolution</h2>
+<p>In terms of definite integrals, the volume of a solid obtained by rotating a region about the <span class="math inline">\(x\)</span>-axis can be calculated by
+<span class="math display">\[\int_a^b \pi (r_1(x)^2 - r_2(x)^2) \mathrm{d} x \qquad \text{disk/washer method},\]</span>
+or
+<span class="math display">\[\int_a^b 2\pi r(y) h(y) \mathrm{d} y \qquad \text{shell method method},\]</span></p>
+<p>where <span class="math inline">\(r_1(x)\)</span>, <span class="math inline">\(r_2(x)\)</span> and <span class="math inline">\(r(x)\)</span> represents the radius and <span class="math inline">\(h(x)\)</span> represents the height of a cylindrical shell.</p>
+<p>In practice, it’s better to recognize the shape of a cross section, find the volume of a slice of the solid and then set up the integral.</p>
+<p>In the following, you will see some tools/commands from Maple which are very helpful to calculate the volume of a solid.</p>
+<p>In Maple, the following command, supported by the package <code>Student[Calculus1]</code>, can be used to get the graph, the integral and the volume of the solid obtained by rotation the region bounded by <span class="math inline">\(f(x)\)</span>, <span class="math inline">\(g(x)\)</span>, <span class="math inline">\(x=a\)</span> and <span class="math inline">\(x=b\)</span>.</p>
+<pre class="maple"><code>VolumeOfRevolution(f(x), g(x), x = a..b, opts)</code></pre>
+<p>To learn what options does the command <code>VolumeOfRevolution</code> have, you may type</p>
+<pre class="maple"><code>?VolumeOfRevolution</code></pre>
+<p>in the Math mode and hit enter. You will see the help page.</p>
+<p><img src="figs/VolOfRev-help-page.png" /></p>
+
+<div class="example">
+<span id="exm:unnamed-chunk-81" class="example"><strong>Example 7.1  </strong></span>Show the solid obtained by rotating the region bounded by <span class="math inline">\(y=x^2\)</span> and <span class="math inline">\(y=x\)</span> about <span class="math inline">\(y\)</span>-axis. Set up an integral for the volume. Find the volume.
 </div>
 
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> <br></p>
+<p>#Load the package</p>
+<pre><code>with(Student[Calculus1])</code></pre>
+<p>#Show the solid</p>
+<pre><code>VolumeOfRevolution(x^2, x, x = 0 .. 1, axis = vertical, output = plot)</code></pre>
+<p>#Set up an integral</p>
+<pre><code>VolumeOfRevolution(x^2, x, x = 0 .. 1, axis = vertical, output = integral)</code></pre>
+<p>#Find the volume</p>
+<pre><code>VolumeOfRevolution(x^2, x, x = 0 .. 1, axis = vertical, output = value)</code></pre>
+<p>The outputs in Maple can be seen in the following picture</p>
+<img src="figs/VolOfRev-Example1.png" />
+</div>
+
+
+<div class="remark">
+<p> <span class="remark"><em>Remark. </em></span> 1. If you change the function to <code>VolumeOfRevolutionTutor</code>, you will see an interactive popup windows which does exactly the same thing.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>If the rotation axis is not an axis of the coordinate system, you need add the option <code>distancefromaxis = numeric</code> into the function. For example, if in the above example, the rotation is about <span class="math inline">\(y=-2\)</span>, then the Maple command should be the following</p>
+<pre><code> VolumeOfRevolution(x^2, x, x = 0 .. 1, axis = vertical, distancefromaxis = -2, output = integral)</code></pre></li>
+</ol>
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-84" class="exercise"><strong>Exercise 7.1  </strong></span>Find the volume of the solid obtained by rotating the region bounded by <span class="math inline">\(y=x^3\)</span>, <span class="math inline">\(x=0\)</span>, <span class="math inline">\(y=1\)</span> about <span class="math inline">\(y\)</span>-axis
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-85" class="exercise"><strong>Exercise 7.2  </strong></span>Find the volume of the solid obtained by rotating the region bounded by <span class="math inline">\(y=x^3\)</span>, <span class="math inline">\(y=0\)</span>, <span class="math inline">\(x=1\)</span> about (a) <span class="math inline">\(y=0\)</span>, and (b) <span class="math inline">\(x=2\)</span>.
+</div>
+
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="basics-in-maple.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="application-of-integrals-i.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="calculus-of-inverse-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

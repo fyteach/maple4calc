@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.27)  6 OCT 2019 23:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.27)  7 OCT 2019 15:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -564,197 +564,7 @@ Package: amsthm 2017/10/31 v2.20.4
 \c@definition=\count129
 \c@example=\count130
 \c@exercise=\count131
-(./maple-notes.aux
-
-LaTeX Warning: Label `exm:unnamed-chunk-1' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-3' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-9' multiply defined.
-
-
-LaTeX Warning: Label `exm:unnamed-chunk-1' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-3' multiply defined.
-
-
-LaTeX Warning: Label `exm:unnamed-chunk-6' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-10' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-25' multiply defined.
-
-
-LaTeX Warning: Label `exm:unnamed-chunk-1' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-4' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-5' multiply defined.
-
-
-LaTeX Warning: Label `exm:unnamed-chunk-1' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-5' multiply defined.
-
-
-LaTeX Warning: Label `exm:unnamed-chunk-1' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-3' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-4' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-5' multiply defined.
-
-
-LaTeX Warning: Label `exm:unnamed-chunk-6' multiply defined.
-
-
-LaTeX Warning: Label `exm:unnamed-chunk-8' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-10' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-11' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-12' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-13' multiply defined.
-
-
-LaTeX Warning: Label `exm:unnamed-chunk-1' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-3' multiply defined.
-
-
-LaTeX Warning: Label `exm:unnamed-chunk-1' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-3' multiply defined.
-
-
-LaTeX Warning: Label `exm:unnamed-chunk-4' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-8' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-9' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-10' multiply defined.
-
-
-LaTeX Warning: Label `exm:unnamed-chunk-1' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-3' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-4' multiply defined.
-
-
-LaTeX Warning: Label `exm:unnamed-chunk-5' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-7' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-8' multiply defined.
-
-
-LaTeX Warning: Label `exm:unnamed-chunk-1' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-3' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-4' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-5' multiply defined.
-
-
-LaTeX Warning: Label `exm:unnamed-chunk-1' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-3' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-4' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-5' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-6' multiply defined.
-
-
-LaTeX Warning: Label `exm:unnamed-chunk-1' multiply defined.
-
-
-LaTeX Warning: Label `exm:unnamed-chunk-3' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-5' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-6' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-7' multiply defined.
-
-
-LaTeX Warning: Label `exm:unnamed-chunk-5' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-7' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-8' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-9' multiply defined.
-
-
-LaTeX Warning: Label `exm:unnamed-chunk-1' multiply defined.
-
-
-LaTeX Warning: Label `exm:unnamed-chunk-3' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-5' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-6' multiply defined.
-
-
-LaTeX Warning: Label `exm:unnamed-chunk-1' multiply defined.
-
-
-LaTeX Warning: Label `exm:unnamed-chunk-3' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-5' multiply defined.
-
-
-LaTeX Warning: Label `exr:unnamed-chunk-6' multiply defined.
-
-)
+(./maple-notes.aux)
 \openout1 = `maple-notes.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 107.
@@ -24338,43 +24148,43 @@ ists, duplicates ignored
 }] [2
 
 ] (./maple-notes.toc
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 2.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 3.
 (c:/Users/Fei/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 2.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 3.
 (c:/Users/Fei/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 2.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 3.
 (c:/Users/Fei/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 2.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 3.
 (c:/Users/Fei/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 2.
+(Font)              <10> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 2.
+(Font)              <7> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 2.
-LaTeX Font Info:    Try loading font information for U+msa on input line 2.
+(Font)              <5> on input line 3.
+LaTeX Font Info:    Try loading font information for U+msa on input line 3.
 (c:/Users/Fei/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 (c:/Users/Fei/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 2.
+LaTeX Font Info:    Try loading font information for U+msb on input line 3.
 (c:/Users/Fei/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 (c:/Users/Fei/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 12.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 13.
 (c:/Users/Fei/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [3])
@@ -24382,773 +24192,354 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 \openout4 = `maple-notes.toc'.
 
 [4]
+<figs/by-nc-sa.png, id=323, 97.0827pt x 33.9669pt>
+File: figs/by-nc-sa.png Graphic file (type png)
+<use figs/by-nc-sa.png>
+Package pdftex.def Info: figs/by-nc-sa.png  used on input line 130.
+(pdftex.def)             Requested size: 97.0854pt x 33.96783pt.
+[5
+
+ <./figs/by-nc-sa.png>] [6
+
+]
 Chapter 1.
-<figs/Maple-Start.png, id=242, 1305.63255pt x 706.33698pt>
+<figs/Maple-Start.png, id=338, 1305.63255pt x 706.33698pt>
 File: figs/Maple-Start.png Graphic file (type png)
 <use figs/Maple-Start.png>
-Package pdftex.def Info: figs/Maple-Start.png  used on input line 126.
+Package pdftex.def Info: figs/Maple-Start.png  used on input line 144.
 (pdftex.def)             Requested size: 344.99486pt x 186.63951pt.
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 133.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 151.
 
 (c:/Users/Fei/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<figs/Maple-New-Doc.png, id=244, 1306.99614pt x 708.38235pt>
+<figs/Maple-New-Doc.png, id=339, 1306.99614pt x 708.38235pt>
 File: figs/Maple-New-Doc.png Graphic file (type png)
 <use figs/Maple-New-Doc.png>
-Package pdftex.def Info: figs/Maple-New-Doc.png  used on input line 138.
+Package pdftex.def Info: figs/Maple-New-Doc.png  used on input line 156.
 (pdftex.def)             Requested size: 344.9962pt x 186.98541pt.
-<figs/Text-Math-Mode.png, id=245, 459.5281pt x 216.1282pt>
+<figs/Text-Math-Mode.png, id=340, 459.5281pt x 216.1282pt>
 File: figs/Text-Math-Mode.png Graphic file (type png)
 <use figs/Text-Math-Mode.png>
-Package pdftex.def Info: figs/Text-Math-Mode.png  used on input line 146.
+Package pdftex.def Info: figs/Text-Math-Mode.png  used on input line 164.
 (pdftex.def)             Requested size: 345.01685pt x 162.27054pt.
-<figs/Home-reopen-start-page.png, id=246, 534.52528pt x 387.25812pt>
+<figs/Home-reopen-start-page.png, id=341, 534.52528pt x 387.25812pt>
 File: figs/Home-reopen-start-page.png Graphic file (type png)
 <use figs/Home-reopen-start-page.png>
-Package pdftex.def Info: figs/Home-reopen-start-page.png  used on input line 16
-2.
+Package pdftex.def Info: figs/Home-reopen-start-page.png  used on input line 18
+0.
 (pdftex.def)             Requested size: 345.01492pt x 249.95978pt.
-<figs/Start-Page-Calculus.png, id=247, 950.41869pt x 515.43509pt>
+<figs/Start-Page-Calculus.png, id=342, 950.41869pt x 515.43509pt>
 File: figs/Start-Page-Calculus.png Graphic file (type png)
 <use figs/Start-Page-Calculus.png>
-Package pdftex.def Info: figs/Start-Page-Calculus.png  used on input line 171.
+Package pdftex.def Info: figs/Start-Page-Calculus.png  used on input line 189.
 (pdftex.def)             Requested size: 344.99289pt x 187.098pt.
-<figs/Calculus-Doc.png, id=248, 955.87302pt x 537.93425pt>
+<figs/Calculus-Doc.png, id=343, 955.87302pt x 537.93425pt>
 File: figs/Calculus-Doc.png Graphic file (type png)
 <use figs/Calculus-Doc.png>
-Package pdftex.def Info: figs/Calculus-Doc.png  used on input line 179.
+Package pdftex.def Info: figs/Calculus-Doc.png  used on input line 197.
 (pdftex.def)             Requested size: 345.00374pt x 194.15688pt.
-[5
 
-] [6 <./figs/Maple-Start.png> <./figs/Maple-New-Doc.png>] [7 <./figs/Text-Math-
-Mode.png> <./figs/Home-reopen-start-page.png>] [8 <./figs/Start-Page-Calculus.p
-ng> <./figs/Calculus-Doc.png>]
-Overfull \hbox (33.86185pt too wide) in alignment at lines 196--200
+Overfull \hbox (33.86185pt too wide) in alignment at lines 215--219
  [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (33.86185pt too wide) in alignment at lines 200--205
+Overfull \hbox (33.86185pt too wide) in alignment at lines 219--224
  [] [] [] [] [] [] 
  []
 
-[9]
-<figs/Initial-Functions.PNG, id=297, 862.46745pt x 371.57689pt>
+[7] [8 <./figs/Maple-Start.png> <./figs/Maple-New-Doc.png>] [9 <./figs/Text-Mat
+h-Mode.png> <./figs/Home-reopen-start-page.png>] [10 <./figs/Start-Page-Calculu
+s.png> <./figs/Calculus-Doc.png>] [11]
+<figs/Initial-Functions.PNG, id=392, 862.46745pt x 371.57689pt>
 File: figs/Initial-Functions.PNG Graphic file (type png)
 <use figs/Initial-Functions.PNG>
-Package pdftex.def Info: figs/Initial-Functions.PNG  used on input line 258.
+Package pdftex.def Info: figs/Initial-Functions.PNG  used on input line 278.
 (pdftex.def)             Requested size: 345.00719pt x 148.63945pt.
 
-Overfull \hbox (40.00041pt too wide) in alignment at lines 264--268
+Overfull \hbox (40.00041pt too wide) in alignment at lines 284--288
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (40.00041pt too wide) in alignment at lines 268--271
+Overfull \hbox (40.00041pt too wide) in alignment at lines 288--291
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (1.3559pt too wide) in alignment at lines 282--298
+Overfull \hbox (1.3559pt too wide) in alignment at lines 302--318
  [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (1.3559pt too wide) in alignment at lines 298--313
+Overfull \hbox (1.3559pt too wide) in alignment at lines 318--333
  [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 319--319
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 340--340
 []\T1/lmtt/m/n/10 piecewise(condition1, expression1, condition2, expression2, e
 xpression3)[] 
  []
 
 
-Overfull \hbox (116.99866pt too wide) in paragraph at lines 341--341
-[]\T1/lmtt/m/n/10 pwf:=x->piecewise(x<-1, sqrt(sin(x)), x>=-1 and x<Pi, surd(x,
- 3)/abs(x+2), ln(exp(x)+2))[] 
- []
+Overfull \vbox (122.07184pt too high) has occurred while \output is active []
 
-
-Overfull \vbox (164.62175pt too high) has occurred while \output is active []
-
-[10 <./figs/Initial-Functions.PNG>]
-<figs/First-Plot-Example.png, id=316, 1190.94937pt x 320.69812pt>
+[12 <./figs/Initial-Functions.PNG>]
+<figs/First-Plot-Example.png, id=410, 337.26pt x 315.42844pt>
 File: figs/First-Plot-Example.png Graphic file (type png)
 <use figs/First-Plot-Example.png>
-Package pdftex.def Info: figs/First-Plot-Example.png  used on input line 393.
-(pdftex.def)             Requested size: 344.98485pt x 92.89731pt.
+Package pdftex.def Info: figs/First-Plot-Example.png  used on input line 417.
+(pdftex.def)             Requested size: 337.26431pt x 315.43246pt.
 
-LaTeX Warning: Reference `@' on page 11 undefined on input line 400.
+LaTeX Warning: Reference `@' on page 13 undefined on input line 424.
 
-[11 <./figs/First-Plot-Example.PNG>] [12
+[13] [14 <./figs/First-Plot-Example.PNG>] [15
 
-] [13] [14]
+] [16]
 Chapter 2.
-pdfTeX warning (ext4): destination with the same identifier (name{exm:unnamed-c
-hunk-1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.428 \protect\hypertarget{exm:unnamed-chunk-1}{}
-                                                 {\label{exm:unnamed-chunk-1} }
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.447 \protect\hypertarget{exr:unnamed-chunk-3}{}
-                                                 {\label{exr:unnamed-chunk-3...
-[15
+[17
 
-]pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-
-chunk-9}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.497 \protect\hypertarget{exr:unnamed-chunk-9}{}
-                                                 {\label{exr:unnamed-chunk-9...
-[16]
+] [18]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 547.
-LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 568
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 582.
+LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 605
 .
 (c:/Users/Fei/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [17]
-Overfull \hbox (6.74898pt too wide) in paragraph at lines 608--608
+) [19]
+Overfull \hbox (6.74898pt too wide) in paragraph at lines 649--649
 []\T1/lmtt/m/n/10 plot([-x, x*cos(1/x), x], x=-1..1, discont, color=[red, blue,
  red])[] 
  []
 
-<figs/squeeze.png, id=388, 401.5pt x 401.5pt>
+<figs/squeeze.png, id=487, 401.5pt x 401.5pt>
 File: figs/squeeze.png Graphic file (type png)
 <use figs/squeeze.png>
-Package pdftex.def Info: figs/squeeze.png  used on input line 612.
+Package pdftex.def Info: figs/squeeze.png  used on input line 653.
 (pdftex.def)             Requested size: 345.02596pt x 345.02596pt.
-[18 <./figs/Squeeze.png (PNG copy)>]
-Overfull \hbox (242.99829pt too wide) in paragraph at lines 651--651
+[20 <./figs/Squeeze.png (PNG copy)>]
+Overfull \hbox (242.99829pt too wide) in paragraph at lines 692--692
 []\T1/lmtt/m/n/10 f := x -> piecewise(x <= -1, x, -1 < x and x < 1, 1/(x - 1), 
 1 <= x and x < 2, 3 - x, 2 < x, sin(x - 2) + 1, -2)[] 
  []
 
-
-Overfull \hbox (11.99896pt too wide) in paragraph at lines 657--657
-[]\T1/lmtt/m/n/10 plot(f(x), discont = [showremovable], x = -5 .. 5, smartview 
-= true)[] 
- []
-
-<figs/Discontinuities.png, id=396, 1039.885pt x 968.61874pt>
+<figs/Discontinuities.png, id=495, 1039.885pt x 968.61874pt>
 File: figs/Discontinuities.png Graphic file (type png)
 <use figs/Discontinuities.png>
-Package pdftex.def Info: figs/Discontinuities.png  used on input line 663.
+Package pdftex.def Info: figs/Discontinuities.png  used on input line 704.
 (pdftex.def)             Requested size: 344.98785pt x 321.34486pt.
-[19] [20 <./figs/Discontinuities.png (PNG copy)>] [21] [22] [23] [24
+[21] [22 <./figs/Discontinuities.png (PNG copy)>] [23] [24] [25] [26
 
 ]
 Chapter 3.
-pdfTeX warning (ext4): destination with the same identifier (name{exm:unnamed-c
-hunk-1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.879 \protect\hypertarget{exm:unnamed-chunk-1}{}
-                                                 {\label{exm:unnamed-chunk-1} }
-[25]pdfTeX warning (ext4): destination with the same identifier (name{exr:unnam
-ed-chunk-3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.905 \protect\hypertarget{exr:unnamed-chunk-3}{}
-                                                 {\label{exr:unnamed-chunk-3} }
-pdfTeX warning (ext4): destination with the same identifier (name{exm:unnamed-c
-hunk-6}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.939 \protect\hypertarget{exm:unnamed-chunk-6}{}
-                                                 {\label{exm:unnamed-chunk-6} }
-[26]
-<figs/DiffTutor-Example.png, id=465, 583.61433pt x 551.5701pt>
+[27] [28]
+<figs/DiffTutor-Example.png, id=565, 583.61433pt x 551.5701pt>
 File: figs/DiffTutor-Example.png Graphic file (type png)
 <use figs/DiffTutor-Example.png>
-Package pdftex.def Info: figs/DiffTutor-Example.png  used on input line 994.
+Package pdftex.def Info: figs/DiffTutor-Example.png  used on input line 1036.
 (pdftex.def)             Requested size: 345.00626pt x 326.06317pt.
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-10}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1000 ...tect\hypertarget{exr:unnamed-chunk-10}{}
-                                                  {\label{exr:unnamed-chunk-...
-[27] [28 <./figs/DiffTutor-Example.png>]
-<figs/D_vs_diff.png, id=487, 873.37613pt x 603.38632pt>
+[29] [30 <./figs/DiffTutor-Example.png>]
+<figs/D_vs_diff.png, id=589, 873.37613pt x 603.38632pt>
 File: figs/D_vs_diff.png Graphic file (type png)
 <use figs/D_vs_diff.png>
-Package pdftex.def Info: figs/D_vs_diff.png  used on input line 1034.
+Package pdftex.def Info: figs/D_vs_diff.png  used on input line 1076.
 (pdftex.def)             Requested size: 344.99977pt x 238.34879pt.
-[29 <./figs/D_vs_diff.png>]
-<figs/chain_rule.png, id=496, 621.11293pt x 417.25699pt>
+[31 <./figs/D_vs_diff.png>]
+<figs/chain_rule.png, id=599, 621.11293pt x 417.25699pt>
 File: figs/chain_rule.png Graphic file (type png)
 <use figs/chain_rule.png>
-Package pdftex.def Info: figs/chain_rule.png  used on input line 1076.
+Package pdftex.def Info: figs/chain_rule.png  used on input line 1118.
 (pdftex.def)             Requested size: 345.00609pt x 231.77136pt.
-[30 <./figs/chain_rule.png>]
-<figs/DiffTutor-Chain-Rule-Example.png, id=509, 506.5718pt x 326.57858pt>
+[32 <./figs/chain_rule.png>]
+<figs/DiffTutor-Chain-Rule-Example.png, id=612, 506.5718pt x 326.57858pt>
 File: figs/DiffTutor-Chain-Rule-Example.png Graphic file (type png)
 <use figs/DiffTutor-Chain-Rule-Example.png>
 Package pdftex.def Info: figs/DiffTutor-Chain-Rule-Example.png  used on input l
-ine 1121.
+ine 1163.
 (pdftex.def)             Requested size: 345.00533pt x 222.41931pt.
-[31 <./figs/DiffTutor-Chain-Rule-Example.png>]
-Overfull \hbox (74.99878pt too wide) in paragraph at lines 1227--1227
-[]\T1/lmtt/m/n/10 implicitplot([eqnf, tangentline], x = 1 .. 3, y = -1 .. 2, co
-lor = [red, blue]);[] 
+[33 <./figs/DiffTutor-Chain-Rule-Example.png>]
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 1269--1269
+[]\T1/lmtt/m/n/10 implicitplot([eqnf, tangentline], x=1..3, y=-1..2, color=[red
+, blue]);[] 
  []
 
-[32]pdfTeX warning (ext4): destination with the same identifier (name{exr:unnam
-ed-chunk-25}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1245 ...tect\hypertarget{exr:unnamed-chunk-25}{}
-                                                  {\label{exr:unnamed-chunk-...
-[33] [34] [35] [36
+[34] [35] [36] [37] [38
 
-] [37] [38]
+]
 Chapter 4.
+[39] [40
 
-Overfull \hbox (5.7297pt too wide) in paragraph at lines 1404--1405
+]
+Chapter 5.
+[41] [42
+
+]
+Chapter 6.
+[43] [44
+
+] [45] [46]
+Chapter 7.
+
+Overfull \hbox (5.7297pt too wide) in paragraph at lines 1494--1495
 []\T1/lmr/m/n/10 (-20) In Maple, the fol-low-ing com-mand, sup-ported by the pa
 ck-age \T1/lmtt/m/n/10 Student[Calculus1]\T1/lmr/m/n/10 (-20) ,
  []
 
-<figs/VolOfRev-help-page.png, id=592, 869.96716pt x 485.43623pt>
+<figs/VolOfRev-help-page.png, id=735, 869.96716pt x 485.43623pt>
 File: figs/VolOfRev-help-page.png Graphic file (type png)
 <use figs/VolOfRev-help-page.png>
-Package pdftex.def Info: figs/VolOfRev-help-page.png  used on input line 1418.
+Package pdftex.def Info: figs/VolOfRev-help-page.png  used on input line 1508.
 (pdftex.def)             Requested size: 345.00719pt x 192.51184pt.
-[39
+[47
 
-]pdfTeX warning (ext4): destination with the same identifier (name{exm:unnamed-
-chunk-1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1421 \protect\hypertarget{exm:unnamed-chunk-1}{}
-                                                  {\label{exm:unnamed-chunk-...
-
-Overfull \hbox (22.49893pt too wide) in paragraph at lines 1437--1437
+]
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 1527--1527
 []\T1/lmtt/m/n/10 VolumeOfRevolution(x^2, x, x = 0 .. 1, axis = vertical, outpu
 t = plot)[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 1443--1443
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1533--1533
 []\T1/lmtt/m/n/10 VolumeOfRevolution(x^2, x, x = 0 .. 1, axis = vertical, outpu
 t = integral)[] 
  []
 
 
-Overfull \hbox (27.74892pt too wide) in paragraph at lines 1449--1449
+Overfull \hbox (27.74892pt too wide) in paragraph at lines 1539--1539
 []\T1/lmtt/m/n/10 VolumeOfRevolution(x^2, x, x = 0 .. 1, axis = vertical, outpu
 t = value)[] 
  []
 
-<figs/VolOfRev-Example1.png, id=598, 700.20085pt x 533.84349pt>
+<figs/VolOfRev-Example1.png, id=742, 700.20085pt x 533.84349pt>
 File: figs/VolOfRev-Example1.png Graphic file (type png)
 <use figs/VolOfRev-Example1.png>
-Package pdftex.def Info: figs/VolOfRev-Example1.png  used on input line 1453.
+Package pdftex.def Info: figs/VolOfRev-Example1.png  used on input line 1543.
 (pdftex.def)             Requested size: 345.0032pt x 263.03554pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[40 <./figs/VolOfRev-help-page.png>]
-Overfull \hbox (194.49854pt too wide) in paragraph at lines 1467--1467
+[48 <./figs/VolOfRev-help-page.png>]
+Overfull \hbox (194.49854pt too wide) in paragraph at lines 1557--1557
  [] \T1/lmtt/m/n/10 VolumeOfRevolution(x^2, x, x = 0 .. 1, axis = vertical, dis
 tancefromaxis = -2, output = integral)[] 
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-4}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1472 \protect\hypertarget{exr:unnamed-chunk-4}{}
-                                                  {\label{exr:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-5}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1476 \protect\hypertarget{exr:unnamed-chunk-5}{}
-                                                  {\label{exr:unnamed-chunk-...
-[41 <./figs/VolOfRev-Example1.png>] [42
+[49 <./figs/VolOfRev-Example1.png>] [50
 
 ]
-Chapter 5.
-pdfTeX warning (ext4): destination with the same identifier (name{exm:unnamed-c
-hunk-1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1493 \protect\hypertarget{exm:unnamed-chunk-1}{}
-                                                  {\label{exm:unnamed-chunk-...
-<figs/InversePlot1.png, id=618, 666.11122pt x 304.76123pt>
+Chapter 8.
+<figs/InversePlot1.png, id=766, 666.11122pt x 304.76123pt>
 File: figs/InversePlot1.png Graphic file (type png)
 <use figs/InversePlot1.png>
-Package pdftex.def Info: figs/InversePlot1.png  used on input line 1516.
+Package pdftex.def Info: figs/InversePlot1.png  used on input line 1609.
 (pdftex.def)             Requested size: 345.00768pt x 157.84895pt.
 
-Overfull \hbox (59.24883pt too wide) in paragraph at lines 1524--1524
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 1617--1617
 []  \T1/lmtt/m/n/10 plot([f(x), g(x), x], x = -2 .. 4, y = -5 .. 5, color = [re
 d, black, blue])[] 
  []
 
-[43] [44 <./figs/InversePlot1.png>]pdfTeX warning (ext4): destination with the 
-same identifier (name{exr:unnamed-chunk-5}) has been already used, duplicate ig
-nored
-<to be read again> 
-                   \relax 
-l.1600 \protect\hypertarget{exr:unnamed-chunk-5}{}
-                                                  {\label{exr:unnamed-chunk-...
-[45] [46
-
-]
-Chapter 6.
-pdfTeX warning (ext4): destination with the same identifier (name{exm:unnamed-c
-hunk-1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1641 \protect\hypertarget{exm:unnamed-chunk-1}{}
-                                                  {\label{exm:unnamed-chunk-...
-[47]
-Overfull \hbox (132.74861pt too wide) in paragraph at lines 1658--1658
+[51] [52 <./figs/InversePlot1.png>] [53]
+Overfull \hbox (132.74861pt too wide) in paragraph at lines 1751--1751
 []\T1/lmtt/m/n/10 plot([ln(x), exp(x), 2^x, log[2](x), x], x=-5..5, color=[blue
 , green, purple, yellow, red])[] 
  []
 
-<figs/Log-Exp-Functions-01.png, id=651, 295.89792pt x 277.48953pt>
+<figs/Log-Exp-Functions-01.png, id=795, 295.89792pt x 277.48953pt>
 File: figs/Log-Exp-Functions-01.png Graphic file (type png)
 <use figs/Log-Exp-Functions-01.png>
-Package pdftex.def Info: figs/Log-Exp-Functions-01.png  used on input line 1664
+Package pdftex.def Info: figs/Log-Exp-Functions-01.png  used on input line 1757
 .
 (pdftex.def)             Requested size: 295.91525pt x 277.50577pt.
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1670 \protect\hypertarget{exr:unnamed-chunk-3}{}
-                                                  {\label{exr:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-4}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1679 \protect\hypertarget{exr:unnamed-chunk-4}{}
-                                                  {\label{exr:unnamed-chunk-...
-[48 <./figs/Log-Exp-Functions-01.png>]pdfTeX warning (ext4): destination with t
-he same identifier (name{exr:unnamed-chunk-5}) has been already used, duplicate
- ignored
-<to be read again> 
-                   \relax 
-l.1690 \protect\hypertarget{exr:unnamed-chunk-5}{}
-                                                  {\label{exr:unnamed-chunk-...
-<figs/Calculus-Palette.png, id=660, 113.17755pt x 143.17642pt>
+[54 <./figs/Log-Exp-Functions-01.png>]
+<figs/Calculus-Palette.png, id=807, 113.17755pt x 143.17642pt>
 File: figs/Calculus-Palette.png Graphic file (type png)
 <use figs/Calculus-Palette.png>
-Package pdftex.def Info: figs/Calculus-Palette.png  used on input line 1707.
+Package pdftex.def Info: figs/Calculus-Palette.png  used on input line 1800.
 (pdftex.def)             Requested size: 113.17899pt x 143.17824pt.
-pdfTeX warning (ext4): destination with the same identifier (name{exm:unnamed-c
-hunk-6}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1718 \protect\hypertarget{exm:unnamed-chunk-6}{}
-                                                  {\label{exm:unnamed-chunk-...
-
-Overfull \hbox (142.25917pt too wide) has occurred while \output is active
-\T1/lmr/m/sl/10 6.2.  DIFFERENTIATION AND INTEGRATION OF LOGARITHMIC AND EXPONE
-NTIAL FUNCTIONS \T1/lmr/m/n/10 49
- []
-
-[49 <./figs/Calculus-Palette.png>]
-<figs/DiffTutor-ex.png, id=671, 415.8934pt x 386.57632pt>
+[55 <./figs/Calculus-Palette.png>]
+<figs/DiffTutor-ex.png, id=821, 415.8934pt x 386.57632pt>
 File: figs/DiffTutor-ex.png Graphic file (type png)
 <use figs/DiffTutor-ex.png>
-Package pdftex.def Info: figs/DiffTutor-ex.png  used on input line 1742.
+Package pdftex.def Info: figs/DiffTutor-ex.png  used on input line 1835.
 (pdftex.def)             Requested size: 345.01375pt x 320.69308pt.
-pdfTeX warning (ext4): destination with the same identifier (name{exm:unnamed-c
-hunk-8}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1748 \protect\hypertarget{exm:unnamed-chunk-8}{}
-                                                  {\label{exm:unnamed-chunk-...
-[50 <./figs/DiffTutor-ex.png>]
-<figs/IntTutor-ex.png, id=678, 416.5752pt x 385.89453pt>
+[56 <./figs/DiffTutor-ex.png>]
+<figs/IntTutor-ex.png, id=829, 416.5752pt x 385.89453pt>
 File: figs/IntTutor-ex.png Graphic file (type png)
 <use figs/IntTutor-ex.png>
-Package pdftex.def Info: figs/IntTutor-ex.png  used on input line 1775.
+Package pdftex.def Info: figs/IntTutor-ex.png  used on input line 1868.
 (pdftex.def)             Requested size: 345.00726pt x 319.59755pt.
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-10}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1781 ...tect\hypertarget{exr:unnamed-chunk-10}{}
-                                                  {\label{exr:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-11}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1786 ...tect\hypertarget{exr:unnamed-chunk-11}{}
-                                                  {\label{exr:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-12}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1791 ...tect\hypertarget{exr:unnamed-chunk-12}{}
-                                                  {\label{exr:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-13}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1799 ...tect\hypertarget{exr:unnamed-chunk-13}{}
-                                                  {\label{exr:unnamed-chunk-...
-
-Overfull \hbox (142.25917pt too wide) has occurred while \output is active
-\T1/lmr/m/sl/10 6.2.  DIFFERENTIATION AND INTEGRATION OF LOGARITHMIC AND EXPONE
-NTIAL FUNCTIONS \T1/lmr/m/n/10 51
- []
-
-[51 <./figs/IntTutor-ex.png>] [52]
-Chapter 7.
-pdfTeX warning (ext4): destination with the same identifier (name{exm:unnamed-c
-hunk-1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1812 \protect\hypertarget{exm:unnamed-chunk-1}{}
-                                                  {\label{exm:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1841 \protect\hypertarget{exr:unnamed-chunk-3}{}
-                                                  {\label{exr:unnamed-chunk-...
-[53
-
-] [54
-
-]
-Chapter 8.
-[55]pdfTeX warning (ext4): destination with the same identifier (name{exm:unnam
-ed-chunk-1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1883 \protect\hypertarget{exm:unnamed-chunk-1}{}
-                                                  {\label{exm:unnamed-chunk-...
-<figs/InversePlot_tanx.png, id=712, 283.0575pt x 304.13625pt>
+[57 <./figs/IntTutor-ex.png>] [58]
+<figs/InversePlot_tanx.png, id=856, 283.0575pt x 304.13625pt>
 File: figs/InversePlot_tanx.png Graphic file (type png)
 <use figs/InversePlot_tanx.png>
-Package pdftex.def Info: figs/InversePlot_tanx.png  used on input line 1904.
+Package pdftex.def Info: figs/InversePlot_tanx.png  used on input line 1997.
 (pdftex.def)             Requested size: 283.06543pt x 304.14478pt.
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1910 \protect\hypertarget{exr:unnamed-chunk-3}{}
-                                                  {\label{exr:unnamed-chunk-...
-[56 <./figs/InversePlot_tanx.PNG>]pdfTeX warning (ext4): destination with the s
-ame identifier (name{exm:unnamed-chunk-4}) has been already used, duplicate ign
-ored
-<to be read again> 
-                   \relax 
-l.1927 \protect\hypertarget{exm:unnamed-chunk-4}{}
-                                                  {\label{exm:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-8}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1965 \protect\hypertarget{exr:unnamed-chunk-8}{}
-                                                  {\label{exr:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-9}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1973 \protect\hypertarget{exr:unnamed-chunk-9}{}
-                                                  {\label{exr:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-10}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1981 ...tect\hypertarget{exr:unnamed-chunk-10}{}
-                                                  {\label{exr:unnamed-chunk-...
-
-Overfull \hbox (102.67653pt too wide) has occurred while \output is active
-\T1/lmr/m/sl/10 8.2.  DIFFERENTIATION AND INTEGRATION OF INVERSE TRIGONOMETRIC 
-FUNCTIONS \T1/lmr/m/n/10 57
- []
-
-[57] [58
-
-]
+[59] [60 <./figs/InversePlot_tanx.PNG>] [61] [62]
 Chapter 9.
-pdfTeX warning (ext4): destination with the same identifier (name{exm:unnamed-c
-hunk-1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1999 \protect\hypertarget{exm:unnamed-chunk-1}{}
-                                                  {\label{exm:unnamed-chunk-...
 
-Overfull \hbox (6.74898pt too wide) in paragraph at lines 2012--2012
+Overfull \hbox (6.74898pt too wide) in paragraph at lines 2154--2154
 []\T1/lmtt/m/n/10 # use DiffTutor to evaluate the integral of the resulting fun
 ction.[] 
  []
 
 
-Overfull \hbox (25.97462pt too wide) in paragraph at lines 2015--2016
+Overfull \hbox (25.97462pt too wide) in paragraph at lines 2157--2158
 []\T1/lmr/m/n/10 (-20) You may com-pare the above so-lu-tion with the so-lu-tio
 n given by \T1/lmtt/m/n/10 IntTutor((cos(x))^^B4,
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2018 \protect\hypertarget{exr:unnamed-chunk-3}{}
-                                                  {\label{exr:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-4}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2026 \protect\hypertarget{exr:unnamed-chunk-4}{}
-                                                  {\label{exr:unnamed-chunk-...
-[59]pdfTeX warning (ext4): destination with the same identifier (name{exm:unnam
-ed-chunk-5}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2041 \protect\hypertarget{exm:unnamed-chunk-5}{}
-                                                  {\label{exm:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-7}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2070 \protect\hypertarget{exr:unnamed-chunk-7}{}
-                                                  {\label{exr:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-8}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2078 \protect\hypertarget{exr:unnamed-chunk-8}{}
-                                                  {\label{exr:unnamed-chunk-...
+[63
 
-Overfull \hbox (25.66515pt too wide) has occurred while \output is active
-\T1/lmr/m/n/10 60 \T1/lmr/m/sl/10 CHAPTER 9.  INTEGRATIONS INVOLVING TRIGONOMET
-RIC FUNCTIONS
+] [64]
+Overfull \hbox (26.63461pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 9.3.  INTEGRATIONS OF RATIONAL FUNCTIONS BY PARTIAL FRACTIONS \
+T1/lmr/m/n/10 65
  []
 
-[60]
-Chapter 10.
-pdfTeX warning (ext4): destination with the same identifier (name{exm:unnamed-c
-hunk-1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2091 \protect\hypertarget{exm:unnamed-chunk-1}{}
-                                                  {\label{exm:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2110 \protect\hypertarget{exr:unnamed-chunk-3}{}
-                                                  {\label{exr:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-4}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2119 \protect\hypertarget{exr:unnamed-chunk-4}{}
-                                                  {\label{exr:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-5}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2127 \protect\hypertarget{exr:unnamed-chunk-5}{}
-                                                  {\label{exr:unnamed-chunk-...
-[61
-
-] [62
+[65] [66
 
 ]
-Chapter 11.
-pdfTeX warning (ext4): destination with the same identifier (name{exm:unnamed-c
-hunk-1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2140 \protect\hypertarget{exm:unnamed-chunk-1}{}
-                                                  {\label{exm:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2158 \protect\hypertarget{exr:unnamed-chunk-3}{}
-                                                  {\label{exr:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-4}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2166 \protect\hypertarget{exr:unnamed-chunk-4}{}
-                                                  {\label{exr:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-5}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2175 \protect\hypertarget{exr:unnamed-chunk-5}{}
-                                                  {\label{exr:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-6}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2184 \protect\hypertarget{exr:unnamed-chunk-6}{}
-                                                  {\label{exr:unnamed-chunk-...
-[63]
-Overfull \hbox (76.49506pt too wide) has occurred while \output is active
-\T1/lmr/m/n/10 64 \T1/lmr/m/sl/10 CHAPTER 11.  INTEGRATIONS OF RATIONAL FUNCTIO
-NS BY PARTIAL FRACTIONS
- []
-
-[64]
-Chapter 12.
-pdfTeX warning (ext4): destination with the same identifier (name{exm:unnamed-c
-hunk-1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2225 \protect\hypertarget{exm:unnamed-chunk-1}{}
-                                                  {\label{exm:unnamed-chunk-...
-[65
-
-]pdfTeX warning (ext4): destination with the same identifier (name{exm:unnamed-
-chunk-3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2256 \protect\hypertarget{exm:unnamed-chunk-3}{}
-                                                  {\label{exm:unnamed-chunk-...
-
-Overfull \hbox (8.59273pt too wide) in paragraph at lines 2283--2283
+Chapter 10.
+[67]
+Overfull \hbox (8.59273pt too wide) in paragraph at lines 2379--2379
 []\T1/lmtt/m/n/10 # Load the package (skip if the package was already loaded)[]
  
  []
 
 
-Overfull \hbox (1.499pt too wide) in paragraph at lines 2283--2283
+Overfull \hbox (1.499pt too wide) in paragraph at lines 2379--2379
 []\T1/lmtt/m/n/10 SurfaceOfRevolution(sqrt(x),x=1..4,output=integral, axis=vert
 ical)[] 
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-5}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2287 \protect\hypertarget{exr:unnamed-chunk-5}{}
-                                                  {\label{exr:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-6}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2296 \protect\hypertarget{exr:unnamed-chunk-6}{}
-                                                  {\label{exr:unnamed-chunk-...
-
-Overfull \hbox (35.9399pt too wide) has occurred while \output is active
-\T1/lmr/m/n/10 66 \T1/lmr/m/sl/10 CHAPTER 12.  ARC LENGTHS AND AREAS OF SURFACE
-S OF REVOLUTIONS
- []
-
-[66]pdfTeX warning (ext4): destination with the same identifier (name{exr:unnam
-ed-chunk-7}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2305 \protect\hypertarget{exr:unnamed-chunk-7}{}
-                                                  {\label{exr:unnamed-chunk-...
-[67]
-Overfull \hbox (35.9399pt too wide) has occurred while \output is active
-\T1/lmr/m/n/10 68 \T1/lmr/m/sl/10 CHAPTER 12.  ARC LENGTHS AND AREAS OF SURFACE
-S OF REVOLUTIONS
- []
-
-[68
+[68] [69] [70
 
 ]
-Chapter 13.
-[69]pdfTeX warning (ext4): destination with the same identifier (name{exm:unnam
-ed-chunk-5}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2397 \protect\hypertarget{exm:unnamed-chunk-5}{}
-                                                  {\label{exm:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-7}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2422 \protect\hypertarget{exr:unnamed-chunk-7}{}
-                                                  {\label{exr:unnamed-chunk-...
-[70]pdfTeX warning (ext4): destination with the same identifier (name{exr:unnam
-ed-chunk-8}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2431 \protect\hypertarget{exr:unnamed-chunk-8}{}
-                                                  {\label{exr:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-9}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2439 \protect\hypertarget{exr:unnamed-chunk-9}{}
-                                                  {\label{exr:unnamed-chunk-...
-[71] [72
+Chapter 11.
+[71] [72]
 
-]
-Chapter 14.
+LaTeX Warning: Reference `@' on page 73 undefined on input line 2559.
 
-LaTeX Warning: Reference `@' on page 73 undefined on input line 2460.
+[73]
+Underfull \vbox (badness 2865) has occurred while \output is active []
 
-pdfTeX warning (ext4): destination with the same identifier (name{exm:unnamed-c
-hunk-1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2469 \protect\hypertarget{exm:unnamed-chunk-1}{}
-                                                  {\label{exm:unnamed-chunk-...
-[73]pdfTeX warning (ext4): destination with the same identifier (name{exm:unnam
-ed-chunk-3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2495 \protect\hypertarget{exm:unnamed-chunk-3}{}
-                                                  {\label{exm:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-5}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2518 \protect\hypertarget{exr:unnamed-chunk-5}{}
-                                                  {\label{exr:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-6}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2526 \protect\hypertarget{exr:unnamed-chunk-6}{}
-                                                  {\label{exr:unnamed-chunk-...
-[74]
-Chapter 15.
-[75
-
-]pdfTeX warning (ext4): destination with the same identifier (name{exm:unnamed-
-chunk-1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2565 \protect\hypertarget{exm:unnamed-chunk-1}{}
-                                                  {\label{exm:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exm:unnamed-c
-hunk-3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2588 \protect\hypertarget{exm:unnamed-chunk-3}{}
-                                                  {\label{exm:unnamed-chunk-...
-
-Overfull \hbox (48.74886pt too wide) in paragraph at lines 2611--2611
+[74] [75]
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 2710--2710
 []\T1/lmtt/m/n/10 for n to 5 do T := (eval(diff(g(x), x$n), x = 0))*x^n/factori
 al(n)+T end do[] 
  []
 
-<figs/non-analytic-smooth.png, id=853, 401.5pt x 401.5pt>
+<figs/non-analytic-smooth.png, id=1025, 401.5pt x 401.5pt>
 File: figs/non-analytic-smooth.png Graphic file (type png)
 <use figs/non-analytic-smooth.png>
-Package pdftex.def Info: figs/non-analytic-smooth.png  used on input line 2614.
+Package pdftex.def Info: figs/non-analytic-smooth.png  used on input line 2713.
 
 (pdftex.def)             Requested size: 345.02596pt x 345.02596pt.
 
-Overfull \hbox (223.51787pt too wide) in paragraph at lines 2613--2615
+Overfull \hbox (223.51787pt too wide) in paragraph at lines 2712--2714
 []\T1/lmr/m/n/10 (-20) The graphs of the func-tions are shown in the pic-ture. 
 [] 
  []
@@ -25156,43 +24547,29 @@ Overfull \hbox (223.51787pt too wide) in paragraph at lines 2613--2615
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[76]pdfTeX warning (ext4): destination with the same identifier (name{exr:unnam
-ed-chunk-5}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2620 \protect\hypertarget{exr:unnamed-chunk-5}{}
-                                                  {\label{exr:unnamed-chunk-...
-pdfTeX warning (ext4): destination with the same identifier (name{exr:unnamed-c
-hunk-6}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2625 \protect\hypertarget{exr:unnamed-chunk-6}{}
-                                                  {\label{exr:unnamed-chunk-...
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2630.
+[76]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2729.
 [77 <./figs/non-analytic-smooth.png (PNG copy)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2630.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2729.
 (./maple-notes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2630.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2630.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2729.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2729.
 
 Package rerunfilecheck Info: File `maple-notes.out' has not changed.
-(rerunfilecheck)             Checksum: A62855E5F9D08D87BF626BDA67846993;8134.
+(rerunfilecheck)             Checksum: 3CA63305C296FFF50CDD8DC9081F94D9;10568.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2630.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2729.
  ) 
 Here is how much of TeX's memory you used:
- 13257 strings out of 494553
- 195831 string characters out of 6176105
- 289784 words of memory out of 5000000
- 16232 multiletter control sequences out of 15000+600000
+ 13464 strings out of 494553
+ 200144 string characters out of 6176105
+ 292672 words of memory out of 5000000
+ 16335 multiletter control sequences out of 15000+600000
  72120 words of font info for 122 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 32i,12n,38p,974b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 32i,12n,38p,974b,516s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/Fei/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit
 .enc}{c:/Users/Fei/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mat
 hsy.enc}{c:/Users/Fei/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-
@@ -25219,10 +24596,10 @@ TeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/Users/Fei/AppData/Roaming/Ti
 nyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/Fei/AppData/Roaming
 /TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Users/Fei/AppData/Roam
 ing/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtto10.pfb>
-Output written on maple-notes.pdf (77 pages, 1380795 bytes).
+Output written on maple-notes.pdf (77 pages, 1394767 bytes).
 PDF statistics:
- 1019 PDF objects out of 1200 (max. 8388607)
- 869 compressed objects within 9 object streams
- 376 named destinations out of 1000 (max. 500000)
- 12740 words of extra memory for PDF output out of 14400 (max. 10000000)
+ 1214 PDF objects out of 1440 (max. 8388607)
+ 1060 compressed objects within 11 object streams
+ 480 named destinations out of 1000 (max. 500000)
+ 12873 words of extra memory for PDF output out of 14400 (max. 10000000)
 

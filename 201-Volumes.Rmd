@@ -1,6 +1,8 @@
 # (PART\*) Part 2 - Calculus II {-}
 
-# Volume of Revolution
+# Applications of Integrals II
+
+## Volume of Revolution
 
 In terms of definite integrals, the volume of a solid obtained by rotating a region about the $x$-axis can be calculated by 
 $$\int_a^b \pi (r_1(x)^2 - r_2(x)^2) \mathrm{d} x \qquad \text{disk/washer method},$$

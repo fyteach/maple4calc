@@ -1,4 +1,6 @@
-# Inverse Functions
+# Calculus of Inverse Functions
+
+## Inverse Functions
 
 Maple package `Student[Calculus1]` provides the following command
 
@@ -98,5 +100,415 @@ Using Maple, we find $(f^{-1})'(0)=-1$.
 
 ```
 
+## Logarithmic and Exponential Functions
 
+### Basic properties and graphs
 
+The natural logarithmic function $y=\ln(x)$ is defined by $\ln(x)=\int_1^x\frac{1}{t}\mathrm{d} t$.
+
+The natural exponential function $y=e^x$ is defined as the inverse function of $y=\ln(x)$.
+
+From the definition, we have very important identities
+$$
+\ln(e^x)=x\qquad \text{and}\qquad e^{\ln x}=x.
+$$
+
+<!-- In mathematics, an identity is an equality that always holds true when assigning values to the same variable in both sides. -->
+
+Using those two identities, we may define general exponential functions and general logarithmic function, and deduce the Law of Logarithms and Law of Exponents.
+
+- For any positive number $b\ne 1$, we have $b^x=(e^{\ln b})^x=e^{x\ln b}$.
+
+- For any positive number $b\ne 1$, we define $y=\log_bx$ to be the inverse function of $y=b^x$
+
+- By solving $x=b^y$ for $y$, we find that $\log_bx=\dfrac{\ln x}{\ln b}$. This identity is called the change of base property.
+
+How do graphs of logarithmic functions and exponential functions look like?
+
+```{example}
+
+Graph the following functions together.
+$$
+y=\ln x, \qquad y=e^x, \qquad y=2^x, \qquad y=\log_2x, y=x.
+$$
+
+```
+
+```{solution}
+<br>
+In Maple, the logarithm $\log_bx$ is given by `log[b](x)`. When $b=e$, you simply use `ln(x)` for $\ln x$. When $b=10$, you may also use `log(x)` or `log10(x)` for $\log_{10}x$.
+
+The exponent $b^x$ is given by `b^x` in Maple. When $b=e$, you may also use `exp(x)` to represent $e^x$.
+
+To graph the functions together with different colors, we use the following command
+
+    plot([ln(x), exp(x), 2^x, log[2](x), x], x=-5..5, color=[blue, green, purple, yellow, red])
+
+Here is the output
+
+![Graph of some logarithmic and exponential functions](figs/Log-Exp-Functions-01.png)
+
+```
+
+```{exercise}
+Graph the following functions together.
+$$
+y=\log_3x, \qquad y=3^x, \qquad y=(1/3)^x, \qquad y=\log_{1/3}x.
+$$
+
+Find the pairs that are symmetric to each other with respect to a certain line.
+
+```
+
+```{exercise}
+Graph the following functions together.
+$$
+y=0.5^x, \qquad y=2^x, \qquad y=5^x.
+$$
+
+Describe the monotonicity (increasing/decreasing) of the functions?
+
+Fix an input $x$. Describe how $y$-values change when bases changes from small number to bigger number?
+
+```
+
+```{exercise}
+Graph the following functions together.
+$$
+y=\log_{0.5}x, \qquad y=\log_2x, \qquad y=\log_{5}x.
+$$
+
+Describe the monotonicity (increasing/decreasing) of the functions?
+
+Fix an input $x$. Describe how $y$-values change when bases changes from small number to bigger number?
+
+```
+
+### Differentiation and integration of logarithmic and exponential functions
+
+In Maple, one way to do differentiation and integration is to use the `Calculus Palette` on the left side.
+
+![Calculus Palette in Maple](figs/Calculus-Palette.png)
+
+The other way is to use the commands `diff(f(x), x)` , `int(f(x), x)`, and `int(f(x), x=a..b)`.
+
+Supported by the `Student[Calculus1]` package, Maple also provides the tutor commands `DiffTutor()` and `IntTutor()` which can show step-by-step solution of differentiation and integration.
+
+Note you may also access tutor commands from the `Start` page (click the home button in the toolbar and look for Calculus).
+
+```{example}
+Find $y'$, where $y=\ln \left(x^{3}+5x+1\right)$.
+```
+
+```{solution}
+<br>
+Using `diff`:
+
+    diff(ln(x^3+5*x+1), x)
+
+We get
+$$
+y'=\dfrac{3x^{2}+5}{x^{3}+5 x+1}.
+$$
+
+Type in (assume that `with(Student[Calculus1])` was run)
+
+    DiffTutor(ln(x^3+5*x+1), x)
+
+and hit enter you will see
+
+![](figs/DiffTutor-ex.png)
+
+By click `Next Step` or `All Steps` you will see detailed solution with rules used.
+
+```
+
+```{example}
+Evaluate the integral
+$$
+\int\dfrac{e^x-1}{e^x+1}\mathrm{d} x.
+$$
+```
+
+```{solution}
+<br>
+Using `int`:
+
+    int((exp(x)-1)/(exp(x)+1), x)
+
+We get
+$$
+\int\dfrac{e^x-1}{e^x+1}\mathrm{d} x=2 \ln \left(\mathrm{e}^{x}+1\right)- x+C.
+$$
+
+Type in (assume that `with(Student[Calculus1])` was run)
+
+    IntTutor((exp(x)-1)/(exp(x)+1), x)
+
+and hit enter you will see
+
+![](figs/IntTutor-ex.png)
+
+By click `Next Step` or `All Steps` you will see detailed solution with rules used.
+
+```
+
+```{exercise}
+
+Find the derivative $\frac{\mathrm{d} y}{\mathrm{d} x}$, where $y=\ln|\cos x|$
+
+```
+
+```{exercise}
+
+Find the derivative $\frac{\mathrm{d} y}{\mathrm{d} x}$, where $y=x^{\cos x}$
+
+```
+
+```{exercise}
+
+Evaluate the integral
+$$
+\int \frac{\left(e^{4x}+e^{2x}\right)}{e^{3x}} d x
+$$
+
+```
+
+```{exercise}
+
+Evaluate the integral
+$$
+\int 2^{3x} d x
+$$
+
+```
+
+## Solve differential equations
+
+In Maple, you may solve the equation $y'(x)=k y(x) + c$ (which is called an ODE) using the command `dsolve({ics, eq})`, where `ics` stands for initial condition $y(0)=c$ and `eq` stands for the differential equation. Without the `ics`, `dsolve` will provide a general solution.
+
+```{example}
+Find the function $f(x)$ which satisfies the differential equation $f'(x)=k f(x)$ with $f(0)=5$ and $f(2)=3$.
+
+```
+
+```{solution}
+<br>
+Use the following command
+
+    dsolve({f(0)=5, f'(x)=k f(x)})
+
+we get $f(x)=5e^{kx}$.
+
+To find $k$, we solve the equation $3=5e^{2k}$ by
+
+    solve(3=5*e^(2*k), k)
+
+which shows that $k=\frac{\ln3-\ln5}{2}\approx -0.255$.
+Here we use `evalf(%)` (% represents the previous result) to get the approximation.
+
+So the function $f$ is given by
+$$
+f(x)=5e^{\frac{x(\ln3-\ln5)}{2}}\approx 5e^{-0.255x}.
+$$
+
+```
+
+```{exercise}
+
+Find the function $y$ which satisfies the  differential equation $y'(x)=k y(x)$ with $y(0)=2$ and $y(5)=11$.
+
+```
+
+## Inverse Trigonometric Functions
+
+### Domains and Ranges
+
+To define the inverse function, the original function must be a one-to-one function.
+For a trigonometric function, we have to restrict the function over a specific domain to ensure that the function is one-to-one.
+For simplicity, we pick domains near the origin for trigonometric functions. To be more precise, we consider the following trigonometric functions:
+$$
+y=\sin x,\quad -\pi/2\leq x\leq \pi/2 ~~\text{and}~ -1\leq y\leq 1;
+$$
+
+$$
+y=\cos x,\quad 0\leq x\leq \pi ~~\text{and}~ -1\leq y\leq 1;
+$$
+
+$$
+y=\tan x,\quad -\pi/2< x< \pi/2 ~~\text{and}~ -\infty<y<\infty.
+$$
+
+Their inverse functions are
+
+$$
+y=\arcsin x,\quad -\pi/2\leq y\leq \pi/2 ~~\text{and}~ -1\leq x\leq 1;
+$$
+
+$$
+y=\arccos x,\quad 0\leq y\leq \pi ~~\text{and}~ -1\leq x\leq 1;
+$$
+
+$$
+y=\arctan x,\quad -\pi/2< y< \pi/2 ~~\text{and}~ -\infty< x<\infty.
+$$
+
+To see the graphs of the functions, we may use the `plot(f(x), x = a..b, opts)` command. Or, to graph $f$, $f^{-1}$ and $y=x$ together, we may also use the command `InversePlot(f(x), x = a..b, opts)` supported by the package `Student[Calculus1]`.
+
+```{example}
+
+Graph the following functions together.
+$$
+y=\tan x, \qquad y=\arctan x, \qquad y=x.
+$$
+
+```
+
+```{solution}
+<br>
+
+    #load the package ``Student[Calculus1]".
+    with(Student[Calculus1])
+    #plot the functions
+    InversePlot(tan(x),x=-Pi/2..Pi/2)
+
+Here is the output
+
+![Graph of the tangent and arctangent functions](figs/InversePlot_tanx.png)
+
+```
+
+```{exercise}
+
+Graph the following functions together over an appropriate domain.
+$$
+y=\cot x, \qquad y=\mathrm{arccot} x, \qquad y=x.
+$$
+
+What's the domain and range of $y=\mathrm{arccot} x$?
+
+```
+
+### Differentiation and integration of inverse trigonometric functions
+
+In the section {#Differentiation and integration of logarithmic and exponential functions}, we learned to how use Maple to learn differentiation and integration.
+
+Now let find derivatives and integrals of some inverse trigonometric functions.
+
+```{example}
+
+Find $y'$, where $y=\mathrm{arccot} x$.
+
+```
+
+```{solution}
+<br>
+
+Surely, we may use `diff` or `DiffTutor` to find the derivative.
+
+Here let's me introduce to you another command `implicitdiff`.
+
+We've learned that (see {#Inverse Functions}) to find the inverse function, we switch $x$ and $y$ and then solve for $y$. When finding the derivative, we don't have to solve for $y$ instead, we want $y'$ which is implicitly defined by an equation. In this case, we have $x=\mathrm{arccot}y$.
+
+Enter the following commands in Maple, you will find $y'=-\frac{1}{x^2+1}$.
+
+    implicitdiff(x=cot(y), y, x)
+    subs(cot(y) = x, %)
+
+where `%` is a ditto operator that allows you to refer to a previously computed result in Maple.
+
+```
+
+```{exercise}
+
+Find the derivative of $y=\mathrm{arcsec} x$
+
+```
+
+```{exercise}
+
+Find the derivative of $y=\mathrm{arccsc} x$
+
+```
+
+For integrals of inverse trigonometric function, you may need the method of integration by parts.
+
+Use `DiffTutor` to find antiderivatives of inverse trigonometric functions.
+
+```{exercise}
+
+Evaluate the integral
+$$
+\int \arcsin x \mathrm{d} x
+$$
+
+```
+
+```{exercise}
+
+Evaluate the integral
+$$
+\int \arctan x \mathrm{d} x
+$$
+
+```
+
+```{exercise}
+
+Evaluate the integral
+$$
+\int \mathrm{sec} x \mathrm{d} x
+$$
+
+```
+
+## L'Hospital's Rule
+
+In Maple, supported by the package, `Student[Calculus1]`, the command `LimitTutor` can show step-by-step solutions of evaluating limits.
+
+```{example}
+
+Evaluate the limit
+$$
+\lim\limits_{x\to \infty}(1+x)^{1/\ln(x)}
+$$
+
+```
+
+```{solution}
+<br>
+
+    # load the package Student[Calculus1].
+    with(Student[Calculus1])
+    #Find the limit step-by-step using LimitTutor
+    LimitTutor((1+x)^(1/ln(x)), x = infinity)
+
+```
+
+```{exercise}
+
+Estimate the limit
+$$
+\lim\limits_{x\to 1}\frac{x^2-2x+1}{x^2-x}
+$$
+by graphing and verify your estimation.
+
+```
+
+```{exercise}
+
+Evaluate the limit
+$$
+\lim\limits_{x\to \infty} x-\ln(x).
+$$
+
+```
+
+```{exercise}
+
+Evaluate the limit
+$$
+\lim\limits_{x\to \infty} x\tan(\frac1x).
+$$
+
+```

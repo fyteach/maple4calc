@@ -48,7 +48,7 @@ Estimate the limit $\lim\limits_{x\to 0}\frac{\sin x}{x}$ by approximations.
 ```{solution}
 First, we pick some values close to 0, for example -0.99, -0.999, -0.9999, 0.01, 0.001, 0.0001 and assign them to an expression.
 
-    sq:= [-0.99, -0.999, -0.9999, 0.0001, 0.001, 0.01]
+    sq:=[-0.99, -0.999, -0.9999, 0.0001, 0.001, 0.01]
 
 Now we find the function values using two new commands instead of defining the function a priori.
 
@@ -59,23 +59,31 @@ Now we find the function values using two new commands instead of defining the f
 Graphs provide visual intuition which helps understand and solve problems. Recall, the command `plot(expression, domain, option)` produces a graph of the function defined by the expression over your choice of domain.
 
 ```{example}
+
 Determine whether the limit $\lim\limits_{x\to 0}\frac{1}{1- \cos x}$ exists.
+
 ```
 
 ```{solution}
+
 Apply the `plot` function to the expression over the domain $(-0.5, 0.5)$.
 
     plot(1/(1-cos(x)), x=-0.5..0.5)
 
 The graph shows that the function $y=\frac{1}{1- \cos x}$ goes to $\infty$ when $x$ approaches $0$. So the limit is an infinite limit.
+
 ```
 
 ```{exercise}
+
 Estimate the limit $\lim\limits_{t \to 0}\frac{1-\cos x}{x}$ numerically.
+
 ```
 
 ```{exercise}
+
 Determine whether the limit $\lim\limits_{x \to 1}\frac{\sin x}{|x-1|}$ exists using the graph.
+
 ```
 
 ## Evaluate limits
@@ -83,29 +91,38 @@ Determine whether the limit $\lim\limits_{x \to 1}\frac{\sin x}{|x-1|}$ exists u
 Maple provides the following command to evaluate a limit
 
 ```
+
 limit(function, position, direction)
+
 ```
 
 The direction may be omitted when evaluating a two-side limit.
 
 ```{example}
+
 Determine whether the limit $\lim\limits_{x\to 0}\frac{|x|}{x}$ exists.
+
 ```
 
 ```{solution}
+
 You may find the left and right limits using the following commands.
 
     limit(abs(x)/x, x=0, left)
     limit(abs(x)/x, x=0, right)
 
 It turns out that $\lim\limits_{x\to 0}\frac{|x|}{x}$ does not exist because the left limit and the right limit are different.
+
 ```
 
 ```{example}
+
 Evaluate the limit $\lim\limits_{h\to 0}\dfrac{f(x+h)-f(x)}{h}$, where $f(x)=\dfrac{1}{x}$.
+
 ```
 
 ```{solution}
+
 The limit can be obtained using the following command.
 
     limit((1/(x+h)-1/x)/h, x=0)
@@ -113,11 +130,15 @@ The limit can be obtained using the following command.
 ```
 
 ```{exercise}
+
 Determine whether the limit $\lim\limits_{x\to 1/2}\dfrac{2x-1}{|2x^3-x^2|}$ exists.
+
 ```
 
 ```{exercise}
+
 Evaluate the limit $\lim\limits_{t\to 0}\dfrac{\sqrt{x+t}-\sqrt{x}}{t}$.
+
 ```
 
 ## Learn limit laws using `LimitTutor`
@@ -127,10 +148,13 @@ Suppose the limits of two functions $f$ and $g$ at the same point $x=a$ exist (e
 In Maple, you may use the command `LimitTutor(function, position, direction)`, which is again supported by the subpackage `Student[Calculus1]`,  to learn how to evaluate a limit using limit laws and theorems.
 
 ```{example}
+
 Evaluate $\lim\limits_{x\to 0}\dfrac{1-\cos x}{x}$.
+
 ```
 
 ```{solution}
+
 Load the subpackage `Student[Calculus1]` if it was not loaded.
 
     with(Student[Calculus1])
@@ -140,10 +164,13 @@ Use the following command to learn how to evaluate the limit.
     LimitTutor(2-x^3, x=2,'right')
 
 You will see an interactive windows pop out.  You can choose the see the procedure step-by-step.
+
 ```
 
 ```{exercise}
+
 Evaluate $\lim\limits_{x\to 0}\dfrac{(x+2)(\cos x-1)}{x^2-x}$ using `LimitTutor`.
+
 ```
 
 ## Squeeze Theorem
@@ -151,6 +178,7 @@ Evaluate $\lim\limits_{x\to 0}\dfrac{(x+2)(\cos x-1)}{x^2-x}$ using `LimitTutor`
 Comparison is a very useful tool in problem solving. Squeeze theorem is such an example
 
 ```{theorem, name="Squeeze Theorem"}
+
 Suppose that
 $$
 f(x)\leq g(x)\leq h(x)
@@ -163,15 +191,19 @@ Then
 $$
 \lim\limits_{x\to c}g(x)=L.
 $$
+
 ```
 
 Let's use Maple to understand the statement.
 
 ```{example}
+
 Graph the functions $f(x)=-x$, $g(x)=x\cos\frac1x$ and $h(x)=x$ in the same coordinate system. What's the limit of $g(x)$ as $x$ approaches $0$.
+
 ```
 
 ```{solution}
+
 We use the `plot()` command to graph the functions together.
 
     plot([-x, x*cos(1/x), x], x=-1..1, discont, color=[red, blue, red])
@@ -217,7 +249,7 @@ First we define the function.
 
 We first check visually whether the graph has holes or jumps.
 
-    plot(f(x), discont = [showremovable], x = -5 .. 5, smartview = true)
+    plot(f(x), discont=[showremovable], x=-5..5, smartview=true)
 
 In the above command, the option `discont = [showremovable]`  is used to show removable discontinuities.
 
@@ -312,6 +344,7 @@ The results show that the limit may not commute with composition if the outside 
 ```
 
 ```{exercise}
+
 Find three functions $f$, $g$, $h$ and a value $c$ such that $f(g(x))$ is continuous,
 $$
 \lim\limits_{x\to c}f(h(x))=f(\lim\limits_{x\to c}h(x))
@@ -338,7 +371,7 @@ In particular, if $f(a)f(b)<0$ then there exists a number $c$ such that $f(c)=0$
 
 Determine whether the equation
 $$
-\sin^2x + 2x - 1=0
+\sin^2x+2x-1=0
 $$
 has the solution in $(-1, 1)$. Estimate the solution if it exists.
 

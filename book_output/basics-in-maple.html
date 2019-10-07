@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Notes on Maple for Calculus</title>
+  <title>Topic 1 Basics in Maple | Notes on Maple for Calculus</title>
   <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Notes on Maple for Calculus" />
+  <meta property="og:title" content="Topic 1 Basics in Maple | Notes on Maple for Calculus" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Notes on Maple for Calculus" />
+  <meta name="twitter:title" content="Topic 1 Basics in Maple | Notes on Maple for Calculus" />
   
   <meta name="twitter:description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="basics-in-maple.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="limits.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -164,31 +164,310 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Notes on Maple for Calculus</h1>
-<p class="author"><em>Fei Ye</em></p>
-<p class="date"><em>2019-10-07</em></p>
-</div>
-<div id="introduction" class="section level1 unnumbered">
-<h1>Introduction</h1>
-<p>This is a book written for Maple labs for Calculus I and II. The companion textbook is Stewart’s Calculus book.</p>
-<p>Maple 2018 was used for Calculus II and Maple 2019 was used for Calculus I.</p>
-<p>The resource can be found at <a href="https://github.com/fyemath/maple4calc">https://github.com/fyemath/maple4calc</a>.</p>
-<p>Comments and suggestions are very welcome.</p>
-<p>This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
+<div id="basics-in-maple" class="section level1">
+<h1><span class="header-section-number">Topic 1</span> Basics in Maple</h1>
+<div id="what-should-i-do-after-i-opened-maple" class="section level2">
+<h2><span class="header-section-number">1.1</span> What should I do after I opened Maple</h2>
+<p>Once you opened Maple, you will see the following Maple Start document.</p>
 <div class="figure">
-<img src="figs/by-nc-sa.png" alt="" />
-<p class="caption">by-nc-sa license icon</p>
+<img src="figs/Maple-Start.png" alt="" />
+<p class="caption">Maple start page screenshot</p>
+</div>
+<ul>
+<li>If you already know what you want to do, then you may open a new document by clicking <code>New Document</code> icon in the start document. The following shows what an new (empty document) looks like.</li>
+</ul>
+<div class="figure">
+<img src="figs/Maple-New-Doc.png" alt="" />
+<p class="caption">Maple new document page screenshot</p>
+</div>
+<p>In this new document you may type in text under <code>Text</code> mode or evaluate a Maple syntax in the <code>Math</code> mode. (See the following picture).</p>
+<div class="figure">
+<img src="figs/Text-Math-Mode.png" alt="" />
+<p class="caption">Maple text and Math modes screen shot</p>
+</div>
+<ul>
+<li><p>If you want to explore some featured sample documents, you may go to <code>Start.mw</code> document and click on different icons to open a new document.</p>
+<ul>
+<li>You may alway reopen the start page by click the home icon to reopen the start page.</li>
+</ul>
+<div class="figure">
+<img src="figs/Home-reopen-start-page.png" alt="" />
+<p class="caption">Maple reopen start page screenshot</p>
+</div></li>
+<li><p>For Calculus, the most useful document is <code>Calculus</code>.</p></li>
+</ul>
+<div class="figure">
+<img src="figs/Start-Page-Calculus.png" alt="" />
+<p class="caption">Maple start page screen shot with Calculus highlighted</p>
+</div>
+<p>If you click the <code>Calculus</code> icon on the Start page and click <code>OK</code>, you will see the following document.</p>
+<div class="figure">
+<img src="figs/Calculus-Doc.png" alt="" />
+<p class="caption">Maple Calculus document page screen shot</p>
+</div>
+</div>
+<div id="basic-operators" class="section level2">
+<h2><span class="header-section-number">1.2</span> Basic Operators</h2>
+<p>The first thing to know when learn something new is where and how to get help. In Maple, you may simply type</p>
+<pre><code>
+?keyword
+</code></pre>
+<p>to open a help page (a new window).</p>
+<p>For example, the command <code>?operators</code> will lead you to descriptions of arithmetic operators in Maple.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">addition</th>
+<th align="center">subtraction</th>
+<th align="center">multiplication</th>
+<th align="center">division</th>
+<th align="center">exponentiation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Maple Operators</td>
+<td align="center"><code>+</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>*</code></td>
+<td align="center"><code>/</code></td>
+<td align="center"><code>^</code></td>
+</tr>
+<tr class="even">
+<td align="center">In writing</td>
+<td align="center"><span class="math inline">\(x+2\)</span></td>
+<td align="center"><span class="math inline">\(a-b\)</span></td>
+<td align="center"><span class="math inline">\(2x\)</span></td>
+<td align="center"><span class="math inline">\(\dfrac pq\)</span></td>
+<td align="center"><span class="math inline">\(b^5\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">In Maple</td>
+<td align="center"><code>x+2</code></td>
+<td align="center"><code>a-b</code></td>
+<td align="center"><code>2*x</code></td>
+<td align="center"><code>p/q</code></td>
+<td align="center"><code>b^5</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="how-to-define-a-function" class="section level2">
+<h2><span class="header-section-number">1.3</span> How to define a function</h2>
+<p>A function is an assignment, for a given input <span class="math inline">\(x\)</span>, we assignment an output <span class="math inline">\(y\)</span> under a certain rule. Maple take this idea to define functions. The command to define a function has the following form.</p>
+<pre><code>
+function name:= independent variable -&gt; function rule
+</code></pre>
+<p>Here <code>:=</code> means “defined/assigned to be” and <code>-&gt;</code> may be understood as “plug in”.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-1" class="example"><strong>Example 1.1  </strong></span>
+Define the following function in Maple and find the value <span class="math inline">\(f(0.999)\)</span>.</p>
+<p><span class="math display">\[
+f(x)=\dfrac{x}{x-1}
+\]</span></p>
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> The function name is <span class="math inline">\(f\)</span>, the independent variable is <span class="math inline">\(x\)</span> and the function rule is <span class="math inline">\(\dfrac{x}{x-1}\)</span>. So the function can be defined in Maple by the following command.</p>
+<pre><code>f:=x-&gt;x/(x-1)</code></pre>
+<p>Once the function is define, you may find the function value by the command <code>f(0.999)</code>.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-3" class="exercise"><strong>Exercise 1.1  </strong></span>
+Define the following function in Maple and find the value <span class="math inline">\(f(2.0001)\)</span>.</p>
+<p><span class="math display">\[
+g(x)=\dfrac{x^3}{(x-2)^2}
+\]</span></p>
+</div>
+
+
+<div class="remark">
+<p> <span class="remark"><em>Remark. </em></span> 
+The assignment operator <code>:=</code> to the left-hand side the value of the right-hand side. The left-hand side normally is a name and the right-hand side is a value or expression.</p>
 </div>
 
 </div>
+<div id="initially-known-mathematical-functions" class="section level2">
+<h2><span class="header-section-number">1.4</span> Initially known mathematical functions</h2>
+<p>Maple has many predefined functions which can be used to create new functions. To see all initially known mathematical functions in maple, you may use the help command <code>?functions</code> and click the hyperlinked “initial functions” in the description shown in the new window.</p>
+<div class="figure">
+<img src="figs/Initial-Functions.PNG" alt="" />
+<p class="caption">Maple function help page screenshot</p>
+</div>
+<p>Some frequently used functions are listed in tables below.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">absolute value</th>
+<th align="center">square root</th>
+<th align="center">n-th root</th>
+<th align="center">natural exponential</th>
+<th align="center">logarithmic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><code>abs()</code></td>
+<td align="center"><code>sqrt()</code></td>
+<td align="center"><code>surd(,n)</code></td>
+<td align="center"><code>exp()</code></td>
+<td align="center"><code>log()</code>,<code>log[b]()</code>, <code>ln()</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center">sine</th>
+<th align="center">cosine</th>
+<th align="center">tangent</th>
+<th align="center">cotangent</th>
+<th align="center">secant</th>
+<th align="center">cosecant</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><code>sin()</code></td>
+<td align="center"><code>cos()</code></td>
+<td align="center"><code>tan()</code></td>
+<td align="center"><code>cot()</code></td>
+<td align="center"><code>sec()</code></td>
+<td align="center"><code>csc()</code></td>
+</tr>
+</tbody>
+</table>
+<table style="width:100%;">
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+<col width="19%" />
+<col width="15%" />
+<col width="17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">inverse sine</th>
+<th align="center">inverse cosine</th>
+<th align="center">inverse tangent</th>
+<th align="center">inverse cotangent</th>
+<th align="center">inverse secant</th>
+<th align="center">inverse cosecant</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><code>arcsin()</code></td>
+<td align="center"><code>arccos()</code></td>
+<td align="center"><code>arctan()</code></td>
+<td align="center"><code>arccot()</code></td>
+<td align="center"><code>arcsec()</code></td>
+<td align="center"><code>arccsc()</code></td>
+</tr>
+</tbody>
+</table>
+<p>Another initially know function that we will use is the piecewise function.</p>
+<pre><code>
+piecewise(condition1, expression1, condition2, expression2, expression3)
+</code></pre>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-5" class="example"><strong>Example 1.2  </strong></span>
+Define the following function in Maple and evaluate <span class="math inline">\(pwf(3)\)</span></p>
+<p><span class="math display">\[
+pwf(x) =
+  \begin{cases}
+    \sqrt{\sin(x)} &amp; x&lt;-1\\
+    \frac{\sqrt[3]{x}}{|x+2|} &amp; -1\leq x&lt;\pi\\
+    \ln(e^x+2) &amp; \text{otherwise}.
+  \end{cases}
+\]</span></p>
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> 
+The function can be defined by the following command.</p>
+<pre><code>pwf:=x-&gt;piecewise(x&lt;-1, sqrt(sin(x)), x&gt;=-1 and x&lt;Pi,
+surd(x, 3)/abs(x+2), ln(exp(x)+2))</code></pre>
+<p>The value <span class="math inline">\(pwf(3)\)</span> can be obtained by the command <code>pwf(3)</code>.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:piecewise-exer1" class="exercise"><strong>Exercise 1.2  </strong></span>
+Define the following function in Maple and evaluate <span class="math inline">\(q(1)\)</span></p>
+<p><span class="math display">\[
+q(x) =
+\begin{cases}
+  |x-2|/\sqrt{x} &amp; x&gt;\dfrac{pi}{2}\\
+  (x-1)\tan(x) &amp; 0\leq x&lt; \dfrac{\pi}{2}\\
+  \sqrt[5]{\log_2(1+e^x)} &amp; \text{otherwise}
+\end{cases}
+\]</span></p>
+</div>
+
+</div>
+<div id="plot-functions" class="section level2">
+<h2><span class="header-section-number">1.5</span> Plot functions</h2>
+<p>In Maple, you may plot a single variable function easily using the command</p>
+<pre><code>
+plot(expression, domain, options)
+</code></pre>
+<p>or plot several single variable functions together using</p>
+<pre><code>
+plot([experssion1, experssion2], domain, options)
+</code></pre>
+<p>In the command, options may be omitted, but the domain must be given.
+To see details about available options, you may run the command <code>?plot</code> in Maple.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-7" class="example"><strong>Example 1.3  </strong></span>
+Plot the functions <span class="math inline">\(f(x)=x^2\)</span> in red and <span class="math inline">\(l(x)=2x+1\)</span> in blue over the domain <span class="math inline">\([-1, 2]\)</span>.</p>
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> 
+Here are the command and the output</p>
+<pre><code>plot([x^2, 2*x+1], x=-1..2, color=[red, blue])</code></pre>
+<div class="figure">
+<img src="figs/First-Plot-Example.png" alt="" />
+<p class="caption">Screen shot of the output generated by plotting of two function</p>
+</div>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-9" class="exercise"><strong>Exercise 1.3  </strong></span>
+Plot the piecewise function in Exercise  over the domain <span class="math inline">\([-2, 4]\)</span>.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-10" class="exercise"><strong>Exercise 1.4  </strong></span>
+Plot the functions <span class="math inline">\(f(x)=\ln(x+5)\)</span> and <span class="math inline">\(g(x)=3\cos(2x+1)+4\)</span> over the domain <span class="math inline">\([-\pi, \pi]\)</span>.</p>
+</div>
+
+
+</div>
+</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="basics-in-maple.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="limits.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
