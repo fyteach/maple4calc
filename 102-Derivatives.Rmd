@@ -468,3 +468,97 @@ Find the linear approximation $L(x)$ of the function $f(x) = \cos(2x)$ at $x = 0
 Find the linear approximation $L(x)$ of the function $f(x) = \sqrt{x^2+5}$ at $x = 2$. Use this linearization to approximate $f(2.03)$.
 
 ```
+
+## Newton's Method
+
+In science and engineering, many problems may be eventually reduced to nonlinear equations which likely has no algebraic (analytic) solution. In such a situation, numerical solutions are hoped for applications. We've seen a method to find a numerical solution using the intermediate value theorem. However, it is not very effective. Using linearization, a root-finding algorithm was developed by Newton and other mathematicians. The idea is to use the $x$-coordinates of tangent lines to approximate a root of an equation. Let's see an example first using the Maple command `NewtonsMethod(function, starting point, options)` which is again supported by the subpackage `Student[Calculus1]`.
+
+```{example}
+
+Starting at $x=-1.5$, obtain a solution of $\sin x-\frac{x}{2}=0$ by Newton's method.
+
+```
+
+```{solution}
+
+First load `Student[Calculus1]` use `with()`.
+
+    with(Student[Calculus1])
+
+Now apply the `NewtonsMethod command`
+
+    NewtonsMethod(sin(x)-x/2, x=-1.5)
+
+To see the graph, you may add the option `output=plot`.
+
+    NewtonsMethod(sin(x)-x/2, x=-1.5, showroot=true, output=plot)
+
+```
+
+How does Newton's methods work? It's an iteration process. Consider the equation $f(x)=0$. Suppose $f$ is differentiable. To find a solution, we pick an initial value $x_0$ first. The $x$-value $x_1$ of the $x$-intercept of the linearization $L_0(x)=f'(x_0)(x-x_0)+f(x_0)$ should produce a value that is closer. The value $x_1$ is given by the formula
+$$
+x_1=x_0-\frac{f(x_0)}{f'(x_0)}.
+$$
+Iteratedly applying the above idea, we get the iteration formula
+$$
+x_{n}=x_{n-1}-\frac{f(x_{n-1})}{f'(x_{n-1})}.
+$$
+
+```{remark}
+
+How many times should be iterated? It depends on the sizes of acceptable errors and a maximum number of iteration.
+
+If the $x$-values produced from two successive iterates is sufficiently small, say $|x_n-x_{n-1}|<e_1$, and the function value at  $x=x_n$ is sufficiently small, say $f(x_n)<e_2$, where $e_1$ and $e_2$ are acceptable errors, then we may say $f(x)=0$ has a solution at $x=x_n$.
+
+If after iterated a maximum number of times and a solution was not found, then we may have to change the initial value or using other methods.
+
+If it happens that $f'(x_n) = 0$, then the iteration process fails.
+
+The above algorithm may be realized using the following Maple codes.
+
+    tol := 10^(-3);
+    N := 100;
+    f := x -> sin(x) - 1/2*x;
+    m := D(f);
+    newton := x -> evalf(x - f(x)/m(x)); # Newton's formula
+    x := -1.5;
+
+    for i to N do
+      x := newton(x);
+      if abs(x - newton(x)) < tol and abs(f(x)) < tol then
+        break;
+      eli i = N then
+        error "Newton's method did not converge";
+      end if;
+    end do;
+
+    print(x);
+
+If you don't want to check the size of error, the code can be simplified using the composite symbol `@` in Maple.
+
+    restart;
+    f := x -> sin(x) - 1/2*x;
+    m := D(f);
+    newton := x -> evalf(x - f(x)/m(x));
+    N:=100
+    x[N]:=evalf((newton@@N)(-1.5)); # @@N means that newton compose with itself N times.
+
+```
+
+```{exercise}
+
+Using Newton's Method to find solutions of the polynomial equation $x^3-x^2+1=0$.
+
+```
+
+```{exercise}
+
+Using Newton's Method to find solutions of the equation $\cos x=\frac{x}{2}$.
+
+```
+
+```{exercise}
+
+Using Newton's Method to find the solution of the equation $\tan x-2x=0$ in the interval $[1, 2]$. Among 1 and 2,which is a better initial value? Why?
+
+```

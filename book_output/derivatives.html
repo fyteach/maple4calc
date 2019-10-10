@@ -24,7 +24,7 @@
 <meta name="author" content="Fei Ye" />
 
 
-<meta name="date" content="2019-10-07" />
+<meta name="date" content="2019-10-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -95,6 +95,7 @@
 <li class="chapter" data-level="3.4" data-path="derivatives.html"><a href="derivatives.html#implicit-differentiation"><i class="fa fa-check"></i><b>3.4</b> Implicit Differentiation</a></li>
 <li class="chapter" data-level="3.5" data-path="derivatives.html"><a href="derivatives.html#related-rates"><i class="fa fa-check"></i><b>3.5</b> Related Rates</a></li>
 <li class="chapter" data-level="3.6" data-path="derivatives.html"><a href="derivatives.html#linearizations"><i class="fa fa-check"></i><b>3.6</b> Linearizations</a></li>
+<li class="chapter" data-level="3.7" data-path="derivatives.html"><a href="derivatives.html#newtons-method"><i class="fa fa-check"></i><b>3.7</b> Newton’s Method</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="application-of-differentiation.html"><a href="application-of-differentiation.html"><i class="fa fa-check"></i><b>4</b> Application of Differentiation</a><ul>
 <li class="chapter" data-level="4.1" data-path="application-of-differentiation.html"><a href="application-of-differentiation.html#maximum-and-minimum-values"><i class="fa fa-check"></i><b>4.1</b> Maximum and Minimum Values</a></li>
@@ -582,6 +583,87 @@ Find the linear approximation <span class="math inline">\(L(x)\)</span> of the f
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-80" class="exercise"><strong>Exercise 3.19  </strong></span>
 Find the linear approximation <span class="math inline">\(L(x)\)</span> of the function <span class="math inline">\(f(x) = \sqrt{x^2+5}\)</span> at <span class="math inline">\(x = 2\)</span>. Use this linearization to approximate <span class="math inline">\(f(2.03)\)</span>.</p>
+</div>
+
+</div>
+<div id="newtons-method" class="section level2">
+<h2><span class="header-section-number">3.7</span> Newton’s Method</h2>
+<p>In science and engineering, many problems may be eventually reduced to nonlinear equations which likely has no algebraic (analytic) solution. In such a situation, numerical solutions are hoped for applications. We’ve seen a method to find a numerical solution using the intermediate value theorem. However, it is not very effective. Using linearization, a root-finding algorithm was developed by Newton and other mathematicians. The idea is to use the <span class="math inline">\(x\)</span>-coordinates of tangent lines to approximate a root of an equation. Let’s see an example first using the Maple command <code>NewtonsMethod(function, starting point, options)</code> which is again supported by the subpackage <code>Student[Calculus1]</code>.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-81" class="example"><strong>Example 3.9  </strong></span>
+Starting at <span class="math inline">\(x=-1.5\)</span>, obtain a solution of <span class="math inline">\(\sin x-\frac{x}{2}=0\)</span> by Newton’s method.</p>
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> 
+First load <code>Student[Calculus1]</code> use <code>with()</code>.</p>
+<pre><code>with(Student[Calculus1])</code></pre>
+<p>Now apply the <code>NewtonsMethod command</code></p>
+<pre><code>NewtonsMethod(sin(x)-x/2, x=-1.5)</code></pre>
+<p>To see the graph, you may add the option <code>output=plot</code>.</p>
+<pre><code>NewtonsMethod(sin(x)-x/2, x=-1.5, showroot=true, output=plot)</code></pre>
+</div>
+
+<p>How does Newton’s methods work? It’s an iteration process. Consider the equation <span class="math inline">\(f(x)=0\)</span>. Suppose <span class="math inline">\(f\)</span> is differentiable. To find a solution, we pick an initial value <span class="math inline">\(x_0\)</span> first. The <span class="math inline">\(x\)</span>-value <span class="math inline">\(x_1\)</span> of the <span class="math inline">\(x\)</span>-intercept of the linearization <span class="math inline">\(L_0(x)=f&#39;(x_0)(x-x_0)+f(x_0)\)</span> should produce a value that is closer. The value <span class="math inline">\(x_1\)</span> is given by the formula
+<span class="math display">\[
+x_1=x_0-\frac{f(x_0)}{f&#39;(x_0)}.
+\]</span>
+Iteratedly applying the above idea, we get the iteration formula
+<span class="math display">\[
+x_{n}=x_{n-1}-\frac{f(x_{n-1})}{f&#39;(x_{n-1})}.
+\]</span></p>
+
+<div class="remark">
+<p> <span class="remark"><em>Remark. </em></span> 
+How many times should be iterated? It depends on the sizes of acceptable errors and a maximum number of iteration.</p>
+<p>If the <span class="math inline">\(x\)</span>-values produced from two successive iterates is sufficiently small, say <span class="math inline">\(|x_n-x_{n-1}|&lt;e_1\)</span>, and the function value at <span class="math inline">\(x=x_n\)</span> is sufficiently small, say <span class="math inline">\(f(x_n)&lt;e_2\)</span>, where <span class="math inline">\(e_1\)</span> and <span class="math inline">\(e_2\)</span> are acceptable errors, then we may say <span class="math inline">\(f(x)=0\)</span> has a solution at <span class="math inline">\(x=x_n\)</span>.</p>
+<p>If after iterated a maximum number of times and a solution was not found, then we may have to change the initial value or using other methods.</p>
+<p>If it happens that <span class="math inline">\(f&#39;(x_n) = 0\)</span>, then the iteration process fails.</p>
+<p>The above algorithm may be realized using the following Maple codes.</p>
+<pre><code>tol := 10^(-3);
+N := 100;
+f := x -&gt; sin(x) - 1/2*x;
+m := D(f);
+newton := x -&gt; evalf(x - f(x)/m(x)); # Newton&#39;s formula
+x := -1.5;
+
+for i to N do
+  x := newton(x);
+  if abs(x - newton(x)) &lt; tol and abs(f(x)) &lt; tol then
+    break;
+  eli i = N then
+    error &quot;Newton&#39;s method did not converge&quot;;
+  end if;
+end do;
+
+print(x);</code></pre>
+<p>If you don’t want to check the size of error, the code can be simplified using the composite symbol <code>@</code> in Maple.</p>
+<pre><code>restart;
+f := x -&gt; sin(x) - 1/2*x;
+m := D(f);
+newton := x -&gt; evalf(x - f(x)/m(x));
+N:=100
+x[N]:=evalf((newton@@N)(-1.5)); # @@N means that newton compose with itself N times.</code></pre>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-84" class="exercise"><strong>Exercise 3.20  </strong></span>
+Using Newton’s Method to find solutions of the polynomial equation <span class="math inline">\(x^3-x^2+1=0\)</span>.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-85" class="exercise"><strong>Exercise 3.21  </strong></span>
+Using Newton’s Method to find solutions of the equation <span class="math inline">\(\cos x=\frac{x}{2}\)</span>.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-86" class="exercise"><strong>Exercise 3.22  </strong></span>
+Using Newton’s Method to find the solution of the equation <span class="math inline">\(\tan x-2x=0\)</span> in the interval <span class="math inline">\([1, 2]\)</span>. Among 1 and 2,which is a better initial value? Why?</p>
 </div>
 
 
