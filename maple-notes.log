@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.27)  9 OCT 2019 23:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.27)  16 OCT 2019 00:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -24192,7 +24192,7 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 \openout4 = `maple-notes.toc'.
 
 [4]
-<figs/by-nc-sa.png, id=328, 97.0827pt x 33.9669pt>
+<figs/by-nc-sa.png, id=333, 97.0827pt x 33.9669pt>
 File: figs/by-nc-sa.png Graphic file (type png)
 <use figs/by-nc-sa.png>
 Package pdftex.def Info: figs/by-nc-sa.png  used on input line 130.
@@ -24203,7 +24203,7 @@ Package pdftex.def Info: figs/by-nc-sa.png  used on input line 130.
 
 ]
 Chapter 1.
-<figs/Maple-Start.png, id=343, 1305.63255pt x 706.33698pt>
+<figs/Maple-Start.png, id=348, 1305.63255pt x 706.33698pt>
 File: figs/Maple-Start.png Graphic file (type png)
 <use figs/Maple-Start.png>
 Package pdftex.def Info: figs/Maple-Start.png  used on input line 144.
@@ -24213,28 +24213,28 @@ LaTeX Font Info:    Try loading font information for TS1+lmr on input line 151.
 (c:/Users/Fei/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<figs/Maple-New-Doc.png, id=344, 1306.99614pt x 708.38235pt>
+<figs/Maple-New-Doc.png, id=349, 1306.99614pt x 708.38235pt>
 File: figs/Maple-New-Doc.png Graphic file (type png)
 <use figs/Maple-New-Doc.png>
 Package pdftex.def Info: figs/Maple-New-Doc.png  used on input line 156.
 (pdftex.def)             Requested size: 344.9962pt x 186.98541pt.
-<figs/Text-Math-Mode.png, id=345, 459.5281pt x 216.1282pt>
+<figs/Text-Math-Mode.png, id=350, 459.5281pt x 216.1282pt>
 File: figs/Text-Math-Mode.png Graphic file (type png)
 <use figs/Text-Math-Mode.png>
 Package pdftex.def Info: figs/Text-Math-Mode.png  used on input line 164.
 (pdftex.def)             Requested size: 345.01685pt x 162.27054pt.
-<figs/Home-reopen-start-page.png, id=346, 534.52528pt x 387.25812pt>
+<figs/Home-reopen-start-page.png, id=351, 534.52528pt x 387.25812pt>
 File: figs/Home-reopen-start-page.png Graphic file (type png)
 <use figs/Home-reopen-start-page.png>
 Package pdftex.def Info: figs/Home-reopen-start-page.png  used on input line 18
 0.
 (pdftex.def)             Requested size: 345.01492pt x 249.95978pt.
-<figs/Start-Page-Calculus.png, id=347, 950.41869pt x 515.43509pt>
+<figs/Start-Page-Calculus.png, id=352, 950.41869pt x 515.43509pt>
 File: figs/Start-Page-Calculus.png Graphic file (type png)
 <use figs/Start-Page-Calculus.png>
 Package pdftex.def Info: figs/Start-Page-Calculus.png  used on input line 189.
 (pdftex.def)             Requested size: 344.99289pt x 187.098pt.
-<figs/Calculus-Doc.png, id=348, 955.87302pt x 537.93425pt>
+<figs/Calculus-Doc.png, id=353, 955.87302pt x 537.93425pt>
 File: figs/Calculus-Doc.png Graphic file (type png)
 <use figs/Calculus-Doc.png>
 Package pdftex.def Info: figs/Calculus-Doc.png  used on input line 197.
@@ -24252,7 +24252,7 @@ Overfull \hbox (33.86185pt too wide) in alignment at lines 219--224
 [7] [8 <./figs/Maple-Start.png> <./figs/Maple-New-Doc.png>] [9 <./figs/Text-Mat
 h-Mode.png> <./figs/Home-reopen-start-page.png>] [10 <./figs/Start-Page-Calculu
 s.png> <./figs/Calculus-Doc.png>] [11]
-<figs/Initial-Functions.PNG, id=397, 862.46745pt x 371.57689pt>
+<figs/Initial-Functions.PNG, id=402, 862.46745pt x 371.57689pt>
 File: figs/Initial-Functions.PNG Graphic file (type png)
 <use figs/Initial-Functions.PNG>
 Package pdftex.def Info: figs/Initial-Functions.PNG  used on input line 278.
@@ -24287,7 +24287,7 @@ xpression3)[]
 Overfull \vbox (122.07184pt too high) has occurred while \output is active []
 
 [12 <./figs/Initial-Functions.PNG>]
-<figs/First-Plot-Example.png, id=415, 337.26pt x 315.42844pt>
+<figs/First-Plot-Example.png, id=420, 337.26pt x 315.42844pt>
 File: figs/First-Plot-Example.png Graphic file (type png)
 <use figs/First-Plot-Example.png>
 Package pdftex.def Info: figs/First-Plot-Example.png  used on input line 417.
@@ -24314,7 +24314,7 @@ Overfull \hbox (6.74898pt too wide) in paragraph at lines 649--649
  red])[] 
  []
 
-<figs/squeeze.png, id=492, 401.5pt x 401.5pt>
+<figs/squeeze.png, id=497, 401.5pt x 401.5pt>
 File: figs/squeeze.png Graphic file (type png)
 <use figs/squeeze.png>
 Package pdftex.def Info: figs/squeeze.png  used on input line 653.
@@ -24325,7 +24325,7 @@ Overfull \hbox (242.99829pt too wide) in paragraph at lines 692--692
 1 <= x and x < 2, 3 - x, 2 < x, sin(x - 2) + 1, -2)[] 
  []
 
-<figs/Discontinuities.png, id=500, 1039.885pt x 968.61874pt>
+<figs/Discontinuities.png, id=505, 1039.885pt x 968.61874pt>
 File: figs/Discontinuities.png Graphic file (type png)
 <use figs/Discontinuities.png>
 Package pdftex.def Info: figs/Discontinuities.png  used on input line 704.
@@ -24335,25 +24335,25 @@ Package pdftex.def Info: figs/Discontinuities.png  used on input line 704.
 ]
 Chapter 3.
 [27] [28]
-<figs/DiffTutor-Example.png, id=570, 583.61433pt x 551.5701pt>
+<figs/DiffTutor-Example.png, id=575, 583.61433pt x 551.5701pt>
 File: figs/DiffTutor-Example.png Graphic file (type png)
 <use figs/DiffTutor-Example.png>
 Package pdftex.def Info: figs/DiffTutor-Example.png  used on input line 1036.
 (pdftex.def)             Requested size: 345.00626pt x 326.06317pt.
 [29] [30 <./figs/DiffTutor-Example.png>]
-<figs/D_vs_diff.png, id=594, 873.37613pt x 603.38632pt>
+<figs/D_vs_diff.png, id=599, 873.37613pt x 603.38632pt>
 File: figs/D_vs_diff.png Graphic file (type png)
 <use figs/D_vs_diff.png>
 Package pdftex.def Info: figs/D_vs_diff.png  used on input line 1076.
 (pdftex.def)             Requested size: 344.99977pt x 238.34879pt.
 [31 <./figs/D_vs_diff.png>]
-<figs/chain_rule.png, id=604, 621.11293pt x 417.25699pt>
+<figs/chain_rule.png, id=609, 621.11293pt x 417.25699pt>
 File: figs/chain_rule.png Graphic file (type png)
 <use figs/chain_rule.png>
 Package pdftex.def Info: figs/chain_rule.png  used on input line 1118.
 (pdftex.def)             Requested size: 345.00609pt x 231.77136pt.
 [32 <./figs/chain_rule.png>]
-<figs/DiffTutor-Chain-Rule-Example.png, id=617, 506.5718pt x 326.57858pt>
+<figs/DiffTutor-Chain-Rule-Example.png, id=622, 506.5718pt x 326.57858pt>
 File: figs/DiffTutor-Chain-Rule-Example.png Graphic file (type png)
 <use figs/DiffTutor-Chain-Rule-Example.png>
 Package pdftex.def Info: figs/DiffTutor-Chain-Rule-Example.png  used on input l
@@ -24365,17 +24365,17 @@ Overfull \hbox (22.49893pt too wide) in paragraph at lines 1269--1269
 , blue]);[] 
  []
 
-[34] [35] [36] [37]
-Overfull \hbox (95.99872pt too wide) in paragraph at lines 1509--1509
+[34] [35] [36] [37] [38] [39]
+Overfull \hbox (95.99872pt too wide) in paragraph at lines 1608--1608
 []\T1/lmtt/m/n/10 x[N]:=evalf((newton@@N)(-1.5)); # @@N means that newton compo
 se with itself N times.[] 
  []
 
-[38] [39] [40
-
-]
+[40]
 Chapter 4.
-[41] [42
+[41
+
+] [42
 
 ]
 Chapter 5.
@@ -24388,46 +24388,46 @@ Chapter 6.
 ] [47] [48]
 Chapter 7.
 
-Overfull \hbox (5.7297pt too wide) in paragraph at lines 1593--1594
+Overfull \hbox (5.7297pt too wide) in paragraph at lines 1692--1693
 []\T1/lmr/m/n/10 (-20) In Maple, the fol-low-ing com-mand, sup-ported by the pa
 ck-age \T1/lmtt/m/n/10 Student[Calculus1]\T1/lmr/m/n/10 (-20) ,
  []
 
-<figs/VolOfRev-help-page.png, id=757, 869.96716pt x 485.43623pt>
+<figs/VolOfRev-help-page.png, id=779, 869.96716pt x 485.43623pt>
 File: figs/VolOfRev-help-page.png Graphic file (type png)
 <use figs/VolOfRev-help-page.png>
-Package pdftex.def Info: figs/VolOfRev-help-page.png  used on input line 1607.
+Package pdftex.def Info: figs/VolOfRev-help-page.png  used on input line 1706.
 (pdftex.def)             Requested size: 345.00719pt x 192.51184pt.
 [49
 
 ]
-Overfull \hbox (22.49893pt too wide) in paragraph at lines 1626--1626
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 1725--1725
 []\T1/lmtt/m/n/10 VolumeOfRevolution(x^2, x, x = 0 .. 1, axis = vertical, outpu
 t = plot)[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 1632--1632
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1731--1731
 []\T1/lmtt/m/n/10 VolumeOfRevolution(x^2, x, x = 0 .. 1, axis = vertical, outpu
 t = integral)[] 
  []
 
 
-Overfull \hbox (27.74892pt too wide) in paragraph at lines 1638--1638
+Overfull \hbox (27.74892pt too wide) in paragraph at lines 1737--1737
 []\T1/lmtt/m/n/10 VolumeOfRevolution(x^2, x, x = 0 .. 1, axis = vertical, outpu
 t = value)[] 
  []
 
-<figs/VolOfRev-Example1.png, id=765, 700.20085pt x 533.84349pt>
+<figs/VolOfRev-Example1.png, id=787, 700.20085pt x 533.84349pt>
 File: figs/VolOfRev-Example1.png Graphic file (type png)
 <use figs/VolOfRev-Example1.png>
-Package pdftex.def Info: figs/VolOfRev-Example1.png  used on input line 1642.
+Package pdftex.def Info: figs/VolOfRev-Example1.png  used on input line 1741.
 (pdftex.def)             Requested size: 345.0032pt x 263.03554pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [50 <./figs/VolOfRev-help-page.png>]
-Overfull \hbox (194.49854pt too wide) in paragraph at lines 1656--1656
+Overfull \hbox (194.49854pt too wide) in paragraph at lines 1755--1755
  [] \T1/lmtt/m/n/10 VolumeOfRevolution(x^2, x, x = 0 .. 1, axis = vertical, dis
 tancefromaxis = -2, output = integral)[] 
  []
@@ -24436,63 +24436,63 @@ tancefromaxis = -2, output = integral)[]
 
 ]
 Chapter 8.
-<figs/InversePlot1.png, id=788, 666.11122pt x 304.76123pt>
+<figs/InversePlot1.png, id=811, 666.11122pt x 304.76123pt>
 File: figs/InversePlot1.png Graphic file (type png)
 <use figs/InversePlot1.png>
-Package pdftex.def Info: figs/InversePlot1.png  used on input line 1708.
+Package pdftex.def Info: figs/InversePlot1.png  used on input line 1807.
 (pdftex.def)             Requested size: 345.00768pt x 157.84895pt.
 
-Overfull \hbox (59.24883pt too wide) in paragraph at lines 1716--1716
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 1815--1815
 []  \T1/lmtt/m/n/10 plot([f(x), g(x), x], x = -2 .. 4, y = -5 .. 5, color = [re
 d, black, blue])[] 
  []
 
 [53] [54 <./figs/InversePlot1.png>] [55]
-Overfull \hbox (132.74861pt too wide) in paragraph at lines 1850--1850
+Overfull \hbox (132.74861pt too wide) in paragraph at lines 1949--1949
 []\T1/lmtt/m/n/10 plot([ln(x), exp(x), 2^x, log[2](x), x], x=-5..5, color=[blue
 , green, purple, yellow, red])[] 
  []
 
-<figs/Log-Exp-Functions-01.png, id=819, 295.89792pt x 277.48953pt>
+<figs/Log-Exp-Functions-01.png, id=841, 295.89792pt x 277.48953pt>
 File: figs/Log-Exp-Functions-01.png Graphic file (type png)
 <use figs/Log-Exp-Functions-01.png>
-Package pdftex.def Info: figs/Log-Exp-Functions-01.png  used on input line 1856
+Package pdftex.def Info: figs/Log-Exp-Functions-01.png  used on input line 1955
 .
 (pdftex.def)             Requested size: 295.91525pt x 277.50577pt.
 [56 <./figs/Log-Exp-Functions-01.png>]
-<figs/Calculus-Palette.png, id=830, 113.17755pt x 143.17642pt>
+<figs/Calculus-Palette.png, id=852, 113.17755pt x 143.17642pt>
 File: figs/Calculus-Palette.png Graphic file (type png)
 <use figs/Calculus-Palette.png>
-Package pdftex.def Info: figs/Calculus-Palette.png  used on input line 1899.
+Package pdftex.def Info: figs/Calculus-Palette.png  used on input line 1998.
 (pdftex.def)             Requested size: 113.17899pt x 143.17824pt.
 [57 <./figs/Calculus-Palette.png>]
-<figs/DiffTutor-ex.png, id=843, 415.8934pt x 386.57632pt>
+<figs/DiffTutor-ex.png, id=865, 415.8934pt x 386.57632pt>
 File: figs/DiffTutor-ex.png Graphic file (type png)
 <use figs/DiffTutor-ex.png>
-Package pdftex.def Info: figs/DiffTutor-ex.png  used on input line 1934.
+Package pdftex.def Info: figs/DiffTutor-ex.png  used on input line 2033.
 (pdftex.def)             Requested size: 345.01375pt x 320.69308pt.
 [58 <./figs/DiffTutor-ex.png>]
-<figs/IntTutor-ex.png, id=851, 416.5752pt x 385.89453pt>
+<figs/IntTutor-ex.png, id=873, 416.5752pt x 385.89453pt>
 File: figs/IntTutor-ex.png Graphic file (type png)
 <use figs/IntTutor-ex.png>
-Package pdftex.def Info: figs/IntTutor-ex.png  used on input line 1967.
+Package pdftex.def Info: figs/IntTutor-ex.png  used on input line 2066.
 (pdftex.def)             Requested size: 345.00726pt x 319.59755pt.
 [59 <./figs/IntTutor-ex.png>] [60]
-<figs/InversePlot_tanx.png, id=878, 283.0575pt x 304.13625pt>
+<figs/InversePlot_tanx.png, id=900, 283.0575pt x 304.13625pt>
 File: figs/InversePlot_tanx.png Graphic file (type png)
 <use figs/InversePlot_tanx.png>
-Package pdftex.def Info: figs/InversePlot_tanx.png  used on input line 2096.
+Package pdftex.def Info: figs/InversePlot_tanx.png  used on input line 2195.
 (pdftex.def)             Requested size: 283.06543pt x 304.14478pt.
 [61] [62 <./figs/InversePlot_tanx.PNG>] [63] [64]
 Chapter 9.
 
-Overfull \hbox (6.74898pt too wide) in paragraph at lines 2253--2253
+Overfull \hbox (6.74898pt too wide) in paragraph at lines 2352--2352
 []\T1/lmtt/m/n/10 # use DiffTutor to evaluate the integral of the resulting fun
 ction.[] 
  []
 
 
-Overfull \hbox (25.97462pt too wide) in paragraph at lines 2256--2257
+Overfull \hbox (25.97462pt too wide) in paragraph at lines 2355--2356
 []\T1/lmr/m/n/10 (-20) You may com-pare the above so-lu-tion with the so-lu-tio
 n given by \T1/lmtt/m/n/10 IntTutor((cos(x))^^B4,
  []
@@ -24510,13 +24510,13 @@ T1/lmr/m/n/10 67
 ]
 Chapter 10.
 [69]
-Overfull \hbox (8.59273pt too wide) in paragraph at lines 2478--2478
+Overfull \hbox (8.59273pt too wide) in paragraph at lines 2577--2577
 []\T1/lmtt/m/n/10 # Load the package (skip if the package was already loaded)[]
  
  []
 
 
-Overfull \hbox (1.499pt too wide) in paragraph at lines 2478--2478
+Overfull \hbox (1.499pt too wide) in paragraph at lines 2577--2577
 []\T1/lmtt/m/n/10 SurfaceOfRevolution(sqrt(x),x=1..4,output=integral, axis=vert
 ical)[] 
  []
@@ -24527,25 +24527,25 @@ ical)[]
 Chapter 11.
 [73] [74]
 
-LaTeX Warning: Reference `@' on page 75 undefined on input line 2658.
+LaTeX Warning: Reference `@' on page 75 undefined on input line 2757.
 
 [75]
 Underfull \vbox (badness 2865) has occurred while \output is active []
 
 [76] [77]
-Overfull \hbox (48.74886pt too wide) in paragraph at lines 2809--2809
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 2908--2908
 []\T1/lmtt/m/n/10 for n to 5 do T := (eval(diff(g(x), x$n), x = 0))*x^n/factori
 al(n)+T end do[] 
  []
 
-<figs/non-analytic-smooth.png, id=1047, 401.5pt x 401.5pt>
+<figs/non-analytic-smooth.png, id=1069, 401.5pt x 401.5pt>
 File: figs/non-analytic-smooth.png Graphic file (type png)
 <use figs/non-analytic-smooth.png>
-Package pdftex.def Info: figs/non-analytic-smooth.png  used on input line 2812.
+Package pdftex.def Info: figs/non-analytic-smooth.png  used on input line 2911.
 
 (pdftex.def)             Requested size: 345.02596pt x 345.02596pt.
 
-Overfull \hbox (223.51787pt too wide) in paragraph at lines 2811--2813
+Overfull \hbox (223.51787pt too wide) in paragraph at lines 2910--2912
 []\T1/lmr/m/n/10 (-20) The graphs of the func-tions are shown in the pic-ture. 
 [] 
  []
@@ -24554,25 +24554,25 @@ Overfull \hbox (223.51787pt too wide) in paragraph at lines 2811--2813
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [78]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2828.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2927.
 [79 <./figs/non-analytic-smooth.png (PNG copy)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2828.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2927.
 (./maple-notes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2828.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2828.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2927.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2927.
 
 Package rerunfilecheck Info: File `maple-notes.out' has not changed.
-(rerunfilecheck)             Checksum: E0B483EF07256DCA3C62D51484F07E4C;10701.
+(rerunfilecheck)             Checksum: 7C44397A6F71D75E4DBB58B57E55710C;10923.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2828.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2927.
  ) 
 Here is how much of TeX's memory you used:
- 13482 strings out of 494553
- 200438 string characters out of 6176105
- 292836 words of memory out of 5000000
- 16341 multiletter control sequences out of 15000+600000
+ 13505 strings out of 494553
+ 200766 string characters out of 6176105
+ 292987 words of memory out of 5000000
+ 16346 multiletter control sequences out of 15000+600000
  72120 words of font info for 122 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  32i,12n,38p,974b,516s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -24602,10 +24602,10 @@ TeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/Users/Fei/AppData/Roaming/Ti
 nyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/Fei/AppData/Roaming
 /TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Users/Fei/AppData/Roam
 ing/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtto10.pfb>
-Output written on maple-notes.pdf (79 pages, 1400175 bytes).
+Output written on maple-notes.pdf (79 pages, 1407136 bytes).
 PDF statistics:
- 1239 PDF objects out of 1440 (max. 8388607)
- 1083 compressed objects within 11 object streams
- 492 named destinations out of 1000 (max. 500000)
- 12881 words of extra memory for PDF output out of 14400 (max. 10000000)
+ 1266 PDF objects out of 1440 (max. 8388607)
+ 1109 compressed objects within 12 object streams
+ 510 named destinations out of 1000 (max. 500000)
+ 12889 words of extra memory for PDF output out of 14400 (max. 10000000)
 

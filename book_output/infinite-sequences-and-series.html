@@ -24,7 +24,7 @@
 <meta name="author" content="Fei Ye" />
 
 
-<meta name="date" content="2019-10-09" />
+<meta name="date" content="2019-10-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -93,9 +93,10 @@
 <li class="chapter" data-level="3.2" data-path="derivatives.html"><a href="derivatives.html#calculating-derivatives"><i class="fa fa-check"></i><b>3.2</b> Calculating Derivatives</a></li>
 <li class="chapter" data-level="3.3" data-path="derivatives.html"><a href="derivatives.html#chain-rule"><i class="fa fa-check"></i><b>3.3</b> Chain Rule</a></li>
 <li class="chapter" data-level="3.4" data-path="derivatives.html"><a href="derivatives.html#implicit-differentiation"><i class="fa fa-check"></i><b>3.4</b> Implicit Differentiation</a></li>
-<li class="chapter" data-level="3.5" data-path="derivatives.html"><a href="derivatives.html#related-rates"><i class="fa fa-check"></i><b>3.5</b> Related Rates</a></li>
-<li class="chapter" data-level="3.6" data-path="derivatives.html"><a href="derivatives.html#linearizations"><i class="fa fa-check"></i><b>3.6</b> Linearizations</a></li>
-<li class="chapter" data-level="3.7" data-path="derivatives.html"><a href="derivatives.html#newtons-method"><i class="fa fa-check"></i><b>3.7</b> Newton’s Method</a></li>
+<li class="chapter" data-level="3.5" data-path="derivatives.html"><a href="derivatives.html#rates-of-change-and-derivatives"><i class="fa fa-check"></i><b>3.5</b> Rates of Change and Derivatives</a></li>
+<li class="chapter" data-level="3.6" data-path="derivatives.html"><a href="derivatives.html#related-rates"><i class="fa fa-check"></i><b>3.6</b> Related Rates</a></li>
+<li class="chapter" data-level="3.7" data-path="derivatives.html"><a href="derivatives.html#linearizations"><i class="fa fa-check"></i><b>3.7</b> Linearizations</a></li>
+<li class="chapter" data-level="3.8" data-path="derivatives.html"><a href="derivatives.html#newtons-method"><i class="fa fa-check"></i><b>3.8</b> Newton’s Method</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="application-of-differentiation.html"><a href="application-of-differentiation.html"><i class="fa fa-check"></i><b>4</b> Application of Differentiation</a><ul>
 <li class="chapter" data-level="4.1" data-path="application-of-differentiation.html"><a href="application-of-differentiation.html#maximum-and-minimum-values"><i class="fa fa-check"></i><b>4.1</b> Maximum and Minimum Values</a></li>
@@ -192,7 +193,7 @@ seq(1/(n*(n+1)), n=1..10)</code></pre>
 end do;</code></pre>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-150" class="example"><strong>Example 11.2  </strong></span>
+<p><span id="exm:unnamed-chunk-154" class="example"><strong>Example 11.2  </strong></span>
 Find the first 20 partial sums <span class="math inline">\(s_k=\sum_{n=1}^{n}a_n\)</span> of the infinite series
 <span class="math display">\[
 \sum_{n=0}^\infty\frac1{2^n}=1+\frac12+\frac14+\frac18+\cdots.
@@ -233,7 +234,7 @@ end do;</code></pre>
 To execute codes within this region, click <code>Execute Code</code> from the <code>Edit</code> menu, or use the shortcut command <code>Ctrl+E</code>.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-153" class="example"><strong>Example 11.3  </strong></span>
+<p><span id="exm:unnamed-chunk-157" class="example"><strong>Example 11.3  </strong></span>
 The Fibonacci sequence is defined by <span class="math inline">\(fib(0)=0\)</span>, <span class="math inline">\(fib(1)=1\)</span> and <span class="math inline">\(fib(n)=fib(n-1)+fic(n-2)\)</span>.
 Find the first 20 Fibonacci numbers.</p>
 </div>
@@ -255,7 +256,7 @@ end proc</code></pre>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-155" class="exercise"><strong>Exercise 11.1  </strong></span>
+<p><span id="exr:unnamed-chunk-159" class="exercise"><strong>Exercise 11.1  </strong></span>
 Find the first 20 terms of the sequence
 <span class="math display">\[
 \{\sin{\frac{\pi}{n}}\}_{n=1}^\infty.
@@ -265,7 +266,7 @@ Determine whether the sequence <span class="math inline">\(\{\sin{\frac{\pi}{n}}
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-156" class="exercise"><strong>Exercise 11.2  </strong></span>
+<p><span id="exr:unnamed-chunk-160" class="exercise"><strong>Exercise 11.2  </strong></span>
 Find the first 20 partial sums <span class="math inline">\(s_k=\sum_{n=1}^{n}a_n\)</span> of the infinite series
 <span class="math display">\[\sum_{n=0}^\infty\frac1n=1+\frac12+\frac13+\frac14+\cdots.
 \]</span>
@@ -274,7 +275,7 @@ Determine whether the series <span class="math inline">\(\sum_{n=0}^\infty\frac1
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-157" class="exercise"><strong>Exercise 11.3  </strong></span>
+<p><span id="exr:unnamed-chunk-161" class="exercise"><strong>Exercise 11.3  </strong></span>
 Find the 20th to 30th Fibonacci numbers.</p>
 </div>
 
@@ -306,7 +307,7 @@ We also have Maple command `TaylorApproximation` supported by the package `Stude
 TaylorApproximation(sin(x), x=-1, order=1..10, output=animation, view=[-5..3, DEFAULT]); -->
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-158" class="example"><strong>Example 11.4  </strong></span>
+<p><span id="exm:unnamed-chunk-162" class="example"><strong>Example 11.4  </strong></span>
 Find the interval of convergence of the power series
 <span class="math display">\[
 \sum\limits_{n=1}^{\infty}\dfrac{(-2)^nx^n}{n^3}.
@@ -331,7 +332,7 @@ solve(abs(x)&lt;1/r, x)</code></pre>
 
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-160" class="example"><strong>Example 11.5  </strong></span>
+<p><span id="exm:unnamed-chunk-164" class="example"><strong>Example 11.5  </strong></span>
 Find the Taylor expansion of the function <span class="math inline">\(f(x)=\dfrac{1}{x-2}\)</span> at <span class="math inline">\(x=0\)</span> up to the 5-th order. Plot <span class="math inline">\(f(x)\)</span> and the <span class="math inline">\(5\)</span>-th order Taylor polynomial together.</p>
 </div>
 
@@ -353,7 +354,7 @@ plot([1/(x-2), fpoly], x=-1..1)</code></pre>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-162" class="exercise"><strong>Exercise 11.4  </strong></span>
+<p><span id="exr:unnamed-chunk-166" class="exercise"><strong>Exercise 11.4  </strong></span>
 Find the interval of convergence of the power series
 <span class="math display">\[
 \sum\limits_{n=1}^{\infty}\dfrac{(-4)^nx^n}{\sqrt{n}}.
@@ -362,7 +363,7 @@ Find the interval of convergence of the power series
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-163" class="exercise"><strong>Exercise 11.5  </strong></span>
+<p><span id="exr:unnamed-chunk-167" class="exercise"><strong>Exercise 11.5  </strong></span>
 Find the Taylor expansion of the function <span class="math inline">\(f(x)=\sin x\)</span> at <span class="math inline">\(x=0\)</span> up to the 5-th order. Plot <span class="math inline">\(f(x)\)</span> and the <span class="math inline">\(5\)</span>-th order Taylor polynomial together over the interval <span class="math inline">\([-\pi,\pi]\)</span>.</p>
 </div>
 
@@ -397,7 +398,7 @@ f(x)=\sum\limits_{k=0}^\infty \dfrac{f^{(k)}(a)}{k!}(x-a)^k,\quad\quad \left|x-a
 <p>Roughly speaking, the absolute value of the reminder <span class="math inline">\(\left|R_n(x)\right|\)</span> determines how accurate the Taylor polynomial approximation.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-164" class="example"><strong>Example 11.6  </strong></span>
+<p><span id="exm:unnamed-chunk-168" class="example"><strong>Example 11.6  </strong></span>
 Approximate function <span class="math inline">\(f(x)=\sin x\)</span> by the degree 3 Taylor polynomial at <span class="math inline">\(x=1\)</span>.</p>
 </div>
 
@@ -419,7 +420,7 @@ subs(x=1, fpolyapprox)</code></pre>
 
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-166" class="example"><strong>Example 11.7  </strong></span>
+<p><span id="exm:unnamed-chunk-170" class="example"><strong>Example 11.7  </strong></span>
 Plot the function
 <span class="math display">\[
 g(x)=\begin{cases}e^{-\frac{1}{x^2}} &amp; x\neq 0\\ 0 &amp; x=0\end{cases}
@@ -448,13 +449,13 @@ plot([g,T],x=-2..2, color=[red, blue])</code></pre>
 <p>In the solution, <code>x$n</code> is a shortcut option for <code>x, x, x, x, x</code> in the <code>diff</code> command.</p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-168" class="exercise"><strong>Exercise 11.6  </strong></span>
+<p><span id="exr:unnamed-chunk-172" class="exercise"><strong>Exercise 11.6  </strong></span>
 Approximate function <span class="math inline">\(f(x)=e^x\)</span> by the degree 5 Taylor polynomial at <span class="math inline">\(x=1\)</span>.</p>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-169" class="exercise"><strong>Exercise 11.7  </strong></span>
+<p><span id="exr:unnamed-chunk-173" class="exercise"><strong>Exercise 11.7  </strong></span>
 Compare the function <span class="math inline">\(y=\sin x\)</span> with its degree 10 Taylor polynomial at <span class="math inline">\(x=0\)</span>.</p>
 </div>
 

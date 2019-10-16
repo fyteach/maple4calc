@@ -24,7 +24,7 @@
 <meta name="author" content="Fei Ye" />
 
 
-<meta name="date" content="2019-10-09" />
+<meta name="date" content="2019-10-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -93,9 +93,10 @@
 <li class="chapter" data-level="3.2" data-path="derivatives.html"><a href="derivatives.html#calculating-derivatives"><i class="fa fa-check"></i><b>3.2</b> Calculating Derivatives</a></li>
 <li class="chapter" data-level="3.3" data-path="derivatives.html"><a href="derivatives.html#chain-rule"><i class="fa fa-check"></i><b>3.3</b> Chain Rule</a></li>
 <li class="chapter" data-level="3.4" data-path="derivatives.html"><a href="derivatives.html#implicit-differentiation"><i class="fa fa-check"></i><b>3.4</b> Implicit Differentiation</a></li>
-<li class="chapter" data-level="3.5" data-path="derivatives.html"><a href="derivatives.html#related-rates"><i class="fa fa-check"></i><b>3.5</b> Related Rates</a></li>
-<li class="chapter" data-level="3.6" data-path="derivatives.html"><a href="derivatives.html#linearizations"><i class="fa fa-check"></i><b>3.6</b> Linearizations</a></li>
-<li class="chapter" data-level="3.7" data-path="derivatives.html"><a href="derivatives.html#newtons-method"><i class="fa fa-check"></i><b>3.7</b> Newton’s Method</a></li>
+<li class="chapter" data-level="3.5" data-path="derivatives.html"><a href="derivatives.html#rates-of-change-and-derivatives"><i class="fa fa-check"></i><b>3.5</b> Rates of Change and Derivatives</a></li>
+<li class="chapter" data-level="3.6" data-path="derivatives.html"><a href="derivatives.html#related-rates"><i class="fa fa-check"></i><b>3.6</b> Related Rates</a></li>
+<li class="chapter" data-level="3.7" data-path="derivatives.html"><a href="derivatives.html#linearizations"><i class="fa fa-check"></i><b>3.7</b> Linearizations</a></li>
+<li class="chapter" data-level="3.8" data-path="derivatives.html"><a href="derivatives.html#newtons-method"><i class="fa fa-check"></i><b>3.8</b> Newton’s Method</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="application-of-differentiation.html"><a href="application-of-differentiation.html"><i class="fa fa-check"></i><b>4</b> Application of Differentiation</a><ul>
 <li class="chapter" data-level="4.1" data-path="application-of-differentiation.html"><a href="application-of-differentiation.html#maximum-and-minimum-values"><i class="fa fa-check"></i><b>4.1</b> Maximum and Minimum Values</a></li>
@@ -489,8 +490,69 @@ Find all points <span class="math inline">\((x, y)\)</span> on the curve of <spa
 </div>
 
 </div>
+<div id="rates-of-change-and-derivatives" class="section level2">
+<h2><span class="header-section-number">3.5</span> Rates of Change and Derivatives</h2>
+<p>Given a function <span class="math inline">\(y=f(x)\)</span>, the average rate of change of <span class="math inline">\(f\)</span> is the difference quotient
+<span class="math display">\[
+\frac{\Delta y}{\Delta x}=\frac{f(x+\Delta x)-f(x)}{\Delta x}.
+\]</span>
+The instantaneous rate of change is the limit <span class="math inline">\(\lim\limits_{\Delta x\to 0}\frac{\Delta y}{\Delta x}\)</span> which is exactly the derivate of <span class="math inline">\(f\)</span>. However, in science, economy and many other field, the same concept bears different names. For example, the velocity is the instantaneous rate of change of the position function; the marginal cost is the derivative of the cost function.</p>
+<p>Now let’s use Maple to help us understand such kind of application of derivatives.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-71" class="example"><strong>Example 3.7  </strong></span>
+The position function of a particle moving along a straight line after <span class="math inline">\(t\)</span> seconds is <span class="math inline">\(s(t)= 2t^3-6t^2-18t+1\)</span> meters.</p>
+<ol style="list-style-type: decimal">
+<li>Find the time <span class="math inline">\(t\)</span> that the particle is at the rest.</li>
+<li>Find the distance the particle moved in the first 5 seconds.</li>
+<li>Plot the <span class="math inline">\(s(t)\)</span>, <span class="math inline">\(v(t)\)</span> and <span class="math inline">\(a(t)\)</span> for <span class="math inline">\(0\le t\le 5\)</span> together.</li>
+<li>When the particle is speeding up?</li>
+<li>Confirm you answer in 3. using graph of the speed function.</li>
+</ol>
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> 
+Let’s first define if position function</p>
+<pre><code>s:= t-&gt;2*t^3-6*t^2-18*t+1</code></pre>
+<p>The particle at rest when the velocity is 0. To find <span class="math inline">\(t\)</span>, we find <span class="math inline">\(v(t)\)</span> first and then solve <span class="math inline">\(t\)</span> from <span class="math inline">\(v(t)=0\)</span>.</p>
+<pre><code>v:=D(s);
+solve({v(t)=0, t&gt;0}, t); # assuming t&gt;0.</code></pre>
+<p>From the output, you will find that after 3 second the particle is temporarily at rest.</p>
+<p>The particle moves forward if <span class="math inline">\(v(t)&gt;0\)</span> and backward if <span class="math inline">\(v(t)&lt;0\)</span>. You may use the previous output or apply the command <code>solve</code> for those two inequalities. Either way, you will find from <span class="math inline">\(t=0\)</span> to <span class="math inline">\(t=3\)</span>, <span class="math inline">\(v(t)&lt;0\)</span> and <span class="math inline">\(v(t)&gt;0\)</span> for <span class="math inline">\(3&lt;t\le 5\)</span>. So the total distance should be calculated as</p>
+<pre><code>totdist:= abs(s(3)-s(0))+abs(s(5)-s(3))</code></pre>
+<p>The acceleration function <span class="math inline">\(a(t)=v&#39;(t)\)</span>. To plot those three functions together, you may use <code>plot</code>.</p>
+<pre><code>a:=D(v);
+plot([s(t), v(t), a(t)], t=0..5, color=[black, blue, red]);</code></pre>
+<p>The speed function of the particle is <span class="math inline">\(|v(t)|\)</span>. When <span class="math inline">\(v(t)&gt;0\)</span> and <span class="math inline">\(a(t)&gt;0\)</span>, the particle is speeding up. When <span class="math inline">\(v(t)&lt;0\)</span> and <span class="math inline">\(a(t)&lt;0\)</span>, the particle is also speeding up. So the particle is speeding up if <span class="math inline">\(v(t)a(t)&gt;0\)</span>. Similarly, the particle is slowing down if <span class="math inline">\(v(t)a(t)&lt;0\)</span>.</p>
+<pre><code> solve({v(t)*a(t)&gt;0, t&gt;0}, t)</code></pre>
+<p>It shows that the particle is speeding up when <span class="math inline">\(t&lt;1\)</span> or <span class="math inline">\(t&gt;3\)</span>. This can also be seen from the graph of the speed function.</p>
+<pre><code> plot(abs(v(t)), t=0..5)</code></pre>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-73" class="exercise"><strong>Exercise 3.14  </strong></span>
+The position function of a particle moving along a straight line after <span class="math inline">\(t\)</span> seconds is <span class="math inline">\(s(t) = t^3 - 6t^2 - 15t+2\)</span> meters.</p>
+<ol style="list-style-type: decimal">
+<li>Find the time <span class="math inline">\(t\)</span> that the particle is at the rest.</li>
+<li>Find the distance the particle moved in the first 5 seconds.</li>
+<li>Plot the <span class="math inline">\(s(t)\)</span>, <span class="math inline">\(v(t)\)</span> and <span class="math inline">\(a(t)\)</span> for <span class="math inline">\(0\le t\le 5\)</span> together.</li>
+<li>When the particle is speeding up?</li>
+<li>Confirm you answer in 3. using graph of the speed function.</li>
+</ol>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-74" class="exercise"><strong>Exercise 3.15  </strong></span>
+Suppose that the profit obtained from the sale of <span class="math inline">\(x\)</span> calculators is given by <span class="math inline">\(P(x)=-0.05x^2+4x+25\)</span>. Use the marginal profit function to estimate the profit from the sale of the 51st calculator.</p>
+</div>
+
+</div>
 <div id="related-rates" class="section level2">
-<h2><span class="header-section-number">3.5</span> Related Rates</h2>
+<h2><span class="header-section-number">3.6</span> Related Rates</h2>
 <p>Stewart suggests the following general steps for solving problems about related rates.</p>
 <ol style="list-style-type: decimal">
 <li>Read the problem carefully. (What quantities are known? What is the unknown rate of change?)</li>
@@ -504,7 +566,7 @@ Find all points <span class="math inline">\((x, y)\)</span> on the curve of <spa
 <p>In Maple, the quantities that shared by the same independent variable should be written in function notations. See the following example for details.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-71" class="example"><strong>Example 3.7  </strong></span>
+<p><span id="exm:unnamed-chunk-75" class="example"><strong>Example 3.8  </strong></span>
 A spherical shaped balloon is inflated at a constant rate 2 cm<span class="math inline">\(^3\)</span>/s. Find the relative rate growth of the diameter when its 10 cm wide.</p>
 </div>
 
@@ -525,31 +587,31 @@ D_r:=solve(D_eqn_v, D_r);</code></pre>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-73" class="exercise"><strong>Exercise 3.14  </strong></span>
+<p><span id="exr:unnamed-chunk-77" class="exercise"><strong>Exercise 3.16  </strong></span>
 A cylindrical cup with radius 5 cm is being filled with coffee at a rate of 2 cm<span class="math inline">\(^3\)</span>/s. How fast is
 the height of the coffee increasing?</p>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-74" class="exercise"><strong>Exercise 3.15  </strong></span>
+<p><span id="exr:unnamed-chunk-78" class="exercise"><strong>Exercise 3.17  </strong></span>
 Two cars start moving from the same point. One travels north at 30 mph and the other travels
 west at 50 mph. At what rate is the distance between the cars changing one hour later?</p>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-75" class="exercise"><strong>Exercise 3.16  </strong></span>
+<p><span id="exr:unnamed-chunk-79" class="exercise"><strong>Exercise 3.18  </strong></span>
 Sands dumping from a truck to the ground at a constant rate 5 m<span class="math inline">\(^3\)</span>/s is creating a circular cone. Find a relation between the rate of growth of the radius of the base and the rate of growth of the height of cone, when the the base is 6 m and the heigh is 4 m.</p>
 </div>
 
 </div>
 <div id="linearizations" class="section level2">
-<h2><span class="header-section-number">3.6</span> Linearizations</h2>
+<h2><span class="header-section-number">3.7</span> Linearizations</h2>
 <p>Let <span class="math inline">\(f\)</span> be the function differentiable at <span class="math inline">\(x = a\)</span>. The <strong>linearization</strong> of <span class="math inline">\(f\)</span> at <span class="math inline">\(x = a\)</span> is defined to be the function <span class="math inline">\(L(x)=f&#39;(a)(x-a)+f(a)\)</span>. For any value <span class="math inline">\(b\)</span> near <span class="math inline">\(a\)</span>, the function value <span class="math inline">\(f(b)\)</span> is approximately the same as <span class="math inline">\(L(b)\)</span>. This method is called <strong>linear approximation</strong>. The tangent line approximation is fundamental to almost every application of the derivative.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-76" class="example"><strong>Example 3.8  </strong></span>
+<p><span id="exm:unnamed-chunk-80" class="example"><strong>Example 3.9  </strong></span>
 Find the linearization <span class="math inline">\(L(x)\)</span> of the function <span class="math inline">\(f(x) = \sqrt[3](x+7)\)</span> at <span class="math inline">\(x=1\)</span> and use this linearization to estimate <span class="math inline">\(f(0.99)\)</span>. How large is the error?</p>
 </div>
 
@@ -569,29 +631,29 @@ L(0.99);</code></pre>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-78" class="exercise"><strong>Exercise 3.17  </strong></span>
+<p><span id="exr:unnamed-chunk-82" class="exercise"><strong>Exercise 3.19  </strong></span>
 Find the linear approximation <span class="math inline">\(L(x)\)</span> of the function <span class="math inline">\(f(x) = \frac{\sqrt{x}}{x+1}\)</span> at <span class="math inline">\(x = 1\)</span>. Use this linearization to approximate <span class="math inline">\(f(1.02)\)</span>.</p>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-79" class="exercise"><strong>Exercise 3.18  </strong></span>
+<p><span id="exr:unnamed-chunk-83" class="exercise"><strong>Exercise 3.20  </strong></span>
 Find the linear approximation <span class="math inline">\(L(x)\)</span> of the function <span class="math inline">\(f(x) = \cos(2x)\)</span> at <span class="math inline">\(x = 0\)</span>. Use this linearization to approximate <span class="math inline">\(f(0.1)\)</span>.</p>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-80" class="exercise"><strong>Exercise 3.19  </strong></span>
+<p><span id="exr:unnamed-chunk-84" class="exercise"><strong>Exercise 3.21  </strong></span>
 Find the linear approximation <span class="math inline">\(L(x)\)</span> of the function <span class="math inline">\(f(x) = \sqrt{x^2+5}\)</span> at <span class="math inline">\(x = 2\)</span>. Use this linearization to approximate <span class="math inline">\(f(2.03)\)</span>.</p>
 </div>
 
 </div>
 <div id="newtons-method" class="section level2">
-<h2><span class="header-section-number">3.7</span> Newton’s Method</h2>
+<h2><span class="header-section-number">3.8</span> Newton’s Method</h2>
 <p>In science and engineering, many problems may be eventually reduced to nonlinear equations which likely has no algebraic (analytic) solution. In such a situation, numerical solutions are hoped for applications. We’ve seen a method to find a numerical solution using the intermediate value theorem. However, it is not very effective. Using linearization, a root-finding algorithm was developed by Newton and other mathematicians. The idea is to use the <span class="math inline">\(x\)</span>-coordinates of tangent lines to approximate a root of an equation. Let’s see an example first using the Maple command <code>NewtonsMethod(function, starting point, options)</code> which is again supported by the subpackage <code>Student[Calculus1]</code>.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-81" class="example"><strong>Example 3.9  </strong></span>
+<p><span id="exm:unnamed-chunk-85" class="example"><strong>Example 3.10  </strong></span>
 Starting at <span class="math inline">\(x=-1.5\)</span>, obtain a solution of <span class="math inline">\(\sin x-\frac{x}{2}=0\)</span> by Newton’s method.</p>
 </div>
 
@@ -650,19 +712,19 @@ x[N]:=evalf((newton@@N)(-1.5)); # @@N means that newton compose with itself N ti
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-84" class="exercise"><strong>Exercise 3.20  </strong></span>
+<p><span id="exr:unnamed-chunk-88" class="exercise"><strong>Exercise 3.22  </strong></span>
 Using Newton’s Method to find solutions of the polynomial equation <span class="math inline">\(x^3-x^2+1=0\)</span>.</p>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-85" class="exercise"><strong>Exercise 3.21  </strong></span>
+<p><span id="exr:unnamed-chunk-89" class="exercise"><strong>Exercise 3.23  </strong></span>
 Using Newton’s Method to find solutions of the equation <span class="math inline">\(\cos x=\frac{x}{2}\)</span>.</p>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-86" class="exercise"><strong>Exercise 3.22  </strong></span>
+<p><span id="exr:unnamed-chunk-90" class="exercise"><strong>Exercise 3.24  </strong></span>
 Using Newton’s Method to find the solution of the equation <span class="math inline">\(\tan x-2x=0\)</span> in the interval <span class="math inline">\([1, 2]\)</span>. Among 1 and 2,which is a better initial value? Why?</p>
 </div>
 

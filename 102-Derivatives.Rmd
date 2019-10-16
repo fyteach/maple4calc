@@ -358,6 +358,78 @@ Find an equation of the line tangent to the curve $x^2 + (x-y)^3 = 9$ at $x=1$. 
 Find all points $(x, y)$ on the curve of $|x|^{2/3} + |y|^{2/3} = 8$ where lines tangent to the curve at $(x, y)$ is perpendicular to the line $x-y=1$. (Use `?solve` to learn how to solve a system of equations in Maple).
 
 ```
+## Rates of Change and Derivatives
+
+Given a function $y=f(x)$, the average rate of change of $f$ is the difference quotient
+$$
+\frac{\Delta y}{\Delta x}=\frac{f(x+\Delta x)-f(x)}{\Delta x}.
+$$
+The instantaneous rate of change is the limit $\lim\limits_{\Delta x\to 0}\frac{\Delta y}{\Delta x}$ which is exactly the derivate of $f$. However, in science, economy and many other field, the same concept bears different names. For example, the velocity is the instantaneous rate of change of the position function; the marginal cost is the derivative of the cost function.
+
+Now let's use Maple to help us understand such kind of application of derivatives.
+
+```{example}
+
+The position function of a particle moving along a straight line after $t$ seconds is $s(t)= 2t^3-6t^2-18t+1$ meters.
+
+1. Find the time $t$ that the particle is at the rest.
+2. Find the distance the particle moved in the first 5 seconds.
+3. Plot the $s(t)$, $v(t)$ and $a(t)$ for $0\le t\le 5$ together.
+4. When the particle is speeding up?
+5. Confirm you answer in 3. using graph of the speed function.
+
+```
+
+```{solution}
+
+Let's first define if position function
+
+    s:= t->2*t^3-6*t^2-18*t+1
+
+The particle at rest when the velocity is 0. To find $t$, we find $v(t)$ first and then solve $t$ from $v(t)=0$.
+
+    v:=D(s);
+    solve({v(t)=0, t>0}, t); # assuming t>0.
+
+From the output, you will find that after 3 second the particle is temporarily at rest.
+
+The particle moves forward if $v(t)>0$ and backward if $v(t)<0$. You may use the previous output or apply the command `solve` for those two inequalities. Either way, you will find from $t=0$ to $t=3$, $v(t)<0$ and $v(t)>0$ for $3<t\le 5$. So the total distance should be calculated as
+
+    totdist:= abs(s(3)-s(0))+abs(s(5)-s(3))
+
+The acceleration function $a(t)=v'(t)$. To plot those three functions together, you may use `plot`. 
+
+    a:=D(v);
+    plot([s(t), v(t), a(t)], t=0..5, color=[black, blue, red]);
+
+The speed function of the particle is $|v(t)|$. When $v(t)>0$ and $a(t)>0$, the particle is speeding up. When $v(t)<0$ and $a(t)<0$, the particle is also speeding up. So the particle is speeding up if $v(t)a(t)>0$. Similarly, the particle is slowing down if $v(t)a(t)<0$.
+
+     solve({v(t)*a(t)>0, t>0}, t)
+
+It shows that the particle is speeding up when $t<1$ or $t>3$. This can also be seen from the graph of the speed function.
+
+     plot(abs(v(t)), t=0..5)
+
+
+```
+
+```{exercise}
+
+The position function of a particle moving along a straight line after $t$ seconds is $s(t) = t^3 - 6t^2 - 15t+2$ meters.
+
+1. Find the time $t$ that the particle is at the rest.
+2. Find the distance the particle moved in the first 5 seconds.
+3. Plot the $s(t)$, $v(t)$ and $a(t)$ for $0\le t\le 5$ together.
+4. When the particle is speeding up?
+5. Confirm you answer in 3. using graph of the speed function.
+
+```
+
+```{exercise}
+
+Suppose that the profit obtained from the sale of $x$ calculators is given by $P(x)=-0.05x^2+4x+25$. Use the marginal profit function to estimate the profit from the sale of the 51st calculator.
+
+```
 
 ## Related Rates
 
