@@ -84,7 +84,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-10-16}
+    \date{2019-10-18}
 
 \usepackage{booktabs}
 
@@ -1629,23 +1629,673 @@ Using Newton's Method to find the solution of the equation \(\tan x-2x=0\) in th
 \hypertarget{maximum-and-minimum-values}{%
 \section{Maximum and Minimum Values}\label{maximum-and-minimum-values}}
 
+If \(f\) is continuous on a closed interval \([a, b]\), then \(f\) attains an absolute maximum value \(f(c)\) and an absolute minimum value \(f(d)\) at some numbers \(c\) and \(d\) in \([a, b]\).
+
+A \textbf{critical value} of a function \(f\) is a number \(c\) in its domain such that either \(f'(c)=0\) or \(f'(c)\) does not exist.
+
+To find the absolute maximum and minimum values of \(f\) over \([a,b]\), we do the following.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Find the values of \(f\) at the critical values in \([a, b]\).
+\item
+  Find the values of \(f(a)\) and \(f(b)\).
+\item
+  The largest of the values from Steps 1 and 2 is the absolute maximum value; the smallest of these values is the absolute minimum value.
+\end{enumerate}
+
+To find critical values, we solve the equation \(f'(x)=0\) and look at where \(f'(x)\) is undefined. In Maple, you can use the command \texttt{CriticalPoints(function,\ variable)} which is supported by the subpackage \texttt{Student{[}Calculus1{]}}.
+
+\BeginKnitrBlock{example}
+\protect\hypertarget{exm:unnamed-chunk-91}{}{\label{exm:unnamed-chunk-91} }
+Find the absolute maximum and minimum values of the function \(f(x)=|x^2-2x-3|\) over the interval \([0, 4]\).
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{solution}
+\iffalse{} {Solution. } \fi{}
+First defined the function.
+
+\begin{verbatim}
+f:=x->abs(x^2-2*x-3)
+\end{verbatim}
+
+Find critical points.
+
+\begin{verbatim}
+with(Student[Calculus1]):
+Cpts:=CriticalPoints(f(x), x);
+\end{verbatim}
+
+Let's put endpoints and critical points in \([0,4]\) in a list.
+
+\begin{verbatim}
+lst:=[op(remove(c->c<0 or c>4, Cpts)),0,4];
+# The op function extracts elements from the list.
+# The remove function removes removes the elements of Cpts in [0,4]
+# The remove function use a Boolean-valued procedure as a condition.
+# A procedure can be considered as a function. This is why we use ->. 
+\end{verbatim}
+
+Evaluate the function at each point in the list.
+
+\begin{verbatim}
+fc:=f~(lst) # ~ is the element-wise operator.
+\end{verbatim}
+
+Find the maximum and minimum.
+
+\begin{verbatim}
+fmax:=max(fc);
+fmin:=min(fc);
+\end{verbatim}
+
+You may use the following code to display at where the function reaches an extremum.
+
+\begin{verbatim}
+for c in lst do
+    if f(c) = fmax then print(The maximum value of f(x) over [0, 4] is*%f(c) = fmax);
+    elif f(c)=fmin then print(The minimum value of f(x) over [0, 4] is*%f(c) = fmin);
+    end if;
+end do;
+\end{verbatim}
+\EndKnitrBlock{solution}
+
+\BeginKnitrBlock{remark}
+\iffalse{} {Remark. } \fi{}
+The above solution is still the method using Calculus but with the assistant of Maple. Indeed, Maple has the commands \texttt{maximize(f(x),\ x=a..b)} and \texttt{minimize(f(x),\ x=a..b)} which produce the maximum and minimum of a function \(f(x)\) over an interval \([a,b]\).
+\EndKnitrBlock{remark}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-94}{}{\label{exr:unnamed-chunk-94} }
+Find the absolute maximum and minimum values of the function \(f(x)=x^3-3x+1\) over the interval \([0, 2]\).
+\EndKnitrBlock{exercise}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-95}{}{\label{exr:unnamed-chunk-95} }
+Find the absolute maximum and minimum values of the function \(f(x)=2\cos x - x -1\) over the interval \([-2, 1]\).
+\EndKnitrBlock{exercise}
+
 \hypertarget{the-mean-value-theorem}{%
 \section{The Mean Value Theorem}\label{the-mean-value-theorem}}
+
+Rolle's Theorem states that if a function \(f\) is continuous on the closed interval \([a, b]\), differentiable on the open interval \((a, b)\) and \(f(a)=f(b)\), then there exists a point \(c\) in \((a, b)\) such that \(f'(c)=0\).
+
+Using Maple, you can verify this theorem for a function \(f\) graphically using the following command
+\texttt{RollesTheorem(f(x),\ x\ =\ a..b)} which is supported by the subpackage \(Student[Calculus1]\).
+
+\BeginKnitrBlock{example}
+\protect\hypertarget{exm:unnamed-chunk-96}{}{\label{exm:unnamed-chunk-96} }
+Let \(f(x)=(x-1)(x+1)(x-2)\). Graph the function \(f(x)\) from \(-1\) to \(2\) indicate the points between \(-1\) and \(2\) where tangent line is horizontal. Find values \(x=c\) in \((-1,2)\) at where the tangent line is horizontal.
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{solution}
+\iffalse{} {Solution. } \fi{}
+Define the function.
+
+\begin{verbatim}
+restart:
+f:=x->(x-1)*(x+1)*(x-2)
+\end{verbatim}
+
+Now let's create the graph of the function and the horizontal tangent line.
+
+\begin{verbatim}
+with(Student[Calculus1]):
+RollesTheorem((x-1)*(x+1)*(x-2), x = -1..2);
+\end{verbatim}
+
+\begin{figure}
+\centering
+\includegraphics{figs/Rolletheorem.png}
+\caption{A demonstration of Rolle's theorem}
+\end{figure}
+
+To find the values \(x=c\). We solve the equation \(f'(x)=0\).
+
+\begin{verbatim}
+solve({D(f)(x)=0, x>-1, x<2}, x)
+\end{verbatim}
+\EndKnitrBlock{solution}
+
+A generalization of Rolle's theorem is the Mean Value Theorem.
+
+If a function \(f\) is continuous on the closed interval \([a, b]\) and differentiable on the open interval \((a, b)\), then there exists a point \(c\) in \((a, b)\) such that
+\[
+f'(c)=\dfrac{f(b)-f(a)}{b-a}
+\]
+or equivalently,
+\[
+f(b)=f(a)+f'(c)(b-a).
+\]
+
+The subpackage \texttt{Student{[}Calculus1{]}} also provides a command \texttt{MeanValueTheorem(f(x),\ x\ =\ a..b)} to illustrate the Mean Value Theorem.
+
+\BeginKnitrBlock{example}
+\protect\hypertarget{exm:unnamed-chunk-98}{}{\label{exm:unnamed-chunk-98} }
+Let \(f(x)=(x-1)(x+1)(x-2)\). Graph the function \(f(x)\) from \(-2\) to \(3\) indicate the points between \(-2\) and \(3\) where tangent line is parallel to the secant line passing through \((-2, f(-2))\) and \((3, f(3))\). Find the values \(x=c\) where the tangent line is parallel to the secant line.
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{solution}
+\iffalse{} {Solution. } \fi{}
+Define the function.
+
+\begin{verbatim}
+restart:
+f:=x->(x-1)*(x+1)*(x-2)
+\end{verbatim}
+
+Now let's create the graph of the function and the horizontal tangent line.
+
+\begin{verbatim}
+with(Student[Calculus1]):
+MeanValueTheorem(f(x), x = -2..3);
+\end{verbatim}
+
+\begin{figure}
+\centering
+\includegraphics{figs/MeanValueTheorem.png}
+\caption{A demonstration of Mean Value Theorem}
+\end{figure}
+
+Find the slope \texttt{msec} of the secan line.
+
+\begin{verbatim}
+a:= -2;
+b:= 3;
+msec:=(f(a)-f(b))/(a-b);
+\end{verbatim}
+
+Solve the equation \(f'(x)=\)\texttt{msec} for \(c\).
+
+\begin{verbatim}
+solve({D(f)(x)=msec, x>-2, x<3}, x)
+\end{verbatim}
+\EndKnitrBlock{solution}
+
+Note that in Rolle's theorem and Mean Value Theorem, the continuity and differentiability conditions are crucial.
+
+\BeginKnitrBlock{example}
+\protect\hypertarget{exm:unnamed-chunk-100}{}{\label{exm:unnamed-chunk-100} }
+Consider the floor function \(f(x)=\begin{cases}1 & x<0\\ 2& x\ge 0\end{cases}\). Use a graph to show that there is no tangent line that is parallel to the secant line through \((-1, 1)\) and \((1,2)\).
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{solution}
+\iffalse{} {Solution. } \fi{}
+First define the function.
+
+\begin{verbatim}
+restart:
+f := x->piecewise(x<0, 1, 2);
+\end{verbatim}
+
+Now let's find the second line.
+
+\begin{verbatim}
+a := -1; # left endpoint
+b := 1; # right endpoint
+msec:=(f(b)-f(a))/( b-a ); # slope of secant line
+secline:=f(a) + msec*(x-a); # secant line
+\end{verbatim}
+
+Plot the function and the secant line together.
+
+\begin{verbatim}
+plot([f(x), secline], x=a..b, discont=true);
+\end{verbatim}
+
+Now try the \texttt{MeanValueTheorem} command.
+
+\begin{verbatim}
+with( Student[Calculus1] ):
+MeanValueTheorem( f(x), a..b );
+\end{verbatim}
+\EndKnitrBlock{solution}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-102}{}{\label{exr:unnamed-chunk-102} }
+Let \(f(x)=\cos x\). Graph the function from \(-\frac{2\pi}{3}\) to \(\frac{4\pi}{3}\) and indicate the points in \([-\frac{2\pi}{3}, \frac{4\pi}{3}]\) where the derivative \(f'(x)\) is \(0\). Find the tangent points where the slope of the tangent line is \(0\).
+\EndKnitrBlock{exercise}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-103}{}{\label{exr:unnamed-chunk-103} }
+Let \(f(x)=x^4-3x^2+1\). Graph the function \(f(x)\) from \(-1\) to \(2\) indicate the points between \(-1\) and \(2\) where tangent line is parallel to the secant line passing through \((-1, f(-1))\) and \((2, f(2))\). Find the tangent points where the tangent line is parallel to the secant line.
+\EndKnitrBlock{exercise}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-104}{}{\label{exr:unnamed-chunk-104} }
+Consider the floor function \(f(x)=abs{x}\). Use a graph to show that there is no tangent line that is parallel to the secant line through \((-1, 1)\) and \((2,2)\).
+\EndKnitrBlock{exercise}
 
 \hypertarget{derivatives-and-the-shape-of-a-graph}{%
 \section{Derivatives and the Shape of a Graph}\label{derivatives-and-the-shape-of-a-graph}}
 
+Given a function \(f(x)\), we know that \(f(x)\) is increasing on an interval if \(f'(x)>0\) on that interval and \(f(x)\) is decreasing on an interval if \(f'(x)<0\) on that interval. By Mean Value theorem, \(f(x)\) is a constant on an interval if \(f'(x)=0\) on that interval.
+
+To determine over which interval a function \(f(x)\) is increasing/decreasing, we need to find out the domain of \(f'(x)\) and the critical points and then use test points to determine the sign of \(f'(x)\).
+
+Using first derivative, we can test local extrema at critical points.
+
+\BeginKnitrBlock{theorem}
+\protect\hypertarget{thm:unnamed-chunk-105}{}{\label{thm:unnamed-chunk-105} }
+Suppose that \(c\) is a critical point of a continuous function \(f\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  If \(f'\) changes from positive to negative at \(c\), then \(f\) has a local maximum at \(c\).
+\item
+  If \(f'\) changes from negative to positive at \(c\), then \(f\) has a local minimum at \(c\).
+\item
+  If \(f'\) does not change signs at \(c\), then \(f\) has no local extremum at \(c\).
+\end{enumerate}
+\EndKnitrBlock{theorem}
+
+Another method to determine local extremum is to use second derivative.
+
+\BeginKnitrBlock{theorem}
+\protect\hypertarget{thm:unnamed-chunk-106}{}{\label{thm:unnamed-chunk-106} }
+Suppose \(f\) is a twice differentiable function on an interval \(I\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  If \(f''>0\) over \(I\), then \(f\) is concave upward on \(I\).
+\item
+  If \(f''<0\) over \(I\), then \(f\) is concave downward on \(I\).
+\end{enumerate}
+\EndKnitrBlock{theorem}
+
+Base on the observation on concavity, we have the following second derivative test.
+
+\BeginKnitrBlock{theorem}
+\protect\hypertarget{thm:unnamed-chunk-107}{}{\label{thm:unnamed-chunk-107} }
+Suppose that \(f''\) is continuous near \(c\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  If \(f'(c)=0\) and \(f''(c)>0\), then \(f\) has a local minimum at \(c\).
+\item
+  If \(f'(c)=0\) and \(f''(c)<0\), then \(f\) has a local maximum at \(c\).
+\end{enumerate}
+\EndKnitrBlock{theorem}
+
+\BeginKnitrBlock{example}
+\protect\hypertarget{exm:unnamed-chunk-108}{}{\label{exm:unnamed-chunk-108} }
+Find local extrema, the intervals on which \(f(x)=\frac{x}{x^2+1}\) is increasing or decreasing and the intervals on which \(f(x)\) is concave up or concave down.
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{solution}
+\iffalse{} {Solution. } \fi{}
+First we define the function and find the derivatives.
+f:=x-\textgreater x/(x\^{}2+1);
+df:=D(f);
+ddf:=D(D(f));
+
+Now let's find critical points using \texttt{Student{[}Calculus1{]}} subpackage.
+with(Student{[}Calculus1{]}):
+CriticalPoints(f(x),x)
+
+Find the intervals of monotonicity (using test points).
+
+\begin{verbatim}
+df(t) # where t is a test point in an interval, you replace it by a number.
+\end{verbatim}
+
+Determine local extrema and find values.
+
+\begin{verbatim}
+g(c) # suppose c is a critical point.
+\end{verbatim}
+
+Find critical points of the derivative function \(g'(x)\) and determine intervals of concavity.
+
+\begin{verbatim}
+CriticalPoints(df(x),x);
+ddf(t);     # evaluate the second derivative at a test point $t$.
+\end{verbatim}
+
+From the outputs, we know that \(f\) is decreasing on \((-\infty, -1)\cup (1, \infty)\) and increasing on \((-1, 1)\). It has a local minimum \(f(-1)=-\frac12\) and a local maximum \(f(1)=\frac12\).
+
+The function is concave cup on \((-\sqrt{3}, 0)\cup (\sqrt{3},\infty)\) and concave down on \((-\infty,-\sqrt{3})\cup (0,\sqrt{3})\).
+\EndKnitrBlock{solution}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-110}{}{\label{exr:unnamed-chunk-110} }
+Let \(f(x)=\sin x+\cos x\) be a function defined over the interval \([0, 2\pi]\). Find local extrema, the intervals on which \(f\) is increasing or decreasing and the intervals on which \(f(x)\) is concave up or concave down.
+\EndKnitrBlock{exercise}
+
 \hypertarget{limits-at-infinity-and-asymptotes}{%
 \section{Limits at Infinity and Asymptotes}\label{limits-at-infinity-and-asymptotes}}
+
+Limits at infinity can provide information on the end behaviors of a curve such as horizontal and vertical asymptotes.
+
+When the limit of a function is an infinite limits, we will get a vertical asymptotes.
+
+The function \(f\) has a horizontal asymptote \(y = b\) if \(\lim\limits_{x\to \infty}f(x)=b\) or \(\lim\limits_{x\to -\infty}f(x)=b\).
+
+The function \(f\) has a horizontal asymptote \(x = a\) if \(\lim\limits_{x\to a^+}f(x)=\infty\), \(\lim\limits_{x\to a^-}f(x)=\infty\), \(\lim\limits_{x\to a^+}f(x)=-\infty\) or \(\lim\limits_{x\to a^-}f(x)=-\infty\).
+
+The function \(f\) has a slant asymptote \(y = mx + b\) if \(\lim\limits_{x\to \infty}(f(x)-(mx+b))=0\) or \(\lim\limits_{x\to -\infty}(f(x)-(mx+b))=0\).
+
+For rational functions, we have the following results.
+Suppose \(p(x)=a_nx^n+\cdots +a_1x+ a_0\) and \(q(x)=b_mx^m+\cdots +a_1x+ a_0\)
+\[
+\lim\limits_{x\to \infty}\frac{p(x)}{q(x)}=
+\begin{cases}
+    0 & \text{if} n<m\\
+    \frac{a_n}{b_m} & \text{if} n=m\\
+    \pm\infty & \text{if} n>m\\
+\end{cases}
+\]
+In the last case, the sign agrees with the sign of \(\frac{a_n}{b_m}\).
+
+The limit at the negative infinity of a rational function is similar.
+
+In Maple, to find limits, we use the command \texttt{limit(f(x),\ x=a)} or \texttt{LimitTutor(f(x),\ x=a)} supported by \texttt{Student{[}Calculus1{]}.\ To\ find\ asymptotes,\ you\ may\ use\ the\ command}Asymptotes(f(x), x)\texttt{which\ is\ again\ supported\ by}Student{[}Calculus1{]}`.
+
+\BeginKnitrBlock{example}
+\protect\hypertarget{exm:unnamed-chunk-111}{}{\label{exm:unnamed-chunk-111} }
+Evaluate the following limits.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\lim\limits_{x\to \infty}\sqrt{x^2+1}\),
+\item
+  \(\lim\limits_{x\to-\infty}\dfrac{x^3-1}{\sqrt{9x^6-x}}\)
+\item
+  \(\lim\limits_{x\to\infty}x\sin(\frac{1}{x})\).
+\end{enumerate}
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{solution}
+\iffalse{} {Solution. } \fi{}
+Use \texttt{LimitTutor} to find limits step-by-step
+
+\begin{verbatim}
+with(Student[Calculus1]);
+LimitTutor(sqrt(x^2+1), x=infinity);
+LimitTutor((x^3-1)/(9*x^6-x), x=-infinity);
+LimitTutor(x*sin(1/x), x=infinity);
+\end{verbatim}
+\EndKnitrBlock{solution}
+
+\BeginKnitrBlock{example}
+\protect\hypertarget{exm:unnamed-chunk-113}{}{\label{exm:unnamed-chunk-113} }
+Find asymptote of the function \(f(x)=\frac{x^{3}+2x^{2}-3x-1}{x^{2}-1}\) and plot the graph of \(f\) and its asymptotes together with \(x\) in \([-5,5]\) and \(y\) in \([-10, 10]\).
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{solution}
+\iffalse{} {Solution. } \fi{}
+Define the function first.
+
+\begin{verbatim}
+restart:
+f:=x-> (x^3+2*x^3-3*x-1)/(x^2-1);
+\end{verbatim}
+
+Find and plot asymptotes. Here, it's better to use \texttt{implicitplot} because vertical asymptotes are not functions of \(x\).
+
+\begin{verbatim}
+with(Student[Calculus1]):
+asym := Asymptotes(f(x), x);
+with(plots):
+asymplots := implicitplot(asym, x = -5 .. 5, y = -10 .. 10):
+\end{verbatim}
+
+Plot the function \(f\) and use \texttt{display} to put the graph and asymptotes together.
+
+\begin{verbatim}
+Grphf:=plot(f(x), x=-5..5, y=-10..10, discont=true):
+display(asymplots, Grphf); # display is supported by the plots package.
+\end{verbatim}
+
+{[}A graphs of rational functions with its asymptotes{]}\{figs/asymptotes.png\}
+\EndKnitrBlock{solution}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-115}{}{\label{exr:unnamed-chunk-115} }
+Evaluate the following limits.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\lim\limits_{x\to \infty}\sqrt{x}\sin(\frac{1}{x})\),
+\item
+  \(\lim\limits_{x\to-\infty}\dfrac{\sqrt{9x^6+1}}{x^3+x}\).
+\end{enumerate}
+\EndKnitrBlock{exercise}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-116}{}{\label{exr:unnamed-chunk-116} }
+Find asymptote of the function \(f(x)=\frac{2x^{3}-3x^{2}-5x+2}{x^{2}+1}\) and plot the graph of \(f\) and its asymptotes together with \(x\) in \([-5,5]\) and \(y\) in \([-10, 10]\).
+\EndKnitrBlock{exercise}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-117}{}{\label{exr:unnamed-chunk-117} }
+Find asymptote of the function \(f(x)=\frac{8\sin x}{x^{2}+1}+\frac{x^{2}-x}{x^{2}-1}\) and plot the graph of \(f\) and its asymptotes together with \(x\) in \([-10,10]\) and \(y\) in \([-20, 20]\).
+\EndKnitrBlock{exercise}
 
 \hypertarget{curve-sketching}{%
 \section{Curve Sketching}\label{curve-sketching}}
 
+To plot the graph of a function in maple, we simply use the command \texttt{plot(function,\ widows,\ options)}.
+
+On the other hand, we can sketch the graph using calculus, more precisely, monotonicity, concavity, vertical asymptote, horizontal asymptote, periods, symmetries, local extrema, intercepts etc.
+
+\BeginKnitrBlock{example}
+\protect\hypertarget{exm:unnamed-chunk-118}{}{\label{exm:unnamed-chunk-118} }
+Sketch and plot the graph of the function \(g(x)=\frac{2x+1}{x-2}\).
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{solution}
+\iffalse{} {Solution. } \fi{}
+First define the function
+
+\begin{verbatim}
+g:=x->(2*x+1)/(x-2)
+\end{verbatim}
+
+Find the domain of the function.
+
+\begin{verbatim}
+solve((x-2)!=0, x)
+\end{verbatim}
+
+Find the \(x\)-intercepts.
+
+\begin{verbatim}
+solve(g(x)=0, x)
+\end{verbatim}
+
+Find the \(y\)-intercept
+
+\begin{verbatim}
+g(0)
+\end{verbatim}
+
+Check whether \(x=2\), where the function is undefined, is a vertical asymptote.
+
+\begin{verbatim}
+limit(g(x), x=2, left);
+limit(g(x), x=2, right);
+\end{verbatim}
+
+Find horizontal asymptotes
+
+\begin{verbatim}
+limit(g(x), x=infinity);
+limit(g(x), x=-infinity);
+\end{verbatim}
+
+Then we find derivative functions.
+
+\begin{verbatim}
+dg:=D(g);    # first derivative
+ddg:=D(dg); # second derivative
+\end{verbatim}
+
+Find all critical points. This can be done by finding using the \texttt{Student{[}Calculus1{]}} subpackage.
+
+\begin{verbatim}
+with(Student[Calculus1]):
+CriticalPoints(g(x),x);
+\end{verbatim}
+
+Find the intervals of monotonicity (using test points).
+
+\begin{verbatim}
+dg(t) # where t is a test point in an interval, you replace it by a number.
+\end{verbatim}
+
+Determine local extrema and find values.
+
+\begin{verbatim}
+g(c) # suppose c is a critical point.
+\end{verbatim}
+
+Find critical points of the derivative function \(g'(x)\) and determine intervals of concavity.
+
+\begin{verbatim}
+CriticalPoints(dg(x),x);
+ddg(t);     # evaluate the second derivative at a test point $t$.
+\end{verbatim}
+
+Sketch the graph using above obtained information and compare with Maple \texttt{plot} output.
+
+\begin{verbatim}
+plot(g(x), x=a..b) # Plot the function in the window [a, b].
+\end{verbatim}
+\EndKnitrBlock{solution}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-120}{}{\label{exr:unnamed-chunk-120} }
+Sketch and plot the graph of the function \(h(x)=\frac{x-1}{x+2}\).
+\EndKnitrBlock{exercise}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-121}{}{\label{exr:unnamed-chunk-121} }
+Sketch and plot the graph of the function \(g(x)=x\sqrt{4-x}\).
+\EndKnitrBlock{exercise}
+
 \hypertarget{optimization-problems}{%
 \section{Optimization Problems}\label{optimization-problems}}
 
+To solve a optimization problem in Calculus, the key is to represent the quantity to be optimized by a function of other quantities and then find the extremum value using the extreme value theorem.
+
+\BeginKnitrBlock{example}
+\protect\hypertarget{exm:unnamed-chunk-122}{}{\label{exm:unnamed-chunk-122} }
+Among rectangles with the same perimeter \(16\) centimeters, there is one that has the largest area. Find the dimension of that rectangle.
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{solution}
+\iffalse{} {Solution. } \fi{}
+Suppose the length is \(x\) and the width is \(y\). The area is a function of \(x\) and \(y\).
+
+\begin{verbatim}
+A:=(x, y)->x*y;
+\end{verbatim}
+
+We know that the perimeter is \(16\) which provides a relation between \(x\) and \(y\).
+
+\begin{verbatim}
+prm:=2x+2y=16;
+\end{verbatim}
+
+Solve for \(y\) and plug it in to the area function.
+
+\begin{verbatim}
+wd:=solve(prm, y);
+y:=unapply(wd, x); # define y as a function of x
+Ar:=unapply(A(x,y(x)),x); # Translate the area function into a function of x.
+\end{verbatim}
+
+To find the maximum area, you may use \texttt{maximize} or using the following commands. Note that \(x>0\).
+
+\begin{verbatim}
+Amx := max(Ar~(solve(D(Ar)(x) = 0, x))); # Find critical points, evaluate, and find the maximum.
+xvalue := solve(Ar(x) = Amx, x); # Find the length x such that the area is the largest. 
+yvalue := y(xvalue); # Find the width y such that the area is the largest.
+\end{verbatim}
+\EndKnitrBlock{solution}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-124}{}{\label{exr:unnamed-chunk-124} }
+Find the rectangle with the minimal perimeter among rectangles with the area 36 square inches.
+\EndKnitrBlock{exercise}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-125}{}{\label{exr:unnamed-chunk-125} }
+Find the point on the parabola \(y^2=2x\) that is closest to the point \((1, -4)\).
+\EndKnitrBlock{exercise}
+
 \hypertarget{antiderivatives}{%
 \section{Antiderivatives}\label{antiderivatives}}
+
+An antiderivative of a function \(f\) over an interval \(I\) is any function \(F\) such that \(F'(x)=f(x)\) for all \(x\) in \(I\).
+
+Antiderivatives are closely related to integration. In Maple, you may use \texttt{int(f(x),\ x)} or \texttt{IntTutor(f(x),\ x)} supported by \texttt{Student{[}Calculus1{]}} to find an antiderivative of \(f(x)\).
+
+\BeginKnitrBlock{example}
+\protect\hypertarget{exm:unnamed-chunk-126}{}{\label{exm:unnamed-chunk-126} }
+Find an antiderivative of the function \(f(x)=x^3-\frac{1}{\sqrt{x}}\) by hand and by Maple respectively. Use \texttt{diff} to check your answer.
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{solution}
+\iffalse{} {Solution. } \fi{}
+To find an antiderivative by hand, rewrite the function using negative rational exponent and apply the formula
+\[
+\frac{\mathrm{d}}{\mathrm{d}x}\left(\frac{1}{r+1}x^{r+1}\right)=x^r.
+\]
+
+In this question, an antiderivative is \(F(x)=\frac14x^4-2\sqrt{x}\).
+
+Define the function first.
+
+\begin{verbatim}
+restart:
+f:=x->x^3-1/sqrt(x);
+\end{verbatim}
+
+Find an antiderivative using \texttt{int} and using \texttt{IntTutor} for a step-by-step solution.
+
+\begin{verbatim}
+F:=int(f(x), x); # may define a function using unapply(int(f(x), x), x).
+
+with(Student[Calculus1]):
+TutorF:=IntTutor(f(x), x);
+\end{verbatim}
+
+Verify using \texttt{diff}.
+
+\begin{verbatim}
+diff(F, x);
+diff(TutorF, x);
+\end{verbatim}
+\EndKnitrBlock{solution}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-128}{}{\label{exr:unnamed-chunk-128} }
+Find an antiderivative of the function \(f(x)=x^2-3+8\sin(x)\) by hand and by Maple respectively. Use \texttt{diff} to check your answer.
+\EndKnitrBlock{exercise}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-129}{}{\label{exr:unnamed-chunk-129} }
+Find an antiderivative of the function \(f(x)=\frac{x^3-2x+1}{\sqrt{x}}\) by hand and by Maple respectively. Use \texttt{diff} to check your answer.
+\EndKnitrBlock{exercise}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-130}{}{\label{exr:unnamed-chunk-130} }
+Find \textbf{the most general antiderivative} of the function \(f(x)=\tan x\sec x+1\) by hand and by Maple respectively. Use \texttt{diff} to check your answer.
+\EndKnitrBlock{exercise}
 
 \hypertarget{integrals}{%
 \chapter{Integrals}\label{integrals}}
@@ -1706,7 +2356,7 @@ in the Math mode and hit enter. You will see the help page.
 \includegraphics{figs/VolOfRev-help-page.png}
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-91}{}{\label{exm:unnamed-chunk-91} }Show the solid obtained by rotating the region bounded by \(y=x^2\) and \(y=x\) about \(y\)-axis. Set up an integral for the volume. Find the volume.
+\protect\hypertarget{exm:unnamed-chunk-131}{}{\label{exm:unnamed-chunk-131} }Show the solid obtained by rotating the region bounded by \(y=x^2\) and \(y=x\) about \(y\)-axis. Set up an integral for the volume. Find the volume.
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{solution}
@@ -1757,11 +2407,11 @@ The outputs in Maple can be seen in the following picture
 \EndKnitrBlock{remark}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-94}{}{\label{exr:unnamed-chunk-94} }Find the volume of the solid obtained by rotating the region bounded by \(y=x^3\), \(x=0\), \(y=1\) about \(y\)-axis
+\protect\hypertarget{exr:unnamed-chunk-134}{}{\label{exr:unnamed-chunk-134} }Find the volume of the solid obtained by rotating the region bounded by \(y=x^3\), \(x=0\), \(y=1\) about \(y\)-axis
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-95}{}{\label{exr:unnamed-chunk-95} }Find the volume of the solid obtained by rotating the region bounded by \(y=x^3\), \(y=0\), \(x=1\) about (a) \(y=0\), and (b) \(x=2\).
+\protect\hypertarget{exr:unnamed-chunk-135}{}{\label{exr:unnamed-chunk-135} }Find the volume of the solid obtained by rotating the region bounded by \(y=x^3\), \(y=0\), \(x=1\) about (a) \(y=0\), and (b) \(x=2\).
 \EndKnitrBlock{exercise}
 
 \hypertarget{calculus-of-inverse-functions}{%
@@ -1781,7 +2431,7 @@ which graphs the original function \(f(x)\) and the inverse function \(f^{-1}(x)
 You will see clearly that the graphs of a function and its inverse are symmetric with respect to the line \(y=x\).
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-96}{}{\label{exm:unnamed-chunk-96} }
+\protect\hypertarget{exm:unnamed-chunk-136}{}{\label{exm:unnamed-chunk-136} }
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1861,7 +2511,7 @@ eval(subs(x=f^{-1}(a), 1/f'(x)))
 \end{verbatim}
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-98}{}{\label{exm:unnamed-chunk-98} }Find \((f^{-1})'(0)\), where \(f(x)=\cos(x)\) and \(0\leq x\leq \pi\).
+\protect\hypertarget{exm:unnamed-chunk-138}{}{\label{exm:unnamed-chunk-138} }Find \((f^{-1})'(0)\), where \(f(x)=\cos(x)\) and \(0\leq x\leq \pi\).
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{solution}
@@ -1888,7 +2538,7 @@ Using Maple, we find \((f^{-1})'(0)=-1\).
 \EndKnitrBlock{solution}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-100}{}{\label{exr:unnamed-chunk-100} }
+\protect\hypertarget{exr:unnamed-chunk-140}{}{\label{exr:unnamed-chunk-140} }
 1. Graph the function \(f(x)=3+2\sin x\), its inverse function, and the line \(y=x\) over the interval \([-2,2]\).
 
 \begin{enumerate}
@@ -1929,7 +2579,7 @@ Using those two identities, we may define general exponential functions and gene
 How do graphs of logarithmic functions and exponential functions look like?
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-101}{}{\label{exm:unnamed-chunk-101} }
+\protect\hypertarget{exm:unnamed-chunk-141}{}{\label{exm:unnamed-chunk-141} }
 Graph the following functions together.
 \[
 y=\ln x, \qquad y=e^x, \qquad y=2^x, \qquad y=\log_2x, y=x.
@@ -1958,7 +2608,7 @@ Here is the output
 \EndKnitrBlock{solution}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-103}{}{\label{exr:unnamed-chunk-103} }Graph the following functions together.
+\protect\hypertarget{exr:unnamed-chunk-143}{}{\label{exr:unnamed-chunk-143} }Graph the following functions together.
 \[
 y=\log_3x, \qquad y=3^x, \qquad y=(1/3)^x, \qquad y=\log_{1/3}x.
 \]
@@ -1967,7 +2617,7 @@ Find the pairs that are symmetric to each other with respect to a certain line.
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-104}{}{\label{exr:unnamed-chunk-104} }Graph the following functions together.
+\protect\hypertarget{exr:unnamed-chunk-144}{}{\label{exr:unnamed-chunk-144} }Graph the following functions together.
 \[
 y=0.5^x, \qquad y=2^x, \qquad y=5^x.
 \]
@@ -1978,7 +2628,7 @@ Fix an input \(x\). Describe how \(y\)-values change when bases changes from sma
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-105}{}{\label{exr:unnamed-chunk-105} }Graph the following functions together.
+\protect\hypertarget{exr:unnamed-chunk-145}{}{\label{exr:unnamed-chunk-145} }Graph the following functions together.
 \[
 y=\log_{0.5}x, \qquad y=\log_2x, \qquad y=\log_{5}x.
 \]
@@ -2006,7 +2656,7 @@ Supported by the \texttt{Student{[}Calculus1{]}} package, Maple also provides th
 Note you may also access tutor commands from the \texttt{Start} page (click the home button in the toolbar and look for Calculus).
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-106}{}{\label{exm:unnamed-chunk-106} }Find \(y'\), where \(y=\ln \left(x^{3}+5x+1\right)\).
+\protect\hypertarget{exm:unnamed-chunk-146}{}{\label{exm:unnamed-chunk-146} }Find \(y'\), where \(y=\ln \left(x^{3}+5x+1\right)\).
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{solution}
@@ -2036,7 +2686,7 @@ By click \texttt{Next\ Step} or \texttt{All\ Steps} you will see detailed soluti
 \EndKnitrBlock{solution}
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-108}{}{\label{exm:unnamed-chunk-108} }Evaluate the integral
+\protect\hypertarget{exm:unnamed-chunk-148}{}{\label{exm:unnamed-chunk-148} }Evaluate the integral
 \[
 \int\dfrac{e^x-1}{e^x+1}\mathrm{d} x.
 \]
@@ -2069,17 +2719,17 @@ By click \texttt{Next\ Step} or \texttt{All\ Steps} you will see detailed soluti
 \EndKnitrBlock{solution}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-110}{}{\label{exr:unnamed-chunk-110} }
+\protect\hypertarget{exr:unnamed-chunk-150}{}{\label{exr:unnamed-chunk-150} }
 Find the derivative \(\frac{\mathrm{d} y}{\mathrm{d} x}\), where \(y=\ln|\cos x|\)
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-111}{}{\label{exr:unnamed-chunk-111} }
+\protect\hypertarget{exr:unnamed-chunk-151}{}{\label{exr:unnamed-chunk-151} }
 Find the derivative \(\frac{\mathrm{d} y}{\mathrm{d} x}\), where \(y=x^{\cos x}\)
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-112}{}{\label{exr:unnamed-chunk-112} }
+\protect\hypertarget{exr:unnamed-chunk-152}{}{\label{exr:unnamed-chunk-152} }
 Evaluate the integral
 \[
 \int \frac{\left(e^{4x}+e^{2x}\right)}{e^{3x}} d x
@@ -2087,7 +2737,7 @@ Evaluate the integral
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-113}{}{\label{exr:unnamed-chunk-113} }
+\protect\hypertarget{exr:unnamed-chunk-153}{}{\label{exr:unnamed-chunk-153} }
 Evaluate the integral
 \[
 \int 2^{3x} d x
@@ -2100,7 +2750,7 @@ Evaluate the integral
 In Maple, you may solve the equation \(y'(x)=k y(x) + c\) (which is called an ODE) using the command \texttt{dsolve(\{ics,\ eq\})}, where \texttt{ics} stands for initial condition \(y(0)=c\) and \texttt{eq} stands for the differential equation. Without the \texttt{ics}, \texttt{dsolve} will provide a general solution.
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-114}{}{\label{exm:unnamed-chunk-114} }Find the function \(f(x)\) which satisfies the differential equation \(f'(x)=k f(x)\) with \(f(0)=5\) and \(f(2)=3\).
+\protect\hypertarget{exm:unnamed-chunk-154}{}{\label{exm:unnamed-chunk-154} }Find the function \(f(x)\) which satisfies the differential equation \(f'(x)=k f(x)\) with \(f(0)=5\) and \(f(2)=3\).
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{solution}
@@ -2129,7 +2779,7 @@ f(x)=5e^{\frac{x(\ln3-\ln5)}{2}}\approx 5e^{-0.255x}.
 \EndKnitrBlock{solution}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-116}{}{\label{exr:unnamed-chunk-116} }
+\protect\hypertarget{exr:unnamed-chunk-156}{}{\label{exr:unnamed-chunk-156} }
 Find the function \(y\) which satisfies the differential equation \(y'(x)=k y(x)\) with \(y(0)=2\) and \(y(5)=11\).
 \EndKnitrBlock{exercise}
 
@@ -2171,7 +2821,7 @@ y=\arctan x,\quad -\pi/2< y< \pi/2 ~~\text{and}~ -\infty< x<\infty.
 To see the graphs of the functions, we may use the \texttt{plot(f(x),\ x\ =\ a..b,\ opts)} command. Or, to graph \(f\), \(f^{-1}\) and \(y=x\) together, we may also use the command \texttt{InversePlot(f(x),\ x\ =\ a..b,\ opts)} supported by the package \texttt{Student{[}Calculus1{]}}.
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-117}{}{\label{exm:unnamed-chunk-117} }
+\protect\hypertarget{exm:unnamed-chunk-157}{}{\label{exm:unnamed-chunk-157} }
 Graph the following functions together.
 \[
 y=\tan x, \qquad y=\arctan x, \qquad y=x.
@@ -2198,7 +2848,7 @@ Here is the output
 \EndKnitrBlock{solution}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-119}{}{\label{exr:unnamed-chunk-119} }
+\protect\hypertarget{exr:unnamed-chunk-159}{}{\label{exr:unnamed-chunk-159} }
 Graph the following functions together over an appropriate domain.
 \[
 y=\cot x, \qquad y=\mathrm{arccot} x, \qquad y=x.
@@ -2215,7 +2865,7 @@ In the section \{\#Differentiation and integration of logarithmic and exponentia
 Now let find derivatives and integrals of some inverse trigonometric functions.
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-120}{}{\label{exm:unnamed-chunk-120} }
+\protect\hypertarget{exm:unnamed-chunk-160}{}{\label{exm:unnamed-chunk-160} }
 Find \(y'\), where \(y=\mathrm{arccot} x\).
 \EndKnitrBlock{example}
 
@@ -2239,12 +2889,12 @@ where \texttt{\%} is a ditto operator that allows you to refer to a previously c
 \EndKnitrBlock{solution}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-122}{}{\label{exr:unnamed-chunk-122} }
+\protect\hypertarget{exr:unnamed-chunk-162}{}{\label{exr:unnamed-chunk-162} }
 Find the derivative of \(y=\mathrm{arcsec} x\)
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-123}{}{\label{exr:unnamed-chunk-123} }
+\protect\hypertarget{exr:unnamed-chunk-163}{}{\label{exr:unnamed-chunk-163} }
 Find the derivative of \(y=\mathrm{arccsc} x\)
 \EndKnitrBlock{exercise}
 
@@ -2253,7 +2903,7 @@ For integrals of inverse trigonometric function, you may need the method of inte
 Use \texttt{DiffTutor} to find antiderivatives of inverse trigonometric functions.
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-124}{}{\label{exr:unnamed-chunk-124} }
+\protect\hypertarget{exr:unnamed-chunk-164}{}{\label{exr:unnamed-chunk-164} }
 Evaluate the integral
 \[
 \int \arcsin x \mathrm{d} x
@@ -2261,7 +2911,7 @@ Evaluate the integral
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-125}{}{\label{exr:unnamed-chunk-125} }
+\protect\hypertarget{exr:unnamed-chunk-165}{}{\label{exr:unnamed-chunk-165} }
 Evaluate the integral
 \[
 \int \arctan x \mathrm{d} x
@@ -2269,7 +2919,7 @@ Evaluate the integral
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-126}{}{\label{exr:unnamed-chunk-126} }
+\protect\hypertarget{exr:unnamed-chunk-166}{}{\label{exr:unnamed-chunk-166} }
 Evaluate the integral
 \[
 \int \mathrm{sec} x \mathrm{d} x
@@ -2282,7 +2932,7 @@ Evaluate the integral
 In Maple, supported by the package, \texttt{Student{[}Calculus1{]}}, the command \texttt{LimitTutor} can show step-by-step solutions of evaluating limits.
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-127}{}{\label{exm:unnamed-chunk-127} }
+\protect\hypertarget{exm:unnamed-chunk-167}{}{\label{exm:unnamed-chunk-167} }
 Evaluate the limit
 \[
 \lim\limits_{x\to \infty}(1+x)^{1/\ln(x)}
@@ -2301,7 +2951,7 @@ LimitTutor((1+x)^(1/ln(x)), x = infinity)
 \EndKnitrBlock{solution}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-129}{}{\label{exr:unnamed-chunk-129} }
+\protect\hypertarget{exr:unnamed-chunk-169}{}{\label{exr:unnamed-chunk-169} }
 Estimate the limit
 \[
 \lim\limits_{x\to 1}\frac{x^2-2x+1}{x^2-x}
@@ -2310,7 +2960,7 @@ by graphing and verify your estimation.
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-130}{}{\label{exr:unnamed-chunk-130} }
+\protect\hypertarget{exr:unnamed-chunk-170}{}{\label{exr:unnamed-chunk-170} }
 Evaluate the limit
 \[
 \lim\limits_{x\to \infty} x-\ln(x).
@@ -2318,7 +2968,7 @@ Evaluate the limit
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-131}{}{\label{exr:unnamed-chunk-131} }
+\protect\hypertarget{exr:unnamed-chunk-171}{}{\label{exr:unnamed-chunk-171} }
 Evaluate the limit
 \[
 \lim\limits_{x\to \infty} x\tan(\frac1x).
@@ -2336,7 +2986,7 @@ When evaluating integrations of trigonometric functions, one idea is to reduce t
 In Maple, you may use the command \texttt{combine} to rewrite the expression.
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-132}{}{\label{exm:unnamed-chunk-132} }
+\protect\hypertarget{exm:unnamed-chunk-172}{}{\label{exm:unnamed-chunk-172} }
 Rewrite \(\cos^4x\) into an expression with single terms and evaluate the integral \(\int \cos^4x\mathrm{d} x\).
 \EndKnitrBlock{example}
 
@@ -2355,7 +3005,7 @@ IntTutor(%, x)
 You may compare the above solution with the solution given by \texttt{IntTutor((cos(x))\^{}4,\ x)}.
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-134}{}{\label{exr:unnamed-chunk-134} }
+\protect\hypertarget{exr:unnamed-chunk-174}{}{\label{exr:unnamed-chunk-174} }
 Evaluate the integral
 \[
 \int \tan ^{5} x \mathrm{d} x
@@ -2363,7 +3013,7 @@ Evaluate the integral
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-135}{}{\label{exr:unnamed-chunk-135} }
+\protect\hypertarget{exr:unnamed-chunk-175}{}{\label{exr:unnamed-chunk-175} }
 Evaluate the integral
 \[
 \int \sin 5 x \sin^2 x \mathrm{d} x
@@ -2378,7 +3028,7 @@ Surely, you may learn some trigonometric substitution tricks using \texttt{IntTu
 Here I want to introduce another useful command which when integrating functions, we may need to complete a square and then do a substitution. In Maple, we can complete squares using the command \texttt{CompleteSquare(f,\ x)} which supported by the package \texttt{Student{[}Precalculus{]}}.
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-136}{}{\label{exm:unnamed-chunk-136} }
+\protect\hypertarget{exm:unnamed-chunk-176}{}{\label{exm:unnamed-chunk-176} }
 Evaluate the integral
 \[
 \int\dfrac{1}{x^2+x+1} \mathrm{d} x.
@@ -2407,7 +3057,7 @@ DiffTutor(1/%, x)
 \EndKnitrBlock{solution}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-138}{}{\label{exr:unnamed-chunk-138} }
+\protect\hypertarget{exr:unnamed-chunk-178}{}{\label{exr:unnamed-chunk-178} }
 Evaluate the integral
 \[
 \int \sqrt{3+2 x-x^{2}} \mathrm{d} x
@@ -2415,7 +3065,7 @@ Evaluate the integral
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-139}{}{\label{exr:unnamed-chunk-139} }
+\protect\hypertarget{exr:unnamed-chunk-179}{}{\label{exr:unnamed-chunk-179} }
 Evaluate the integral
 \[
 \int_{0}^{\pi / 2} \frac{\cos t}{\sqrt{1+\sin ^{2} t}} \mathrm{d} t
@@ -2428,7 +3078,7 @@ Evaluate the integral
 In Maple, we can factor a polynomial using the command \texttt{factor(polynomial)} or find partial fraction decomposition using \texttt{convert(function,\ parfrac)}.
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-140}{}{\label{exm:unnamed-chunk-140} }
+\protect\hypertarget{exm:unnamed-chunk-180}{}{\label{exm:unnamed-chunk-180} }
 Find the sum of partial fractions for the rational function
 \[
 f(x)=\frac{x^3+4x+3}{x^4+5x^2+4}
@@ -2446,7 +3096,7 @@ convert((x^3+4*x+3)/(x^4+5x^2+4), parfrac)
 \EndKnitrBlock{solution}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-142}{}{\label{exr:unnamed-chunk-142} }
+\protect\hypertarget{exr:unnamed-chunk-182}{}{\label{exr:unnamed-chunk-182} }
 Find the sum of partial fractions for the rational function
 \[
 f(x)=\frac{x^{4}}{\left(x^{2}-x+1\right)\left(x^{2}+2\right)^{2}}.
@@ -2454,7 +3104,7 @@ f(x)=\frac{x^{4}}{\left(x^{2}-x+1\right)\left(x^{2}+2\right)^{2}}.
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-143}{}{\label{exr:unnamed-chunk-143} }
+\protect\hypertarget{exr:unnamed-chunk-183}{}{\label{exr:unnamed-chunk-183} }
 Find the sum of partial fraction and evaluate the integral
 
 \[
@@ -2463,7 +3113,7 @@ Find the sum of partial fraction and evaluate the integral
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-144}{}{\label{exr:unnamed-chunk-144} }
+\protect\hypertarget{exr:unnamed-chunk-184}{}{\label{exr:unnamed-chunk-184} }
 Find the sum of partial fraction and evaluate the integral
 
 \[
@@ -2472,7 +3122,7 @@ Find the sum of partial fraction and evaluate the integral
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-145}{}{\label{exr:unnamed-chunk-145} }
+\protect\hypertarget{exr:unnamed-chunk-185}{}{\label{exr:unnamed-chunk-185} }
 Find the sum of partial fraction and evaluate the integral
 
 \[
@@ -2516,7 +3166,7 @@ In Maple, the package \texttt{Student{[}Calculus1{]}} provides commands to inves
 \texttt{SurfaceOfRevolution(f(x),\ x\ =\ a..b,\ opts)\}}
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-146}{}{\label{exm:unnamed-chunk-146} }
+\protect\hypertarget{exm:unnamed-chunk-186}{}{\label{exm:unnamed-chunk-186} }
 Set up an integral and evaluate the integral for the length of the curve defined by
 \[
 f(x)=\sqrt{x},\qquad 1\leq x\leq 4.
@@ -2547,7 +3197,7 @@ ArcLength(sqrt(x), x=1..4, output=plot)
 \EndKnitrBlock{solution}
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-148}{}{\label{exm:unnamed-chunk-148} }
+\protect\hypertarget{exm:unnamed-chunk-188}{}{\label{exm:unnamed-chunk-188} }
 Set up an integral and evaluate the integral for the area of the surface obtained by rotating the curve defined by
 \[
 f(x)=\sqrt{x},\qquad 1\leq x\leq 4
@@ -2578,7 +3228,7 @@ SurfaceOfRevolution(sqrt(x),x=1..4, axis=vertical)
 \EndKnitrBlock{solution}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-150}{}{\label{exr:unnamed-chunk-150} }
+\protect\hypertarget{exr:unnamed-chunk-190}{}{\label{exr:unnamed-chunk-190} }
 Set up an integral and evaluate the integral for the length of the arc defined by
 \[
 f(x)=\ln x, \qquad 1\leq x\leq 2.
@@ -2587,7 +3237,7 @@ Plot \(f(x)\) together with the arc length function in the same coordinate syste
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-151}{}{\label{exr:unnamed-chunk-151} }
+\protect\hypertarget{exr:unnamed-chunk-191}{}{\label{exr:unnamed-chunk-191} }
 Plot the surface obtained by rotating the curve defined by
 \[
 f(x)=\frac{\cos x}{x}, \qquad 0\leq x\leq 4\pi
@@ -2596,7 +3246,7 @@ about the \(y\)-axis. Set up an integral for the area of the surface.
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-152}{}{\label{exr:unnamed-chunk-152} }
+\protect\hypertarget{exr:unnamed-chunk-192}{}{\label{exr:unnamed-chunk-192} }
 Find the area of the surface obtained by rotating the curve defined by
 \[
 f(x)=\sqrt{1+x^2},\qquad 0\leq x\leq 3.
@@ -2639,7 +3289,7 @@ end do;
 \end{verbatim}
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-154}{}{\label{exm:unnamed-chunk-154} }
+\protect\hypertarget{exm:unnamed-chunk-194}{}{\label{exm:unnamed-chunk-194} }
 Find the first 20 partial sums \(s_k=\sum_{n=1}^{n}a_n\) of the infinite series
 \[
 \sum_{n=0}^\infty\frac1{2^n}=1+\frac12+\frac14+\frac18+\cdots.
@@ -2691,7 +3341,7 @@ To structure codes in a procedure, you may use \texttt{Code\ Edit\ Region} which
 To execute codes within this region, click \texttt{Execute\ Code} from the \texttt{Edit} menu, or use the shortcut command \texttt{Ctrl+E}.
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-157}{}{\label{exm:unnamed-chunk-157} }
+\protect\hypertarget{exm:unnamed-chunk-197}{}{\label{exm:unnamed-chunk-197} }
 The Fibonacci sequence is defined by \(fib(0)=0\), \(fib(1)=1\) and \(fib(n)=fib(n-1)+fic(n-2)\).
 Find the first 20 Fibonacci numbers.
 \EndKnitrBlock{example}
@@ -2716,7 +3366,7 @@ seq(fib(n), n=0..19)
 \EndKnitrBlock{solution}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-159}{}{\label{exr:unnamed-chunk-159} }
+\protect\hypertarget{exr:unnamed-chunk-199}{}{\label{exr:unnamed-chunk-199} }
 Find the first 20 terms of the sequence
 \[
 \{\sin{\frac{\pi}{n}}\}_{n=1}^\infty.
@@ -2725,7 +3375,7 @@ Determine whether the sequence \(\{\sin{\frac{\pi}{n}}\}\) is convergent or dive
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-160}{}{\label{exr:unnamed-chunk-160} }
+\protect\hypertarget{exr:unnamed-chunk-200}{}{\label{exr:unnamed-chunk-200} }
 Find the first 20 partial sums \(s_k=\sum_{n=1}^{n}a_n\) of the infinite series
 \[\sum_{n=0}^\infty\frac1n=1+\frac12+\frac13+\frac14+\cdots.
 \]
@@ -2733,7 +3383,7 @@ Determine whether the series \(\sum_{n=0}^\infty\frac1n\) is convergent or diver
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-161}{}{\label{exr:unnamed-chunk-161} }
+\protect\hypertarget{exr:unnamed-chunk-201}{}{\label{exr:unnamed-chunk-201} }
 Find the 20th to 30th Fibonacci numbers.
 \EndKnitrBlock{exercise}
 
@@ -2763,7 +3413,7 @@ f(x)=\sum_{n=0}^\infty c_n(x-a)^n,\quad\quad \left|x-a\right|<R,
 then its coefficients are given by \(c_n=\dfrac{f^{(n)}(a)}{n!}.\)
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-162}{}{\label{exm:unnamed-chunk-162} }
+\protect\hypertarget{exm:unnamed-chunk-202}{}{\label{exm:unnamed-chunk-202} }
 Find the interval of convergence of the power series
 \[
 \sum\limits_{n=1}^{\infty}\dfrac{(-2)^nx^n}{n^3}.
@@ -2789,7 +3439,7 @@ solve(abs(x)<1/r, x)
 \EndKnitrBlock{solution}
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-164}{}{\label{exm:unnamed-chunk-164} }
+\protect\hypertarget{exm:unnamed-chunk-204}{}{\label{exm:unnamed-chunk-204} }
 Find the Taylor expansion of the function \(f(x)=\dfrac{1}{x-2}\) at \(x=0\) up to the 5-th order. Plot \(f(x)\) and the \(5\)-th order Taylor polynomial together.
 \EndKnitrBlock{example}
 
@@ -2812,7 +3462,7 @@ plot([1/(x-2), fpoly], x=-1..1)
 \EndKnitrBlock{solution}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-166}{}{\label{exr:unnamed-chunk-166} }
+\protect\hypertarget{exr:unnamed-chunk-206}{}{\label{exr:unnamed-chunk-206} }
 Find the interval of convergence of the power series
 \[
 \sum\limits_{n=1}^{\infty}\dfrac{(-4)^nx^n}{\sqrt{n}}.
@@ -2820,7 +3470,7 @@ Find the interval of convergence of the power series
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-167}{}{\label{exr:unnamed-chunk-167} }
+\protect\hypertarget{exr:unnamed-chunk-207}{}{\label{exr:unnamed-chunk-207} }
 Find the Taylor expansion of the function \(f(x)=\sin x\) at \(x=0\) up to the 5-th order. Plot \(f(x)\) and the \(5\)-th order Taylor polynomial together over the interval \([-\pi,\pi]\).
 \EndKnitrBlock{exercise}
 
@@ -2859,7 +3509,7 @@ If \(\left|f^{n+1}{x}\right|\leq M\) for \(\left|x-a\right|\leq d\), then the re
 Roughly speaking, the absolute value of the reminder \(\left|R_n(x)\right|\) determines how accurate the Taylor polynomial approximation.
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-168}{}{\label{exm:unnamed-chunk-168} }
+\protect\hypertarget{exm:unnamed-chunk-208}{}{\label{exm:unnamed-chunk-208} }
 Approximate function \(f(x)=\sin x\) by the degree 3 Taylor polynomial at \(x=1\).
 \EndKnitrBlock{example}
 
@@ -2882,7 +3532,7 @@ subs(x=1, fpolyapprox)
 \EndKnitrBlock{solution}
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-170}{}{\label{exm:unnamed-chunk-170} }
+\protect\hypertarget{exm:unnamed-chunk-210}{}{\label{exm:unnamed-chunk-210} }
 Plot the function
 \[
 g(x)=\begin{cases}e^{-\frac{1}{x^2}} & x\neq 0\\ 0 & x=0\end{cases}
@@ -2914,12 +3564,12 @@ The graphs of the functions are shown in the picture.
 In the solution, \texttt{x\$n} is a shortcut option for \texttt{x,\ x,\ x,\ x,\ x} in the \texttt{diff} command.
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-172}{}{\label{exr:unnamed-chunk-172} }
+\protect\hypertarget{exr:unnamed-chunk-212}{}{\label{exr:unnamed-chunk-212} }
 Approximate function \(f(x)=e^x\) by the degree 5 Taylor polynomial at \(x=1\).
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}
-\protect\hypertarget{exr:unnamed-chunk-173}{}{\label{exr:unnamed-chunk-173} }
+\protect\hypertarget{exr:unnamed-chunk-213}{}{\label{exr:unnamed-chunk-213} }
 Compare the function \(y=\sin x\) with its degree 10 Taylor polynomial at \(x=0\).
 \EndKnitrBlock{exercise}
 

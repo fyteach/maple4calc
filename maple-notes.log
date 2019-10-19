@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.27)  16 OCT 2019 00:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.27)  18 OCT 2019 15:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -24375,177 +24375,297 @@ se with itself N times.[]
 Chapter 4.
 [41
 
-] [42
+]
+Overfull \hbox (6.74898pt too wide) in paragraph at lines 1679--1679
+[]\T1/lmtt/m/n/10 # The remove function removes removes the elements of Cpts in
+ [0,4][] 
+ []
+
+
+Overfull \hbox (11.99896pt too wide) in paragraph at lines 1679--1679
+[]\T1/lmtt/m/n/10 # The remove function use a Boolean-valued procedure as a con
+dition.[] 
+ []
+
+
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 1679--1679
+[]\T1/lmtt/m/n/10 # A procedure can be considered as a function. This is why we
+ use ->.[] 
+ []
+
+
+Overfull \hbox (101.2487pt too wide) in paragraph at lines 1702--1702
+[]    \T1/lmtt/m/n/10 if f(c) = fmax then print(The maximum value of f(x) over 
+[0, 4] is*%f(c) = fmax);[] 
+ []
+
+
+Overfull \hbox (101.2487pt too wide) in paragraph at lines 1702--1702
+[]    \T1/lmtt/m/n/10 elif f(c)=fmin then print(The minimum value of f(x) over 
+[0, 4] is*%f(c) = fmin);[] 
+ []
+
+[42]
+<figs/Rolletheorem.png, id=752, 281.58028pt x 282.26207pt>
+File: figs/Rolletheorem.png Graphic file (type png)
+<use figs/Rolletheorem.png>
+Package pdftex.def Info: figs/Rolletheorem.png  used on input line 1751.
+(pdftex.def)             Requested size: 281.58817pt x 282.26997pt.
+[43 <./figs/Rolletheorem.png>]
+Overfull \hbox (43.70703pt too wide) in paragraph at lines 1773--1774
+[]\T1/lmr/m/n/10 (-20) The sub-pack-age \T1/lmtt/m/n/10 Student[Calculus1] \T1/
+lmr/m/n/10 (-20) also pro-vides a com-mand \T1/lmtt/m/n/10 MeanValueTheorem(f(x
+),
+ []
+
+<figs/MeanValueTheorem.png, id=760, 264.53548pt x 254.99037pt>
+File: figs/MeanValueTheorem.png Graphic file (type png)
+<use figs/MeanValueTheorem.png>
+Package pdftex.def Info: figs/MeanValueTheorem.png  used on input line 1798.
+(pdftex.def)             Requested size: 264.53482pt x 254.98975pt.
+[44 <./figs/MeanValueTheorem.png>] [45]
+Underfull \hbox (badness 3861) in paragraph at lines 1940--1943
+[]\T1/lmr/m/n/10 (+20) Now let's find crit-i-cal points us-ing \T1/lmtt/m/n/10 
+Student[Calculus1] \T1/lmr/m/n/10 (+20) sub-pack-age.
+ []
+
+
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 1948--1948
+[]\T1/lmtt/m/n/10 df(t) # where t is a test point in an interval, you replace i
+t by a number.[] 
+ []
+
+[46]
+Underfull \hbox (badness 1394) in paragraph at lines 2000--2001
+[]\T1/lmr/m/n/10 (+20) In Maple, to find lim-its, we use the com-mand \T1/lmtt/
+m/n/10 limit(f(x), x=a) \T1/lmr/m/n/10 (+20) or
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2000--2001
+\T1/lmtt/m/n/10 LimitTutor(f(x), x=a) \T1/lmr/m/n/10 (+20) sup-ported by \T1/lm
+tt/m/n/10 Student[Calculus1]. To find
+ []
+
+[47]
+Overfull \hbox (27.74892pt too wide) in paragraph at lines 2058--2058
+[]\T1/lmtt/m/n/10 display(asymplots, Grphf); # display is supported by the plot
+s package.[] 
+ []
+
+[48]
+Overfull \hbox (6.46677pt too wide) in paragraph at lines 2146--2147
+[]\T1/lmr/m/n/10 (-20) Find all crit-i-cal points. This can be done by find-ing
+ us-ing the \T1/lmtt/m/n/10 Student[Calculus1]
+ []
+
+
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 2157--2157
+[]\T1/lmtt/m/n/10 dg(t) # where t is a test point in an interval, you replace i
+t by a number.[] 
+ []
+
+[49]
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 2219--2219
+[]\T1/lmtt/m/n/10 Ar:=unapply(A(x,y(x)),x); # Translate the area function into 
+a function of x.[] 
+ []
+
+
+Overfull \hbox (158.99854pt too wide) in paragraph at lines 2227--2227
+[]\T1/lmtt/m/n/10 Amx := max(Ar~(solve(D(Ar)(x) = 0, x))); # Find critical poin
+ts, evaluate, and find the maximum.[] 
+ []
+
+
+Overfull \hbox (111.74867pt too wide) in paragraph at lines 2227--2227
+[]\T1/lmtt/m/n/10 xvalue := solve(Ar(x) = Amx, x); # Find the length x such tha
+t the area is the largest.[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 2227--2227
+[]\T1/lmtt/m/n/10 yvalue := y(xvalue); # Find the width y such that the area is
+ the largest.[] 
+ []
+
+[50]
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 2275--2275
+[]\T1/lmtt/m/n/10 F:=int(f(x), x); # may define a function using unapply(int(f(
+x), x), x).[] 
+ []
+
+[51] [52
 
 ]
 Chapter 5.
-[43] [44
+[53] [54
 
 ]
 Chapter 6.
-[45] [46
+[55] [56
 
-] [47] [48]
+] [57] [58]
 Chapter 7.
 
-Overfull \hbox (5.7297pt too wide) in paragraph at lines 1692--1693
+Overfull \hbox (5.7297pt too wide) in paragraph at lines 2342--2343
 []\T1/lmr/m/n/10 (-20) In Maple, the fol-low-ing com-mand, sup-ported by the pa
 ck-age \T1/lmtt/m/n/10 Student[Calculus1]\T1/lmr/m/n/10 (-20) ,
  []
 
-<figs/VolOfRev-help-page.png, id=779, 869.96716pt x 485.43623pt>
+<figs/VolOfRev-help-page.png, id=902, 869.96716pt x 485.43623pt>
 File: figs/VolOfRev-help-page.png Graphic file (type png)
 <use figs/VolOfRev-help-page.png>
-Package pdftex.def Info: figs/VolOfRev-help-page.png  used on input line 1706.
+Package pdftex.def Info: figs/VolOfRev-help-page.png  used on input line 2356.
 (pdftex.def)             Requested size: 345.00719pt x 192.51184pt.
-[49
+[59
 
 ]
-Overfull \hbox (22.49893pt too wide) in paragraph at lines 1725--1725
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 2375--2375
 []\T1/lmtt/m/n/10 VolumeOfRevolution(x^2, x, x = 0 .. 1, axis = vertical, outpu
 t = plot)[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 1731--1731
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 2381--2381
 []\T1/lmtt/m/n/10 VolumeOfRevolution(x^2, x, x = 0 .. 1, axis = vertical, outpu
 t = integral)[] 
  []
 
 
-Overfull \hbox (27.74892pt too wide) in paragraph at lines 1737--1737
+Overfull \hbox (27.74892pt too wide) in paragraph at lines 2387--2387
 []\T1/lmtt/m/n/10 VolumeOfRevolution(x^2, x, x = 0 .. 1, axis = vertical, outpu
 t = value)[] 
  []
 
-<figs/VolOfRev-Example1.png, id=787, 700.20085pt x 533.84349pt>
+<figs/VolOfRev-Example1.png, id=910, 700.20085pt x 533.84349pt>
 File: figs/VolOfRev-Example1.png Graphic file (type png)
 <use figs/VolOfRev-Example1.png>
-Package pdftex.def Info: figs/VolOfRev-Example1.png  used on input line 1741.
+Package pdftex.def Info: figs/VolOfRev-Example1.png  used on input line 2391.
 (pdftex.def)             Requested size: 345.0032pt x 263.03554pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[50 <./figs/VolOfRev-help-page.png>]
-Overfull \hbox (194.49854pt too wide) in paragraph at lines 1755--1755
+[60 <./figs/VolOfRev-help-page.png>]
+Overfull \hbox (194.49854pt too wide) in paragraph at lines 2405--2405
  [] \T1/lmtt/m/n/10 VolumeOfRevolution(x^2, x, x = 0 .. 1, axis = vertical, dis
 tancefromaxis = -2, output = integral)[] 
  []
 
-[51 <./figs/VolOfRev-Example1.png>] [52
+[61 <./figs/VolOfRev-Example1.png>] [62
 
 ]
 Chapter 8.
-<figs/InversePlot1.png, id=811, 666.11122pt x 304.76123pt>
+<figs/InversePlot1.png, id=934, 666.11122pt x 304.76123pt>
 File: figs/InversePlot1.png Graphic file (type png)
 <use figs/InversePlot1.png>
-Package pdftex.def Info: figs/InversePlot1.png  used on input line 1807.
+Package pdftex.def Info: figs/InversePlot1.png  used on input line 2457.
 (pdftex.def)             Requested size: 345.00768pt x 157.84895pt.
 
-Overfull \hbox (59.24883pt too wide) in paragraph at lines 1815--1815
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 2465--2465
 []  \T1/lmtt/m/n/10 plot([f(x), g(x), x], x = -2 .. 4, y = -5 .. 5, color = [re
 d, black, blue])[] 
  []
 
-[53] [54 <./figs/InversePlot1.png>] [55]
-Overfull \hbox (132.74861pt too wide) in paragraph at lines 1949--1949
+[63] [64 <./figs/InversePlot1.png>] [65]
+Overfull \hbox (132.74861pt too wide) in paragraph at lines 2599--2599
 []\T1/lmtt/m/n/10 plot([ln(x), exp(x), 2^x, log[2](x), x], x=-5..5, color=[blue
 , green, purple, yellow, red])[] 
  []
 
-<figs/Log-Exp-Functions-01.png, id=841, 295.89792pt x 277.48953pt>
+<figs/Log-Exp-Functions-01.png, id=963, 295.89792pt x 277.48953pt>
 File: figs/Log-Exp-Functions-01.png Graphic file (type png)
 <use figs/Log-Exp-Functions-01.png>
-Package pdftex.def Info: figs/Log-Exp-Functions-01.png  used on input line 1955
+Package pdftex.def Info: figs/Log-Exp-Functions-01.png  used on input line 2605
 .
 (pdftex.def)             Requested size: 295.91525pt x 277.50577pt.
-[56 <./figs/Log-Exp-Functions-01.png>]
-<figs/Calculus-Palette.png, id=852, 113.17755pt x 143.17642pt>
+[66 <./figs/Log-Exp-Functions-01.png>]
+<figs/Calculus-Palette.png, id=974, 113.17755pt x 143.17642pt>
 File: figs/Calculus-Palette.png Graphic file (type png)
 <use figs/Calculus-Palette.png>
-Package pdftex.def Info: figs/Calculus-Palette.png  used on input line 1998.
+Package pdftex.def Info: figs/Calculus-Palette.png  used on input line 2648.
 (pdftex.def)             Requested size: 113.17899pt x 143.17824pt.
-[57 <./figs/Calculus-Palette.png>]
-<figs/DiffTutor-ex.png, id=865, 415.8934pt x 386.57632pt>
+[67 <./figs/Calculus-Palette.png>]
+<figs/DiffTutor-ex.png, id=988, 415.8934pt x 386.57632pt>
 File: figs/DiffTutor-ex.png Graphic file (type png)
 <use figs/DiffTutor-ex.png>
-Package pdftex.def Info: figs/DiffTutor-ex.png  used on input line 2033.
+Package pdftex.def Info: figs/DiffTutor-ex.png  used on input line 2683.
 (pdftex.def)             Requested size: 345.01375pt x 320.69308pt.
-[58 <./figs/DiffTutor-ex.png>]
-<figs/IntTutor-ex.png, id=873, 416.5752pt x 385.89453pt>
+[68 <./figs/DiffTutor-ex.png>]
+<figs/IntTutor-ex.png, id=996, 416.5752pt x 385.89453pt>
 File: figs/IntTutor-ex.png Graphic file (type png)
 <use figs/IntTutor-ex.png>
-Package pdftex.def Info: figs/IntTutor-ex.png  used on input line 2066.
+Package pdftex.def Info: figs/IntTutor-ex.png  used on input line 2716.
 (pdftex.def)             Requested size: 345.00726pt x 319.59755pt.
-[59 <./figs/IntTutor-ex.png>] [60]
-<figs/InversePlot_tanx.png, id=900, 283.0575pt x 304.13625pt>
+[69 <./figs/IntTutor-ex.png>] [70]
+<figs/InversePlot_tanx.png, id=1022, 283.0575pt x 304.13625pt>
 File: figs/InversePlot_tanx.png Graphic file (type png)
 <use figs/InversePlot_tanx.png>
-Package pdftex.def Info: figs/InversePlot_tanx.png  used on input line 2195.
+Package pdftex.def Info: figs/InversePlot_tanx.png  used on input line 2845.
 (pdftex.def)             Requested size: 283.06543pt x 304.14478pt.
-[61] [62 <./figs/InversePlot_tanx.PNG>] [63] [64]
+[71] [72 <./figs/InversePlot_tanx.PNG>] [73] [74]
 Chapter 9.
 
-Overfull \hbox (6.74898pt too wide) in paragraph at lines 2352--2352
+Overfull \hbox (6.74898pt too wide) in paragraph at lines 3002--3002
 []\T1/lmtt/m/n/10 # use DiffTutor to evaluate the integral of the resulting fun
 ction.[] 
  []
 
 
-Overfull \hbox (25.97462pt too wide) in paragraph at lines 2355--2356
+Overfull \hbox (25.97462pt too wide) in paragraph at lines 3005--3006
 []\T1/lmr/m/n/10 (-20) You may com-pare the above so-lu-tion with the so-lu-tio
 n given by \T1/lmtt/m/n/10 IntTutor((cos(x))^^B4,
  []
 
-[65
+[75
 
-] [66]
+] [76]
 Overfull \hbox (26.63461pt too wide) has occurred while \output is active
 \T1/lmr/m/sl/10 9.3.  INTEGRATIONS OF RATIONAL FUNCTIONS BY PARTIAL FRACTIONS \
-T1/lmr/m/n/10 67
+T1/lmr/m/n/10 77
  []
 
-[67] [68
+[77] [78
 
 ]
 Chapter 10.
-[69]
-Overfull \hbox (8.59273pt too wide) in paragraph at lines 2577--2577
+[79]
+Overfull \hbox (8.59273pt too wide) in paragraph at lines 3227--3227
 []\T1/lmtt/m/n/10 # Load the package (skip if the package was already loaded)[]
  
  []
 
 
-Overfull \hbox (1.499pt too wide) in paragraph at lines 2577--2577
+Overfull \hbox (1.499pt too wide) in paragraph at lines 3227--3227
 []\T1/lmtt/m/n/10 SurfaceOfRevolution(sqrt(x),x=1..4,output=integral, axis=vert
 ical)[] 
  []
 
-[70] [71] [72
+[80] [81] [82
 
 ]
 Chapter 11.
-[73] [74]
+[83] [84]
 
-LaTeX Warning: Reference `@' on page 75 undefined on input line 2757.
+LaTeX Warning: Reference `@' on page 85 undefined on input line 3407.
 
-[75]
+[85]
 Underfull \vbox (badness 2865) has occurred while \output is active []
 
-[76] [77]
-Overfull \hbox (48.74886pt too wide) in paragraph at lines 2908--2908
+[86] [87]
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 3558--3558
 []\T1/lmtt/m/n/10 for n to 5 do T := (eval(diff(g(x), x$n), x = 0))*x^n/factori
 al(n)+T end do[] 
  []
 
-<figs/non-analytic-smooth.png, id=1069, 401.5pt x 401.5pt>
+<figs/non-analytic-smooth.png, id=1191, 401.5pt x 401.5pt>
 File: figs/non-analytic-smooth.png Graphic file (type png)
 <use figs/non-analytic-smooth.png>
-Package pdftex.def Info: figs/non-analytic-smooth.png  used on input line 2911.
+Package pdftex.def Info: figs/non-analytic-smooth.png  used on input line 3561.
 
 (pdftex.def)             Requested size: 345.02596pt x 345.02596pt.
 
-Overfull \hbox (223.51787pt too wide) in paragraph at lines 2910--2912
+Overfull \hbox (223.51787pt too wide) in paragraph at lines 3560--3562
 []\T1/lmr/m/n/10 (-20) The graphs of the func-tions are shown in the pic-ture. 
 [] 
  []
@@ -24553,27 +24673,27 @@ Overfull \hbox (223.51787pt too wide) in paragraph at lines 2910--2912
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[78]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2927.
-[79 <./figs/non-analytic-smooth.png (PNG copy)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2927.
+[88]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3577.
+[89 <./figs/non-analytic-smooth.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3577.
 (./maple-notes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2927.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2927.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3577.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3577.
 
 Package rerunfilecheck Info: File `maple-notes.out' has not changed.
 (rerunfilecheck)             Checksum: 7C44397A6F71D75E4DBB58B57E55710C;10923.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2927.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3577.
  ) 
 Here is how much of TeX's memory you used:
- 13505 strings out of 494553
- 200766 string characters out of 6176105
- 292987 words of memory out of 5000000
- 16346 multiletter control sequences out of 15000+600000
- 72120 words of font info for 122 fonts, out of 8000000 for 9000
+ 13653 strings out of 494553
+ 203092 string characters out of 6176105
+ 293831 words of memory out of 5000000
+ 16383 multiletter control sequences out of 15000+600000
+ 73387 words of font info for 135 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  32i,12n,38p,974b,516s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/Fei/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit
@@ -24602,10 +24722,10 @@ TeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/Users/Fei/AppData/Roaming/Ti
 nyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/Fei/AppData/Roaming
 /TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Users/Fei/AppData/Roam
 ing/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtto10.pfb>
-Output written on maple-notes.pdf (79 pages, 1407136 bytes).
+Output written on maple-notes.pdf (89 pages, 1469577 bytes).
 PDF statistics:
- 1266 PDF objects out of 1440 (max. 8388607)
- 1109 compressed objects within 12 object streams
- 510 named destinations out of 1000 (max. 500000)
- 12889 words of extra memory for PDF output out of 14400 (max. 10000000)
+ 1404 PDF objects out of 1440 (max. 8388607)
+ 1232 compressed objects within 13 object streams
+ 595 named destinations out of 1000 (max. 500000)
+ 12899 words of extra memory for PDF output out of 14400 (max. 10000000)
 
