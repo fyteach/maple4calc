@@ -24,7 +24,7 @@
 <meta name="author" content="Fei Ye" />
 
 
-<meta name="date" content="2019-10-18" />
+<meta name="date" content="2019-10-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,93 @@
 <h1><span class="header-section-number">Topic 6</span> Application of Integrals I</h1>
 <div id="areas-between-curves" class="section level2">
 <h2><span class="header-section-number">6.1</span> Areas Between Curves</h2>
+<p>By the definition of integral, we see that the area between two curves, is the difference of areas “under” each curve. Here “under” is relative, it depends on how you slice the area.</p>
+<p>If the slices are vertical, then the area between two curves <span class="math inline">\(y=T(x)\)</span> and <span class="math inline">\(y=B(x)\)</span> from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span> is given by
+<span class="math display">\[
+\int_a^b|T(x)-B(x)|\mathrm{d} x.
+\]</span></p>
+<p>If the slices are horizontal, then the word “under” should be understood horizontally and the area between two curves <span class="math inline">\(x=R(y)\)</span> and <span class="math inline">\(x=L(y)\)</span> from <span class="math inline">\(c\)</span> to <span class="math inline">\(d\)</span> may be calculated by
+<span class="math display">\[
+\int_c^d|R(y)-L(y)|\mathrm{d} y.
+\]</span></p>
+<p>Before you setup the interval, it’s better to plot the curves first.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-152" class="example"><strong>Example 6.1  </strong></span>
+Plot the curves <span class="math inline">\(y=x^2\)</span> and <span class="math inline">\(y=2x-x^2\)</span>, and find the enclosed area</p>
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> 
+Define the functions.</p>
+<pre><code>y[1]:=x-&gt;x^2:
+y[2]:=x-&gt;2*x-x^2:</code></pre>
+<p>Plot the curves and shade the enclosed area</p>
+<pre><code>Curves:=plot([y[1](x), y[2](x)], x=-1..2, color=[red, blue])</code></pre>
+<div class="figure">
+<img src="figs/Area-between-two-curves.png" alt="" />
+<p class="caption">A plot of two curves</p>
+</div>
+<p>From the graph, we see the curves intersect at two points. Let’s find the <span class="math inline">\(x\)</span>-coordinates of the intersection points which are the integral limits.</p>
+<pre><code>pts:=solve(y[1](x)=y[2](x), x)</code></pre>
+<p>Determine the upper and lower limits of the integral.</p>
+<pre><code>a:=min(pts):
+b:=max(pts):</code></pre>
+<p>Setup the integral and evaluate</p>
+<pre><code>Area:=Int(abs(y[1](x)-y[2](x)), x=0..1);
+ValArea:=value(Area);</code></pre>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-154" class="example"><strong>Example 6.2  </strong></span>
+Find the area enclosed by the curves <span class="math inline">\(y=x-1\)</span> and <span class="math inline">\(y^2=2x+6\)</span>.</p>
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> 
+Note the second curve does not define a function of <span class="math inline">\(x\)</span>. So let’s just define the curves as equations.</p>
+<pre><code>C[1]:=y=x+1:
+C[2]:=y^2=2x+6;</code></pre>
+<p>Plot the two curves use <code>implicitplot</code> which is supported by <code>plot</code>.</p>
+<pre><code>with(plots):
+implicitplot([C[1],C[2]], x=-5..5, y=-5..5, color=[red, blue]);</code></pre>
+<div class="figure">
+<img src="figs/Area-between-two-curves-y.png" alt="" />
+<p class="caption">An implicit plot of two curves</p>
+</div>
+<p>From the graph, we see that it’s better to integrate along <span class="math inline">\(y\)</span>-axis. So we need to solve for <span class="math inline">\(x\)</span> from the equations and view it as a function of <span class="math inline">\(y\)</span>.</p>
+<pre><code>x[1]:=unapply(solve(C[1], x), y);
+x[2]:=unapply(solve(C[2], x), y);</code></pre>
+<p>Find the <span class="math inline">\(y\)</span>-coordinate of the intersection points and setup integral limits.</p>
+<pre><code>ycord:=solve(x[1](y)=x[2](y), y);
+a:=min(ycord):
+b:=max(ycord):</code></pre>
+<p>Setup the integral with respect to <span class="math inline">\(y\)</span> and evaluate.</p>
+<pre><code>Area:=Int(abs(x[1](y)-x[2](y)), y=a..b);
+ValArea:=value(Area);</code></pre>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-156" class="exercise"><strong>Exercise 6.1  </strong></span>
+Find the area of the region bounded by <span class="math inline">\(y=\sin x\)</span>, <span class="math inline">\(y=\cos x\)</span>, <span class="math inline">\(x=0\)</span> and <span class="math inline">\(x=\pi/2\)</span>.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-157" class="exercise"><strong>Exercise 6.2  </strong></span>
+Find the area between the curve <span class="math inline">\(x=y^2-4y\)</span> and <span class="math inline">\(x=2y-y^2\)</span>.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-158" class="exercise"><strong>Exercise 6.3  </strong></span>
+Find the area of the ellipse <span class="math inline">\(\frac{x^2}{4}+\frac{y^2}{9}=1\)</span>.</p>
+</div>
+
 
 </div>
 </div>

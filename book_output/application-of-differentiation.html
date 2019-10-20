@@ -24,7 +24,7 @@
 <meta name="author" content="Fei Ye" />
 
 
-<meta name="date" content="2019-10-18" />
+<meta name="date" content="2019-10-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -336,7 +336,7 @@ Let <span class="math inline">\(f(x)=x^4-3x^2+1\)</span>. Graph the function <sp
 
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-104" class="exercise"><strong>Exercise 4.5  </strong></span>
-Consider the floor function <span class="math inline">\(f(x)=abs{x}\)</span>. Use a graph to show that there is no tangent line that is parallel to the secant line through <span class="math inline">\((-1, 1)\)</span> and <span class="math inline">\((2,2)\)</span>.</p>
+Consider the floor function <span class="math inline">\(f(x)=|x|\)</span>. Use a graph to show that there is no tangent line that is parallel to the secant line through <span class="math inline">\((-1, 1)\)</span> and <span class="math inline">\((2,2)\)</span>.</p>
 </div>
 
 </div>
@@ -424,14 +424,14 @@ Suppose <span class="math inline">\(p(x)=a_nx^n+\cdots +a_1x+ a_0\)</span> and <
 <span class="math display">\[
 \lim\limits_{x\to \infty}\frac{p(x)}{q(x)}=
 \begin{cases}
-    0 &amp; \text{if} n&lt;m\\
-    \frac{a_n}{b_m} &amp; \text{if} n=m\\
-    \pm\infty &amp; \text{if} n&gt;m\\
+    0 &amp; \text{if}~ n&lt;m\\
+    \frac{a_n}{b_m} &amp; \text{if}~ n=m\\
+    \pm\infty &amp; \text{if}~ n&gt;m\\
 \end{cases}
 \]</span>
 In the last case, the sign agrees with the sign of <span class="math inline">\(\frac{a_n}{b_m}\)</span>.</p>
 <p>The limit at the negative infinity of a rational function is similar.</p>
-<p>In Maple, to find limits, we use the command <code>limit(f(x), x=a)</code> or <code>LimitTutor(f(x), x=a)</code> supported by <code>Student[Calculus1]. To find asymptotes, you may use the command</code>Asymptotes(f(x), x)<code>which is again supported by</code>Student[Calculus1]`.</p>
+<p>In Maple, to find limits, we use the command <code>limit(f(x), x=a)</code> or <code>LimitTutor(f(x), x=a)</code> supported by <code>Student[Calculus1]</code>. To find asymptotes, you may use the command <code>Asymptotes(f(x), x)</code> which is again supported by <code>Student[Calculus1]</code>.</p>
 
 <div class="example">
 <p><span id="exm:unnamed-chunk-111" class="example"><strong>Example 4.6  </strong></span>
@@ -473,7 +473,7 @@ asymplots := implicitplot(asym, x = -5 .. 5, y = -10 .. 10):</code></pre>
 <p>Plot the function <span class="math inline">\(f\)</span> and use <code>display</code> to put the graph and asymptotes together.</p>
 <pre><code>Grphf:=plot(f(x), x=-5..5, y=-10..10, discont=true):
 display(asymplots, Grphf); # display is supported by the plots package.</code></pre>
-[A graphs of rational functions with its asymptotes]{figs/asymptotes.png}
+<img src="figs/asymptotes.png" title="fig:" alt="A graphs of rational functions with its asymptotes" />
 </div>
 
 
@@ -502,7 +502,7 @@ Find asymptote of the function <span class="math inline">\(f(x)=\frac{8\sin x}{x
 <div id="curve-sketching" class="section level2">
 <h2><span class="header-section-number">4.5</span> Curve Sketching</h2>
 <p>To plot the graph of a function in maple, we simply use the command <code>plot(function, widows, options)</code>.</p>
-<p>On the other hand, we can sketch the graph using calculus, more precisely, monotonicity, concavity, vertical asymptote, horizontal asymptote, periods, symmetries, local extrema, intercepts etc.</p>
+<p>On the other hand, we can sketch the graph using calculus, more precisely, monotonicity, concavity, vertical asymptotes, horizontal asymptotes, periods, symmetries, local extrema, intercepts etc.</p>
 
 <div class="example">
 <p><span id="exm:unnamed-chunk-118" class="example"><strong>Example 4.8  </strong></span>

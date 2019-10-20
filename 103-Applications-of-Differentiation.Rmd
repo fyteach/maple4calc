@@ -201,7 +201,7 @@ Let $f(x)=x^4-3x^2+1$. Graph the function $f(x)$ from $-1$ to $2$ indicate the p
 
 ```{exercise}
 
-Consider the floor function $f(x)=abs{x}$. Use a graph to show that there is no tangent line that is parallel to the secant line through $(-1, 1)$ and $(2,2)$.
+Consider the floor function $f(x)=|x|$. Use a graph to show that there is no tangent line that is parallel to the secant line through $(-1, 1)$ and $(2,2)$.
 
 ```
 
@@ -304,16 +304,16 @@ Suppose $p(x)=a_nx^n+\cdots +a_1x+ a_0$ and $q(x)=b_mx^m+\cdots +a_1x+ a_0$
 $$
 \lim\limits_{x\to \infty}\frac{p(x)}{q(x)}=
 \begin{cases}
-    0 & \text{if} n<m\\
-    \frac{a_n}{b_m} & \text{if} n=m\\
-    \pm\infty & \text{if} n>m\\
+    0 & \text{if}~ n<m\\
+    \frac{a_n}{b_m} & \text{if}~ n=m\\
+    \pm\infty & \text{if}~ n>m\\
 \end{cases}
 $$
 In the last case, the sign agrees with the sign of $\frac{a_n}{b_m}$.
 
 The limit at the negative infinity of a rational function is similar.
 
-In Maple, to find limits, we use the command `limit(f(x), x=a)` or `LimitTutor(f(x), x=a)` supported by `Student[Calculus1]. To find asymptotes, you may use the command `Asymptotes(f(x), x)` which is again supported by `Student[Calculus1]`.
+In Maple, to find limits, we use the command `limit(f(x), x=a)` or `LimitTutor(f(x), x=a)` supported by `Student[Calculus1]`. To find asymptotes, you may use the command `Asymptotes(f(x), x)` which is again supported by `Student[Calculus1]`.
 
 ```{example}
 
@@ -361,7 +361,7 @@ Plot the function $f$ and use `display` to put the graph and asymptotes together
     Grphf:=plot(f(x), x=-5..5, y=-10..10, discont=true):
     display(asymplots, Grphf); # display is supported by the plots package.
 
-![A graphs of rational functions with its asymptotes]{figs/asymptotes.png}
+![A graphs of rational functions with its asymptotes](figs/asymptotes.png)
 ```
 
 
@@ -391,7 +391,7 @@ Find asymptote of the function $f(x)=\frac{8\sin x}{x^{2}+1}+\frac{x^{2}-x}{x^{2
 
 To plot the graph of a function in maple, we simply use the command `plot(function, widows, options)`.
 
-On the other hand, we can sketch the graph using calculus, more precisely, monotonicity, concavity, vertical asymptote, horizontal asymptote, periods, symmetries, local extrema, intercepts etc.  
+On the other hand, we can sketch the graph using calculus, more precisely, monotonicity, concavity, vertical asymptotes, horizontal asymptotes, periods, symmetries, local extrema, intercepts etc.  
 
 ```{example}
 

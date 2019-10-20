@@ -24,7 +24,7 @@
 <meta name="author" content="Fei Ye" />
 
 
-<meta name="date" content="2019-10-18" />
+<meta name="date" content="2019-10-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,15 +170,234 @@
 <h1><span class="header-section-number">Topic 5</span> Integrals</h1>
 <div id="definite-integrals" class="section level2">
 <h2><span class="header-section-number">5.1</span> Definite Integrals</h2>
+<p>In mathematics, the area of a region is measured by comparing it to squares of a fixed size. For example, the area of a dimension 1 by 3 rectangle equals the sum of three dimension 1 by 1 squares. For irregular shaped regions, the idea is similar. We slice the region into thin slices and estimate the area of each slice using a rectangle and then take the sum. In other words, the area of any region can be expressed as an infinite sum of rectangles of infinitesimal width. More precisely, to find the (signed) area under a curve <span class="math inline">\(y=f(x)\)</span> from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span> can be approximated using the Riemann Sum
+<span class="math display">\[
+R_N=\sum _{i=1}^{N}f(x_i^*)(x_i-x_{i-1}),
+\]</span>
+where <span class="math inline">\(x_i\)</span> is a partition of the interval <span class="math inline">\([a,b]\)</span> and <span class="math inline">\(x_i^*\)</span> is a sample point in <span class="math inline">\([x_{i-1}, x_i]\)</span>.</p>
+<p>If the limit <span class="math inline">\(R_N\)</span> exists as the partition is getting finer and finer, that is <span class="math inline">\(max(x_i-x_{i-1})\to 0\)</span> and gives the same value for any possible choice of sample points, then we say the function <span class="math inline">\(f\)</span> is <strong>integrable</strong> on <span class="math inline">\([a, b]\)</span> and define the <strong>definite integral</strong> of <span class="math inline">\(f\)</span> on <span class="math inline">\([a, b]\)</span> as
+<span class="math display">\[
+\int_a^bf(x)\mathrm{d} x= \lim\limits_{\max(x_i-x_{i-1})\to 0}R_n.
+\]</span></p>
+<p>For an integrable function, we may approximate the definite integral by choosing left, lower, midpoint, right, upper sample points and take a regular subdivision of the interval as a partition, that is, take <span class="math inline">\(x_i=a+i\Delta_x\)</span>, where <span class="math inline">\(\Delta_x=\frac{b-a}{N}\)</span></p>
+<p>In Maple, we can use the following command to view and find Riemann sums approximately
+<code>RiemannSum(f(x), x = a..b, method, output, other options)</code>, where the <code>method</code> can be left, lower, midpoint, random, right, or upper, and the <code>output</code> can be value, sum, plot or animation. For details, you may use <code>?RiemannSum</code> to open the help page.
+Again, to run the command <code>RiemannSum</code> you need to first load the subpackage <code>Student[Calculus1]</code>.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-131" class="example"><strong>Example 5.1  </strong></span>
+Find approximately the definite integral of the function <span class="math inline">\(f(x)=x^3\)</span> from <span class="math inline">\(0\)</span> to <span class="math inline">\(2\)</span>.</p>
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> 
+Load the package and apply the command.</p>
+<pre><code>with(Student[Calculus1]):
+RiemannSum(x^3, x =0..2, method = right,
+    partition=50, output = plot,
+    boxoptions=[filled = [color = blue, transparency = .5]]);</code></pre>
+</div>
+
+<p>Without using <code>RiemannSum</code>, you will also write your own program to approximate the integral. For example</p>
+
+<div class="solution">
+<p> <span class="solution"><em>Solution</em> (Another solution). </span> 
+restart:
+f:=x-&gt;x^3; # define the integrand
+a:=0: # define the lower integral limit
+b:=2: # define the right integral limit
+Delta[x]:=(b-a)/N; # define size of a regular subdivision
+x[i]:=a+i<em>Delta[x]; # sample points using right endpoints
+RS:=Sum(Delta[x]</em>f(x[i]), i=1..N); # find the sum
+limit(RS, N=infinity); # evaluate the sum numerically.</p>
+</div>
+
+
+<div class="remark">
+<p> <span class="remark"><em>Remark. </em></span> 
+In the above code, you may use <code>sum</code> which slightly more flexible than <code>Sum</code>. Indeed, <code>Sum(F,k=0..n) = sum(F,k=0..n,parametric)</code>. For details, see <a href="https://www.maplesoft.com/support/help/Maple/view.aspx?path=sum/details">Maple sum/details</a>.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-135" class="exercise"><strong>Exercise 5.1  </strong></span>
+Approximate the definite integral of the function <span class="math inline">\(f(x)=\dfrac{x}{x+1}\)</span> on the interval <span class="math inline">\([0, 1]\)</span>.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-136" class="exercise"><strong>Exercise 5.2  </strong></span>
+Approximate the definite integral of the function <span class="math inline">\(f(x)=\dfrac{x}{x+1}\)</span> on the interval <span class="math inline">\([0, 3]\)</span>.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-137" class="exercise"><strong>Exercise 5.3  </strong></span>
+Approximate the definite integral of the function <span class="math inline">\(f(x)=\cos x\)</span> on the interval <span class="math inline">\([0, \pi/2]\)</span>.</p>
+</div>
+
 </div>
 <div id="the-fundamental-theorem-of-calculus" class="section level2">
 <h2><span class="header-section-number">5.2</span> The Fundamental Theorem of Calculus</h2>
+<p>To evaluate definite integrals or find antiderivatives, we can use the Fundamental Theorems of Calculus.</p>
+
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-138" class="theorem"><strong>Theorem 5.1  (Fundamental Theorem of Calculus I)  </strong></span>
+If <span class="math inline">\(f\)</span> is continuous on <span class="math inline">\([a, b]\)</span>, then the function <span class="math inline">\(g\)</span> defined by
+<span class="math display">\[
+\dfrac{\mathrm{d}}{\mathrm{d} x}\int^x_af(t)\mathrm{d} t =f(x)
+\]</span></p>
+</div>
+
+
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-139" class="theorem"><strong>Theorem 5.2  (Fundamental Theorem of Calculus II)  </strong></span>
+If <span class="math inline">\(f\)</span> is continuous on <span class="math inline">\([a, b]\)</span> and <span class="math inline">\(F\)</span> is an antiderivative of <span class="math inline">\(f\)</span> on <span class="math inline">\([a, b]\)</span>, then
+<span class="math display">\[
+\int^b_af(t)\mathrm{d} t =F(a)-F(b).
+\]</span></p>
+</div>
+
+<p>In maple, we can use <code>int(f(x),x=a..b)</code> or <code>IntTutor(f(x),x=a..b)</code> to find integrals.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-140" class="example"><strong>Example 5.2  </strong></span>
+Find the derivative the function
+<span class="math display">\[
+g(x)=\int_0^{x}\sin(t)\mathrm{d} t
+\]</span>
+and verify the Fundamental Theorem of Calculus I.</p>
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> 
+Define the integrand.</p>
+<pre><code>f:=t-&gt;sin(t)</code></pre>
+<p>Define <span class="math inline">\(g\)</span> as a function via the integral</p>
+<pre><code>g:=x-&gt;int(f(t), t=1..x)</code></pre>
+<p>Find the derivative function of <span class="math inline">\(g\)</span></p>
+<pre><code>dg:=x-&gt;diff(g(x), x)</code></pre>
+<p>Compare <span class="math inline">\(g&#39;\)</span> with <span class="math inline">\(f\)</span>.</p>
+<pre><code>evalb(dg(x)=f(x)) # evalb evaluates expression involving relational operators</code></pre>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-142" class="exercise"><strong>Exercise 5.4  </strong></span>
+Use Maple to find the derivative of the following function
+<span class="math display">\[
+g(x)=\int_0^{\tan x}\sqrt{t}\mathrm{d} t
+\]</span>
+and verify your answer using the Fundamental Theorem of Calculus I (find the derivate by hand).</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-143" class="exercise"><strong>Exercise 5.5  </strong></span>
+Find <span class="math inline">\(g(x)=\displaystyle\int_0^x\sqrt{1-t^2}\mathrm{d} t\)</span> and verify that <span class="math inline">\(g&#39;(x)=\sqrt{1-x^2}\)</span> and <span class="math inline">\(\displaystyle\int_0^1\sqrt{1-t^2}\mathrm{d} t=g(1)-g(0)\)</span>.</p>
+</div>
+
 </div>
 <div id="indefinite-integrals" class="section level2">
 <h2><span class="header-section-number">5.3</span> Indefinite Integrals</h2>
+<p>When calculating a definite integral, we first find an antiderivative and then apply the Fundamental Theorem of Calculus. To be convenient, we use the <span class="math inline">\(\int f(x)\mathrm{d}x\)</span> to denote the most general antiderivative of <span class="math inline">\(f\)</span> and call it the <strong>indefinite integral</strong> of <span class="math inline">\(f\)</span>.</p>
+<p>In Maple, you may use <code>int</code>, <code>IntTutor</code> or <code>Int</code> to find an integral, where <code>Int</code> should be used with <code>value</code> if you want to see the evaluated integral.
+Again, <code>IntTutor</code> is supported by <code>Student[Calculus1]</code>.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-144" class="example"><strong>Example 5.3  </strong></span>
+Find the indefinite integral
+<span class="math display">\[
+\int(x^3-\sin x)\mathrm{d} x.
+\]</span>
+Show the steps.</p>
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> 
+Define the integrand.</p>
+<pre><code>restart:
+f:=x-&gt;x^3-sin(x);</code></pre>
+<p>Find the indefinite integral step-by-step using <code>IntTutor</code>.</p>
+<pre><code>with(Student[Calculus1]):
+IntTutor(f(x), x);</code></pre>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-146" class="exercise"><strong>Exercise 5.6  </strong></span>
+Find the indefinite integral
+<span class="math display">\[
+\int(\sqrt{x^3}-\sec^2x)\mathrm{d} x.
+\]</span>
+Show the steps.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-147" class="exercise"><strong>Exercise 5.7  </strong></span>
+Find the indefinite integral
+<span class="math display">\[
+\int\left(\frac{x^2+1}{\sqrt{x}}-\tan x\sec x\right)\mathrm{d} x.
+\]</span>
+Show the steps.</p>
+</div>
+
 </div>
 <div id="the-substitution-rule" class="section level2">
 <h2><span class="header-section-number">5.4</span> The Substitution Rule</h2>
+<p>Among techniques of integration, one basic rule is the substitution rule.</p>
+<p>If <span class="math inline">\(g&#39;(x)\)</span> is continuous on <span class="math inline">\([a, b]\)</span> and <span class="math inline">\(f\)</span> is continuous on the range of <span class="math inline">\(u=g(x)\)</span>, then
+<span class="math display">\[
+\int_a^bf(g(x))g&#39;(x)\mathrm{d} x=\int_{g(a)}^{g(b)}f(u)\mathrm{d} u.
+\]</span></p>
+<p>In Maple, we can use the command <code>Change(Int(f(x), x=a..b), u=g(x), new variables)</code>, supported by the package <code>IntegrationTools</code>, to change a variable, where the 3rd argument is optional and required only if the number of new symbols in the substitution is not equal to the number of old variables. Note that in the first argument, you may keep the symbols <code>a</code> and <code>b</code> or omit <code>=a..b</code>.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-148" class="example"><strong>Example 5.4  </strong></span>
+Use substitution to find the following integral.
+<span class="math display">\[
+\int_1^2x\sqrt{x^2+1}\mathrm{d} x.
+\]</span></p>
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> 
+When using substitution to find a definite integral, it’s better to find the indefinite integral first and then use the Fundamental Theorem of Calculus to find the value..</p>
+<p>In this question, we may use the substitution <span class="math inline">\(u=x^2+1\)</span>.</p>
+<p>Let’s use Maple to see how variables will be changed.</p>
+<p>First define the function.</p>
+<pre><code>f:=x-&gt;x*sqrt(x^2+1)</code></pre>
+<p>Load the package <code>IntegrationTools</code></p>
+<pre><code>with(IntegrationTools)</code></pre>
+<p>Find the indefinite integral by the substitution <span class="math inline">\(u=x^2+1\)</span>.</p>
+<pre><code>F:=Int(f(x), x);
+FInt:=Change(F, u=x^2+1);</code></pre>
+<p>Evaluate integral in <span class="math inline">\(u\)</span> and substitute back to <span class="math inline">\(x\)</span>.</p>
+<pre><code>G:=unapply(value(FInt), u);
+FF:=unapply(G(x^2+1), x);</code></pre>
+<p>Apply the Fundamental Theorem of Calculus I to find the definite integral.</p>
+<pre><code>Ans:=FF(2)-FF(1)</code></pre>
+<p>Now let’s check the answer using the <code>int(f(x), x=a..b)</code> command.</p>
+<pre><code>int(f(x), x=1..2)</code></pre>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-150" class="exercise"><strong>Exercise 5.8  </strong></span>
+Find the definite integral <span class="math inline">\(\displaystyle\int_0^{4} \dfrac{\sin(\sqrt{x})}{\sqrt{x}}\mathrm{d} x\)</span> using substitution.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-151" class="exercise"><strong>Exercise 5.9  </strong></span>
+Find the definite integral <span class="math inline">\(\displaystyle\int_1^{2} \dfrac{2x}{\sqrt{x^2+1}}\mathrm{d} x\)</span> using substitution.</p>
+</div>
+
 
 </div>
 </div>

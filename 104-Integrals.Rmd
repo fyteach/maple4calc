@@ -2,8 +2,266 @@
 
 ## Definite Integrals
 
+In mathematics, the area of a region is measured by comparing it to squares of a fixed size. For example, the area of a dimension 1 by 3 rectangle equals the sum of three dimension 1 by 1 squares. For irregular shaped regions, the idea is similar. We slice the region into thin slices and estimate the area of each slice using a rectangle and then take the sum. In other words, the area of any region can be expressed as an infinite sum of rectangles of infinitesimal width. More precisely, to find the (signed) area under a curve $y=f(x)$ from $a$ to $b$ can be approximated using the Riemann Sum
+$$
+R_N=\sum _{i=1}^{N}f(x_i^*)(x_i-x_{i-1}),
+$$
+where $x_i$ is a partition of the interval $[a,b]$ and $x_i^*$ is a sample point in $[x_{i-1}, x_i]$.
+
+If the limit $R_N$ exists as the partition is getting finer and finer, that is $max(x_i-x_{i-1})\to 0$ and gives the same value for any possible choice of sample points, then we say the function $f$ is **integrable** on $[a, b]$ and define the **definite integral** of $f$ on $[a, b]$ as 
+$$
+\int_a^bf(x)\mathrm{d} x= \lim\limits_{\max(x_i-x_{i-1})\to 0}R_n.
+$$
+
+For an integrable function, we may approximate the definite integral by choosing left, lower, midpoint, right, upper sample points and take a regular subdivision of the interval as a partition, that is, take $x_i=a+i\Delta_x$, where $\Delta_x=\frac{b-a}{N}$
+ 
+In Maple, we can use the following command to view and find Riemann sums approximately
+`RiemannSum(f(x), x = a..b, method, output, other options)`, where the `method` can be left, lower, midpoint, random, right, or upper, and the `output` can be value, sum, plot or animation. For details, you may use `?RiemannSum` to open the help page.
+Again, to run the command `RiemannSum` you need to first load the subpackage `Student[Calculus1]`. 
+
+```{example}
+
+Find approximately the definite integral of the function $f(x)=x^3$ from $0$ to $2$.
+
+```
+
+```{solution}
+
+Load the package and apply the command.
+
+    with(Student[Calculus1]):
+    RiemannSum(x^3, x =0..2, method = right,
+        partition=50, output = plot,
+        boxoptions=[filled = [color = blue, transparency = .5]]);
+
+```
+
+Without using `RiemannSum`, you will also write your own program to approximate the integral. For example
+
+```{solution, name="Another solution"}
+
+    restart:
+    f:=x->x^3;               # define the integrand
+    a:=0:                    # define the lower integral limit
+    b:=2:                    # define the right integral limit
+    Delta[x]:=(b-a)/N;       # define size of a regular subdivision
+    x[i]:=a+i*Delta[x];      # sample points using right endpoints
+    RS:=Sum(Delta[x]*f(x[i]), i=1..N); # find the sum
+    limit(RS, N=infinity);             # evaluate the sum numerically.
+
+```
+
+```{remark}
+
+In the above code, you may use `sum` which slightly more flexible than `Sum`. Indeed, `Sum(F,k=0..n) = sum(F,k=0..n,parametric)`. For details, see [Maple sum/details](https://www.maplesoft.com/support/help/Maple/view.aspx?path=sum/details).
+
+```
+
+```{exercise}
+
+Approximate the definite integral of the function $f(x)=\dfrac{x}{x+1}$ on the interval $[0, 1]$.
+
+```
+
+```{exercise}
+
+Approximate the definite integral of the function $f(x)=\dfrac{x}{x+1}$ on the interval $[0, 3]$.
+
+```
+
+```{exercise}
+
+Approximate the definite integral of the function $f(x)=\cos x$ on the interval $[0, \pi/2]$.
+
+```
+
 ## The Fundamental Theorem of Calculus
+
+To evaluate definite integrals or find antiderivatives, we can use the Fundamental Theorems of Calculus. 
+
+```{theorem, name="Fundamental Theorem of Calculus I"}
+
+If $f$ is continuous on $[a, b]$, then the function $g$ defined by
+$$
+\dfrac{\mathrm{d}}{\mathrm{d} x}\int^x_af(t)\mathrm{d} t =f(x)
+$$
+
+```
+
+```{theorem, name="Fundamental Theorem of Calculus II"}
+
+If $f$ is continuous on $[a, b]$ and $F$ is an antiderivative of $f$ on $[a, b]$, then 
+$$
+\int^b_af(t)\mathrm{d} t =F(a)-F(b).
+$$
+
+```
+
+In maple, we can use `int(f(x),x=a..b)` or `IntTutor(f(x),x=a..b)` to find integrals.
+
+```{example}
+
+Find the derivative the function 
+$$
+g(x)=\int_0^{x}\sin(t)\mathrm{d} t
+$$
+and verify the Fundamental Theorem of Calculus I.
+
+```
+
+```{solution}
+
+Define the integrand.
+
+    f:=t->sin(t)
+
+Define $g$ as a function via the integral
+
+    g:=x->int(f(t), t=1..x)
+
+Find the derivative function of $g$
+
+    dg:=x->diff(g(x), x)
+
+Compare $g'$ with $f$.
+
+    evalb(dg(x)=f(x)) # evalb evaluates expression involving relational operators
+
+```
+
+
+```{exercise}
+
+Use Maple to find the derivative of the following function
+$$
+g(x)=\int_0^{\tan x}\sqrt{t}\mathrm{d} t
+$$
+and verify your answer using the Fundamental Theorem of Calculus I (find the derivate by hand).
+
+```
+
+```{exercise}
+
+Find $g(x)=\displaystyle\int_0^x\sqrt{1-t^2}\mathrm{d} t$ and verify that $g'(x)=\sqrt{1-x^2}$ and $\displaystyle\int_0^1\sqrt{1-t^2}\mathrm{d} t=g(1)-g(0)$.
+
+```
 
 ## Indefinite Integrals
 
+When calculating a definite integral, we first find an antiderivative and then apply the Fundamental Theorem of Calculus. To be convenient, we use the $\int f(x)\mathrm{d}x$ to denote the most general antiderivative of $f$ and call it the **indefinite integral** of $f$.
+
+In Maple, you may use `int`, `IntTutor` or `Int` to find an integral, where `Int` should be used with `value` if you want to see the evaluated integral.
+Again, `IntTutor` is supported by `Student[Calculus1]`.
+
+```{example}
+
+Find the indefinite integral
+$$
+\int(x^3-\sin x)\mathrm{d} x.
+$$
+Show the steps.
+
+```
+
+```{solution}
+
+Define the integrand.
+
+    restart:
+    f:=x->x^3-sin(x);
+
+Find the indefinite integral step-by-step using `IntTutor`.
+
+    with(Student[Calculus1]):
+    IntTutor(f(x), x);
+
+```
+
+```{exercise}
+
+Find the indefinite integral
+$$
+\int(\sqrt{x^3}-\sec^2x)\mathrm{d} x.
+$$
+Show the steps.
+
+```
+
+```{exercise}
+
+Find the indefinite integral
+$$
+\int\left(\frac{x^2+1}{\sqrt{x}}-\tan x\sec x\right)\mathrm{d} x.
+$$
+Show the steps.
+
+```
+
 ## The Substitution Rule
+
+Among techniques of integration, one basic rule is the substitution rule.
+
+If $g'(x)$ is continuous on $[a, b]$ and $f$ is continuous on the range of $u=g(x)$, then 
+$$
+\int_a^bf(g(x))g'(x)\mathrm{d} x=\int_{g(a)}^{g(b)}f(u)\mathrm{d} u.
+$$
+
+In Maple, we can use the command `Change(Int(f(x), x=a..b), u=g(x), new variables)`, supported by the package `IntegrationTools`, to change a variable, where the 3rd argument is optional and required only if the number of new symbols in the substitution is not equal to the number of old variables. Note that in the first argument, you may keep the symbols `a` and `b` or omit `=a..b`.
+
+```{example}
+
+Use substitution to find the following integral.
+$$
+\int_1^2x\sqrt{x^2+1}\mathrm{d} x.
+$$
+
+```
+
+```{solution}
+
+When using substitution to find a definite integral, it's better to find the indefinite integral first and then use the Fundamental Theorem of Calculus to find the value..
+
+In this question, we may use the substitution $u=x^2+1$.
+
+Let's use Maple to see how variables will be changed.
+
+First define the function.
+
+    f:=x->x*sqrt(x^2+1)
+
+Load the package `IntegrationTools`
+
+    with(IntegrationTools)
+
+Find the indefinite integral by the substitution $u=x^2+1$. 
+
+    F:=Int(f(x), x);
+    FInt:=Change(F, u=x^2+1);
+
+Evaluate integral in $u$ and substitute back to $x$.
+
+    G:=unapply(value(FInt), u);
+    FF:=unapply(G(x^2+1), x);
+
+Apply the Fundamental Theorem of Calculus I to find the definite integral.
+
+    Ans:=FF(2)-FF(1)
+
+Now let's check the answer using the `int(f(x), x=a..b)` command.
+
+    int(f(x), x=1..2)
+
+```
+
+```{exercise}
+
+Find the definite integral $\displaystyle\int_0^{4} \dfrac{\sin(\sqrt{x})}{\sqrt{x}}\mathrm{d} x$ using substitution.
+
+```
+
+```{exercise}
+
+Find the definite integral $\displaystyle\int_1^{2} \dfrac{2x}{\sqrt{x^2+1}}\mathrm{d} x$ using substitution.
+
+```
+
