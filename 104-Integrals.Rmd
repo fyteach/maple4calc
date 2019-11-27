@@ -14,7 +14,7 @@ $$
 $$
 
 For an integrable function, we may approximate the definite integral by choosing left, lower, midpoint, right, upper sample points and take a regular subdivision of the interval as a partition, that is, take $x_i=a+i\Delta_x$, where $\Delta_x=\frac{b-a}{N}$
- 
+
 In Maple, we can use the following command to view and find Riemann sums approximately
 `RiemannSum(f(x), x = a..b, method, output, other options)`, where the `method` can be left, lower, midpoint, random, right, or upper, and the `output` can be value, sum, plot or animation. For details, you may use `?RiemannSum` to open the help page.
 Again, to run the command `RiemannSum` you need to first load the subpackage `Student[Calculus1]`. 
