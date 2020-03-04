@@ -28,17 +28,14 @@ Use the graph of the function $f(x)=|x-1|$ to identify a $x$ value where $f$ is 
 
 First plot the function.
 
-    f:= x-> abs(x)
-
-    plot(f(x), x=-2..2)
+    f:= x-> abs(x);
+    plot(f(x), x=-2..2);
 
 You will see the function is not flat near $x=1$. To verify that, we calculate the limit of the difference quotient for all $x$ and then evaluate the resulting function at $x=1$.
 
-    diffquot:=(f(x+h)-f(x))/h
-
-    derlimit:= limit(diffquot, h=0)
-
-    evalf(subs(x=1, derlimit))
+    diffquot:=(f(x+h)-f(x))/h;
+    derlimit:= limit(diffquot, h=0);
+    evalf(subs(x=1, derlimit));
 
 ```
 
@@ -99,9 +96,9 @@ Calculate the first derivative and denote the derivative by `f1`.
 
 Calculate the second derivative and denote the derivative by `f2`. You may use one of the following three commands.
 
-    f2:=diff(f1, x)
-    f2:=diff(f, x, x)
-    f2:=diff(f, [x$2])
+    f2:=diff(f1, x);
+    f2:=diff(f, x, x);
+    f2:=diff(f, [x$2]);
 
 ```
 
@@ -122,12 +119,12 @@ $$
 
 To see the result from `DiffTutor`, we use the following command. Remember to load the `Student[Calculus1]` first.
 
-    with(Student[Calculus1])
-    DiffTutor((x^2-2*x-x^(-3))/sqrt(x), x)
+    with(Student[Calculus1]):
+    DiffTutor((x^2-2*x-x^(-3))/sqrt(x), x);
 
 Here is how does the output look like
 
-![The derivative of a function obtained by the DiffTutor command](figs/DiffTutor-Example.png)
+![The derivative of a function obtained by the DiffTutor command](figs/DiffTutor-Example.png){width=50%}
 
 ```
 
@@ -162,21 +159,12 @@ $$
 (f(g(x)))'=f'(g(x))g'(x).
 $$
 Why there is an extra factor $g'(x)$? This is mainly because $g(x+h)\approx g(x)+g'(x)h$.
-<!-- More precisely, let
-$$
-\varepsilon(y, t)=\frac{f(y+t)-f(y)}{t}-f'(y).
-$$
-Then $f(y+t)-f(y)=t(f'(y)-\varepsilon(y, t)$, $\varepsilon(y, t)$ is a continuous function in $t$ for each fixed value $y$, and $lim\limits_{t\to 0}\varepsilon(y, t)=0$ for every fixed $y$.
-Now let $y=g(x)$ and $t=g(x+h)-g(x)$. Then
-$$
-\lim_{h\to 0}\frac{f(g(x+h))-f(x)}{h}=\lim_{h\to 0}\frac{g(x+h)-g(x)}{h}(f'(g(x))-\lim_{h\to 0}\varepsilon(g(x), (g(x+h)-g(x)))=f'(g(x))g'(x).
-$$ -->
 
 Now let's use Maple to understand the chain rule. In Maple, the symbol for composition is `@`, that is, in Maple the composition $f\circ g$ is given by `f@g`.
 
 Since we will evaluate derivative functions, in addition to the command `diff(expression, variable)`, we will also use `D(function)(variable)` to find the derivative function. One major difference between those two commands is that `D` is designed to differentiate functions, whereas `diff` is for differentiating expressions.
 
-![A screen shot from Maple shows a comparison between the commands D and diff](figs/D_vs_diff.png)
+![A screen shot from Maple shows a comparison between the commands D and diff](figs/D_vs_diff.png){width=50%}
 
 ```{example}
 
@@ -209,7 +197,7 @@ To compare the derivatives, we use the command `expand` and `simplify` to rewrit
 
 From the outputs, we see that $(f\circ g)'(x)=F'(x)$. Why they are the same? This is because $\sin(2x)=2\sin x\cos x$!.
 
-![An example about the chain rule solved using Maple](figs/chain_rule.png)
+![An example about the chain rule solved using Maple](figs/chain_rule.png){width=50%}
 
 ```
 
@@ -243,7 +231,7 @@ You may use quotient rule to find the derivative. However, the chain rule may be
 
 You see that the chain rule was applied first.
 
-![A example that chain rule was applied first by DiffTutor](figs/DiffTutor-Chain-Rule-Example.png)
+![A example that chain rule was applied first by DiffTutor](figs/DiffTutor-Chain-Rule-Example.png){width=50%}
 
 To find the points where the tangent line is horizontal, we need to solve the equation $f'(x)=0$.
 
@@ -358,6 +346,7 @@ Find an equation of the line tangent to the curve $x^2 + (x-y)^3 = 9$ at $x=1$. 
 Find all points $(x, y)$ on the curve of $|x|^{2/3} + |y|^{2/3} = 8$ where lines tangent to the curve at $(x, y)$ is perpendicular to the line $x-y=1$. (Use `?solve` to learn how to solve a system of equations in Maple).
 
 ```
+
 ## Rates of Change and Derivatives
 
 Given a function $y=f(x)$, the average rate of change of $f$ is the difference quotient

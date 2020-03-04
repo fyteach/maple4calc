@@ -39,7 +39,7 @@ Plot $f(x)$ together with the arc length function in the same coordinate system.
 ```
 
 ```{solution}
-<br>
+  
 
     # Load the package
 
@@ -70,7 +70,7 @@ about the $y$-axis. Plot the surface of the revolution.
 ```
 
 ```{solution}
-<br>
+  
 
     # Load the package (skip if the package was already loaded)
 

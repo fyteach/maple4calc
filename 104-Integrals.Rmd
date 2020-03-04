@@ -39,8 +39,9 @@ Load the package and apply the command.
 Without using `RiemannSum`, you will also write your own program to approximate the integral. For example
 
 ```{solution, name="Another solution"}
+  
 
-    restart:
+    restart:  
     f:=x->x^3;               # define the integrand
     a:=0:                    # define the lower integral limit
     b:=2:                    # define the right integral limit
@@ -90,7 +91,7 @@ $$
 
 ```{theorem, name="Fundamental Theorem of Calculus II"}
 
-If $f$ is continuous on $[a, b]$ and $F$ is an antiderivative of $f$ on $[a, b]$, then 
+If $f$ is continuous on $[a, b]$ and $F$ is an antiderivative of $f$ on $[a, b]$, then
 $$
 \int^b_af(t)\mathrm{d} t =F(a)-F(b).
 $$
@@ -101,7 +102,7 @@ In maple, we can use `int(f(x),x=a..b)` or `IntTutor(f(x),x=a..b)` to find integ
 
 ```{example}
 
-Find the derivative the function 
+Find the derivative the function
 $$
 g(x)=\int_0^{x}\sin(t)\mathrm{d} t
 $$
@@ -128,7 +129,6 @@ Compare $g'$ with $f$.
     evalb(dg(x)=f(x)) # evalb evaluates expression involving relational operators
 
 ```
-
 
 ```{exercise}
 
@@ -264,4 +264,3 @@ Find the definite integral $\displaystyle\int_0^{4} \dfrac{\sin(\sqrt{x})}{\sqrt
 Find the definite integral $\displaystyle\int_1^{2} \dfrac{2x}{\sqrt{x^2+1}}\mathrm{d} x$ using substitution.
 
 ```
-

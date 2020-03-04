@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 8 Calculus of Inverse Functions | Notes on Maple for Calculus</title>
   <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
-  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 8 Calculus of Inverse Functions | Notes on Maple for Calculus" />
   <meta property="og:type" content="book" />
   
   
   <meta property="og:description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
-  
+  <meta name="github-repo" content="fyemath/elegantbookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Topic 8 Calculus of Inverse Functions | Notes on Maple for Calculus" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Fei Ye" />
 
 
-<meta name="date" content="2019-10-19" />
+<meta name="date" content="2020-03-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="applications-of-integrals-ii.html"/>
 <link rel="next" href="techniques-of-integration.html"/>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -70,7 +71,8 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="1" data-path="basics-in-maple.html"><a href="basics-in-maple.html"><i class="fa fa-check"></i><b>1</b> Basics in Maple</a><ul>
+<li class="chapter" data-level="1" data-path="basics-in-maple.html"><a href="basics-in-maple.html"><i class="fa fa-check"></i><b>1</b> Basics in Maple</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="basics-in-maple.html"><a href="basics-in-maple.html#what-should-i-do-after-i-opened-maple"><i class="fa fa-check"></i><b>1.1</b> What should I do after I opened Maple</a></li>
 <li class="chapter" data-level="1.2" data-path="basics-in-maple.html"><a href="basics-in-maple.html#basic-operators"><i class="fa fa-check"></i><b>1.2</b> Basic Operators</a></li>
 <li class="chapter" data-level="1.3" data-path="basics-in-maple.html"><a href="basics-in-maple.html#how-to-define-a-function"><i class="fa fa-check"></i><b>1.3</b> How to define a function</a></li>
@@ -78,7 +80,8 @@
 <li class="chapter" data-level="1.5" data-path="basics-in-maple.html"><a href="basics-in-maple.html#plot-functions"><i class="fa fa-check"></i><b>1.5</b> Plot functions</a></li>
 </ul></li>
 <li class="part"><span><b>Part 1 - Calculus I</b></span></li>
-<li class="chapter" data-level="2" data-path="limits.html"><a href="limits.html"><i class="fa fa-check"></i><b>2</b> Limits</a><ul>
+<li class="chapter" data-level="2" data-path="limits.html"><a href="limits.html"><i class="fa fa-check"></i><b>2</b> Limits</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="limits.html"><a href="limits.html#understand-limits-using-tangent-lines"><i class="fa fa-check"></i><b>2.1</b> Understand limits using tangent lines</a></li>
 <li class="chapter" data-level="2.2" data-path="limits.html"><a href="limits.html#estimate-limits-numerically-or-graphically"><i class="fa fa-check"></i><b>2.2</b> Estimate limits numerically or graphically</a></li>
 <li class="chapter" data-level="2.3" data-path="limits.html"><a href="limits.html#evaluate-limits"><i class="fa fa-check"></i><b>2.3</b> Evaluate limits</a></li>
@@ -88,7 +91,8 @@
 <li class="chapter" data-level="2.7" data-path="limits.html"><a href="limits.html#continuity-and-limit-of-a-composite-function"><i class="fa fa-check"></i><b>2.7</b> Continuity and Limit of a Composite Function</a></li>
 <li class="chapter" data-level="2.8" data-path="limits.html"><a href="limits.html#intermediate-value-theorem"><i class="fa fa-check"></i><b>2.8</b> Intermediate Value Theorem</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="derivatives.html"><a href="derivatives.html"><i class="fa fa-check"></i><b>3</b> Derivatives</a><ul>
+<li class="chapter" data-level="3" data-path="derivatives.html"><a href="derivatives.html"><i class="fa fa-check"></i><b>3</b> Derivatives</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="derivatives.html"><a href="derivatives.html#derivative-functions"><i class="fa fa-check"></i><b>3.1</b> Derivative Functions</a></li>
 <li class="chapter" data-level="3.2" data-path="derivatives.html"><a href="derivatives.html#calculating-derivatives"><i class="fa fa-check"></i><b>3.2</b> Calculating Derivatives</a></li>
 <li class="chapter" data-level="3.3" data-path="derivatives.html"><a href="derivatives.html#chain-rule"><i class="fa fa-check"></i><b>3.3</b> Chain Rule</a></li>
@@ -98,7 +102,8 @@
 <li class="chapter" data-level="3.7" data-path="derivatives.html"><a href="derivatives.html#linearizations"><i class="fa fa-check"></i><b>3.7</b> Linearizations</a></li>
 <li class="chapter" data-level="3.8" data-path="derivatives.html"><a href="derivatives.html#newtons-method"><i class="fa fa-check"></i><b>3.8</b> Newton’s Method</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="application-of-differentiation.html"><a href="application-of-differentiation.html"><i class="fa fa-check"></i><b>4</b> Application of Differentiation</a><ul>
+<li class="chapter" data-level="4" data-path="application-of-differentiation.html"><a href="application-of-differentiation.html"><i class="fa fa-check"></i><b>4</b> Application of Differentiation</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="application-of-differentiation.html"><a href="application-of-differentiation.html#maximum-and-minimum-values"><i class="fa fa-check"></i><b>4.1</b> Maximum and Minimum Values</a></li>
 <li class="chapter" data-level="4.2" data-path="application-of-differentiation.html"><a href="application-of-differentiation.html#the-mean-value-theorem"><i class="fa fa-check"></i><b>4.2</b> The Mean Value Theorem</a></li>
 <li class="chapter" data-level="4.3" data-path="application-of-differentiation.html"><a href="application-of-differentiation.html#derivatives-and-the-shape-of-a-graph"><i class="fa fa-check"></i><b>4.3</b> Derivatives and the Shape of a Graph</a></li>
@@ -107,41 +112,50 @@
 <li class="chapter" data-level="4.6" data-path="application-of-differentiation.html"><a href="application-of-differentiation.html#optimization-problems"><i class="fa fa-check"></i><b>4.6</b> Optimization Problems</a></li>
 <li class="chapter" data-level="4.7" data-path="application-of-differentiation.html"><a href="application-of-differentiation.html#antiderivatives"><i class="fa fa-check"></i><b>4.7</b> Antiderivatives</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="integrals.html"><a href="integrals.html"><i class="fa fa-check"></i><b>5</b> Integrals</a><ul>
+<li class="chapter" data-level="5" data-path="integrals.html"><a href="integrals.html"><i class="fa fa-check"></i><b>5</b> Integrals</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="integrals.html"><a href="integrals.html#definite-integrals"><i class="fa fa-check"></i><b>5.1</b> Definite Integrals</a></li>
 <li class="chapter" data-level="5.2" data-path="integrals.html"><a href="integrals.html#the-fundamental-theorem-of-calculus"><i class="fa fa-check"></i><b>5.2</b> The Fundamental Theorem of Calculus</a></li>
 <li class="chapter" data-level="5.3" data-path="integrals.html"><a href="integrals.html#indefinite-integrals"><i class="fa fa-check"></i><b>5.3</b> Indefinite Integrals</a></li>
 <li class="chapter" data-level="5.4" data-path="integrals.html"><a href="integrals.html#the-substitution-rule"><i class="fa fa-check"></i><b>5.4</b> The Substitution Rule</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="application-of-integrals-i.html"><a href="application-of-integrals-i.html"><i class="fa fa-check"></i><b>6</b> Application of Integrals I</a><ul>
+<li class="chapter" data-level="6" data-path="application-of-integrals-i.html"><a href="application-of-integrals-i.html"><i class="fa fa-check"></i><b>6</b> Application of Integrals I</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="application-of-integrals-i.html"><a href="application-of-integrals-i.html#areas-between-curves"><i class="fa fa-check"></i><b>6.1</b> Areas Between Curves</a></li>
 </ul></li>
 <li class="part"><span><b>Part 2 - Calculus II</b></span></li>
-<li class="chapter" data-level="7" data-path="applications-of-integrals-ii.html"><a href="applications-of-integrals-ii.html"><i class="fa fa-check"></i><b>7</b> Applications of Integrals II</a><ul>
+<li class="chapter" data-level="7" data-path="applications-of-integrals-ii.html"><a href="applications-of-integrals-ii.html"><i class="fa fa-check"></i><b>7</b> Applications of Integrals II</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="applications-of-integrals-ii.html"><a href="applications-of-integrals-ii.html#volume-of-revolution"><i class="fa fa-check"></i><b>7.1</b> Volume of Revolution</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html"><i class="fa fa-check"></i><b>8</b> Calculus of Inverse Functions</a><ul>
+<li class="chapter" data-level="8" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html"><i class="fa fa-check"></i><b>8</b> Calculus of Inverse Functions</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html#inverse-functions"><i class="fa fa-check"></i><b>8.1</b> Inverse Functions</a></li>
-<li class="chapter" data-level="8.2" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html#logarithmic-and-exponential-functions"><i class="fa fa-check"></i><b>8.2</b> Logarithmic and Exponential Functions</a><ul>
+<li class="chapter" data-level="8.2" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html#logarithmic-and-exponential-functions"><i class="fa fa-check"></i><b>8.2</b> Logarithmic and Exponential Functions</a>
+<ul>
 <li class="chapter" data-level="8.2.1" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html#basic-properties-and-graphs"><i class="fa fa-check"></i><b>8.2.1</b> Basic properties and graphs</a></li>
 <li class="chapter" data-level="8.2.2" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html#differentiation-and-integration-of-logarithmic-and-exponential-functions"><i class="fa fa-check"></i><b>8.2.2</b> Differentiation and integration of logarithmic and exponential functions</a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html#solve-differential-equations"><i class="fa fa-check"></i><b>8.3</b> Solve differential equations</a></li>
-<li class="chapter" data-level="8.4" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html#inverse-trigonometric-functions"><i class="fa fa-check"></i><b>8.4</b> Inverse Trigonometric Functions</a><ul>
+<li class="chapter" data-level="8.4" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html#inverse-trigonometric-functions"><i class="fa fa-check"></i><b>8.4</b> Inverse Trigonometric Functions</a>
+<ul>
 <li class="chapter" data-level="8.4.1" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html#domains-and-ranges"><i class="fa fa-check"></i><b>8.4.1</b> Domains and Ranges</a></li>
 <li class="chapter" data-level="8.4.2" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html#differentiation-and-integration-of-inverse-trigonometric-functions"><i class="fa fa-check"></i><b>8.4.2</b> Differentiation and integration of inverse trigonometric functions</a></li>
 </ul></li>
 <li class="chapter" data-level="8.5" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html#lhospitals-rule"><i class="fa fa-check"></i><b>8.5</b> L’Hospital’s Rule</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="techniques-of-integration.html"><a href="techniques-of-integration.html"><i class="fa fa-check"></i><b>9</b> Techniques of Integration</a><ul>
+<li class="chapter" data-level="9" data-path="techniques-of-integration.html"><a href="techniques-of-integration.html"><i class="fa fa-check"></i><b>9</b> Techniques of Integration</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="techniques-of-integration.html"><a href="techniques-of-integration.html#integrations-of-trigonometric-functions"><i class="fa fa-check"></i><b>9.1</b> Integrations of trigonometric functions</a></li>
 <li class="chapter" data-level="9.2" data-path="techniques-of-integration.html"><a href="techniques-of-integration.html#trigonometric-substitution"><i class="fa fa-check"></i><b>9.2</b> Trigonometric Substitution</a></li>
 <li class="chapter" data-level="9.3" data-path="techniques-of-integration.html"><a href="techniques-of-integration.html#integrations-of-rational-functions-by-partial-fractions"><i class="fa fa-check"></i><b>9.3</b> Integrations of Rational Functions by Partial Fractions</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="further-applications-of-integration.html"><a href="further-applications-of-integration.html"><i class="fa fa-check"></i><b>10</b> Further Applications of Integration</a><ul>
+<li class="chapter" data-level="10" data-path="further-applications-of-integration.html"><a href="further-applications-of-integration.html"><i class="fa fa-check"></i><b>10</b> Further Applications of Integration</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="further-applications-of-integration.html"><a href="further-applications-of-integration.html#arc-lengths-and-areas-of-surfaces-of-revolutions"><i class="fa fa-check"></i><b>10.1</b> Arc Lengths and Areas of Surfaces of Revolutions</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="infinite-sequences-and-series.html"><a href="infinite-sequences-and-series.html"><i class="fa fa-check"></i><b>11</b> Infinite Sequences and Series</a><ul>
+<li class="chapter" data-level="11" data-path="infinite-sequences-and-series.html"><a href="infinite-sequences-and-series.html"><i class="fa fa-check"></i><b>11</b> Infinite Sequences and Series</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="infinite-sequences-and-series.html"><a href="infinite-sequences-and-series.html#introduction-to-sequences-and-series"><i class="fa fa-check"></i><b>11.1</b> Introduction to Sequences and Series</a></li>
 <li class="chapter" data-level="11.2" data-path="infinite-sequences-and-series.html"><a href="infinite-sequences-and-series.html#power-series"><i class="fa fa-check"></i><b>11.2</b> Power Series</a></li>
 <li class="chapter" data-level="11.3" data-path="infinite-sequences-and-series.html"><a href="infinite-sequences-and-series.html#taylor-expansion"><i class="fa fa-check"></i><b>11.3</b> Taylor Expansion</a></li>
@@ -166,9 +180,9 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="calculus-of-inverse-functions" class="section level1">
+<div id="calculus-of-inverse-functions" class="section level1" number="8">
 <h1><span class="header-section-number">Topic 8</span> Calculus of Inverse Functions</h1>
-<div id="inverse-functions" class="section level2">
+<div id="inverse-functions" class="section level2" number="8.1">
 <h2><span class="header-section-number">8.1</span> Inverse Functions</h2>
 <p>Maple package <code>Student[Calculus1]</code> provides the following command</p>
 <pre class="maple"><code>InversePlot(f(x), x = a..b);</code></pre>
@@ -183,14 +197,13 @@
 </ol>
 </div>
 
-
 <div class="solution">
 <p> <span class="solution"><em>Solution. </em></span> <br>
 One way to plot the function and its inverse together is to use the following command which is supported by the package <code>Student[Calculus1]</code>.</p>
 <pre><code>  InversePlot(x^3-3, x = -2 .. 2)</code></pre>
 <p>Here is the output in Maple</p>
 <div class="figure">
-<img src="figs/InversePlot1.png" alt="" />
+<img src="figs/InversePlot1.png" style="width:50.0%" alt="" />
 <p class="caption">Graph of a pair of functions inverse to each other</p>
 </div>
 <p>Another way to plot the function <span class="math inline">\(f\)</span> and its inverse <span class="math inline">\(g\)</span> together uses the <code>plot</code> function.</p>
@@ -199,7 +212,6 @@ One way to plot the function and its inverse together is to use the following co
 <p>In this example, we may find the inverse function by type in the following command. Note I have switch <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
 <pre><code>solve(x=y^3, y)</code></pre>
 </div>
-
 <p>To find the derivative of the inverse function of a function <span class="math inline">\(f\)</span> at a given point <span class="math inline">\(x=a\)</span>, we may apply the formula
 <span class="math display">\[(f^{-1})&#39;(a)=\dfrac{1}{f&#39;(f^{-1}(a))}.\]</span>
 In Maple, we may use the following commands to calculate the value of the derivative function.</p>
@@ -226,7 +238,6 @@ eval(subs(x=f^{-1}(a), 1/f&#39;(x)))
 <span id="exm:unnamed-chunk-166" class="example"><strong>Example 8.2  </strong></span>Find <span class="math inline">\((f^{-1})&#39;(0)\)</span>, where <span class="math inline">\(f(x)=\cos(x)\)</span> and <span class="math inline">\(0\leq x\leq \pi\)</span>.
 </div>
 
-
 <div class="solution">
 <p> <span class="solution"><em>Solution. </em></span> <br>
 Find the derivative of <span class="math inline">\(f\)</span></p>
@@ -238,7 +249,6 @@ Find the derivative of <span class="math inline">\(f\)</span></p>
 Using Maple, we find <span class="math inline">\((f^{-1})&#39;(0)=-1\)</span>.
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-168" class="exercise"><strong>Exercise 8.1  </strong></span>
 1. Graph the function <span class="math inline">\(f(x)=3+2\sin x\)</span>, its inverse function, and the line <span class="math inline">\(y=x\)</span> over the interval <span class="math inline">\([-2,2]\)</span>.</p>
@@ -246,11 +256,10 @@ Using Maple, we find <span class="math inline">\((f^{-1})&#39;(0)=-1\)</span>.
 <li>Find the value <span class="math inline">\((f^{-1})&#39;(5)\)</span>.</li>
 </ol>
 </div>
-
 </div>
-<div id="logarithmic-and-exponential-functions" class="section level2">
+<div id="logarithmic-and-exponential-functions" class="section level2" number="8.2">
 <h2><span class="header-section-number">8.2</span> Logarithmic and Exponential Functions</h2>
-<div id="basic-properties-and-graphs" class="section level3">
+<div id="basic-properties-and-graphs" class="section level3" number="8.2.1">
 <h3><span class="header-section-number">8.2.1</span> Basic properties and graphs</h3>
 <p>The natural logarithmic function <span class="math inline">\(y=\ln(x)\)</span> is defined by <span class="math inline">\(\ln(x)=\int_1^x\frac{1}{t}\mathrm{d} t\)</span>.</p>
 <p>The natural exponential function <span class="math inline">\(y=e^x\)</span> is defined as the inverse function of <span class="math inline">\(y=\ln(x)\)</span>.</p>
@@ -275,7 +284,6 @@ y=\ln x, \qquad y=e^x, \qquad y=2^x, \qquad y=\log_2x, y=x.
 \]</span></p>
 </div>
 
-
 <div class="solution">
 <p> <span class="solution"><em>Solution. </em></span> <br>
 In Maple, the logarithm <span class="math inline">\(\log_bx\)</span> is given by <code>log[b](x)</code>. When <span class="math inline">\(b=e\)</span>, you simply use <code>ln(x)</code> for <span class="math inline">\(\ln x\)</span>. When <span class="math inline">\(b=10\)</span>, you may also use <code>log(x)</code> or <code>log10(x)</code> for <span class="math inline">\(\log_{10}x\)</span>.</p>
@@ -284,11 +292,10 @@ In Maple, the logarithm <span class="math inline">\(\log_bx\)</span> is given by
 <pre><code>plot([ln(x), exp(x), 2^x, log[2](x), x], x=-5..5, color=[blue, green, purple, yellow, red])</code></pre>
 <p>Here is the output</p>
 <div class="figure">
-<img src="figs/Log-Exp-Functions-01.png" alt="" />
+<img src="figs/Log-Exp-Functions-01.png" style="width:50.0%" alt="" />
 <p class="caption">Graph of some logarithmic and exponential functions</p>
 </div>
 </div>
-
 
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-171" class="exercise"><strong>Exercise 8.2  </strong></span>Graph the following functions together.
@@ -297,7 +304,6 @@ y=\log_3x, \qquad y=3^x, \qquad y=(1/3)^x, \qquad y=\log_{1/3}x.
 \]</span></p>
 <p>Find the pairs that are symmetric to each other with respect to a certain line.</p>
 </div>
-
 
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-172" class="exercise"><strong>Exercise 8.3  </strong></span>Graph the following functions together.
@@ -308,7 +314,6 @@ y=0.5^x, \qquad y=2^x, \qquad y=5^x.
 <p>Fix an input <span class="math inline">\(x\)</span>. Describe how <span class="math inline">\(y\)</span>-values change when bases changes from small number to bigger number?</p>
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-173" class="exercise"><strong>Exercise 8.4  </strong></span>Graph the following functions together.
 <span class="math display">\[
@@ -317,13 +322,12 @@ y=\log_{0.5}x, \qquad y=\log_2x, \qquad y=\log_{5}x.
 <p>Describe the monotonicity (increasing/decreasing) of the functions?</p>
 <p>Fix an input <span class="math inline">\(x\)</span>. Describe how <span class="math inline">\(y\)</span>-values change when bases changes from small number to bigger number?</p>
 </div>
-
 </div>
-<div id="differentiation-and-integration-of-logarithmic-and-exponential-functions" class="section level3">
+<div id="differentiation-and-integration-of-logarithmic-and-exponential-functions" class="section level3" number="8.2.2">
 <h3><span class="header-section-number">8.2.2</span> Differentiation and integration of logarithmic and exponential functions</h3>
 <p>In Maple, one way to do differentiation and integration is to use the <code>Calculus Palette</code> on the left side.</p>
 <div class="figure">
-<img src="figs/Calculus-Palette.png" alt="" />
+<img src="figs/Calculus-Palette.png" style="width:50.0%" alt="" />
 <p class="caption">Calculus Palette in Maple</p>
 </div>
 <p>The other way is to use the commands <code>diff(f(x), x)</code> , <code>int(f(x), x)</code>, and <code>int(f(x), x=a..b)</code>.</p>
@@ -333,7 +337,6 @@ y=\log_{0.5}x, \qquad y=\log_2x, \qquad y=\log_{5}x.
 <div class="example">
 <span id="exm:unnamed-chunk-174" class="example"><strong>Example 8.4  </strong></span>Find <span class="math inline">\(y&#39;\)</span>, where <span class="math inline">\(y=\ln \left(x^{3}+5x+1\right)\)</span>.
 </div>
-
 
 <div class="solution">
 <p> <span class="solution"><em>Solution. </em></span> <br>
@@ -346,10 +349,9 @@ y&#39;=\dfrac{3x^{2}+5}{x^{3}+5 x+1}.
 <p>Type in (assume that <code>with(Student[Calculus1])</code> was run)</p>
 <pre><code>DiffTutor(ln(x^3+5*x+1), x)</code></pre>
 <p>and hit enter you will see</p>
-<p><img src="figs/DiffTutor-ex.png" /></p>
+<p><img src="figs/DiffTutor-ex.png" style="width:50.0%" /></p>
 <p>By click <code>Next Step</code> or <code>All Steps</code> you will see detailed solution with rules used.</p>
 </div>
-
 
 <div class="example">
 <span id="exm:unnamed-chunk-176" class="example"><strong>Example 8.5  </strong></span>Evaluate the integral
@@ -357,7 +359,6 @@ y&#39;=\dfrac{3x^{2}+5}{x^{3}+5 x+1}.
 \int\dfrac{e^x-1}{e^x+1}\mathrm{d} x.
 \]</span>
 </div>
-
 
 <div class="solution">
 <p> <span class="solution"><em>Solution. </em></span> <br>
@@ -370,22 +371,19 @@ Using <code>int</code>:</p>
 <p>Type in (assume that <code>with(Student[Calculus1])</code> was run)</p>
 <pre><code>IntTutor((exp(x)-1)/(exp(x)+1), x)</code></pre>
 <p>and hit enter you will see</p>
-<p><img src="figs/IntTutor-ex.png" /></p>
+<p><img src="figs/IntTutor-ex.png" style="width:50.0%" /></p>
 <p>By click <code>Next Step</code> or <code>All Steps</code> you will see detailed solution with rules used.</p>
 </div>
-
 
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-178" class="exercise"><strong>Exercise 8.5  </strong></span>
 Find the derivative <span class="math inline">\(\frac{\mathrm{d} y}{\mathrm{d} x}\)</span>, where <span class="math inline">\(y=\ln|\cos x|\)</span></p>
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-179" class="exercise"><strong>Exercise 8.6  </strong></span>
 Find the derivative <span class="math inline">\(\frac{\mathrm{d} y}{\mathrm{d} x}\)</span>, where <span class="math inline">\(y=x^{\cos x}\)</span></p>
 </div>
-
 
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-180" class="exercise"><strong>Exercise 8.7  </strong></span>
@@ -395,7 +393,6 @@ Evaluate the integral
 \]</span></p>
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-181" class="exercise"><strong>Exercise 8.8  </strong></span>
 Evaluate the integral
@@ -403,17 +400,15 @@ Evaluate the integral
 \int 2^{3x} d x
 \]</span></p>
 </div>
-
 </div>
 </div>
-<div id="solve-differential-equations" class="section level2">
+<div id="solve-differential-equations" class="section level2" number="8.3">
 <h2><span class="header-section-number">8.3</span> Solve differential equations</h2>
 <p>In Maple, you may solve the equation <span class="math inline">\(y&#39;(x)=k y(x) + c\)</span> (which is called an ODE) using the command <code>dsolve({ics, eq})</code>, where <code>ics</code> stands for initial condition <span class="math inline">\(y(0)=c\)</span> and <code>eq</code> stands for the differential equation. Without the <code>ics</code>, <code>dsolve</code> will provide a general solution.</p>
 
 <div class="example">
 <p><span id="exm:unnamed-chunk-182" class="example"><strong>Example 8.6  </strong></span>Find the function <span class="math inline">\(f(x)\)</span> which satisfies the differential equation <span class="math inline">\(f&#39;(x)=k f(x)\)</span> with <span class="math inline">\(f(0)=5\)</span> and <span class="math inline">\(f(2)=3\)</span>.</p>
 </div>
-
 
 <div class="solution">
 <p> <span class="solution"><em>Solution. </em></span> <br>
@@ -430,16 +425,14 @@ f(x)=5e^{\frac{x(\ln3-\ln5)}{2}}\approx 5e^{-0.255x}.
 \]</span></p>
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-184" class="exercise"><strong>Exercise 8.9  </strong></span>
 Find the function <span class="math inline">\(y\)</span> which satisfies the differential equation <span class="math inline">\(y&#39;(x)=k y(x)\)</span> with <span class="math inline">\(y(0)=2\)</span> and <span class="math inline">\(y(5)=11\)</span>.</p>
 </div>
-
 </div>
-<div id="inverse-trigonometric-functions" class="section level2">
+<div id="inverse-trigonometric-functions" class="section level2" number="8.4">
 <h2><span class="header-section-number">8.4</span> Inverse Trigonometric Functions</h2>
-<div id="domains-and-ranges" class="section level3">
+<div id="domains-and-ranges" class="section level3" number="8.4.1">
 <h3><span class="header-section-number">8.4.1</span> Domains and Ranges</h3>
 <p>To define the inverse function, the original function must be a one-to-one function.
 For a trigonometric function, we have to restrict the function over a specific domain to ensure that the function is one-to-one.
@@ -473,7 +466,6 @@ y=\tan x, \qquad y=\arctan x, \qquad y=x.
 \]</span></p>
 </div>
 
-
 <div class="solution">
 <p> <span class="solution"><em>Solution. </em></span> <br></p>
 <pre><code>#load the package ``Student[Calculus1]&quot;.
@@ -482,11 +474,10 @@ with(Student[Calculus1])
 InversePlot(tan(x),x=-Pi/2..Pi/2)</code></pre>
 <p>Here is the output</p>
 <div class="figure">
-<img src="figs/InversePlot_tanx.png" alt="" />
+<img src="figs/InversePlot_tanx.png" style="width:50.0%" alt="" />
 <p class="caption">Graph of the tangent and arctangent functions</p>
 </div>
 </div>
-
 
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-187" class="exercise"><strong>Exercise 8.10  </strong></span>
@@ -496,9 +487,8 @@ y=\cot x, \qquad y=\mathrm{arccot} x, \qquad y=x.
 \]</span></p>
 <p>What’s the domain and range of <span class="math inline">\(y=\mathrm{arccot} x\)</span>?</p>
 </div>
-
 </div>
-<div id="differentiation-and-integration-of-inverse-trigonometric-functions" class="section level3">
+<div id="differentiation-and-integration-of-inverse-trigonometric-functions" class="section level3" number="8.4.2">
 <h3><span class="header-section-number">8.4.2</span> Differentiation and integration of inverse trigonometric functions</h3>
 <p>In the section {#Differentiation and integration of logarithmic and exponential functions}, we learned to how use Maple to learn differentiation and integration.</p>
 <p>Now let find derivatives and integrals of some inverse trigonometric functions.</p>
@@ -507,7 +497,6 @@ y=\cot x, \qquad y=\mathrm{arccot} x, \qquad y=x.
 <p><span id="exm:unnamed-chunk-188" class="example"><strong>Example 8.8  </strong></span>
 Find <span class="math inline">\(y&#39;\)</span>, where <span class="math inline">\(y=\mathrm{arccot} x\)</span>.</p>
 </div>
-
 
 <div class="solution">
 <p> <span class="solution"><em>Solution. </em></span> <br></p>
@@ -520,18 +509,15 @@ subs(cot(y) = x, %)</code></pre>
 <p>where <code>%</code> is a ditto operator that allows you to refer to a previously computed result in Maple.</p>
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-190" class="exercise"><strong>Exercise 8.11  </strong></span>
 Find the derivative of <span class="math inline">\(y=\mathrm{arcsec} x\)</span></p>
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-191" class="exercise"><strong>Exercise 8.12  </strong></span>
 Find the derivative of <span class="math inline">\(y=\mathrm{arccsc} x\)</span></p>
 </div>
-
 <p>For integrals of inverse trigonometric function, you may need the method of integration by parts.</p>
 <p>Use <code>DiffTutor</code> to find antiderivatives of inverse trigonometric functions.</p>
 
@@ -543,7 +529,6 @@ Evaluate the integral
 \]</span></p>
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-193" class="exercise"><strong>Exercise 8.14  </strong></span>
 Evaluate the integral
@@ -552,7 +537,6 @@ Evaluate the integral
 \]</span></p>
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-194" class="exercise"><strong>Exercise 8.15  </strong></span>
 Evaluate the integral
@@ -560,10 +544,9 @@ Evaluate the integral
 \int \mathrm{sec} x \mathrm{d} x
 \]</span></p>
 </div>
-
 </div>
 </div>
-<div id="lhospitals-rule" class="section level2">
+<div id="lhospitals-rule" class="section level2" number="8.5">
 <h2><span class="header-section-number">8.5</span> L’Hospital’s Rule</h2>
 <p>In Maple, supported by the package, <code>Student[Calculus1]</code>, the command <code>LimitTutor</code> can show step-by-step solutions of evaluating limits.</p>
 
@@ -575,7 +558,6 @@ Evaluate the limit
 \]</span></p>
 </div>
 
-
 <div class="solution">
 <p> <span class="solution"><em>Solution. </em></span> <br></p>
 <pre><code># load the package Student[Calculus1].
@@ -583,7 +565,6 @@ with(Student[Calculus1])
 #Find the limit step-by-step using LimitTutor
 LimitTutor((1+x)^(1/ln(x)), x = infinity)</code></pre>
 </div>
-
 
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-197" class="exercise"><strong>Exercise 8.16  </strong></span>
@@ -594,7 +575,6 @@ Estimate the limit
 by graphing and verify your estimation.</p>
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-198" class="exercise"><strong>Exercise 8.17  </strong></span>
 Evaluate the limit
@@ -603,7 +583,6 @@ Evaluate the limit
 \]</span></p>
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-199" class="exercise"><strong>Exercise 8.18  </strong></span>
 Evaluate the limit
@@ -611,7 +590,6 @@ Evaluate the limit
 \lim\limits_{x\to \infty} x\tan(\frac1x).
 \]</span></p>
 </div>
-
 
 </div>
 </div>
@@ -643,10 +621,14 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": "https://github.com/fyemath/maple4calc/202-Inverse-Functions.Rmd",
+"text": "Edit"
+},
+"history": {
 "link": null,
 "text": null
 },
-"history": {
+"view": {
 "link": null,
 "text": null
 },

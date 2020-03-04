@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 4 Application of Differentiation | Notes on Maple for Calculus</title>
   <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
-  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 4 Application of Differentiation | Notes on Maple for Calculus" />
   <meta property="og:type" content="book" />
   
   
   <meta property="og:description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
-  
+  <meta name="github-repo" content="fyemath/elegantbookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Topic 4 Application of Differentiation | Notes on Maple for Calculus" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Fei Ye" />
 
 
-<meta name="date" content="2019-10-19" />
+<meta name="date" content="2020-03-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="derivatives.html"/>
 <link rel="next" href="integrals.html"/>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -70,7 +71,8 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="1" data-path="basics-in-maple.html"><a href="basics-in-maple.html"><i class="fa fa-check"></i><b>1</b> Basics in Maple</a><ul>
+<li class="chapter" data-level="1" data-path="basics-in-maple.html"><a href="basics-in-maple.html"><i class="fa fa-check"></i><b>1</b> Basics in Maple</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="basics-in-maple.html"><a href="basics-in-maple.html#what-should-i-do-after-i-opened-maple"><i class="fa fa-check"></i><b>1.1</b> What should I do after I opened Maple</a></li>
 <li class="chapter" data-level="1.2" data-path="basics-in-maple.html"><a href="basics-in-maple.html#basic-operators"><i class="fa fa-check"></i><b>1.2</b> Basic Operators</a></li>
 <li class="chapter" data-level="1.3" data-path="basics-in-maple.html"><a href="basics-in-maple.html#how-to-define-a-function"><i class="fa fa-check"></i><b>1.3</b> How to define a function</a></li>
@@ -78,7 +80,8 @@
 <li class="chapter" data-level="1.5" data-path="basics-in-maple.html"><a href="basics-in-maple.html#plot-functions"><i class="fa fa-check"></i><b>1.5</b> Plot functions</a></li>
 </ul></li>
 <li class="part"><span><b>Part 1 - Calculus I</b></span></li>
-<li class="chapter" data-level="2" data-path="limits.html"><a href="limits.html"><i class="fa fa-check"></i><b>2</b> Limits</a><ul>
+<li class="chapter" data-level="2" data-path="limits.html"><a href="limits.html"><i class="fa fa-check"></i><b>2</b> Limits</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="limits.html"><a href="limits.html#understand-limits-using-tangent-lines"><i class="fa fa-check"></i><b>2.1</b> Understand limits using tangent lines</a></li>
 <li class="chapter" data-level="2.2" data-path="limits.html"><a href="limits.html#estimate-limits-numerically-or-graphically"><i class="fa fa-check"></i><b>2.2</b> Estimate limits numerically or graphically</a></li>
 <li class="chapter" data-level="2.3" data-path="limits.html"><a href="limits.html#evaluate-limits"><i class="fa fa-check"></i><b>2.3</b> Evaluate limits</a></li>
@@ -88,7 +91,8 @@
 <li class="chapter" data-level="2.7" data-path="limits.html"><a href="limits.html#continuity-and-limit-of-a-composite-function"><i class="fa fa-check"></i><b>2.7</b> Continuity and Limit of a Composite Function</a></li>
 <li class="chapter" data-level="2.8" data-path="limits.html"><a href="limits.html#intermediate-value-theorem"><i class="fa fa-check"></i><b>2.8</b> Intermediate Value Theorem</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="derivatives.html"><a href="derivatives.html"><i class="fa fa-check"></i><b>3</b> Derivatives</a><ul>
+<li class="chapter" data-level="3" data-path="derivatives.html"><a href="derivatives.html"><i class="fa fa-check"></i><b>3</b> Derivatives</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="derivatives.html"><a href="derivatives.html#derivative-functions"><i class="fa fa-check"></i><b>3.1</b> Derivative Functions</a></li>
 <li class="chapter" data-level="3.2" data-path="derivatives.html"><a href="derivatives.html#calculating-derivatives"><i class="fa fa-check"></i><b>3.2</b> Calculating Derivatives</a></li>
 <li class="chapter" data-level="3.3" data-path="derivatives.html"><a href="derivatives.html#chain-rule"><i class="fa fa-check"></i><b>3.3</b> Chain Rule</a></li>
@@ -98,7 +102,8 @@
 <li class="chapter" data-level="3.7" data-path="derivatives.html"><a href="derivatives.html#linearizations"><i class="fa fa-check"></i><b>3.7</b> Linearizations</a></li>
 <li class="chapter" data-level="3.8" data-path="derivatives.html"><a href="derivatives.html#newtons-method"><i class="fa fa-check"></i><b>3.8</b> Newton’s Method</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="application-of-differentiation.html"><a href="application-of-differentiation.html"><i class="fa fa-check"></i><b>4</b> Application of Differentiation</a><ul>
+<li class="chapter" data-level="4" data-path="application-of-differentiation.html"><a href="application-of-differentiation.html"><i class="fa fa-check"></i><b>4</b> Application of Differentiation</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="application-of-differentiation.html"><a href="application-of-differentiation.html#maximum-and-minimum-values"><i class="fa fa-check"></i><b>4.1</b> Maximum and Minimum Values</a></li>
 <li class="chapter" data-level="4.2" data-path="application-of-differentiation.html"><a href="application-of-differentiation.html#the-mean-value-theorem"><i class="fa fa-check"></i><b>4.2</b> The Mean Value Theorem</a></li>
 <li class="chapter" data-level="4.3" data-path="application-of-differentiation.html"><a href="application-of-differentiation.html#derivatives-and-the-shape-of-a-graph"><i class="fa fa-check"></i><b>4.3</b> Derivatives and the Shape of a Graph</a></li>
@@ -107,41 +112,50 @@
 <li class="chapter" data-level="4.6" data-path="application-of-differentiation.html"><a href="application-of-differentiation.html#optimization-problems"><i class="fa fa-check"></i><b>4.6</b> Optimization Problems</a></li>
 <li class="chapter" data-level="4.7" data-path="application-of-differentiation.html"><a href="application-of-differentiation.html#antiderivatives"><i class="fa fa-check"></i><b>4.7</b> Antiderivatives</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="integrals.html"><a href="integrals.html"><i class="fa fa-check"></i><b>5</b> Integrals</a><ul>
+<li class="chapter" data-level="5" data-path="integrals.html"><a href="integrals.html"><i class="fa fa-check"></i><b>5</b> Integrals</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="integrals.html"><a href="integrals.html#definite-integrals"><i class="fa fa-check"></i><b>5.1</b> Definite Integrals</a></li>
 <li class="chapter" data-level="5.2" data-path="integrals.html"><a href="integrals.html#the-fundamental-theorem-of-calculus"><i class="fa fa-check"></i><b>5.2</b> The Fundamental Theorem of Calculus</a></li>
 <li class="chapter" data-level="5.3" data-path="integrals.html"><a href="integrals.html#indefinite-integrals"><i class="fa fa-check"></i><b>5.3</b> Indefinite Integrals</a></li>
 <li class="chapter" data-level="5.4" data-path="integrals.html"><a href="integrals.html#the-substitution-rule"><i class="fa fa-check"></i><b>5.4</b> The Substitution Rule</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="application-of-integrals-i.html"><a href="application-of-integrals-i.html"><i class="fa fa-check"></i><b>6</b> Application of Integrals I</a><ul>
+<li class="chapter" data-level="6" data-path="application-of-integrals-i.html"><a href="application-of-integrals-i.html"><i class="fa fa-check"></i><b>6</b> Application of Integrals I</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="application-of-integrals-i.html"><a href="application-of-integrals-i.html#areas-between-curves"><i class="fa fa-check"></i><b>6.1</b> Areas Between Curves</a></li>
 </ul></li>
 <li class="part"><span><b>Part 2 - Calculus II</b></span></li>
-<li class="chapter" data-level="7" data-path="applications-of-integrals-ii.html"><a href="applications-of-integrals-ii.html"><i class="fa fa-check"></i><b>7</b> Applications of Integrals II</a><ul>
+<li class="chapter" data-level="7" data-path="applications-of-integrals-ii.html"><a href="applications-of-integrals-ii.html"><i class="fa fa-check"></i><b>7</b> Applications of Integrals II</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="applications-of-integrals-ii.html"><a href="applications-of-integrals-ii.html#volume-of-revolution"><i class="fa fa-check"></i><b>7.1</b> Volume of Revolution</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html"><i class="fa fa-check"></i><b>8</b> Calculus of Inverse Functions</a><ul>
+<li class="chapter" data-level="8" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html"><i class="fa fa-check"></i><b>8</b> Calculus of Inverse Functions</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html#inverse-functions"><i class="fa fa-check"></i><b>8.1</b> Inverse Functions</a></li>
-<li class="chapter" data-level="8.2" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html#logarithmic-and-exponential-functions"><i class="fa fa-check"></i><b>8.2</b> Logarithmic and Exponential Functions</a><ul>
+<li class="chapter" data-level="8.2" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html#logarithmic-and-exponential-functions"><i class="fa fa-check"></i><b>8.2</b> Logarithmic and Exponential Functions</a>
+<ul>
 <li class="chapter" data-level="8.2.1" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html#basic-properties-and-graphs"><i class="fa fa-check"></i><b>8.2.1</b> Basic properties and graphs</a></li>
 <li class="chapter" data-level="8.2.2" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html#differentiation-and-integration-of-logarithmic-and-exponential-functions"><i class="fa fa-check"></i><b>8.2.2</b> Differentiation and integration of logarithmic and exponential functions</a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html#solve-differential-equations"><i class="fa fa-check"></i><b>8.3</b> Solve differential equations</a></li>
-<li class="chapter" data-level="8.4" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html#inverse-trigonometric-functions"><i class="fa fa-check"></i><b>8.4</b> Inverse Trigonometric Functions</a><ul>
+<li class="chapter" data-level="8.4" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html#inverse-trigonometric-functions"><i class="fa fa-check"></i><b>8.4</b> Inverse Trigonometric Functions</a>
+<ul>
 <li class="chapter" data-level="8.4.1" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html#domains-and-ranges"><i class="fa fa-check"></i><b>8.4.1</b> Domains and Ranges</a></li>
 <li class="chapter" data-level="8.4.2" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html#differentiation-and-integration-of-inverse-trigonometric-functions"><i class="fa fa-check"></i><b>8.4.2</b> Differentiation and integration of inverse trigonometric functions</a></li>
 </ul></li>
 <li class="chapter" data-level="8.5" data-path="calculus-of-inverse-functions.html"><a href="calculus-of-inverse-functions.html#lhospitals-rule"><i class="fa fa-check"></i><b>8.5</b> L’Hospital’s Rule</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="techniques-of-integration.html"><a href="techniques-of-integration.html"><i class="fa fa-check"></i><b>9</b> Techniques of Integration</a><ul>
+<li class="chapter" data-level="9" data-path="techniques-of-integration.html"><a href="techniques-of-integration.html"><i class="fa fa-check"></i><b>9</b> Techniques of Integration</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="techniques-of-integration.html"><a href="techniques-of-integration.html#integrations-of-trigonometric-functions"><i class="fa fa-check"></i><b>9.1</b> Integrations of trigonometric functions</a></li>
 <li class="chapter" data-level="9.2" data-path="techniques-of-integration.html"><a href="techniques-of-integration.html#trigonometric-substitution"><i class="fa fa-check"></i><b>9.2</b> Trigonometric Substitution</a></li>
 <li class="chapter" data-level="9.3" data-path="techniques-of-integration.html"><a href="techniques-of-integration.html#integrations-of-rational-functions-by-partial-fractions"><i class="fa fa-check"></i><b>9.3</b> Integrations of Rational Functions by Partial Fractions</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="further-applications-of-integration.html"><a href="further-applications-of-integration.html"><i class="fa fa-check"></i><b>10</b> Further Applications of Integration</a><ul>
+<li class="chapter" data-level="10" data-path="further-applications-of-integration.html"><a href="further-applications-of-integration.html"><i class="fa fa-check"></i><b>10</b> Further Applications of Integration</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="further-applications-of-integration.html"><a href="further-applications-of-integration.html#arc-lengths-and-areas-of-surfaces-of-revolutions"><i class="fa fa-check"></i><b>10.1</b> Arc Lengths and Areas of Surfaces of Revolutions</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="infinite-sequences-and-series.html"><a href="infinite-sequences-and-series.html"><i class="fa fa-check"></i><b>11</b> Infinite Sequences and Series</a><ul>
+<li class="chapter" data-level="11" data-path="infinite-sequences-and-series.html"><a href="infinite-sequences-and-series.html"><i class="fa fa-check"></i><b>11</b> Infinite Sequences and Series</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="infinite-sequences-and-series.html"><a href="infinite-sequences-and-series.html#introduction-to-sequences-and-series"><i class="fa fa-check"></i><b>11.1</b> Introduction to Sequences and Series</a></li>
 <li class="chapter" data-level="11.2" data-path="infinite-sequences-and-series.html"><a href="infinite-sequences-and-series.html#power-series"><i class="fa fa-check"></i><b>11.2</b> Power Series</a></li>
 <li class="chapter" data-level="11.3" data-path="infinite-sequences-and-series.html"><a href="infinite-sequences-and-series.html#taylor-expansion"><i class="fa fa-check"></i><b>11.3</b> Taylor Expansion</a></li>
@@ -166,9 +180,9 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="application-of-differentiation" class="section level1">
+<div id="application-of-differentiation" class="section level1" number="4">
 <h1><span class="header-section-number">Topic 4</span> Application of Differentiation</h1>
-<div id="maximum-and-minimum-values" class="section level2">
+<div id="maximum-and-minimum-values" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Maximum and Minimum Values</h2>
 <p>If <span class="math inline">\(f\)</span> is continuous on a closed interval <span class="math inline">\([a, b]\)</span>, then <span class="math inline">\(f\)</span> attains an absolute maximum value <span class="math inline">\(f(c)\)</span> and an absolute minimum value <span class="math inline">\(f(d)\)</span> at some numbers <span class="math inline">\(c\)</span> and <span class="math inline">\(d\)</span> in <span class="math inline">\([a, b]\)</span>.</p>
 <p>A <strong>critical value</strong> of a function <span class="math inline">\(f\)</span> is a number <span class="math inline">\(c\)</span> in its domain such that either <span class="math inline">\(f&#39;(c)=0\)</span> or <span class="math inline">\(f&#39;(c)\)</span> does not exist.</p>
@@ -184,7 +198,6 @@
 <p><span id="exm:unnamed-chunk-91" class="example"><strong>Example 4.1  </strong></span>
 Find the absolute maximum and minimum values of the function <span class="math inline">\(f(x)=|x^2-2x-3|\)</span> over the interval <span class="math inline">\([0, 4]\)</span>.</p>
 </div>
-
 
 <div class="solution">
 <p> <span class="solution"><em>Solution. </em></span> 
@@ -212,26 +225,22 @@ fmin:=min(fc);</code></pre>
 end do;</code></pre>
 </div>
 
-
 <div class="remark">
 <p> <span class="remark"><em>Remark. </em></span> 
 The above solution is still the method using Calculus but with the assistant of Maple. Indeed, Maple has the commands <code>maximize(f(x), x=a..b)</code> and <code>minimize(f(x), x=a..b)</code> which produce the maximum and minimum of a function <span class="math inline">\(f(x)\)</span> over an interval <span class="math inline">\([a,b]\)</span>.</p>
 </div>
-
 
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-94" class="exercise"><strong>Exercise 4.1  </strong></span>
 Find the absolute maximum and minimum values of the function <span class="math inline">\(f(x)=x^3-3x+1\)</span> over the interval <span class="math inline">\([0, 2]\)</span>.</p>
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-95" class="exercise"><strong>Exercise 4.2  </strong></span>
 Find the absolute maximum and minimum values of the function <span class="math inline">\(f(x)=2\cos x - x -1\)</span> over the interval <span class="math inline">\([-2, 1]\)</span>.</p>
 </div>
-
 </div>
-<div id="the-mean-value-theorem" class="section level2">
+<div id="the-mean-value-theorem" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> The Mean Value Theorem</h2>
 <p>Rolle’s Theorem states that if a function <span class="math inline">\(f\)</span> is continuous on the closed interval <span class="math inline">\([a, b]\)</span>, differentiable on the open interval <span class="math inline">\((a, b)\)</span> and <span class="math inline">\(f(a)=f(b)\)</span>, then there exists a point <span class="math inline">\(c\)</span> in <span class="math inline">\((a, b)\)</span> such that <span class="math inline">\(f&#39;(c)=0\)</span>.</p>
 <p>Using Maple, you can verify this theorem for a function <span class="math inline">\(f\)</span> graphically using the following command
@@ -242,7 +251,6 @@ Find the absolute maximum and minimum values of the function <span class="math i
 Let <span class="math inline">\(f(x)=(x-1)(x+1)(x-2)\)</span>. Graph the function <span class="math inline">\(f(x)\)</span> from <span class="math inline">\(-1\)</span> to <span class="math inline">\(2\)</span> indicate the points between <span class="math inline">\(-1\)</span> and <span class="math inline">\(2\)</span> where tangent line is horizontal. Find values <span class="math inline">\(x=c\)</span> in <span class="math inline">\((-1,2)\)</span> at where the tangent line is horizontal.</p>
 </div>
 
-
 <div class="solution">
 <p> <span class="solution"><em>Solution. </em></span> 
 Define the function.</p>
@@ -252,13 +260,12 @@ f:=x-&gt;(x-1)*(x+1)*(x-2)</code></pre>
 <pre><code>with(Student[Calculus1]):
 RollesTheorem((x-1)*(x+1)*(x-2), x = -1..2);</code></pre>
 <div class="figure">
-<img src="figs/Rolletheorem.png" alt="" />
+<img src="figs/Rolletheorem.png" style="width:50.0%" alt="" />
 <p class="caption">A demonstration of Rolle’s theorem</p>
 </div>
 <p>To find the values <span class="math inline">\(x=c\)</span>. We solve the equation <span class="math inline">\(f&#39;(x)=0\)</span>.</p>
 <pre><code>solve({D(f)(x)=0, x&gt;-1, x&lt;2}, x)</code></pre>
 </div>
-
 <p>A generalization of Rolle’s theorem is the Mean Value Theorem.</p>
 <p>If a function <span class="math inline">\(f\)</span> is continuous on the closed interval <span class="math inline">\([a, b]\)</span> and differentiable on the open interval <span class="math inline">\((a, b)\)</span>, then there exists a point <span class="math inline">\(c\)</span> in <span class="math inline">\((a, b)\)</span> such that
 <span class="math display">\[
@@ -275,7 +282,6 @@ f(b)=f(a)+f&#39;(c)(b-a).
 Let <span class="math inline">\(f(x)=(x-1)(x+1)(x-2)\)</span>. Graph the function <span class="math inline">\(f(x)\)</span> from <span class="math inline">\(-2\)</span> to <span class="math inline">\(3\)</span> indicate the points between <span class="math inline">\(-2\)</span> and <span class="math inline">\(3\)</span> where tangent line is parallel to the secant line passing through <span class="math inline">\((-2, f(-2))\)</span> and <span class="math inline">\((3, f(3))\)</span>. Find the values <span class="math inline">\(x=c\)</span> where the tangent line is parallel to the secant line.</p>
 </div>
 
-
 <div class="solution">
 <p> <span class="solution"><em>Solution. </em></span> 
 Define the function.</p>
@@ -285,7 +291,7 @@ f:=x-&gt;(x-1)*(x+1)*(x-2)</code></pre>
 <pre><code>with(Student[Calculus1]):
 MeanValueTheorem(f(x), x = -2..3);</code></pre>
 <div class="figure">
-<img src="figs/MeanValueTheorem.png" alt="" />
+<img src="figs/MeanValueTheorem.png" style="width:50.0%" alt="" />
 <p class="caption">A demonstration of Mean Value Theorem</p>
 </div>
 <p>Find the slope <code>msec</code> of the secan line.</p>
@@ -295,14 +301,12 @@ msec:=(f(a)-f(b))/(a-b);</code></pre>
 <p>Solve the equation <span class="math inline">\(f&#39;(x)=\)</span><code>msec</code> for <span class="math inline">\(c\)</span>.</p>
 <pre><code>solve({D(f)(x)=msec, x&gt;-2, x&lt;3}, x)</code></pre>
 </div>
-
 <p>Note that in Rolle’s theorem and Mean Value Theorem, the continuity and differentiability conditions are crucial.</p>
 
 <div class="example">
 <p><span id="exm:unnamed-chunk-100" class="example"><strong>Example 4.4  </strong></span>
 Consider the floor function <span class="math inline">\(f(x)=\begin{cases}1 &amp; x&lt;0\\ 2&amp; x\ge 0\end{cases}\)</span>. Use a graph to show that there is no tangent line that is parallel to the secant line through <span class="math inline">\((-1, 1)\)</span> and <span class="math inline">\((1,2)\)</span>.</p>
 </div>
-
 
 <div class="solution">
 <p> <span class="solution"><em>Solution. </em></span> 
@@ -321,26 +325,22 @@ secline:=f(a) + msec*(x-a); # secant line</code></pre>
 MeanValueTheorem( f(x), a..b );</code></pre>
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-102" class="exercise"><strong>Exercise 4.3  </strong></span>
 Let <span class="math inline">\(f(x)=\cos x\)</span>. Graph the function from <span class="math inline">\(-\frac{2\pi}{3}\)</span> to <span class="math inline">\(\frac{4\pi}{3}\)</span> and indicate the points in <span class="math inline">\([-\frac{2\pi}{3}, \frac{4\pi}{3}]\)</span> where the derivative <span class="math inline">\(f&#39;(x)\)</span> is <span class="math inline">\(0\)</span>. Find the tangent points where the slope of the tangent line is <span class="math inline">\(0\)</span>.</p>
 </div>
-
 
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-103" class="exercise"><strong>Exercise 4.4  </strong></span>
 Let <span class="math inline">\(f(x)=x^4-3x^2+1\)</span>. Graph the function <span class="math inline">\(f(x)\)</span> from <span class="math inline">\(-1\)</span> to <span class="math inline">\(2\)</span> indicate the points between <span class="math inline">\(-1\)</span> and <span class="math inline">\(2\)</span> where tangent line is parallel to the secant line passing through <span class="math inline">\((-1, f(-1))\)</span> and <span class="math inline">\((2, f(2))\)</span>. Find the tangent points where the tangent line is parallel to the secant line.</p>
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-104" class="exercise"><strong>Exercise 4.5  </strong></span>
 Consider the floor function <span class="math inline">\(f(x)=|x|\)</span>. Use a graph to show that there is no tangent line that is parallel to the secant line through <span class="math inline">\((-1, 1)\)</span> and <span class="math inline">\((2,2)\)</span>.</p>
 </div>
-
 </div>
-<div id="derivatives-and-the-shape-of-a-graph" class="section level2">
+<div id="derivatives-and-the-shape-of-a-graph" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Derivatives and the Shape of a Graph</h2>
 <p>Given a function <span class="math inline">\(f(x)\)</span>, we know that <span class="math inline">\(f(x)\)</span> is increasing on an interval if <span class="math inline">\(f&#39;(x)&gt;0\)</span> on that interval and <span class="math inline">\(f(x)\)</span> is decreasing on an interval if <span class="math inline">\(f&#39;(x)&lt;0\)</span> on that interval. By Mean Value theorem, <span class="math inline">\(f(x)\)</span> is a constant on an interval if <span class="math inline">\(f&#39;(x)=0\)</span> on that interval.</p>
 <p>To determine over which interval a function <span class="math inline">\(f(x)\)</span> is increasing/decreasing, we need to find out the domain of <span class="math inline">\(f&#39;(x)\)</span> and the critical points and then use test points to determine the sign of <span class="math inline">\(f&#39;(x)\)</span>.</p>
@@ -355,7 +355,6 @@ Suppose that <span class="math inline">\(c\)</span> is a critical point of a con
 <li>If <span class="math inline">\(f&#39;\)</span> does not change signs at <span class="math inline">\(c\)</span>, then <span class="math inline">\(f\)</span> has no local extremum at <span class="math inline">\(c\)</span>.</li>
 </ol>
 </div>
-
 <p>Another method to determine local extremum is to use second derivative.</p>
 
 <div class="theorem">
@@ -366,7 +365,6 @@ Suppose <span class="math inline">\(f\)</span> is a twice differentiable functio
 <li>If <span class="math inline">\(f&#39;&#39;&lt;0\)</span> over <span class="math inline">\(I\)</span>, then <span class="math inline">\(f\)</span> is concave downward on <span class="math inline">\(I\)</span>.</li>
 </ol>
 </div>
-
 <p>Base on the observation on concavity, we have the following second derivative test.</p>
 
 <div class="theorem">
@@ -378,12 +376,10 @@ Suppose that <span class="math inline">\(f&#39;&#39;\)</span> is continuous near
 </ol>
 </div>
 
-
 <div class="example">
 <p><span id="exm:unnamed-chunk-108" class="example"><strong>Example 4.5  </strong></span>
 Find local extrema, the intervals on which <span class="math inline">\(f(x)=\frac{x}{x^2+1}\)</span> is increasing or decreasing and the intervals on which <span class="math inline">\(f(x)\)</span> is concave up or concave down.</p>
 </div>
-
 
 <div class="solution">
 <p> <span class="solution"><em>Solution. </em></span> 
@@ -405,14 +401,12 @@ ddf(t);     # evaluate the second derivative at a test point $t$.</code></pre>
 <p>The function is concave cup on <span class="math inline">\((-\sqrt{3}, 0)\cup (\sqrt{3},\infty)\)</span> and concave down on <span class="math inline">\((-\infty,-\sqrt{3})\cup (0,\sqrt{3})\)</span>.</p>
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-110" class="exercise"><strong>Exercise 4.6  </strong></span>
 Let <span class="math inline">\(f(x)=\sin x+\cos x\)</span> be a function defined over the interval <span class="math inline">\([0, 2\pi]\)</span>. Find local extrema, the intervals on which <span class="math inline">\(f\)</span> is increasing or decreasing and the intervals on which <span class="math inline">\(f(x)\)</span> is concave up or concave down.</p>
 </div>
-
 </div>
-<div id="limits-at-infinity-and-asymptotes" class="section level2">
+<div id="limits-at-infinity-and-asymptotes" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> Limits at Infinity and Asymptotes</h2>
 <p>Limits at infinity can provide information on the end behaviors of a curve such as horizontal and vertical asymptotes.</p>
 <p>When the limit of a function is an infinite limits, we will get a vertical asymptotes.</p>
@@ -443,7 +437,6 @@ Evaluate the following limits.</p>
 </ol>
 </div>
 
-
 <div class="solution">
 <p> <span class="solution"><em>Solution. </em></span> 
 Use <code>LimitTutor</code> to find limits step-by-step</p>
@@ -453,12 +446,10 @@ LimitTutor((x^3-1)/(9*x^6-x), x=-infinity);
 LimitTutor(x*sin(1/x), x=infinity);</code></pre>
 </div>
 
-
 <div class="example">
 <p><span id="exm:unnamed-chunk-113" class="example"><strong>Example 4.7  </strong></span>
 Find asymptote of the function <span class="math inline">\(f(x)=\frac{x^{3}+2x^{2}-3x-1}{x^{2}-1}\)</span> and plot the graph of <span class="math inline">\(f\)</span> and its asymptotes together with <span class="math inline">\(x\)</span> in <span class="math inline">\([-5,5]\)</span> and <span class="math inline">\(y\)</span> in <span class="math inline">\([-10, 10]\)</span>.</p>
 </div>
-
 
 <div class="solution">
 <p> <span class="solution"><em>Solution. </em></span> 
@@ -473,9 +464,8 @@ asymplots := implicitplot(asym, x = -5 .. 5, y = -10 .. 10):</code></pre>
 <p>Plot the function <span class="math inline">\(f\)</span> and use <code>display</code> to put the graph and asymptotes together.</p>
 <pre><code>Grphf:=plot(f(x), x=-5..5, y=-10..10, discont=true):
 display(asymplots, Grphf); # display is supported by the plots package.</code></pre>
-<img src="figs/asymptotes.png" title="fig:" alt="A graphs of rational functions with its asymptotes" />
+<img src="figs/asymptotes.png" title="fig:" style="width:50.0%" alt="A graphs of rational functions with its asymptotes" />
 </div>
-
 
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-115" class="exercise"><strong>Exercise 4.7  </strong></span>
@@ -486,20 +476,17 @@ Evaluate the following limits.</p>
 </ol>
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-116" class="exercise"><strong>Exercise 4.8  </strong></span>
 Find asymptote of the function <span class="math inline">\(f(x)=\frac{2x^{3}-3x^{2}-5x+2}{x^{2}+1}\)</span> and plot the graph of <span class="math inline">\(f\)</span> and its asymptotes together with <span class="math inline">\(x\)</span> in <span class="math inline">\([-5,5]\)</span> and <span class="math inline">\(y\)</span> in <span class="math inline">\([-10, 10]\)</span>.</p>
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-117" class="exercise"><strong>Exercise 4.9  </strong></span>
 Find asymptote of the function <span class="math inline">\(f(x)=\frac{8\sin x}{x^{2}+1}+\frac{x^{2}-x}{x^{2}-1}\)</span> and plot the graph of <span class="math inline">\(f\)</span> and its asymptotes together with <span class="math inline">\(x\)</span> in <span class="math inline">\([-10,10]\)</span> and <span class="math inline">\(y\)</span> in <span class="math inline">\([-20, 20]\)</span>.</p>
 </div>
-
 </div>
-<div id="curve-sketching" class="section level2">
+<div id="curve-sketching" class="section level2" number="4.5">
 <h2><span class="header-section-number">4.5</span> Curve Sketching</h2>
 <p>To plot the graph of a function in maple, we simply use the command <code>plot(function, widows, options)</code>.</p>
 <p>On the other hand, we can sketch the graph using calculus, more precisely, monotonicity, concavity, vertical asymptotes, horizontal asymptotes, periods, symmetries, local extrema, intercepts etc.</p>
@@ -508,7 +495,6 @@ Find asymptote of the function <span class="math inline">\(f(x)=\frac{8\sin x}{x
 <p><span id="exm:unnamed-chunk-118" class="example"><strong>Example 4.8  </strong></span>
 Sketch and plot the graph of the function <span class="math inline">\(g(x)=\frac{2x+1}{x-2}\)</span>.</p>
 </div>
-
 
 <div class="solution">
 <p> <span class="solution"><em>Solution. </em></span> 
@@ -543,20 +529,17 @@ ddg(t);     # evaluate the second derivative at a test point $t$.</code></pre>
 <pre><code>plot(g(x), x=a..b) # Plot the function in the window [a, b].</code></pre>
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-120" class="exercise"><strong>Exercise 4.10  </strong></span>
 Sketch and plot the graph of the function <span class="math inline">\(h(x)=\frac{x-1}{x+2}\)</span>.</p>
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-121" class="exercise"><strong>Exercise 4.11  </strong></span>
 Sketch and plot the graph of the function <span class="math inline">\(g(x)=x\sqrt{4-x}\)</span>.</p>
 </div>
-
 </div>
-<div id="optimization-problems" class="section level2">
+<div id="optimization-problems" class="section level2" number="4.6">
 <h2><span class="header-section-number">4.6</span> Optimization Problems</h2>
 <p>To solve a optimization problem in Calculus, the key is to represent the quantity to be optimized by a function of other quantities and then find the extremum value using the extreme value theorem.</p>
 
@@ -564,7 +547,6 @@ Sketch and plot the graph of the function <span class="math inline">\(g(x)=x\sqr
 <p><span id="exm:unnamed-chunk-122" class="example"><strong>Example 4.9  </strong></span>
 Among rectangles with the same perimeter <span class="math inline">\(16\)</span> centimeters, there is one that has the largest area. Find the dimension of that rectangle.</p>
 </div>
-
 
 <div class="solution">
 <p> <span class="solution"><em>Solution. </em></span> 
@@ -582,20 +564,17 @@ xvalue := solve(Ar(x) = Amx, x); # Find the length x such that the area is the l
 yvalue := y(xvalue); # Find the width y such that the area is the largest.</code></pre>
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-124" class="exercise"><strong>Exercise 4.12  </strong></span>
 Find the rectangle with the minimal perimeter among rectangles with the area 36 square inches.</p>
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-125" class="exercise"><strong>Exercise 4.13  </strong></span>
 Find the point on the parabola <span class="math inline">\(y^2=2x\)</span> that is closest to the point <span class="math inline">\((1, -4)\)</span>.</p>
 </div>
-
 </div>
-<div id="antiderivatives" class="section level2">
+<div id="antiderivatives" class="section level2" number="4.7">
 <h2><span class="header-section-number">4.7</span> Antiderivatives</h2>
 <p>An antiderivative of a function <span class="math inline">\(f\)</span> over an interval <span class="math inline">\(I\)</span> is any function <span class="math inline">\(F\)</span> such that <span class="math inline">\(F&#39;(x)=f(x)\)</span> for all <span class="math inline">\(x\)</span> in <span class="math inline">\(I\)</span>.</p>
 <p>Antiderivatives are closely related to integration. In Maple, you may use <code>int(f(x), x)</code> or <code>IntTutor(f(x), x)</code> supported by <code>Student[Calculus1]</code> to find an antiderivative of <span class="math inline">\(f(x)\)</span>.</p>
@@ -604,7 +583,6 @@ Find the point on the parabola <span class="math inline">\(y^2=2x\)</span> that 
 <p><span id="exm:unnamed-chunk-126" class="example"><strong>Example 4.10  </strong></span>
 Find an antiderivative of the function <span class="math inline">\(f(x)=x^3-\frac{1}{\sqrt{x}}\)</span> by hand and by Maple respectively. Use <code>diff</code> to check your answer.</p>
 </div>
-
 
 <div class="solution">
 <p> <span class="solution"><em>Solution. </em></span> 
@@ -626,24 +604,20 @@ TutorF:=IntTutor(f(x), x);</code></pre>
 diff(TutorF, x);</code></pre>
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-128" class="exercise"><strong>Exercise 4.14  </strong></span>
 Find an antiderivative of the function <span class="math inline">\(f(x)=x^2-3+8\sin(x)\)</span> by hand and by Maple respectively. Use <code>diff</code> to check your answer.</p>
 </div>
-
 
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-129" class="exercise"><strong>Exercise 4.15  </strong></span>
 Find an antiderivative of the function <span class="math inline">\(f(x)=\frac{x^3-2x+1}{\sqrt{x}}\)</span> by hand and by Maple respectively. Use <code>diff</code> to check your answer.</p>
 </div>
 
-
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-130" class="exercise"><strong>Exercise 4.16  </strong></span>
 Find <strong>the most general antiderivative</strong> of the function <span class="math inline">\(f(x)=\tan x\sec x+1\)</span> by hand and by Maple respectively. Use <code>diff</code> to check your answer.</p>
 </div>
-
 
 </div>
 </div>
@@ -675,10 +649,14 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": "https://github.com/fyemath/maple4calc/103-Applications-of-Differentiation.Rmd",
+"text": "Edit"
+},
+"history": {
 "link": null,
 "text": null
 },
-"history": {
+"view": {
 "link": null,
 "text": null
 },

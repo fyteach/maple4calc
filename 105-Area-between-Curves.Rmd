@@ -33,7 +33,7 @@ Plot the curves and shade the enclosed area
 
     Curves:=plot([y[1](x), y[2](x)], x=-1..2, color=[red, blue])
 
-![A plot of two curves](figs/Area-between-two-curves.png)
+![A plot of two curves](figs/Area-between-two-curves.png){width=50%}
 
 From the graph, we see the curves intersect at two points. Let's find the $x$-coordinates of the intersection points which are the integral limits.
 
@@ -69,7 +69,7 @@ Plot the two curves use `implicitplot` which is supported by `plot`.
     with(plots):
     implicitplot([C[1],C[2]], x=-5..5, y=-5..5, color=[red, blue]);
 
-![An implicit plot of two curves](figs/Area-between-two-curves-y.png)
+![An implicit plot of two curves](figs/Area-between-two-curves-y.png){width=50%}
 
 From the graph, we see that it's better to integrate along $y$-axis. So we need to solve for $x$ from the equations and view it as a function of $y$.
 

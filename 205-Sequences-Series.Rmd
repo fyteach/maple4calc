@@ -6,14 +6,14 @@ A sequence is a list of numbers in a definite order (indexed by integers). A ser
 
 When the sequence is explicitly defined by an mathematical expression $a_n=f(n)$, Maple has the following command to list numbers of the sequence `seq(f, i=m..n, step)`.
 
-```{example, label=seq-eg}
+```{example, label="seq-eg"}
 
 Find the first 10 terms of the sequence $\{\frac{1}{n(n+1)}\}_{n=1}^\infty$. Determine whether the sequence $\{\frac{1}{n(n+1)}\}$ is convergent or divergent.
 
 ```
 
 ```{solution}
-<br>
+  
 
     # using seq
 
@@ -40,7 +40,7 @@ Determine whether the series $\sum_{n=0}^\infty\frac1{2^n}$ is convergent or div
 ```
 
 ```{solution}
-<br>
+  
 
     # Set up s when n=0
 
@@ -144,7 +144,7 @@ More generally, a series of the form
 
 is called a power series at $a$.
 
-We call a positive number $R$ the radius of convergence of the power series \ref@(eq:Taylor-series) if the power series converges whenever $\left|x-a\right|<R$ and diverges whenever  $\left|x-a\right|>R$.
+We call a positive number $R$ the radius of convergence of the power series \@ref(eq:Taylor-series) if the power series converges whenever $\left|x-a\right|<R$ and diverges whenever  $\left|x-a\right|>R$.
 
 If a function $f$ has a power series representation, i.e.
 $$
@@ -170,7 +170,7 @@ $$
 ```
 
 ```{solution}
-<br>
+  
 
     # Find the abs(a_{n+1}/a_n)
 
@@ -193,7 +193,7 @@ Find the Taylor expansion of the function $f(x)=\dfrac{1}{x-2}$ at $x=0$ up to t
 ```
 
 ```{solution}
-<br>
+  
 
     # Find the Taylor expansion.
 
@@ -264,7 +264,7 @@ Approximate function $f(x)=\sin x$ by the degree 3 Taylor polynomial at $x=1$.
 ```
 
 ```{solution}
-<br>
+  
 
     # Find the Taylor series.
 
@@ -291,7 +291,7 @@ and its 5-th order Taylor polynomial over the domain $[-2..2]$. What can you con
 ```
 
 ```{solution}
-<br>
+  
 
     # Define a piece-wisely defined function.
 
@@ -306,7 +306,8 @@ and its 5-th order Taylor polynomial over the domain $[-2..2]$. What can you con
     plot([g,T],x=-2..2, color=[red, blue])
 
 The graphs of the functions are shown in the picture.
-![A non-analytic smooth function](figs/non-analytic-smooth.png)
+
+![A non-analytic smooth function](figs/non-analytic-smooth.png){width=50%}
 
 ```
 

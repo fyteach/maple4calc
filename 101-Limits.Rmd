@@ -46,9 +46,10 @@ Estimate the limit $\lim\limits_{x\to 0}\frac{\sin x}{x}$ by approximations.
 ```
 
 ```{solution}
-First, we pick some values close to 0, for example -0.99, -0.999, -0.9999, 0.01, 0.001, 0.0001 and assign them to an expression.
 
-    sq:=[-0.99, -0.999, -0.9999, 0.0001, 0.001, 0.01]
+First, we pick some values close to 0, for example -0.01, -0.001, -0.0001, 0.01, 0.001, 0.0001 and assign them to an expression.
+
+    sq:=[-0.01, -0.001, -0.0001, 0.0001, 0.001, 0.01]
 
 Now we find the function values using two new commands instead of defining the function a priori.
 
@@ -108,8 +109,8 @@ Determine whether the limit $\lim\limits_{x\to 0}\frac{|x|}{x}$ exists.
 
 You may find the left and right limits using the following commands.
 
-    limit(abs(x)/x, x=0, left)
-    limit(abs(x)/x, x=0, right)
+    limit(abs(x)/x, x=0, left);
+    limit(abs(x)/x, x=0, right);
 
 It turns out that $\lim\limits_{x\to 0}\frac{|x|}{x}$ does not exist because the left limit and the right limit are different.
 
@@ -125,7 +126,7 @@ Evaluate the limit $\lim\limits_{h\to 0}\dfrac{f(x+h)-f(x)}{h}$, where $f(x)=\df
 
 The limit can be obtained using the following command.
 
-    limit((1/(x+h)-1/x)/h, x=0)
+    limit((1/(x+h)-1/x)/h, h=0)
 
 ```
 
@@ -208,7 +209,7 @@ We use the `plot()` command to graph the functions together.
 
     plot([-x, x*cos(1/x), x], x=-1..1, discont, color=[red, blue, red])
 
-![Squeeze Theorem demonstration](figs/squeeze.png)
+![Squeeze Theorem demonstration](figs/squeeze.png){width=50%}
 
 From the graph, we see that the $\lim\limits_{x\to c}f(x)=0$ as it is squeezed by two limits which are both $0$.
 
@@ -232,7 +233,7 @@ f(x)=
 \begin{cases}
     x & x\le -1 \\
     1/(x-1) & -1<x<1\\
-    3-x & 1<x\le 2\\
+    3-x & 1\le x\le 2\\
     \sin(x - 2) + 1 & x>2\\
     -2 & x=2
 \end{cases}
@@ -245,7 +246,8 @@ is continuous over $(-\infty, \infty)$. Find the discontinuities and verify them
 
 First we define the function.
 
-    f := x -> piecewise(x <= -1, x, -1 < x and x < 1, 1/(x - 1), 1 <= x and x < 2, 3 - x, 2 < x, sin(x - 2) + 1, -2)
+    f := x -> piecewise(x <= -1, x, -1 < x and x < 1, 1/(x - 1),
+    1 <= x and x < 2, 3 - x, 2 < x, sin(x - 2) + 1, -2)
 
 We first check visually whether the graph has holes or jumps.
 
@@ -253,7 +255,7 @@ We first check visually whether the graph has holes or jumps.
 
 In the above command, the option `discont = [showremovable]`  is used to show removable discontinuities.
 
-![An example shows three types of discontinuities](figs/Discontinuities.png)
+![An example shows three types of discontinuities](figs/Discontinuities.png){width=50%}
 
 From the graph, we can tell that the function has discontinuities which can also be found using Maple.
 
@@ -263,8 +265,8 @@ Maple gives three discontinuities $\{-1, 1, 2\}$.
 
 Let's first find limits at all three values.
 
-    discontset:=[-1, 1, 2]
-    for a in discontset do limit(f(x), x=a) end do
+    discontset:=[-1, 1, 2];
+    for a in discontset do limit(f(x), x=a) end do;
 
 You will find that limits do not exist at $-1$ and $1$. The limit at $2$ is $1$.
 However, $g(2)=-2$. So $f$ has three discontinuities at $x=-1$, $x=1$ and $x=2$.
@@ -277,7 +279,7 @@ $$
 f(x)=
 \begin{cases}
     -x^2+2 & x\le 1 \\
-    \tan x& 1<x<\pi/2\\
+    \frac{1}{x-2}& 1<x<2\\
     2\cos x-1 & \text{otherwise}
 \end{cases}
 $$
@@ -324,20 +326,20 @@ $$
 ```{solution}
 We first define $f$ and $g$ in Maple
 
-    f:=x->x^2
-    g:=x->piecewise(x=0, 0, x+2)
+    f:=x->x^2;
+    g:=x->piecewise(x=0, 1, 2x-1);
 
 Evaluate limits for $f\circ g$.
 
-    limit(f(g(x)), x=0)
-    f(limit(g(x), x=0))
+    limit(f(g(x)), x=0);
+    f(limit(g(x), x=0));
 
 The results verify that the limit commutes with composition if the outside function is continuous.
 
 Evaluate limits for $g\circ f$
 
-    limit(f(g(x)), x=0)
-    f(limit(g(x), x=0))
+    limit(f(g(x)), x=0);
+    f(limit(g(x), x=0));
 
 The results show that the limit may not commute with composition if the outside function is not continuous.
 

@@ -3,9 +3,50 @@ title: "Notes on Maple for Calculus"
 author: "Fei Ye"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
-documentclass: book
 description: "This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown"
+documentclass: elegantbook
+github-repo: fyemath/elegantbookdown-demo
+logo: ''
+cover: figs/Spring.jpg
+classoption: en,11pt,simple
+version: '1.0'
 ---
+
+
+
+```{r remove_amsmath, include=FALSE}
+
+options(bookdown.post.latex = function(x) {
+  # x is the content of the LaTeX output file  
+  # The following codes is another way to removes amsthm environments
+  
+  start_row <- grep("package\\{amsthm", x)
+  end_row <- grep("newtheorem\\*\\{solution", x)
+  x<-x[-c(start_row:end_row)]
+  
+  # Remove \iffalse \fi\\
+  x<-gsub('^\\\\iffalse.\\\\fi\\{\\}+?(\\\\)', '', x)
+  x<-gsub('^\\\\tightlist', '', x)
+
+  x<-gsub('(^\\\\BeginKnitrBlock.*\\}$)', '\\1\\{\\}\\{\\}', x)
+  x<-gsub('(^\\\\BeginKnitrBlock.*)+\\[(.*)\\]', '\\1\\{\\2\\}\\{\\}', x)
+})
+
+```
+
+```{r fig_setting, include=FALSE}
+library("knitr")
+knitr::opts_chunk$set(out.width="60%", fig.align="center", fig.pos = "!H", out.extra = "")
+```
+
+\mainmatter
+
+\hypersetup{pageanchor=true}
+
+\renewcommand{\baselinestretch}{1.2}\normalsize
+
+\captionsetup[figure]{labelformat=empty}
+\captionsetup[subfigure]{labelformat=empty}
 
 # Introduction {-}
 

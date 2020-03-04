@@ -29,7 +29,7 @@ One way to plot the function and its inverse together is to use the following co
 
 Here is the output in Maple
 
-![Graph of a pair of functions inverse to each other](figs/InversePlot1.png)
+![Graph of a pair of functions inverse to each other](figs/InversePlot1.png){width=50%}
 
 Another way to plot the function $f$ and its inverse $g$ together uses the `plot` function.
 
@@ -146,7 +146,7 @@ To graph the functions together with different colors, we use the following comm
 
 Here is the output
 
-![Graph of some logarithmic and exponential functions](figs/Log-Exp-Functions-01.png)
+![Graph of some logarithmic and exponential functions](figs/Log-Exp-Functions-01.png){width=50%}
 
 ```
 
@@ -188,7 +188,7 @@ Fix an input $x$. Describe how $y$-values change when bases changes from small n
 
 In Maple, one way to do differentiation and integration is to use the `Calculus Palette` on the left side.
 
-![Calculus Palette in Maple](figs/Calculus-Palette.png)
+![Calculus Palette in Maple](figs/Calculus-Palette.png){width=50%}
 
 The other way is to use the commands `diff(f(x), x)` , `int(f(x), x)`, and `int(f(x), x=a..b)`.
 
@@ -217,7 +217,7 @@ Type in (assume that `with(Student[Calculus1])` was run)
 
 and hit enter you will see
 
-![](figs/DiffTutor-ex.png)
+![](figs/DiffTutor-ex.png){width=50%}
 
 By click `Next Step` or `All Steps` you will see detailed solution with rules used.
 
@@ -247,7 +247,7 @@ Type in (assume that `with(Student[Calculus1])` was run)
 
 and hit enter you will see
 
-![](figs/IntTutor-ex.png)
+![](figs/IntTutor-ex.png){width=50%}
 
 By click `Next Step` or `All Steps` you will see detailed solution with rules used.
 
@@ -374,7 +374,7 @@ $$
 
 Here is the output
 
-![Graph of the tangent and arctangent functions](figs/InversePlot_tanx.png)
+![Graph of the tangent and arctangent functions](figs/InversePlot_tanx.png){width=50%}
 
 ```
 
