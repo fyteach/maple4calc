@@ -29,7 +29,7 @@ To learn what options does the command `VolumeOfRevolution` have, you may type
 
 in the Math mode and hit enter. You will see the help page.
 
-![](figs/VolOfRev-help-page.png){width=50%}
+![Maple help page for VolumeOfRevolution command](figs/VolOfRev-help-page.png){width=50%}
 
 ```{example}
 Show the solid obtained by rotating the region bounded by $y=x^2$ and $y=x$ about $y$-axis. Set up an integral for the volume. Find the volume.
@@ -56,7 +56,8 @@ Show the solid obtained by rotating the region bounded by $y=x^2$ and $y=x$ abou
 
 The outputs in Maple can be seen in the following picture
 
-![](figs/VolOfRev-Example1.png){width=50%}
+![Volume of Revolution Example](figs/VolOfRev-Example1.png){width=50%}
+
 ```
 
 ```{remark}

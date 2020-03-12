@@ -307,7 +307,7 @@ and its 5-th order Taylor polynomial over the domain $[-2..2]$. What can you con
 
 The graphs of the functions are shown in the picture.
 
-![A non-analytic smooth function](figs/non-analytic-smooth.png){width=50%}
+![A non-analytic smooth function](figs/non-analytic-smooth.png){width=50%, height=30%}
 
 ```
 

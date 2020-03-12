@@ -362,8 +362,8 @@ Plot the function $f$ and use `display` to put the graph and asymptotes together
     display(asymplots, Grphf); # display is supported by the plots package.
 
 ![A graphs of rational functions with its asymptotes](figs/asymptotes.png){width=50%}
-```
 
+```
 
 ```{exercise}
 
@@ -385,7 +385,6 @@ Find asymptote of the function $f(x)=\frac{2x^{3}-3x^{2}-5x+2}{x^{2}+1}$ and plo
 Find asymptote of the function $f(x)=\frac{8\sin x}{x^{2}+1}+\frac{x^{2}-x}{x^{2}-1}$ and plot the graph of $f$ and its asymptotes together with $x$ in $[-10,10]$ and $y$ in $[-20, 20]$.
 
 ```
-
 
 ## Curve Sketching
 

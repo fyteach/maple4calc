@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 7 Applications of Integrals II | Notes on Maple for Calculus</title>
   <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 7 Applications of Integrals II | Notes on Maple for Calculus" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Fei Ye" />
 
 
-<meta name="date" content="2020-03-03" />
+<meta name="date" content="2020-03-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -196,7 +196,10 @@ or
 <p>To learn what options does the command <code>VolumeOfRevolution</code> have, you may type</p>
 <pre class="maple"><code>?VolumeOfRevolution</code></pre>
 <p>in the Math mode and hit enter. You will see the help page.</p>
-<p><img src="figs/VolOfRev-help-page.png" style="width:50.0%" /></p>
+<div class="figure">
+<img src="figs/VolOfRev-help-page.png" style="width:50.0%" alt="" />
+<p class="caption">Maple help page for VolumeOfRevolution command</p>
+</div>
 
 <div class="example">
 <span id="exm:unnamed-chunk-159" class="example"><strong>Example 7.1  </strong></span>Show the solid obtained by rotating the region bounded by <span class="math inline">\(y=x^2\)</span> and <span class="math inline">\(y=x\)</span> about <span class="math inline">\(y\)</span>-axis. Set up an integral for the volume. Find the volume.
@@ -213,7 +216,10 @@ or
 <p>#Find the volume</p>
 <pre><code>VolumeOfRevolution(x^2, x, x = 0 .. 1, axis = vertical, output = value)</code></pre>
 <p>The outputs in Maple can be seen in the following picture</p>
-<img src="figs/VolOfRev-Example1.png" style="width:50.0%" />
+<div class="figure">
+<img src="figs/VolOfRev-Example1.png" style="width:50.0%" alt="" />
+<p class="caption">Volume of Revolution Example</p>
+</div>
 </div>
 
 <div class="remark">

@@ -25,11 +25,11 @@
 
   \author{Fei Ye}
 
-  \date{2020-03-03}
+  \date{2020-03-12}
 
 % logo 图案
 % 封面图片
-  \cover{figs/Spring.jpg}
+  \cover{figs/Wintersweet.jpg}
 % 版本号
   \version{1.0}
 % 机构名
@@ -321,15 +321,39 @@ margin=1in
 \patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
 \makeatother
 
-\usepackage{graphicx}
+\usepackage{graphicx}% Needed for \includegraphics{}
+\usepackage[export]{adjustbox} %Needed for max width
+\usepackage{etoolbox} %Needed for \pathcmd
+%\patchcmd{<command>}{<code to replace>}{<code>}{<success>}{<failure>}
+%The following codes add max dimension options to includegraphics
+%Gin@ii is from graphicx package and looks for a second optional argument
+\expandafter\patchcmd\csname Gin@ii\endcsname 
+{\setkeys{Gin}{#1}}
+{\setkeys{Gin}{max width=\textwidth, max height=.5\textwidth,keepaspectratio,#1}}
+{}
+{}
+% See the answer to the question 
+%Set default value for “max width” of “includegraphics” on stackoverflow
+
+%The following codes scale images in mainmatter if necessary
+%It will be overwrite by local setting in \includegraphics[width, height, ...]{}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\def\maxwidth{\ifdim\Gin@nat@width>\textwidth \textwidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>0.4\textheight 0.4\textheight\else\Gin@nat@height\fi}
 \makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+\makeatletter
+\ifboolexpr{   test {\@ifclassloaded{book}}
+            or test {\@ifclassloaded{elagantbook}}
+            or test {\@ifclassloaded{memoir}}}
+{\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}}
+{
+    \if@mainmatter
+        \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+    \fi
+}
+\makeatother
+
 % Set default figure placement to htbp
 \makeatletter
 \def\fps@figure{htbp}
@@ -2326,7 +2350,11 @@ Grphf:=plot(f(x), x=-5..5, y=-10..10, discont=true):
 display(asymplots, Grphf); # display is supported by the plots package.
 \end{verbatim}
 
+\begin{figure}
+\centering
 \includegraphics[width=0.5\textwidth,height=\textheight]{figs/asymptotes.png}
+\caption{A graphs of rational functions with its asymptotes}
+\end{figure}
 \EndKnitrBlock{solution}
 
 \BeginKnitrBlock{exercise}{}{}
@@ -3012,7 +3040,11 @@ To learn what options does the command \texttt{VolumeOfRevolution} have, you may
 
 in the Math mode and hit enter. You will see the help page.
 
+\begin{figure}
+\centering
 \includegraphics[width=0.5\textwidth,height=\textheight]{figs/VolOfRev-help-page.png}
+\caption{Maple help page for VolumeOfRevolution command}
+\end{figure}
 
 \BeginKnitrBlock{example}{}{}
 \protect\hypertarget{exm:unnamed-chunk-159}{}{\label{exm:unnamed-chunk-159} }Show the solid obtained by rotating the region bounded by \(y=x^2\) and \(y=x\) about \(y\)-axis. Set up an integral for the volume. Find the volume.
@@ -3047,7 +3079,11 @@ VolumeOfRevolution(x^2, x, x = 0 .. 1, axis = vertical, output = value)
 
 The outputs in Maple can be seen in the following picture
 
+\begin{figure}
+\centering
 \includegraphics[width=0.5\textwidth,height=\textheight]{figs/VolOfRev-Example1.png}
+\caption{Volume of Revolution Example}
+\end{figure}
 \EndKnitrBlock{solution}
 
 \BeginKnitrBlock{remark}{}{}
@@ -3090,12 +3126,13 @@ which graphs the original function \(f(x)\) and the inverse function \(f^{-1}(x)
 You will see clearly that the graphs of a function and its inverse are symmetric with respect to the line \(y=x\).
 
 \BeginKnitrBlock{example}{}{}
-\protect\hypertarget{exm:unnamed-chunk-164}{}{\label{exm:unnamed-chunk-164} }
+\protect\hypertarget{exm:unnamed-chunk-164}{}{\label{exm:unnamed-chunk-164} }\\
+1. Graph the function \(f(x)=x^3-2\), its inverse function, and the line \(y=x\) over the interval \([-2,2]\).
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\item
-  Graph the function \(f(x)=x^3-2\), its inverse function, and the line \(y=x\) over the interval \([-2,2]\).
+\setcounter{enumi}{1}
+
 \item
   Find the inverse function.
 \end{enumerate}
@@ -3106,7 +3143,7 @@ You will see clearly that the graphs of a function and its inverse are symmetric
 One way to plot the function and its inverse together is to use the following command which is supported by the package \texttt{Student{[}Calculus1{]}}.
 
 \begin{verbatim}
-  InversePlot(x^3-3, x = -2 .. 2)
+  InversePlot(x^3-3, x = -2..2)
 \end{verbatim}
 
 Here is the output in Maple
@@ -3167,7 +3204,8 @@ eval(subs(x=f^{-1}(a), 1/f'(x)))
 \end{verbatim}
 
 \BeginKnitrBlock{example}{}{}
-\protect\hypertarget{exm:unnamed-chunk-166}{}{\label{exm:unnamed-chunk-166} }Find \((f^{-1})'(0)\), where \(f(x)=\cos(x)\) and \(0\leq x\leq \pi\).
+\protect\hypertarget{exm:unnamed-chunk-166}{}{\label{exm:unnamed-chunk-166} }
+Find \((f^{-1})'(0)\), where \(f(x)=\cos(x)\) and \(0\leq x\leq \pi\).
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{solution}{}{}
@@ -3259,12 +3297,13 @@ Here is the output
 \begin{figure}
 \centering
 \includegraphics[width=0.5\textwidth,height=\textheight]{figs/Log-Exp-Functions-01.png}
-\caption{Graph of some logarithmic and exponential functions}
+\caption{Logarithmic and exponential functions}
 \end{figure}
 \EndKnitrBlock{solution}
 
 \BeginKnitrBlock{exercise}{}{}
-\protect\hypertarget{exr:unnamed-chunk-171}{}{\label{exr:unnamed-chunk-171} }Graph the following functions together.
+\protect\hypertarget{exr:unnamed-chunk-171}{}{\label{exr:unnamed-chunk-171} }
+Graph the following functions together.
 \[
 y=\log_3x, \qquad y=3^x, \qquad y=(1/3)^x, \qquad y=\log_{1/3}x.
 \]
@@ -3273,7 +3312,8 @@ Find the pairs that are symmetric to each other with respect to a certain line.
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}{}{}
-\protect\hypertarget{exr:unnamed-chunk-172}{}{\label{exr:unnamed-chunk-172} }Graph the following functions together.
+\protect\hypertarget{exr:unnamed-chunk-172}{}{\label{exr:unnamed-chunk-172} }
+Graph the following functions together.
 \[
 y=0.5^x, \qquad y=2^x, \qquad y=5^x.
 \]
@@ -3284,7 +3324,8 @@ Fix an input \(x\). Describe how \(y\)-values change when bases changes from sma
 \EndKnitrBlock{exercise}
 
 \BeginKnitrBlock{exercise}{}{}
-\protect\hypertarget{exr:unnamed-chunk-173}{}{\label{exr:unnamed-chunk-173} }Graph the following functions together.
+\protect\hypertarget{exr:unnamed-chunk-173}{}{\label{exr:unnamed-chunk-173} }
+Graph the following functions together.
 \[
 y=\log_{0.5}x, \qquad y=\log_2x, \qquad y=\log_{5}x.
 \]
@@ -3312,7 +3353,8 @@ Supported by the \texttt{Student{[}Calculus1{]}} package, Maple also provides th
 Note you may also access tutor commands from the \texttt{Start} page (click the home button in the toolbar and look for Calculus).
 
 \BeginKnitrBlock{example}{}{}
-\protect\hypertarget{exm:unnamed-chunk-174}{}{\label{exm:unnamed-chunk-174} }Find \(y'\), where \(y=\ln \left(x^{3}+5x+1\right)\).
+\protect\hypertarget{exm:unnamed-chunk-174}{}{\label{exm:unnamed-chunk-174} }
+Find \(y'\), where \(y=\ln \left(x^{3}+5x+1\right)\).
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{solution}{}{}
@@ -3336,13 +3378,18 @@ DiffTutor(ln(x^3+5*x+1), x)
 
 and hit enter you will see
 
+\begin{figure}
+\centering
 \includegraphics[width=0.5\textwidth,height=\textheight]{figs/DiffTutor-ex.png}
+\caption{DiffTutor Example}
+\end{figure}
 
 By click \texttt{Next\ Step} or \texttt{All\ Steps} you will see detailed solution with rules used.
 \EndKnitrBlock{solution}
 
 \BeginKnitrBlock{example}{}{}
-\protect\hypertarget{exm:unnamed-chunk-176}{}{\label{exm:unnamed-chunk-176} }Evaluate the integral
+\protect\hypertarget{exm:unnamed-chunk-176}{}{\label{exm:unnamed-chunk-176} }
+Evaluate the integral
 \[
 \int\dfrac{e^x-1}{e^x+1}\mathrm{d} x.
 \]
@@ -3369,7 +3416,11 @@ IntTutor((exp(x)-1)/(exp(x)+1), x)
 
 and hit enter you will see
 
+\begin{figure}
+\centering
 \includegraphics[width=0.5\textwidth,height=\textheight]{figs/IntTutor-ex.png}
+\caption{IntTutor Example}
+\end{figure}
 
 By click \texttt{Next\ Step} or \texttt{All\ Steps} you will see detailed solution with rules used.
 \EndKnitrBlock{solution}
@@ -3486,20 +3537,17 @@ y=\tan x, \qquad y=\arctan x, \qquad y=x.
 
 \BeginKnitrBlock{solution}{}{}
 \iffalse{} {Solution. } \fi{}
-
-\begin{verbatim}
-#load the package ``Student[Calculus1]".
-with(Student[Calculus1])
-#plot the functions
+\#load the package ``Student{[}Calculus1{]}".
+with(Student{[}Calculus1{]})
+\#plot the functions
 InversePlot(tan(x),x=-Pi/2..Pi/2)
-\end{verbatim}
 
 Here is the output
 
 \begin{figure}
 \centering
 \includegraphics[width=0.5\textwidth,height=\textheight]{figs/InversePlot_tanx.png}
-\caption{Graph of the tangent and arctangent functions}
+\caption{Tangent and arctangent functions}
 \end{figure}
 \EndKnitrBlock{solution}
 
@@ -3527,7 +3575,6 @@ Find \(y'\), where \(y=\mathrm{arccot} x\).
 
 \BeginKnitrBlock{solution}{}{}
 \iffalse{} {Solution. } \fi{}
-
 Surely, we may use \texttt{diff} or \texttt{DiffTutor} to find the derivative.
 
 Here let's me introduce to you another command \texttt{implicitdiff}.
@@ -3597,13 +3644,10 @@ Evaluate the limit
 
 \BeginKnitrBlock{solution}{}{}
 \iffalse{} {Solution. } \fi{}
-
-\begin{verbatim}
-# load the package Student[Calculus1].
-with(Student[Calculus1])
-#Find the limit step-by-step using LimitTutor
-LimitTutor((1+x)^(1/ln(x)), x = infinity)
-\end{verbatim}
+\# load the package Student{[}Calculus1{]}.
+with(Student{[}Calculus1{]})
+\#Find the limit step-by-step using LimitTutor
+LimitTutor((1+x)\^{}(1/ln(x)), x = infinity)
 \EndKnitrBlock{solution}
 
 \BeginKnitrBlock{exercise}{}{}
@@ -4217,7 +4261,7 @@ The graphs of the functions are shown in the picture.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth,height=\textheight]{figs/non-analytic-smooth.png}
+\includegraphics[width=\textwidth,height=0.3\textheight]{figs/non-analytic-smooth.png}
 \caption{A non-analytic smooth function}
 \end{figure}
 \EndKnitrBlock{solution}

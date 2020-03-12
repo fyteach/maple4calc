@@ -16,3 +16,11 @@ pre code {
 body {
   background-color: #ccd8f5;
 }
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+    max-width:600px;
+}

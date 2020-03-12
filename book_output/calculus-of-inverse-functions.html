@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 8 Calculus of Inverse Functions | Notes on Maple for Calculus</title>
   <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 8 Calculus of Inverse Functions | Notes on Maple for Calculus" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Fei Ye" />
 
 
-<meta name="date" content="2020-03-03" />
+<meta name="date" content="2020-03-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -190,17 +190,17 @@
 <p>You will see clearly that the graphs of a function and its inverse are symmetric with respect to the line <span class="math inline">\(y=x\)</span>.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-164" class="example"><strong>Example 8.1  </strong></span><br></p>
-<ol style="list-style-type: decimal">
-<li><p>Graph the function <span class="math inline">\(f(x)=x^3-2\)</span>, its inverse function, and the line <span class="math inline">\(y=x\)</span> over the interval <span class="math inline">\([-2,2]\)</span>.</p></li>
-<li><p>Find the inverse function.</p></li>
+<p><span id="exm:unnamed-chunk-164" class="example"><strong>Example 8.1  </strong></span><br />
+1. Graph the function <span class="math inline">\(f(x)=x^3-2\)</span>, its inverse function, and the line <span class="math inline">\(y=x\)</span> over the interval <span class="math inline">\([-2,2]\)</span>.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Find the inverse function.</li>
 </ol>
 </div>
 
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> <br>
+<p> <span class="solution"><em>Solution. </em></span> 
 One way to plot the function and its inverse together is to use the following command which is supported by the package <code>Student[Calculus1]</code>.</p>
-<pre><code>  InversePlot(x^3-3, x = -2 .. 2)</code></pre>
+<pre><code>  InversePlot(x^3-3, x = -2..2)</code></pre>
 <p>Here is the output in Maple</p>
 <div class="figure">
 <img src="figs/InversePlot1.png" style="width:50.0%" alt="" />
@@ -235,18 +235,19 @@ eval(subs(x=f^{-1}(a), 1/f&#39;(x)))
 </code></pre>
 
 <div class="example">
-<span id="exm:unnamed-chunk-166" class="example"><strong>Example 8.2  </strong></span>Find <span class="math inline">\((f^{-1})&#39;(0)\)</span>, where <span class="math inline">\(f(x)=\cos(x)\)</span> and <span class="math inline">\(0\leq x\leq \pi\)</span>.
+<p><span id="exm:unnamed-chunk-166" class="example"><strong>Example 8.2  </strong></span>
+Find <span class="math inline">\((f^{-1})&#39;(0)\)</span>, where <span class="math inline">\(f(x)=\cos(x)\)</span> and <span class="math inline">\(0\leq x\leq \pi\)</span>.</p>
 </div>
 
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> <br>
+<p> <span class="solution"><em>Solution. </em></span> 
 Find the derivative of <span class="math inline">\(f\)</span></p>
 <pre><code>diff(cos(x), x)</code></pre>
 <p>Find the value of <span class="math inline">\(f^{-1}(0)\)</span></p>
 <pre><code>solve(cos(x)=0, x)</code></pre>
 <p>Apply the formula</p>
 <pre><code>eval(subs(x=Pi/2, -1/sin(x)))</code></pre>
-Using Maple, we find <span class="math inline">\((f^{-1})&#39;(0)=-1\)</span>.
+<p>Using Maple, we find <span class="math inline">\((f^{-1})&#39;(0)=-1\)</span>.</p>
 </div>
 
 <div class="exercise">
@@ -267,7 +268,6 @@ Using Maple, we find <span class="math inline">\((f^{-1})&#39;(0)=-1\)</span>.
 <span class="math display">\[
 \ln(e^x)=x\qquad \text{and}\qquad e^{\ln x}=x.
 \]</span></p>
-<!-- In mathematics, an identity is an equality that always holds true when assigning values to the same variable in both sides. -->
 <p>Using those two identities, we may define general exponential functions and general logarithmic function, and deduce the Law of Logarithms and Law of Exponents.</p>
 <ul>
 <li><p>For any positive number <span class="math inline">\(b\ne 1\)</span>, we have <span class="math inline">\(b^x=(e^{\ln b})^x=e^{x\ln b}\)</span>.</p></li>
@@ -285,7 +285,7 @@ y=\ln x, \qquad y=e^x, \qquad y=2^x, \qquad y=\log_2x, y=x.
 </div>
 
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> <br>
+<p> <span class="solution"><em>Solution. </em></span> 
 In Maple, the logarithm <span class="math inline">\(\log_bx\)</span> is given by <code>log[b](x)</code>. When <span class="math inline">\(b=e\)</span>, you simply use <code>ln(x)</code> for <span class="math inline">\(\ln x\)</span>. When <span class="math inline">\(b=10\)</span>, you may also use <code>log(x)</code> or <code>log10(x)</code> for <span class="math inline">\(\log_{10}x\)</span>.</p>
 <p>The exponent <span class="math inline">\(b^x\)</span> is given by <code>b^x</code> in Maple. When <span class="math inline">\(b=e\)</span>, you may also use <code>exp(x)</code> to represent <span class="math inline">\(e^x\)</span>.</p>
 <p>To graph the functions together with different colors, we use the following command</p>
@@ -293,12 +293,13 @@ In Maple, the logarithm <span class="math inline">\(\log_bx\)</span> is given by
 <p>Here is the output</p>
 <div class="figure">
 <img src="figs/Log-Exp-Functions-01.png" style="width:50.0%" alt="" />
-<p class="caption">Graph of some logarithmic and exponential functions</p>
+<p class="caption">Logarithmic and exponential functions</p>
 </div>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-171" class="exercise"><strong>Exercise 8.2  </strong></span>Graph the following functions together.
+<p><span id="exr:unnamed-chunk-171" class="exercise"><strong>Exercise 8.2  </strong></span>
+Graph the following functions together.
 <span class="math display">\[
 y=\log_3x, \qquad y=3^x, \qquad y=(1/3)^x, \qquad y=\log_{1/3}x.
 \]</span></p>
@@ -306,7 +307,8 @@ y=\log_3x, \qquad y=3^x, \qquad y=(1/3)^x, \qquad y=\log_{1/3}x.
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-172" class="exercise"><strong>Exercise 8.3  </strong></span>Graph the following functions together.
+<p><span id="exr:unnamed-chunk-172" class="exercise"><strong>Exercise 8.3  </strong></span>
+Graph the following functions together.
 <span class="math display">\[
 y=0.5^x, \qquad y=2^x, \qquad y=5^x.
 \]</span></p>
@@ -315,7 +317,8 @@ y=0.5^x, \qquad y=2^x, \qquad y=5^x.
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-173" class="exercise"><strong>Exercise 8.4  </strong></span>Graph the following functions together.
+<p><span id="exr:unnamed-chunk-173" class="exercise"><strong>Exercise 8.4  </strong></span>
+Graph the following functions together.
 <span class="math display">\[
 y=\log_{0.5}x, \qquad y=\log_2x, \qquad y=\log_{5}x.
 \]</span></p>
@@ -335,11 +338,12 @@ y=\log_{0.5}x, \qquad y=\log_2x, \qquad y=\log_{5}x.
 <p>Note you may also access tutor commands from the <code>Start</code> page (click the home button in the toolbar and look for Calculus).</p>
 
 <div class="example">
-<span id="exm:unnamed-chunk-174" class="example"><strong>Example 8.4  </strong></span>Find <span class="math inline">\(y&#39;\)</span>, where <span class="math inline">\(y=\ln \left(x^{3}+5x+1\right)\)</span>.
+<p><span id="exm:unnamed-chunk-174" class="example"><strong>Example 8.4  </strong></span>
+Find <span class="math inline">\(y&#39;\)</span>, where <span class="math inline">\(y=\ln \left(x^{3}+5x+1\right)\)</span>.</p>
 </div>
 
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> <br>
+<p> <span class="solution"><em>Solution. </em></span> 
 Using <code>diff</code>:</p>
 <pre><code>diff(ln(x^3+5*x+1), x)</code></pre>
 <p>We get
@@ -349,19 +353,23 @@ y&#39;=\dfrac{3x^{2}+5}{x^{3}+5 x+1}.
 <p>Type in (assume that <code>with(Student[Calculus1])</code> was run)</p>
 <pre><code>DiffTutor(ln(x^3+5*x+1), x)</code></pre>
 <p>and hit enter you will see</p>
-<p><img src="figs/DiffTutor-ex.png" style="width:50.0%" /></p>
+<div class="figure">
+<img src="figs/DiffTutor-ex.png" style="width:50.0%" alt="" />
+<p class="caption">DiffTutor Example</p>
+</div>
 <p>By click <code>Next Step</code> or <code>All Steps</code> you will see detailed solution with rules used.</p>
 </div>
 
 <div class="example">
-<span id="exm:unnamed-chunk-176" class="example"><strong>Example 8.5  </strong></span>Evaluate the integral
+<p><span id="exm:unnamed-chunk-176" class="example"><strong>Example 8.5  </strong></span>
+Evaluate the integral
 <span class="math display">\[
 \int\dfrac{e^x-1}{e^x+1}\mathrm{d} x.
-\]</span>
+\]</span></p>
 </div>
 
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> <br>
+<p> <span class="solution"><em>Solution. </em></span> 
 Using <code>int</code>:</p>
 <pre><code>int((exp(x)-1)/(exp(x)+1), x)</code></pre>
 <p>We get
@@ -371,7 +379,10 @@ Using <code>int</code>:</p>
 <p>Type in (assume that <code>with(Student[Calculus1])</code> was run)</p>
 <pre><code>IntTutor((exp(x)-1)/(exp(x)+1), x)</code></pre>
 <p>and hit enter you will see</p>
-<p><img src="figs/IntTutor-ex.png" style="width:50.0%" /></p>
+<div class="figure">
+<img src="figs/IntTutor-ex.png" style="width:50.0%" alt="" />
+<p class="caption">IntTutor Example</p>
+</div>
 <p>By click <code>Next Step</code> or <code>All Steps</code> you will see detailed solution with rules used.</p>
 </div>
 
@@ -411,7 +422,7 @@ Evaluate the integral
 </div>
 
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> <br>
+<p> <span class="solution"><em>Solution. </em></span> 
 Use the following command</p>
 <pre><code>dsolve({f(0)=5, f&#39;(x)=k f(x)})</code></pre>
 <p>we get <span class="math inline">\(f(x)=5e^{kx}\)</span>.</p>
@@ -467,15 +478,15 @@ y=\tan x, \qquad y=\arctan x, \qquad y=x.
 </div>
 
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> <br></p>
-<pre><code>#load the package ``Student[Calculus1]&quot;.
+<p> <span class="solution"><em>Solution. </em></span> 
+#load the package ``Student[Calculus1]".
 with(Student[Calculus1])
 #plot the functions
-InversePlot(tan(x),x=-Pi/2..Pi/2)</code></pre>
+InversePlot(tan(x),x=-Pi/2..Pi/2)</p>
 <p>Here is the output</p>
 <div class="figure">
 <img src="figs/InversePlot_tanx.png" style="width:50.0%" alt="" />
-<p class="caption">Graph of the tangent and arctangent functions</p>
+<p class="caption">Tangent and arctangent functions</p>
 </div>
 </div>
 
@@ -499,8 +510,8 @@ Find <span class="math inline">\(y&#39;\)</span>, where <span class="math inline
 </div>
 
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> <br></p>
-<p>Surely, we may use <code>diff</code> or <code>DiffTutor</code> to find the derivative.</p>
+<p> <span class="solution"><em>Solution. </em></span> 
+Surely, we may use <code>diff</code> or <code>DiffTutor</code> to find the derivative.</p>
 <p>Here let’s me introduce to you another command <code>implicitdiff</code>.</p>
 <p>We’ve learned that (see {#Inverse Functions}) to find the inverse function, we switch <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> and then solve for <span class="math inline">\(y\)</span>. When finding the derivative, we don’t have to solve for <span class="math inline">\(y\)</span> instead, we want <span class="math inline">\(y&#39;\)</span> which is implicitly defined by an equation. In this case, we have <span class="math inline">\(x=\mathrm{arccot}y\)</span>.</p>
 <p>Enter the following commands in Maple, you will find <span class="math inline">\(y&#39;=-\frac{1}{x^2+1}\)</span>.</p>
@@ -559,11 +570,11 @@ Evaluate the limit
 </div>
 
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> <br></p>
-<pre><code># load the package Student[Calculus1].
+<p> <span class="solution"><em>Solution. </em></span> 
+# load the package Student[Calculus1].
 with(Student[Calculus1])
 #Find the limit step-by-step using LimitTutor
-LimitTutor((1+x)^(1/ln(x)), x = infinity)</code></pre>
+LimitTutor((1+x)^(1/ln(x)), x = infinity)</p>
 </div>
 
 <div class="exercise">

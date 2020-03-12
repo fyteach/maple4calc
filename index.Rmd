@@ -7,7 +7,7 @@ description: "This is a notebook in progress on Maple for Calculus. This noteboo
 documentclass: elegantbook
 github-repo: fyemath/elegantbookdown-demo
 logo: ''
-cover: figs/Spring.jpg
+cover: figs/Wintersweet.jpg
 classoption: en,11pt,simple
 version: '1.0'
 ---
