@@ -12,7 +12,8 @@ classoption: en,11pt,simple
 version: '1.0'
 ---
 
-
+```{r child="redirect.R"}
+```
 
 ```{r remove_amsmath, include=FALSE}
 
