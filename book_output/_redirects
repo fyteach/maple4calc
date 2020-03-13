@@ -1,5 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-https://ex4cal.netlify.com/* https://yfei.page/ex4calc/:splat 301!
-
-# These extra rules are required because HTTPS is not forced
-https://ex4cal.netlify.com/* https://yfei.page/ex4calc/:splat 301!
