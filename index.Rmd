@@ -37,6 +37,9 @@ library("knitr")
 knitr::opts_chunk$set(out.width="60%", fig.align="center", fig.pos = "!H", out.extra = "")
 ```
 
+```{r child = 'redirect.R'}
+```
+
 \mainmatter
 
 \hypersetup{pageanchor=true}
