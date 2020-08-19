@@ -16,11 +16,11 @@ bookdown::gitbook:
       # twitter: no
 bookdown::pdf_book:
   includes:
-    in_header: latex/preamble.tex
+    in_header: [latex/preamble.tex, latex/titlepage.tex]
   latex_engine: xelatex
   keep_tex: yes
   toc_depth: 1
-  template: latex/template.tex
+  # template: latex/template.tex
   pandoc_args: "--top-level-division=chapter"
   # pandoc_args: ["--top-level-division=chapter", "--lua-filter=latex/lua_for_latex.lua"]
 
