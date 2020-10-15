@@ -78,24 +78,20 @@ Approximate the definite integral of the function $f(x)=\cos x$ on the interval 
 
 ## The Fundamental Theorem of Calculus
 
-To evaluate definite integrals or find antiderivatives, we can use the Fundamental Theorems of Calculus. 
+To evaluate definite integrals or find antiderivatives, we can use the Fundamental Theorems of Calculus.
 
 ```{theorem, name="Fundamental Theorem of Calculus I"}
-
 If $f$ is continuous on $[a, b]$, then the function $g$ defined by
 $$
 \dfrac{\mathrm{d}}{\mathrm{d} x}\int^x_af(t)\mathrm{d} t =f(x)
 $$
-
 ```
 
 ```{theorem, name="Fundamental Theorem of Calculus II"}
-
 If $f$ is continuous on $[a, b]$ and $F$ is an antiderivative of $f$ on $[a, b]$, then
 $$
 \int^b_af(t)\mathrm{d} t =F(a)-F(b).
 $$
-
 ```
 
 In maple, we can use `int(f(x),x=a..b)` or `IntTutor(f(x),x=a..b)` to find integrals.

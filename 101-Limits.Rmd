@@ -148,6 +148,12 @@ Suppose the limits of two functions $f$ and $g$ at the same point $x=a$ exist (e
 
 In Maple, you may use the command `LimitTutor(function, position, direction)`, which is again supported by the subpackage `Student[Calculus1]`,  to learn how to evaluate a limit using limit laws and theorems.
 
+Note that LimitTutor employs all limits laws available in Calculus including the L'Hopital rule which will be taught in Calculus 2.
+
+To avoid L'Hopital's Rule when using LimitTutor, it's better to rationalize the expression first. For radicals, you may use the command `rationalize()`. When rationalization involves trigonometric functions, we will have to do it "manually" using the command `simplify(expr, trig)`. For example, the following command will output $sin^x(x)$.
+
+    simplify((1 - cos(x))*(1 + cos(x)), trig)
+
 ```{example}
 
 Evaluate $\lim\limits_{x\to 0}\dfrac{1-\cos x}{x}$.
@@ -155,16 +161,23 @@ Evaluate $\lim\limits_{x\to 0}\dfrac{1-\cos x}{x}$.
 ```
 
 ```{solution}
+We will do the calculations in two ways.
 
 Load the subpackage `Student[Calculus1]` if it was not loaded.
 
     with(Student[Calculus1])
 
-Use the following command to learn how to evaluate the limit.
+Method 1: Use the following command to evaluate the limit.
 
-    LimitTutor(2-x^3, x=2,'right')
+    LimitTutor((1-cos(x))/x, x=0)
 
 You will see an interactive windows pop out.  You can choose the see the procedure step-by-step.
+
+Method 2: Rationalize the numerator first and then evaluate the limit using LimitTutor
+    f:=simplify((1 - cos(x))*(1 + cos(x)), trig)/(x*(1 + cos(x)));
+    LimitTutor(f, x = 0);
+
+Can you tell the difference?
 
 ```
 
@@ -179,7 +192,6 @@ Evaluate $\lim\limits_{x\to 0}\dfrac{(x+2)(\cos x-1)}{x^2-x}$ using `LimitTutor`
 Comparison is a very useful tool in problem solving. Squeeze theorem is such an example
 
 ```{theorem, name="Squeeze Theorem"}
-
 Suppose that
 $$
 f(x)\leq g(x)\leq h(x)

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 3 Derivatives | Notes on Maple for Calculus</title>
   <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 3 Derivatives | Notes on Maple for Calculus" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Fei Ye" />
 
 
-<meta name="date" content="2020-03-12" />
+<meta name="date" content="2020-10-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="limits.html"/>
 <link rel="next" href="application-of-differentiation.html"/>
-<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/header-attrs-2.4/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -197,7 +197,7 @@ f&#39;(x)=\lim\limits_{h\to 0}\frac{f(x+h)-f(x)}{h}.
 <p>All <a href="https://en.wikipedia.org/wiki/Elementary_function">elementary functions</a> are differentiable over their domain. But there are also many functions which are not differential everywhere in their domain.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-44" class="example"><strong>Example 3.1  </strong></span>
+<p><span id="exm:unnamed-chunk-45" class="example"><strong>Example 3.1  </strong></span>
 Use the graph of the function <span class="math inline">\(f(x)=|x-1|\)</span> to identify a <span class="math inline">\(x\)</span> value where <span class="math inline">\(f\)</span> is not differential. Verify your finding using the definition of differentiability.</p>
 </div>
 
@@ -213,7 +213,7 @@ evalf(subs(x=1, derlimit));</code></pre>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-46" class="exercise"><strong>Exercise 3.1  </strong></span>
+<p><span id="exr:unnamed-chunk-47" class="exercise"><strong>Exercise 3.1  </strong></span>
 Determine whether the function
 <span class="math display">\[
 f(x)=\begin{cases}
@@ -225,7 +225,7 @@ is differential at <span class="math inline">\(x=0\)</span> using the definition
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-47" class="exercise"><strong>Exercise 3.2  </strong></span>
+<p><span id="exr:unnamed-chunk-48" class="exercise"><strong>Exercise 3.2  </strong></span>
 Determine whether the function
 <span class="math display">\[
 f(x)=\begin{cases}
@@ -237,7 +237,7 @@ is differential at <span class="math inline">\(x=0\)</span> using the definition
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-48" class="exercise"><strong>Exercise 3.3  </strong></span>
+<p><span id="exr:unnamed-chunk-49" class="exercise"><strong>Exercise 3.3  </strong></span>
 Using the definition to find the derivative for <span class="math inline">\(y=\sin x\)</span>.</p>
 </div>
 </div>
@@ -246,7 +246,7 @@ Using the definition to find the derivative for <span class="math inline">\(y=\s
 <p>Calculating a derivative in Maple is as easy as calculating a limit. The command for differentiation is <code>diff(function, variable)</code>. For higher derivatives, you may simply repeat the variable or use <code>[variable$n]</code> to indicate the <span class="math inline">\(n\)</span> times differentiation.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-49" class="example"><strong>Example 3.2  </strong></span>
+<p><span id="exm:unnamed-chunk-50" class="example"><strong>Example 3.2  </strong></span>
 Calculate the first derivative and the second derivative for the function
 <span class="math display">\[
 f(x)=\frac{2}{\sqrt{2\sin^2 x + 1}}.
@@ -267,7 +267,7 @@ f2:=diff(f, [x$2]);</code></pre>
 <p>Maple also has a tutoring command for differentiation: <code>DiffTutor(function, variable)</code> which is again supported by the subpackage <code>Student[Calculus1]</code>. However, <code>DiffTutor</code> only works for the first derivative.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-51" class="example"><strong>Example 3.3  </strong></span>
+<p><span id="exm:unnamed-chunk-52" class="example"><strong>Example 3.3  </strong></span>
 Calculate the derivative for <span class="math inline">\(g(x)=\frac{x^2-2x-x^{-3}}{\sqrt{x}}\)</span> by hand and compare your calculation the the result given by <code>DiffTutor</code>.</p>
 </div>
 
@@ -288,22 +288,22 @@ DiffTutor((x^2-2*x-x^(-3))/sqrt(x), x);</code></pre>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-53" class="exercise"><strong>Exercise 3.4  </strong></span>
+<p><span id="exr:unnamed-chunk-54" class="exercise"><strong>Exercise 3.4  </strong></span>
 Calculate the first derivative for the function <span class="math inline">\(y=2x^{-1}-3\sqrt{x}\)</span> by hand and by Maple. Compare two results. Are they different? If so, can you explain the difference?</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-54" class="exercise"><strong>Exercise 3.5  </strong></span>
-Calculate the first derivative for the function <span class="math inline">\(y=x\sin^{-1}(x)\)</span> by hand and by Maple. Compare two results. Are they different? If so, can you explain the difference?</p>
+<p><span id="exr:unnamed-chunk-55" class="exercise"><strong>Exercise 3.5  </strong></span>
+Calculate the first derivative for the function <span class="math inline">\(y=x(\sin(x))^{-1}\)</span> by hand and by Maple. Compare two results. Are they different? If so, can you explain the difference?</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-55" class="exercise"><strong>Exercise 3.6  </strong></span>
+<p><span id="exr:unnamed-chunk-56" class="exercise"><strong>Exercise 3.6  </strong></span>
 Calculate the first derivative for the function <span class="math inline">\(y=\frac{\cos(x)+\sin x}{x}\)</span> by hand and by Maple. Compare two results. Are they different? If so, can you explain the difference?</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-56" class="exercise"><strong>Exercise 3.7  </strong></span>
+<p><span id="exr:unnamed-chunk-57" class="exercise"><strong>Exercise 3.7  </strong></span>
 Calculate the <span class="math inline">\(3\)</span>-th derivative for the function <span class="math inline">\(y=\sin x\cos x\)</span> by hand and by Maple. Can you find a formula for the <span class="math inline">\(n\)</span>-th derivative of the function?</p>
 </div>
 </div>
@@ -322,7 +322,7 @@ Why there is an extra factor <span class="math inline">\(g&#39;(x)\)</span>? Thi
 </div>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-57" class="example"><strong>Example 3.4  </strong></span>
+<p><span id="exm:unnamed-chunk-58" class="example"><strong>Example 3.4  </strong></span>
 Let <span class="math inline">\(f(x)=\sin x\)</span>, <span class="math inline">\(g(x)=2x\)</span> and <span class="math inline">\(F(x)=2\sin x\cos x\)</span>. Find <span class="math inline">\(f&#39;(g(x))\)</span>, <span class="math inline">\((fg)&#39;(x)\)</span>, <span class="math inline">\((f\circ g)&#39;(x)\)</span> and <span class="math inline">\(F&#39;(x)\)</span>?
 Compare the derivatives and draw a conclusion.</p>
 </div>
@@ -357,7 +357,7 @@ You may also use <code>D(unapply(f(x)*g(x), x))(x)</code> to calculate the deriv
 <p>The chain rule is almost unavoidable in calculation of derivatives. Sometimes, using chain rule will simplify the calculation.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-60" class="example"><strong>Example 3.5  </strong></span>
+<p><span id="exm:unnamed-chunk-61" class="example"><strong>Example 3.5  </strong></span>
 Consider the function <span class="math inline">\(f(x)=\frac{1}{\sin x+\cos x}\)</span>.</p>
 <ol style="list-style-type: decimal">
 <li>Find the derivative function <span class="math inline">\(f&#39;(x)\)</span> using <code>DiffTutor</code>. Which rule of derivative was applied first?</li>
@@ -392,17 +392,17 @@ DiffTutor(f, x);</code></pre>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-62" class="exercise"><strong>Exercise 3.8  </strong></span>
+<p><span id="exr:unnamed-chunk-63" class="exercise"><strong>Exercise 3.8  </strong></span>
 Let <span class="math inline">\(f(x)=\sin x\)</span>, <span class="math inline">\(g(x)=\frac{\pi}{2}-x\)</span> and <span class="math inline">\(h(x)=\cos x\)</span>. Find <span class="math inline">\(f&#39;(g(x))\)</span>, <span class="math inline">\((fg)&#39;(x)\)</span>, <span class="math inline">\((f\circ g)&#39;(x)\)</span> and <span class="math inline">\(h&#39;(x)\)</span>. Compare the derivatives and draw a conclusion.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-63" class="exercise"><strong>Exercise 3.9  </strong></span>
+<p><span id="exr:unnamed-chunk-64" class="exercise"><strong>Exercise 3.9  </strong></span>
 Let <span class="math inline">\(f(x)=x^2\)</span> and <span class="math inline">\(g(x)=\cos x\)</span> and <span class="math inline">\(h(x)=\frac{1}{2}(\cos(2x)+1)\)</span>. Find <span class="math inline">\(f&#39;(g(x))\)</span>, <span class="math inline">\((fg)&#39;(x)\)</span>, <span class="math inline">\((f\circ g)&#39;(x)\)</span> and <span class="math inline">\(h&#39;(x)\)</span>. Compare the derivatives and draw a conclusion.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-64" class="exercise"><strong>Exercise 3.10  </strong></span>
+<p><span id="exr:unnamed-chunk-65" class="exercise"><strong>Exercise 3.10  </strong></span>
 Consider the function <span class="math inline">\(F(x)=\sin^2(\frac{\pi(x^2+1)}{3})\)</span>.</p>
 <ol style="list-style-type: decimal">
 <li>Define three functions <span class="math inline">\(f\)</span>, <span class="math inline">\(g\)</span> and <span class="math inline">\(h\)</span> so that <span class="math inline">\(F(x)=f(g(h(x)))\)</span>.</li>
@@ -421,7 +421,7 @@ The command <code>implicitplot(equation, domain, range, options)</code> supporte
 The command <code>implicitdiff(function, dependent variable, independent variable)</code> can be used to find derivatives implicitly.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-65" class="example"><strong>Example 3.6  </strong></span>
+<p><span id="exm:unnamed-chunk-66" class="example"><strong>Example 3.6  </strong></span>
 Graph the function <span class="math inline">\(y\)</span> of <span class="math inline">\(x\)</span> defined by <span class="math inline">\(x^2+2y^2=2x+4y\)</span> with it tangent line at <span class="math inline">\((2, 0)\)</span> over the domain <span class="math inline">\((1, 3)\)</span> and range <span class="math inline">\((-1, 2)\)</span>.</p>
 </div>
 
@@ -451,17 +451,17 @@ display(g1, g2, title=&quot;Two Together&quot;);</code></pre>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-68" class="exercise"><strong>Exercise 3.11  </strong></span>
+<p><span id="exr:unnamed-chunk-69" class="exercise"><strong>Exercise 3.11  </strong></span>
 For the ellipse <span class="math inline">\(x^2-xy+y^2=4\)</span>, find the locations of all horizontal tangent lines and plot them implicitly on the same graph as the relation over the interval <span class="math inline">\(-3 \leq x \leq 3\)</span> and <span class="math inline">\(-3 \leq y \leq 3\)</span>.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-69" class="exercise"><strong>Exercise 3.12  </strong></span>
+<p><span id="exr:unnamed-chunk-70" class="exercise"><strong>Exercise 3.12  </strong></span>
 Find an equation of the line tangent to the curve <span class="math inline">\(x^2 + (x-y)^3 = 9\)</span> at <span class="math inline">\(x=1\)</span>. (You may want to use <code>solve</code> and <code>subs</code> to find the <span class="math inline">\(y\)</span> when <span class="math inline">\(x=1\)</span>).</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-70" class="exercise"><strong>Exercise 3.13  </strong></span>
+<p><span id="exr:unnamed-chunk-71" class="exercise"><strong>Exercise 3.13  </strong></span>
 Find all points <span class="math inline">\((x, y)\)</span> on the curve of <span class="math inline">\(|x|^{2/3} + |y|^{2/3} = 8\)</span> where lines tangent to the curve at <span class="math inline">\((x, y)\)</span> is perpendicular to the line <span class="math inline">\(x-y=1\)</span>. (Use <code>?solve</code> to learn how to solve a system of equations in Maple).</p>
 </div>
 </div>
@@ -475,7 +475,7 @@ The instantaneous rate of change is the limit <span class="math inline">\(\lim\l
 <p>Now let’s use Maple to help us understand such kind of application of derivatives.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-71" class="example"><strong>Example 3.7  </strong></span>
+<p><span id="exm:unnamed-chunk-72" class="example"><strong>Example 3.7  </strong></span>
 The position function of a particle moving along a straight line after <span class="math inline">\(t\)</span> seconds is <span class="math inline">\(s(t)= 2t^3-6t^2-18t+1\)</span> meters.</p>
 <ol style="list-style-type: decimal">
 <li>Find the time <span class="math inline">\(t\)</span> that the particle is at the rest.</li>
@@ -506,7 +506,7 @@ plot([s(t), v(t), a(t)], t=0..5, color=[black, blue, red]);</code></pre>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-73" class="exercise"><strong>Exercise 3.14  </strong></span>
+<p><span id="exr:unnamed-chunk-74" class="exercise"><strong>Exercise 3.14  </strong></span>
 The position function of a particle moving along a straight line after <span class="math inline">\(t\)</span> seconds is <span class="math inline">\(s(t) = t^3 - 6t^2 - 15t+2\)</span> meters.</p>
 <ol style="list-style-type: decimal">
 <li>Find the time <span class="math inline">\(t\)</span> that the particle is at the rest.</li>
@@ -518,7 +518,7 @@ The position function of a particle moving along a straight line after <span cla
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-74" class="exercise"><strong>Exercise 3.15  </strong></span>
+<p><span id="exr:unnamed-chunk-75" class="exercise"><strong>Exercise 3.15  </strong></span>
 Suppose that the profit obtained from the sale of <span class="math inline">\(x\)</span> calculators is given by <span class="math inline">\(P(x)=-0.05x^2+4x+25\)</span>. Use the marginal profit function to estimate the profit from the sale of the 51st calculator.</p>
 </div>
 </div>
@@ -537,7 +537,7 @@ Suppose that the profit obtained from the sale of <span class="math inline">\(x\
 <p>In Maple, the quantities that shared by the same independent variable should be written in function notations. See the following example for details.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-75" class="example"><strong>Example 3.8  </strong></span>
+<p><span id="exm:unnamed-chunk-76" class="example"><strong>Example 3.8  </strong></span>
 A spherical shaped balloon is inflated at a constant rate 2 cm<span class="math inline">\(^3\)</span>/s. Find the relative rate growth of the diameter when its 10 cm wide.</p>
 </div>
 
@@ -556,19 +556,19 @@ D_r:=solve(D_eqn_v, D_r);</code></pre>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-77" class="exercise"><strong>Exercise 3.16  </strong></span>
+<p><span id="exr:unnamed-chunk-78" class="exercise"><strong>Exercise 3.16  </strong></span>
 A cylindrical cup with radius 5 cm is being filled with coffee at a rate of 2 cm<span class="math inline">\(^3\)</span>/s. How fast is
 the height of the coffee increasing?</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-78" class="exercise"><strong>Exercise 3.17  </strong></span>
+<p><span id="exr:unnamed-chunk-79" class="exercise"><strong>Exercise 3.17  </strong></span>
 Two cars start moving from the same point. One travels north at 30 mph and the other travels
 west at 50 mph. At what rate is the distance between the cars changing one hour later?</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-79" class="exercise"><strong>Exercise 3.18  </strong></span>
+<p><span id="exr:unnamed-chunk-80" class="exercise"><strong>Exercise 3.18  </strong></span>
 Sands dumping from a truck to the ground at a constant rate 5 m<span class="math inline">\(^3\)</span>/s is creating a circular cone. Find a relation between the rate of growth of the radius of the base and the rate of growth of the height of cone, when the the base is 6 m and the heigh is 4 m.</p>
 </div>
 </div>
@@ -577,7 +577,7 @@ Sands dumping from a truck to the ground at a constant rate 5 m<span class="math
 <p>Let <span class="math inline">\(f\)</span> be the function differentiable at <span class="math inline">\(x = a\)</span>. The <strong>linearization</strong> of <span class="math inline">\(f\)</span> at <span class="math inline">\(x = a\)</span> is defined to be the function <span class="math inline">\(L(x)=f&#39;(a)(x-a)+f(a)\)</span>. For any value <span class="math inline">\(b\)</span> near <span class="math inline">\(a\)</span>, the function value <span class="math inline">\(f(b)\)</span> is approximately the same as <span class="math inline">\(L(b)\)</span>. This method is called <strong>linear approximation</strong>. The tangent line approximation is fundamental to almost every application of the derivative.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-80" class="example"><strong>Example 3.9  </strong></span>
+<p><span id="exm:unnamed-chunk-81" class="example"><strong>Example 3.9  </strong></span>
 Find the linearization <span class="math inline">\(L(x)\)</span> of the function <span class="math inline">\(f(x) = \sqrt[3](x+7)\)</span> at <span class="math inline">\(x=1\)</span> and use this linearization to estimate <span class="math inline">\(f(0.99)\)</span>. How large is the error?</p>
 </div>
 
@@ -595,17 +595,17 @@ L(0.99);</code></pre>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-82" class="exercise"><strong>Exercise 3.19  </strong></span>
+<p><span id="exr:unnamed-chunk-83" class="exercise"><strong>Exercise 3.19  </strong></span>
 Find the linear approximation <span class="math inline">\(L(x)\)</span> of the function <span class="math inline">\(f(x) = \frac{\sqrt{x}}{x+1}\)</span> at <span class="math inline">\(x = 1\)</span>. Use this linearization to approximate <span class="math inline">\(f(1.02)\)</span>.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-83" class="exercise"><strong>Exercise 3.20  </strong></span>
+<p><span id="exr:unnamed-chunk-84" class="exercise"><strong>Exercise 3.20  </strong></span>
 Find the linear approximation <span class="math inline">\(L(x)\)</span> of the function <span class="math inline">\(f(x) = \cos(2x)\)</span> at <span class="math inline">\(x = 0\)</span>. Use this linearization to approximate <span class="math inline">\(f(0.1)\)</span>.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-84" class="exercise"><strong>Exercise 3.21  </strong></span>
+<p><span id="exr:unnamed-chunk-85" class="exercise"><strong>Exercise 3.21  </strong></span>
 Find the linear approximation <span class="math inline">\(L(x)\)</span> of the function <span class="math inline">\(f(x) = \sqrt{x^2+5}\)</span> at <span class="math inline">\(x = 2\)</span>. Use this linearization to approximate <span class="math inline">\(f(2.03)\)</span>.</p>
 </div>
 </div>
@@ -614,7 +614,7 @@ Find the linear approximation <span class="math inline">\(L(x)\)</span> of the f
 <p>In science and engineering, many problems may be eventually reduced to nonlinear equations which likely has no algebraic (analytic) solution. In such a situation, numerical solutions are hoped for applications. We’ve seen a method to find a numerical solution using the intermediate value theorem. However, it is not very effective. Using linearization, a root-finding algorithm was developed by Newton and other mathematicians. The idea is to use the <span class="math inline">\(x\)</span>-coordinates of tangent lines to approximate a root of an equation. Let’s see an example first using the Maple command <code>NewtonsMethod(function, starting point, options)</code> which is again supported by the subpackage <code>Student[Calculus1]</code>.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-85" class="example"><strong>Example 3.10  </strong></span>
+<p><span id="exm:unnamed-chunk-86" class="example"><strong>Example 3.10  </strong></span>
 Starting at <span class="math inline">\(x=-1.5\)</span>, obtain a solution of <span class="math inline">\(\sin x-\frac{x}{2}=0\)</span> by Newton’s method.</p>
 </div>
 
@@ -670,17 +670,17 @@ x[N]:=evalf((newton@@N)(-1.5)); # @@N means that newton compose with itself N ti
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-88" class="exercise"><strong>Exercise 3.22  </strong></span>
+<p><span id="exr:unnamed-chunk-89" class="exercise"><strong>Exercise 3.22  </strong></span>
 Using Newton’s Method to find solutions of the polynomial equation <span class="math inline">\(x^3-x^2+1=0\)</span>.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-89" class="exercise"><strong>Exercise 3.23  </strong></span>
+<p><span id="exr:unnamed-chunk-90" class="exercise"><strong>Exercise 3.23  </strong></span>
 Using Newton’s Method to find solutions of the equation <span class="math inline">\(\cos x=\frac{x}{2}\)</span>.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-90" class="exercise"><strong>Exercise 3.24  </strong></span>
+<p><span id="exr:unnamed-chunk-91" class="exercise"><strong>Exercise 3.24  </strong></span>
 Using Newton’s Method to find the solution of the equation <span class="math inline">\(\tan x-2x=0\)</span> in the interval <span class="math inline">\([1, 2]\)</span>. Among 1 and 2,which is a better initial value? Why?</p>
 </div>
 

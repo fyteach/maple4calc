@@ -1,9 +1,9 @@
 {
-    "path" : "C:/Users/Fei/OneDrive - CUNY/06-Books/maple4calc",
-    "sortOrder" : [
+    "path": "C:/Users/Fei/OneDrive - CUNY/06-Books/maple4calc",
+    "sortOrder": [
         {
-            "ascending" : true,
-            "columnIndex" : 2
+            "columnIndex": 2,
+            "ascending": true
         }
     ]
 }

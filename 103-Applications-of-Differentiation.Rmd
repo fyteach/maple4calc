@@ -209,12 +209,11 @@ Consider the floor function $f(x)=|x|$. Use a graph to show that there is no tan
 
 Given a function $f(x)$, we know that $f(x)$ is increasing on an interval if $f'(x)>0$ on that interval and $f(x)$ is decreasing on an interval if $f'(x)<0$ on that interval. By Mean Value theorem, $f(x)$ is a constant on an interval if $f'(x)=0$ on that interval.
 
-To determine over which interval a function $f(x)$ is increasing/decreasing, we need to find out the domain of $f'(x)$ and the critical points and then use test points to determine the sign of $f'(x)$. 
+To determine over which interval a function $f(x)$ is increasing/decreasing, we need to find out the domain of $f'(x)$ and the critical points and then use test points to determine the sign of $f'(x)$.
 
 Using first derivative, we can test local extrema at critical points.
 
 ```{theorem}
-
 Suppose that $c$ is a critical point of a continuous function $f$.
 
 1. If $f'$ changes from positive to negative at $c$, then $f$ has a local maximum at $c$.
@@ -226,7 +225,6 @@ Suppose that $c$ is a critical point of a continuous function $f$.
 Another method to determine local extremum is to use second derivative.
 
 ```{theorem}
-
 Suppose $f$ is a twice differentiable function on an interval $I$.
 
 1. If $f''>0$ over $I$, then $f$ is concave upward on $I$.
@@ -237,7 +235,6 @@ Suppose $f$ is a twice differentiable function on an interval $I$.
 Base on the observation on concavity, we have the following second derivative test.
 
 ```{theorem}
-
 Suppose that $f''$ is continuous near $c$.
 
 1. If $f'(c)=0$ and $f''(c)>0$, then $f$ has a local minimum at $c$.

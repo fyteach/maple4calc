@@ -136,7 +136,7 @@ Calculate the first derivative for the function $y=2x^{-1}-3\sqrt{x}$ by hand an
 
 ```{exercise}
 
-Calculate the first derivative for the function $y=x\sin^{-1}(x)$ by hand and by Maple. Compare two results. Are they different? If so, can you explain the difference?
+Calculate the first derivative for the function $y=x(\sin(x))^{-1}$ by hand and by Maple. Compare two results. Are they different? If so, can you explain the difference?
 
 ```
 
@@ -386,7 +386,7 @@ The particle moves forward if $v(t)>0$ and backward if $v(t)<0$. You may use the
 
     totdist:= abs(s(3)-s(0))+abs(s(5)-s(3))
 
-The acceleration function $a(t)=v'(t)$. To plot those three functions together, you may use `plot`. 
+The acceleration function $a(t)=v'(t)$. To plot those three functions together, you may use `plot`.
 
     a:=D(v);
     plot([s(t), v(t), a(t)], t=0..5, color=[black, blue, red]);

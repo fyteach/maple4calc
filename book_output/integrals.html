@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 5 Integrals | Notes on Maple for Calculus</title>
   <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 5 Integrals | Notes on Maple for Calculus" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Fei Ye" />
 
 
-<meta name="date" content="2020-03-12" />
+<meta name="date" content="2020-10-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="application-of-differentiation.html"/>
 <link rel="next" href="application-of-integrals-i.html"/>
-<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/header-attrs-2.4/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -199,7 +199,7 @@ where <span class="math inline">\(x_i\)</span> is a partition of the interval <s
 Again, to run the command <code>RiemannSum</code> you need to first load the subpackage <code>Student[Calculus1]</code>.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-131" class="example"><strong>Example 5.1  </strong></span>
+<p><span id="exm:unnamed-chunk-132" class="example"><strong>Example 5.1  </strong></span>
 Find approximately the definite integral of the function <span class="math inline">\(f(x)=x^3\)</span> from <span class="math inline">\(0\)</span> to <span class="math inline">\(2\)</span>.</p>
 </div>
 
@@ -231,17 +231,17 @@ In the above code, you may use <code>sum</code> which slightly more flexible tha
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-135" class="exercise"><strong>Exercise 5.1  </strong></span>
+<p><span id="exr:unnamed-chunk-136" class="exercise"><strong>Exercise 5.1  </strong></span>
 Approximate the definite integral of the function <span class="math inline">\(f(x)=\dfrac{x}{x+1}\)</span> on the interval <span class="math inline">\([0, 1]\)</span>.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-136" class="exercise"><strong>Exercise 5.2  </strong></span>
+<p><span id="exr:unnamed-chunk-137" class="exercise"><strong>Exercise 5.2  </strong></span>
 Approximate the definite integral of the function <span class="math inline">\(f(x)=\dfrac{x}{x+1}\)</span> on the interval <span class="math inline">\([0, 3]\)</span>.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-137" class="exercise"><strong>Exercise 5.3  </strong></span>
+<p><span id="exr:unnamed-chunk-138" class="exercise"><strong>Exercise 5.3  </strong></span>
 Approximate the definite integral of the function <span class="math inline">\(f(x)=\cos x\)</span> on the interval <span class="math inline">\([0, \pi/2]\)</span>.</p>
 </div>
 </div>
@@ -250,24 +250,22 @@ Approximate the definite integral of the function <span class="math inline">\(f(
 <p>To evaluate definite integrals or find antiderivatives, we can use the Fundamental Theorems of Calculus.</p>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-138" class="theorem"><strong>Theorem 5.1  (Fundamental Theorem of Calculus I)  </strong></span>
-If <span class="math inline">\(f\)</span> is continuous on <span class="math inline">\([a, b]\)</span>, then the function <span class="math inline">\(g\)</span> defined by
+<span id="thm:unnamed-chunk-139" class="theorem"><strong>Theorem 5.1  (Fundamental Theorem of Calculus I)  </strong></span>If <span class="math inline">\(f\)</span> is continuous on <span class="math inline">\([a, b]\)</span>, then the function <span class="math inline">\(g\)</span> defined by
 <span class="math display">\[
 \dfrac{\mathrm{d}}{\mathrm{d} x}\int^x_af(t)\mathrm{d} t =f(x)
-\]</span></p>
+\]</span>
 </div>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-139" class="theorem"><strong>Theorem 5.2  (Fundamental Theorem of Calculus II)  </strong></span>
-If <span class="math inline">\(f\)</span> is continuous on <span class="math inline">\([a, b]\)</span> and <span class="math inline">\(F\)</span> is an antiderivative of <span class="math inline">\(f\)</span> on <span class="math inline">\([a, b]\)</span>, then
+<span id="thm:unnamed-chunk-140" class="theorem"><strong>Theorem 5.2  (Fundamental Theorem of Calculus II)  </strong></span>If <span class="math inline">\(f\)</span> is continuous on <span class="math inline">\([a, b]\)</span> and <span class="math inline">\(F\)</span> is an antiderivative of <span class="math inline">\(f\)</span> on <span class="math inline">\([a, b]\)</span>, then
 <span class="math display">\[
 \int^b_af(t)\mathrm{d} t =F(a)-F(b).
-\]</span></p>
+\]</span>
 </div>
 <p>In maple, we can use <code>int(f(x),x=a..b)</code> or <code>IntTutor(f(x),x=a..b)</code> to find integrals.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-140" class="example"><strong>Example 5.2  </strong></span>
+<p><span id="exm:unnamed-chunk-141" class="example"><strong>Example 5.2  </strong></span>
 Find the derivative the function
 <span class="math display">\[
 g(x)=\int_0^{x}\sin(t)\mathrm{d} t
@@ -288,7 +286,7 @@ Define the integrand.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-142" class="exercise"><strong>Exercise 5.4  </strong></span>
+<p><span id="exr:unnamed-chunk-143" class="exercise"><strong>Exercise 5.4  </strong></span>
 Use Maple to find the derivative of the following function
 <span class="math display">\[
 g(x)=\int_0^{\tan x}\sqrt{t}\mathrm{d} t
@@ -297,7 +295,7 @@ and verify your answer using the Fundamental Theorem of Calculus I (find the der
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-143" class="exercise"><strong>Exercise 5.5  </strong></span>
+<p><span id="exr:unnamed-chunk-144" class="exercise"><strong>Exercise 5.5  </strong></span>
 Find <span class="math inline">\(g(x)=\displaystyle\int_0^x\sqrt{1-t^2}\mathrm{d} t\)</span> and verify that <span class="math inline">\(g&#39;(x)=\sqrt{1-x^2}\)</span> and <span class="math inline">\(\displaystyle\int_0^1\sqrt{1-t^2}\mathrm{d} t=g(1)-g(0)\)</span>.</p>
 </div>
 </div>
@@ -308,7 +306,7 @@ Find <span class="math inline">\(g(x)=\displaystyle\int_0^x\sqrt{1-t^2}\mathrm{d
 Again, <code>IntTutor</code> is supported by <code>Student[Calculus1]</code>.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-144" class="example"><strong>Example 5.3  </strong></span>
+<p><span id="exm:unnamed-chunk-145" class="example"><strong>Example 5.3  </strong></span>
 Find the indefinite integral
 <span class="math display">\[
 \int(x^3-\sin x)\mathrm{d} x.
@@ -327,7 +325,7 @@ IntTutor(f(x), x);</code></pre>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-146" class="exercise"><strong>Exercise 5.6  </strong></span>
+<p><span id="exr:unnamed-chunk-147" class="exercise"><strong>Exercise 5.6  </strong></span>
 Find the indefinite integral
 <span class="math display">\[
 \int(\sqrt{x^3}-\sec^2x)\mathrm{d} x.
@@ -336,7 +334,7 @@ Show the steps.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-147" class="exercise"><strong>Exercise 5.7  </strong></span>
+<p><span id="exr:unnamed-chunk-148" class="exercise"><strong>Exercise 5.7  </strong></span>
 Find the indefinite integral
 <span class="math display">\[
 \int\left(\frac{x^2+1}{\sqrt{x}}-\tan x\sec x\right)\mathrm{d} x.
@@ -354,7 +352,7 @@ Show the steps.</p>
 <p>In Maple, we can use the command <code>Change(Int(f(x), x=a..b), u=g(x), new variables)</code>, supported by the package <code>IntegrationTools</code>, to change a variable, where the 3rd argument is optional and required only if the number of new symbols in the substitution is not equal to the number of old variables. Note that in the first argument, you may keep the symbols <code>a</code> and <code>b</code> or omit <code>=a..b</code>.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-148" class="example"><strong>Example 5.4  </strong></span>
+<p><span id="exm:unnamed-chunk-149" class="example"><strong>Example 5.4  </strong></span>
 Use substitution to find the following integral.
 <span class="math display">\[
 \int_1^2x\sqrt{x^2+1}\mathrm{d} x.
@@ -383,12 +381,12 @@ FF:=unapply(G(x^2+1), x);</code></pre>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-150" class="exercise"><strong>Exercise 5.8  </strong></span>
+<p><span id="exr:unnamed-chunk-151" class="exercise"><strong>Exercise 5.8  </strong></span>
 Find the definite integral <span class="math inline">\(\displaystyle\int_0^{4} \dfrac{\sin(\sqrt{x})}{\sqrt{x}}\mathrm{d} x\)</span> using substitution.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-151" class="exercise"><strong>Exercise 5.9  </strong></span>
+<p><span id="exr:unnamed-chunk-152" class="exercise"><strong>Exercise 5.9  </strong></span>
 Find the definite integral <span class="math inline">\(\displaystyle\int_1^{2} \dfrac{2x}{\sqrt{x^2+1}}\mathrm{d} x\)</span> using substitution.</p>
 </div>
 

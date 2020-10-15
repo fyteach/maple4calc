@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 2 Limits | Notes on Maple for Calculus</title>
   <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 2 Limits | Notes on Maple for Calculus" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Fei Ye" />
 
 
-<meta name="date" content="2020-03-12" />
+<meta name="date" content="2020-10-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="basics-in-maple.html"/>
 <link rel="next" href="derivatives.html"/>
-<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/header-attrs-2.4/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -191,7 +191,7 @@
 <code>with(Student[Calculus1])</code> will load the subpackage <code>Calculus1</code>.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-11" class="example"><strong>Example 2.1  </strong></span>
+<p><span id="exm:unnamed-chunk-12" class="example"><strong>Example 2.1  </strong></span>
 Observe how do secant lines of the function <span class="math inline">\(f(x)=x^3-2\)</span> approach to the tangent line at <span class="math inline">\(x=1\)</span>.</p>
 </div>
 
@@ -203,7 +203,7 @@ Observe how do secant lines of the function <span class="math inline">\(f(x)=x^3
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-13" class="exercise"><strong>Exercise 2.1  </strong></span>Explore the package <code>Student</code>, in particular the subpackage <code>Student[Calculus1]</code>.
+<p><span id="exr:unnamed-chunk-14" class="exercise"><strong>Exercise 2.1  </strong></span>Explore the package <code>Student</code>, in particular the subpackage <code>Student[Calculus1]</code>.
 You can use the command <code>?Student</code> to get help.</p>
 Find the slope of the tangent line to the function <span class="math inline">\(f(x)=2x^3+\frac1{x^2}\)</span> at <span class="math inline">\(x=1\)</span> using the <code>TangentSecantTutor</code> command.
 </div>
@@ -213,7 +213,7 @@ Find the slope of the tangent line to the function <span class="math inline">\(f
 <p>To estimate a limit <span class="math inline">\(\lim\limits_{x\to a}f(x)\)</span> numerically, one may pick some values close to <span class="math inline">\(a\)</span> and evaluate the function. In Maple, the calculation can be done by using the repetition statement <code>for counter in array do statement end to;</code>.</p>
 
 <div class="example">
-<span id="exm:unnamed-chunk-14" class="example"><strong>Example 2.2  </strong></span>Estimate the limit <span class="math inline">\(\lim\limits_{x\to 0}\frac{\sin x}{x}\)</span> by approximations.
+<span id="exm:unnamed-chunk-15" class="example"><strong>Example 2.2  </strong></span>Estimate the limit <span class="math inline">\(\lim\limits_{x\to 0}\frac{\sin x}{x}\)</span> by approximations.
 </div>
 
 <div class="solution">
@@ -226,7 +226,7 @@ First, we pick some values close to 0, for example -0.01, -0.001, -0.0001, 0.01,
 <p>Graphs provide visual intuition which helps understand and solve problems. Recall, the command <code>plot(expression, domain, option)</code> produces a graph of the function defined by the expression over your choice of domain.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-16" class="example"><strong>Example 2.3  </strong></span>
+<p><span id="exm:unnamed-chunk-17" class="example"><strong>Example 2.3  </strong></span>
 Determine whether the limit <span class="math inline">\(\lim\limits_{x\to 0}\frac{1}{1- \cos x}\)</span> exists.</p>
 </div>
 
@@ -238,12 +238,12 @@ Apply the <code>plot</code> function to the expression over the domain <span cla
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-18" class="exercise"><strong>Exercise 2.2  </strong></span>
+<p><span id="exr:unnamed-chunk-19" class="exercise"><strong>Exercise 2.2  </strong></span>
 Estimate the limit <span class="math inline">\(\lim\limits_{t \to 0}\frac{1-\cos x}{x}\)</span> numerically.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-19" class="exercise"><strong>Exercise 2.3  </strong></span>
+<p><span id="exr:unnamed-chunk-20" class="exercise"><strong>Exercise 2.3  </strong></span>
 Determine whether the limit <span class="math inline">\(\lim\limits_{x \to 1}\frac{\sin x}{|x-1|}\)</span> exists using the graph.</p>
 </div>
 </div>
@@ -256,7 +256,7 @@ limit(function, position, direction)
 <p>The direction may be omitted when evaluating a two-side limit.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-20" class="example"><strong>Example 2.4  </strong></span>
+<p><span id="exm:unnamed-chunk-21" class="example"><strong>Example 2.4  </strong></span>
 Determine whether the limit <span class="math inline">\(\lim\limits_{x\to 0}\frac{|x|}{x}\)</span> exists.</p>
 </div>
 
@@ -269,7 +269,7 @@ limit(abs(x)/x, x=0, right);</code></pre>
 </div>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-22" class="example"><strong>Example 2.5  </strong></span>
+<p><span id="exm:unnamed-chunk-23" class="example"><strong>Example 2.5  </strong></span>
 Evaluate the limit <span class="math inline">\(\lim\limits_{h\to 0}\dfrac{f(x+h)-f(x)}{h}\)</span>, where <span class="math inline">\(f(x)=\dfrac{1}{x}\)</span>.</p>
 </div>
 
@@ -280,12 +280,12 @@ The limit can be obtained using the following command.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-24" class="exercise"><strong>Exercise 2.4  </strong></span>
+<p><span id="exr:unnamed-chunk-25" class="exercise"><strong>Exercise 2.4  </strong></span>
 Determine whether the limit <span class="math inline">\(\lim\limits_{x\to 1/2}\dfrac{2x-1}{|2x^3-x^2|}\)</span> exists.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-25" class="exercise"><strong>Exercise 2.5  </strong></span>
+<p><span id="exr:unnamed-chunk-26" class="exercise"><strong>Exercise 2.5  </strong></span>
 Evaluate the limit <span class="math inline">\(\lim\limits_{t\to 0}\dfrac{\sqrt{x+t}-\sqrt{x}}{t}\)</span>.</p>
 </div>
 </div>
@@ -293,23 +293,30 @@ Evaluate the limit <span class="math inline">\(\lim\limits_{t\to 0}\dfrac{\sqrt{
 <h2><span class="header-section-number">2.4</span> Learn limit laws using <code>LimitTutor</code></h2>
 <p>Suppose the limits of two functions <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> at the same point <span class="math inline">\(x=a\)</span> exist (equal finite numbers). Then the limit operation commutes with addition/subtraction, multiplication/division and power.</p>
 <p>In Maple, you may use the command <code>LimitTutor(function, position, direction)</code>, which is again supported by the subpackage <code>Student[Calculus1]</code>, to learn how to evaluate a limit using limit laws and theorems.</p>
+<p>Note that LimitTutor employs all limits laws available in Calculus including the L’Hopital rule which will be taught in Calculus 2.</p>
+<p>To avoid L’Hopital’s Rule when using LimitTutor, it’s better to rationalize the expression first. For radicals, you may use the command <code>rationalize()</code>. When rationalization involves trigonometric functions, we will have to do it “manually” using the command <code>simplify(expr, trig)</code>. For example, the following command will output <span class="math inline">\(sin^x(x)\)</span>.</p>
+<pre><code>simplify((1 - cos(x))*(1 + cos(x)), trig)</code></pre>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-26" class="example"><strong>Example 2.6  </strong></span>
+<p><span id="exm:unnamed-chunk-27" class="example"><strong>Example 2.6  </strong></span>
 Evaluate <span class="math inline">\(\lim\limits_{x\to 0}\dfrac{1-\cos x}{x}\)</span>.</p>
 </div>
 
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> 
-Load the subpackage <code>Student[Calculus1]</code> if it was not loaded.</p>
+<p> <span class="solution"><em>Solution. </em></span> We will do the calculations in two ways.</p>
+<p>Load the subpackage <code>Student[Calculus1]</code> if it was not loaded.</p>
 <pre><code>with(Student[Calculus1])</code></pre>
-<p>Use the following command to learn how to evaluate the limit.</p>
-<pre><code>LimitTutor(2-x^3, x=2,&#39;right&#39;)</code></pre>
+<p>Method 1: Use the following command to evaluate the limit.</p>
+<pre><code>LimitTutor((1-cos(x))/x, x=0)</code></pre>
 <p>You will see an interactive windows pop out. You can choose the see the procedure step-by-step.</p>
+<p>Method 2: Rationalize the numerator first and then evaluate the limit using LimitTutor
+f:=simplify((1 - cos(x))<em>(1 + cos(x)), trig)/(x</em>(1 + cos(x)));
+LimitTutor(f, x = 0);</p>
+<p>Can you tell the difference?</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-28" class="exercise"><strong>Exercise 2.6  </strong></span>
+<p><span id="exr:unnamed-chunk-29" class="exercise"><strong>Exercise 2.6  </strong></span>
 Evaluate <span class="math inline">\(\lim\limits_{x\to 0}\dfrac{(x+2)(\cos x-1)}{x^2-x}\)</span> using <code>LimitTutor</code>.</p>
 </div>
 </div>
@@ -318,8 +325,7 @@ Evaluate <span class="math inline">\(\lim\limits_{x\to 0}\dfrac{(x+2)(\cos x-1)}
 <p>Comparison is a very useful tool in problem solving. Squeeze theorem is such an example</p>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-29" class="theorem"><strong>Theorem 2.1  (Squeeze Theorem)  </strong></span>
-Suppose that
+<p><span id="thm:unnamed-chunk-30" class="theorem"><strong>Theorem 2.1  (Squeeze Theorem)  </strong></span>Suppose that
 <span class="math display">\[
 f(x)\leq g(x)\leq h(x)
 \]</span>
@@ -335,7 +341,7 @@ Then
 <p>Let’s use Maple to understand the statement.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-30" class="example"><strong>Example 2.7  </strong></span>
+<p><span id="exm:unnamed-chunk-31" class="example"><strong>Example 2.7  </strong></span>
 Graph the functions <span class="math inline">\(f(x)=-x\)</span>, <span class="math inline">\(g(x)=x\cos\frac1x\)</span> and <span class="math inline">\(h(x)=x\)</span> in the same coordinate system. What’s the limit of <span class="math inline">\(g(x)\)</span> as <span class="math inline">\(x\)</span> approaches <span class="math inline">\(0\)</span>.</p>
 </div>
 
@@ -351,7 +357,7 @@ We use the <code>plot()</code> command to graph the functions together.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-32" class="exercise"><strong>Exercise 2.7  </strong></span>
+<p><span id="exr:unnamed-chunk-33" class="exercise"><strong>Exercise 2.7  </strong></span>
 Graph the functions <span class="math inline">\(f(x)=-x\)</span>, <span class="math inline">\(g(x)=x\sin\frac1x\)</span> and <span class="math inline">\(h(x)=x\)</span> in the same coordinate system. What’s the limit of <span class="math inline">\(g(x)\)</span> as <span class="math inline">\(x\)</span> approaches <span class="math inline">\(0\)</span>.</p>
 </div>
 </div>
@@ -360,7 +366,7 @@ Graph the functions <span class="math inline">\(f(x)=-x\)</span>, <span class="m
 <p>A function <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(x=a\)</span> if <span class="math inline">\(f(a)\)</span> is defined and <span class="math inline">\(\lim\limits_{x\to a}f(x)=f(a)\)</span>. Intuitively, a function is continuous if the graph has no hole or jump.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-33" class="example"><strong>Example 2.8  </strong></span>
+<p><span id="exm:unnamed-chunk-34" class="example"><strong>Example 2.8  </strong></span>
 Use graph to determine if the function
 <span class="math display">\[
 f(x)=
@@ -398,7 +404,7 @@ However, <span class="math inline">\(g(2)=-2\)</span>. So <span class="math inli
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-35" class="exercise"><strong>Exercise 2.8  </strong></span>Determine if the function
+<span id="exr:unnamed-chunk-36" class="exercise"><strong>Exercise 2.8  </strong></span>Determine if the function
 <span class="math display">\[
 f(x)=
 \begin{cases}
@@ -416,7 +422,7 @@ Find all discontinuities if they exist and verify them using the definition.
 <p>Continuous functions behave under composition. The composition of continuous functions is still continuous over its domain. More generally,</p>
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-36" class="theorem"><strong>Theorem 2.2  </strong></span>Let <span class="math inline">\(f\)</span> be a function continuous at <span class="math inline">\(x=L\)</span>. Suppose that <span class="math inline">\(\lim\limits_{x\to c}g(x)=L\)</span>. Then
+<span id="thm:unnamed-chunk-37" class="theorem"><strong>Theorem 2.2  </strong></span>Let <span class="math inline">\(f\)</span> be a function continuous at <span class="math inline">\(x=L\)</span>. Suppose that <span class="math inline">\(\lim\limits_{x\to c}g(x)=L\)</span>. Then
 <span class="math display">\[
 \lim{x\to c}f(g(x))=f(L).
 \]</span>
@@ -424,7 +430,7 @@ Find all discontinuities if they exist and verify them using the definition.
 <p>In general, the limit does not commute with composition.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-37" class="example"><strong>Example 2.9  </strong></span>
+<p><span id="exm:unnamed-chunk-38" class="example"><strong>Example 2.9  </strong></span>
 Let
 <span class="math display">\[
 f(x)=x^3\quad \text{and}\quad
@@ -459,7 +465,7 @@ f(limit(g(x), x=0));</code></pre>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-39" class="exercise"><strong>Exercise 2.9  </strong></span>
+<p><span id="exr:unnamed-chunk-40" class="exercise"><strong>Exercise 2.9  </strong></span>
 Find three functions <span class="math inline">\(f\)</span>, <span class="math inline">\(g\)</span>, <span class="math inline">\(h\)</span> and a value <span class="math inline">\(c\)</span> such that <span class="math inline">\(f(g(x))\)</span> is continuous,
 <span class="math display">\[
 \lim\limits_{x\to c}f(h(x))=f(\lim\limits_{x\to c}h(x))
@@ -475,12 +481,12 @@ and
 <p>A very important result about continuity is the intermediate value theorem (IVT for short).</p>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-40" class="theorem"><strong>Theorem 2.3  (Intermediate Value Theorem)  </strong></span>Let <span class="math inline">\(f\)</span> be a function continuous over the interval <span class="math inline">\([a, b]\)</span>. Suppose that <span class="math inline">\(f(a)\neq f(b)\)</span> and <span class="math inline">\(N\)</span> is a number between <span class="math inline">\(f(a)\)</span> and <span class="math inline">\(f(b)\)</span>. Then there exists a number <span class="math inline">\(c\in (a, b)\)</span> such that <span class="math inline">\(f(c)=N\)</span>.</p>
+<p><span id="thm:unnamed-chunk-41" class="theorem"><strong>Theorem 2.3  (Intermediate Value Theorem)  </strong></span>Let <span class="math inline">\(f\)</span> be a function continuous over the interval <span class="math inline">\([a, b]\)</span>. Suppose that <span class="math inline">\(f(a)\neq f(b)\)</span> and <span class="math inline">\(N\)</span> is a number between <span class="math inline">\(f(a)\)</span> and <span class="math inline">\(f(b)\)</span>. Then there exists a number <span class="math inline">\(c\in (a, b)\)</span> such that <span class="math inline">\(f(c)=N\)</span>.</p>
 <p>In particular, if <span class="math inline">\(f(a)f(b)&lt;0\)</span> then there exists a number <span class="math inline">\(c\)</span> such that <span class="math inline">\(f(c)=0\)</span>.</p>
 </div>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-41" class="example"><strong>Example 2.10  </strong></span>
+<p><span id="exm:unnamed-chunk-42" class="example"><strong>Example 2.10  </strong></span>
 Determine whether the equation
 <span class="math display">\[
 \sin^2x+2x-1=0
@@ -518,7 +524,7 @@ end do;</code></pre>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-43" class="exercise"><strong>Exercise 2.10  </strong></span>
+<p><span id="exr:unnamed-chunk-44" class="exercise"><strong>Exercise 2.10  </strong></span>
 Find an integer <span class="math inline">\(k\)</span> such that the equation
 <span class="math display">\[
 \cos^2x + 3x - 2=0

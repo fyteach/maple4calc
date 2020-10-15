@@ -28,6 +28,7 @@ options(bookdown.post.latex = function(x) {
 
   x<-gsub('(^\\\\BeginKnitrBlock.*\\}$)', '\\1\\{\\}\\{\\}', x)
   x<-gsub('(^\\\\BeginKnitrBlock.*)+\\[(.*)\\]', '\\1\\{\\2\\}\\{\\}', x)
+  x<-gsub('(^\\\\protect\\\\hypertarget.*)+(\\}[[:space:]]\\})', '', x)
 })
 
 ```
@@ -37,7 +38,8 @@ library("knitr")
 knitr::opts_chunk$set(out.width="60%", fig.align="center", fig.pos = "!H", out.extra = "")
 ```
 
-```{r child = 'redirect.R'}
+```{r include=FALSE}
+file.copy('_redirects', 'book_output/_redirects', overwrite = TRUE)
 ```
 
 \mainmatter

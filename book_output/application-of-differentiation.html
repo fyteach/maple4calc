@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 4 Application of Differentiation | Notes on Maple for Calculus</title>
   <meta name="description" content="This is a notebook in progress on Maple for Calculus. This notebook was created using bookdown" />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 4 Application of Differentiation | Notes on Maple for Calculus" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Fei Ye" />
 
 
-<meta name="date" content="2020-03-12" />
+<meta name="date" content="2020-10-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="derivatives.html"/>
 <link rel="next" href="integrals.html"/>
-<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/header-attrs-2.4/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -195,7 +195,7 @@
 <p>To find critical values, we solve the equation <span class="math inline">\(f&#39;(x)=0\)</span> and look at where <span class="math inline">\(f&#39;(x)\)</span> is undefined. In Maple, you can use the command <code>CriticalPoints(function, variable)</code> which is supported by the subpackage <code>Student[Calculus1]</code>.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-91" class="example"><strong>Example 4.1  </strong></span>
+<p><span id="exm:unnamed-chunk-92" class="example"><strong>Example 4.1  </strong></span>
 Find the absolute maximum and minimum values of the function <span class="math inline">\(f(x)=|x^2-2x-3|\)</span> over the interval <span class="math inline">\([0, 4]\)</span>.</p>
 </div>
 
@@ -231,12 +231,12 @@ The above solution is still the method using Calculus but with the assistant of 
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-94" class="exercise"><strong>Exercise 4.1  </strong></span>
+<p><span id="exr:unnamed-chunk-95" class="exercise"><strong>Exercise 4.1  </strong></span>
 Find the absolute maximum and minimum values of the function <span class="math inline">\(f(x)=x^3-3x+1\)</span> over the interval <span class="math inline">\([0, 2]\)</span>.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-95" class="exercise"><strong>Exercise 4.2  </strong></span>
+<p><span id="exr:unnamed-chunk-96" class="exercise"><strong>Exercise 4.2  </strong></span>
 Find the absolute maximum and minimum values of the function <span class="math inline">\(f(x)=2\cos x - x -1\)</span> over the interval <span class="math inline">\([-2, 1]\)</span>.</p>
 </div>
 </div>
@@ -247,7 +247,7 @@ Find the absolute maximum and minimum values of the function <span class="math i
 <code>RollesTheorem(f(x), x = a..b)</code> which is supported by the subpackage <span class="math inline">\(Student[Calculus1]\)</span>.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-96" class="example"><strong>Example 4.2  </strong></span>
+<p><span id="exm:unnamed-chunk-97" class="example"><strong>Example 4.2  </strong></span>
 Let <span class="math inline">\(f(x)=(x-1)(x+1)(x-2)\)</span>. Graph the function <span class="math inline">\(f(x)\)</span> from <span class="math inline">\(-1\)</span> to <span class="math inline">\(2\)</span> indicate the points between <span class="math inline">\(-1\)</span> and <span class="math inline">\(2\)</span> where tangent line is horizontal. Find values <span class="math inline">\(x=c\)</span> in <span class="math inline">\((-1,2)\)</span> at where the tangent line is horizontal.</p>
 </div>
 
@@ -278,7 +278,7 @@ f(b)=f(a)+f&#39;(c)(b-a).
 <p>The subpackage <code>Student[Calculus1]</code> also provides a command <code>MeanValueTheorem(f(x), x = a..b)</code> to illustrate the Mean Value Theorem.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-98" class="example"><strong>Example 4.3  </strong></span>
+<p><span id="exm:unnamed-chunk-99" class="example"><strong>Example 4.3  </strong></span>
 Let <span class="math inline">\(f(x)=(x-1)(x+1)(x-2)\)</span>. Graph the function <span class="math inline">\(f(x)\)</span> from <span class="math inline">\(-2\)</span> to <span class="math inline">\(3\)</span> indicate the points between <span class="math inline">\(-2\)</span> and <span class="math inline">\(3\)</span> where tangent line is parallel to the secant line passing through <span class="math inline">\((-2, f(-2))\)</span> and <span class="math inline">\((3, f(3))\)</span>. Find the values <span class="math inline">\(x=c\)</span> where the tangent line is parallel to the secant line.</p>
 </div>
 
@@ -304,7 +304,7 @@ msec:=(f(a)-f(b))/(a-b);</code></pre>
 <p>Note that in Rolle’s theorem and Mean Value Theorem, the continuity and differentiability conditions are crucial.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-100" class="example"><strong>Example 4.4  </strong></span>
+<p><span id="exm:unnamed-chunk-101" class="example"><strong>Example 4.4  </strong></span>
 Consider the floor function <span class="math inline">\(f(x)=\begin{cases}1 &amp; x&lt;0\\ 2&amp; x\ge 0\end{cases}\)</span>. Use a graph to show that there is no tangent line that is parallel to the secant line through <span class="math inline">\((-1, 1)\)</span> and <span class="math inline">\((1,2)\)</span>.</p>
 </div>
 
@@ -326,17 +326,17 @@ MeanValueTheorem( f(x), a..b );</code></pre>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-102" class="exercise"><strong>Exercise 4.3  </strong></span>
+<p><span id="exr:unnamed-chunk-103" class="exercise"><strong>Exercise 4.3  </strong></span>
 Let <span class="math inline">\(f(x)=\cos x\)</span>. Graph the function from <span class="math inline">\(-\frac{2\pi}{3}\)</span> to <span class="math inline">\(\frac{4\pi}{3}\)</span> and indicate the points in <span class="math inline">\([-\frac{2\pi}{3}, \frac{4\pi}{3}]\)</span> where the derivative <span class="math inline">\(f&#39;(x)\)</span> is <span class="math inline">\(0\)</span>. Find the tangent points where the slope of the tangent line is <span class="math inline">\(0\)</span>.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-103" class="exercise"><strong>Exercise 4.4  </strong></span>
+<p><span id="exr:unnamed-chunk-104" class="exercise"><strong>Exercise 4.4  </strong></span>
 Let <span class="math inline">\(f(x)=x^4-3x^2+1\)</span>. Graph the function <span class="math inline">\(f(x)\)</span> from <span class="math inline">\(-1\)</span> to <span class="math inline">\(2\)</span> indicate the points between <span class="math inline">\(-1\)</span> and <span class="math inline">\(2\)</span> where tangent line is parallel to the secant line passing through <span class="math inline">\((-1, f(-1))\)</span> and <span class="math inline">\((2, f(2))\)</span>. Find the tangent points where the tangent line is parallel to the secant line.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-104" class="exercise"><strong>Exercise 4.5  </strong></span>
+<p><span id="exr:unnamed-chunk-105" class="exercise"><strong>Exercise 4.5  </strong></span>
 Consider the floor function <span class="math inline">\(f(x)=|x|\)</span>. Use a graph to show that there is no tangent line that is parallel to the secant line through <span class="math inline">\((-1, 1)\)</span> and <span class="math inline">\((2,2)\)</span>.</p>
 </div>
 </div>
@@ -347,8 +347,7 @@ Consider the floor function <span class="math inline">\(f(x)=|x|\)</span>. Use a
 <p>Using first derivative, we can test local extrema at critical points.</p>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-105" class="theorem"><strong>Theorem 4.1  </strong></span>
-Suppose that <span class="math inline">\(c\)</span> is a critical point of a continuous function <span class="math inline">\(f\)</span>.</p>
+<p><span id="thm:unnamed-chunk-106" class="theorem"><strong>Theorem 4.1  </strong></span>Suppose that <span class="math inline">\(c\)</span> is a critical point of a continuous function <span class="math inline">\(f\)</span>.</p>
 <ol style="list-style-type: decimal">
 <li>If <span class="math inline">\(f&#39;\)</span> changes from positive to negative at <span class="math inline">\(c\)</span>, then <span class="math inline">\(f\)</span> has a local maximum at <span class="math inline">\(c\)</span>.</li>
 <li>If <span class="math inline">\(f&#39;\)</span> changes from negative to positive at <span class="math inline">\(c\)</span>, then <span class="math inline">\(f\)</span> has a local minimum at <span class="math inline">\(c\)</span>.</li>
@@ -358,8 +357,7 @@ Suppose that <span class="math inline">\(c\)</span> is a critical point of a con
 <p>Another method to determine local extremum is to use second derivative.</p>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-106" class="theorem"><strong>Theorem 4.2  </strong></span>
-Suppose <span class="math inline">\(f\)</span> is a twice differentiable function on an interval <span class="math inline">\(I\)</span>.</p>
+<p><span id="thm:unnamed-chunk-107" class="theorem"><strong>Theorem 4.2  </strong></span>Suppose <span class="math inline">\(f\)</span> is a twice differentiable function on an interval <span class="math inline">\(I\)</span>.</p>
 <ol style="list-style-type: decimal">
 <li>If <span class="math inline">\(f&#39;&#39;&gt;0\)</span> over <span class="math inline">\(I\)</span>, then <span class="math inline">\(f\)</span> is concave upward on <span class="math inline">\(I\)</span>.</li>
 <li>If <span class="math inline">\(f&#39;&#39;&lt;0\)</span> over <span class="math inline">\(I\)</span>, then <span class="math inline">\(f\)</span> is concave downward on <span class="math inline">\(I\)</span>.</li>
@@ -368,8 +366,7 @@ Suppose <span class="math inline">\(f\)</span> is a twice differentiable functio
 <p>Base on the observation on concavity, we have the following second derivative test.</p>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-107" class="theorem"><strong>Theorem 4.3  </strong></span>
-Suppose that <span class="math inline">\(f&#39;&#39;\)</span> is continuous near <span class="math inline">\(c\)</span>.</p>
+<p><span id="thm:unnamed-chunk-108" class="theorem"><strong>Theorem 4.3  </strong></span>Suppose that <span class="math inline">\(f&#39;&#39;\)</span> is continuous near <span class="math inline">\(c\)</span>.</p>
 <ol style="list-style-type: decimal">
 <li>If <span class="math inline">\(f&#39;(c)=0\)</span> and <span class="math inline">\(f&#39;&#39;(c)&gt;0\)</span>, then <span class="math inline">\(f\)</span> has a local minimum at <span class="math inline">\(c\)</span>.</li>
 <li>If <span class="math inline">\(f&#39;(c)=0\)</span> and <span class="math inline">\(f&#39;&#39;(c)&lt;0\)</span>, then <span class="math inline">\(f\)</span> has a local maximum at <span class="math inline">\(c\)</span>.</li>
@@ -377,7 +374,7 @@ Suppose that <span class="math inline">\(f&#39;&#39;\)</span> is continuous near
 </div>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-108" class="example"><strong>Example 4.5  </strong></span>
+<p><span id="exm:unnamed-chunk-109" class="example"><strong>Example 4.5  </strong></span>
 Find local extrema, the intervals on which <span class="math inline">\(f(x)=\frac{x}{x^2+1}\)</span> is increasing or decreasing and the intervals on which <span class="math inline">\(f(x)\)</span> is concave up or concave down.</p>
 </div>
 
@@ -402,7 +399,7 @@ ddf(t);     # evaluate the second derivative at a test point $t$.</code></pre>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-110" class="exercise"><strong>Exercise 4.6  </strong></span>
+<p><span id="exr:unnamed-chunk-111" class="exercise"><strong>Exercise 4.6  </strong></span>
 Let <span class="math inline">\(f(x)=\sin x+\cos x\)</span> be a function defined over the interval <span class="math inline">\([0, 2\pi]\)</span>. Find local extrema, the intervals on which <span class="math inline">\(f\)</span> is increasing or decreasing and the intervals on which <span class="math inline">\(f(x)\)</span> is concave up or concave down.</p>
 </div>
 </div>
@@ -428,7 +425,7 @@ In the last case, the sign agrees with the sign of <span class="math inline">\(\
 <p>In Maple, to find limits, we use the command <code>limit(f(x), x=a)</code> or <code>LimitTutor(f(x), x=a)</code> supported by <code>Student[Calculus1]</code>. To find asymptotes, you may use the command <code>Asymptotes(f(x), x)</code> which is again supported by <code>Student[Calculus1]</code>.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-111" class="example"><strong>Example 4.6  </strong></span>
+<p><span id="exm:unnamed-chunk-112" class="example"><strong>Example 4.6  </strong></span>
 Evaluate the following limits.</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(\lim\limits_{x\to \infty}\sqrt{x^2+1}\)</span>,</li>
@@ -447,7 +444,7 @@ LimitTutor(x*sin(1/x), x=infinity);</code></pre>
 </div>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-113" class="example"><strong>Example 4.7  </strong></span>
+<p><span id="exm:unnamed-chunk-114" class="example"><strong>Example 4.7  </strong></span>
 Find asymptote of the function <span class="math inline">\(f(x)=\frac{x^{3}+2x^{2}-3x-1}{x^{2}-1}\)</span> and plot the graph of <span class="math inline">\(f\)</span> and its asymptotes together with <span class="math inline">\(x\)</span> in <span class="math inline">\([-5,5]\)</span> and <span class="math inline">\(y\)</span> in <span class="math inline">\([-10, 10]\)</span>.</p>
 </div>
 
@@ -471,7 +468,7 @@ display(asymplots, Grphf); # display is supported by the plots package.</code></
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-115" class="exercise"><strong>Exercise 4.7  </strong></span>
+<p><span id="exr:unnamed-chunk-116" class="exercise"><strong>Exercise 4.7  </strong></span>
 Evaluate the following limits.</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(\lim\limits_{x\to \infty}\sqrt{x}\sin(\frac{1}{x})\)</span>,</li>
@@ -480,12 +477,12 @@ Evaluate the following limits.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-116" class="exercise"><strong>Exercise 4.8  </strong></span>
+<p><span id="exr:unnamed-chunk-117" class="exercise"><strong>Exercise 4.8  </strong></span>
 Find asymptote of the function <span class="math inline">\(f(x)=\frac{2x^{3}-3x^{2}-5x+2}{x^{2}+1}\)</span> and plot the graph of <span class="math inline">\(f\)</span> and its asymptotes together with <span class="math inline">\(x\)</span> in <span class="math inline">\([-5,5]\)</span> and <span class="math inline">\(y\)</span> in <span class="math inline">\([-10, 10]\)</span>.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-117" class="exercise"><strong>Exercise 4.9  </strong></span>
+<p><span id="exr:unnamed-chunk-118" class="exercise"><strong>Exercise 4.9  </strong></span>
 Find asymptote of the function <span class="math inline">\(f(x)=\frac{8\sin x}{x^{2}+1}+\frac{x^{2}-x}{x^{2}-1}\)</span> and plot the graph of <span class="math inline">\(f\)</span> and its asymptotes together with <span class="math inline">\(x\)</span> in <span class="math inline">\([-10,10]\)</span> and <span class="math inline">\(y\)</span> in <span class="math inline">\([-20, 20]\)</span>.</p>
 </div>
 </div>
@@ -495,7 +492,7 @@ Find asymptote of the function <span class="math inline">\(f(x)=\frac{8\sin x}{x
 <p>On the other hand, we can sketch the graph using calculus, more precisely, monotonicity, concavity, vertical asymptotes, horizontal asymptotes, periods, symmetries, local extrema, intercepts etc.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-118" class="example"><strong>Example 4.8  </strong></span>
+<p><span id="exm:unnamed-chunk-119" class="example"><strong>Example 4.8  </strong></span>
 Sketch and plot the graph of the function <span class="math inline">\(g(x)=\frac{2x+1}{x-2}\)</span>.</p>
 </div>
 
@@ -533,12 +530,12 @@ ddg(t);     # evaluate the second derivative at a test point $t$.</code></pre>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-120" class="exercise"><strong>Exercise 4.10  </strong></span>
+<p><span id="exr:unnamed-chunk-121" class="exercise"><strong>Exercise 4.10  </strong></span>
 Sketch and plot the graph of the function <span class="math inline">\(h(x)=\frac{x-1}{x+2}\)</span>.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-121" class="exercise"><strong>Exercise 4.11  </strong></span>
+<p><span id="exr:unnamed-chunk-122" class="exercise"><strong>Exercise 4.11  </strong></span>
 Sketch and plot the graph of the function <span class="math inline">\(g(x)=x\sqrt{4-x}\)</span>.</p>
 </div>
 </div>
@@ -547,7 +544,7 @@ Sketch and plot the graph of the function <span class="math inline">\(g(x)=x\sqr
 <p>To solve a optimization problem in Calculus, the key is to represent the quantity to be optimized by a function of other quantities and then find the extremum value using the extreme value theorem.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-122" class="example"><strong>Example 4.9  </strong></span>
+<p><span id="exm:unnamed-chunk-123" class="example"><strong>Example 4.9  </strong></span>
 Among rectangles with the same perimeter <span class="math inline">\(16\)</span> centimeters, there is one that has the largest area. Find the dimension of that rectangle.</p>
 </div>
 
@@ -568,12 +565,12 @@ yvalue := y(xvalue); # Find the width y such that the area is the largest.</code
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-124" class="exercise"><strong>Exercise 4.12  </strong></span>
+<p><span id="exr:unnamed-chunk-125" class="exercise"><strong>Exercise 4.12  </strong></span>
 Find the rectangle with the minimal perimeter among rectangles with the area 36 square inches.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-125" class="exercise"><strong>Exercise 4.13  </strong></span>
+<p><span id="exr:unnamed-chunk-126" class="exercise"><strong>Exercise 4.13  </strong></span>
 Find the point on the parabola <span class="math inline">\(y^2=2x\)</span> that is closest to the point <span class="math inline">\((1, -4)\)</span>.</p>
 </div>
 </div>
@@ -583,7 +580,7 @@ Find the point on the parabola <span class="math inline">\(y^2=2x\)</span> that 
 <p>Antiderivatives are closely related to integration. In Maple, you may use <code>int(f(x), x)</code> or <code>IntTutor(f(x), x)</code> supported by <code>Student[Calculus1]</code> to find an antiderivative of <span class="math inline">\(f(x)\)</span>.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-126" class="example"><strong>Example 4.10  </strong></span>
+<p><span id="exm:unnamed-chunk-127" class="example"><strong>Example 4.10  </strong></span>
 Find an antiderivative of the function <span class="math inline">\(f(x)=x^3-\frac{1}{\sqrt{x}}\)</span> by hand and by Maple respectively. Use <code>diff</code> to check your answer.</p>
 </div>
 
@@ -608,17 +605,17 @@ diff(TutorF, x);</code></pre>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-128" class="exercise"><strong>Exercise 4.14  </strong></span>
+<p><span id="exr:unnamed-chunk-129" class="exercise"><strong>Exercise 4.14  </strong></span>
 Find an antiderivative of the function <span class="math inline">\(f(x)=x^2-3+8\sin(x)\)</span> by hand and by Maple respectively. Use <code>diff</code> to check your answer.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-129" class="exercise"><strong>Exercise 4.15  </strong></span>
+<p><span id="exr:unnamed-chunk-130" class="exercise"><strong>Exercise 4.15  </strong></span>
 Find an antiderivative of the function <span class="math inline">\(f(x)=\frac{x^3-2x+1}{\sqrt{x}}\)</span> by hand and by Maple respectively. Use <code>diff</code> to check your answer.</p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-130" class="exercise"><strong>Exercise 4.16  </strong></span>
+<p><span id="exr:unnamed-chunk-131" class="exercise"><strong>Exercise 4.16  </strong></span>
 Find <strong>the most general antiderivative</strong> of the function <span class="math inline">\(f(x)=\tan x\sec x+1\)</span> by hand and by Maple respectively. Use <code>diff</code> to check your answer.</p>
 </div>
 
